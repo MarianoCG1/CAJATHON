@@ -134,21 +134,20 @@ Detalle de dueños, cronograma y recortes: `retos/NEG-02/panorama.md` §4.
 | T13 | Integración y ensayo | todos | 2.0 | 2.0 |
 | | **Total** | | **36.0** | **28.0** |
 
-## Anexo B. Preguntas para el owner
+## Anexo B. Preguntas para el owner (de comprensión)
 
-Prioridad alta primero. Versión completa en `retos/NEG-02/panorama.md` §7.
+Son preguntas para entender el problema y su operación; **no piden datos** (la organización indicó que en esta etapa no los entrega).
 
-- [ ] **KPI y línea base:** ¿qué KPI de negocio prioriza la Caja en Open Finance (conversión, retención, inclusión, conocimiento del cliente) y cuál es su línea base y su medición?
-- [ ] **Sandbox y datos:** como los datos son referenciales y sin compromiso de entrega, asumimos que construimos nuestro propio sandbox. ¿La Caja compartirá de todos modos algún esquema o dato simulado? ¿Qué entidades y tipos de información multientidad espera ver?
-- [ ] **Marco regulatorio:** ¿qué marco de consentimiento debemos asumir para el prototipo (alcance, vigencia, finalidad, revocación)?
-- [ ] ¿La Caja se espera solo como **receptora** de datos o también como proveedora? (Asumimos receptora.)
-- [ ] ¿Se permite usar LLM externos con datos sintéticos? ¿Hay proveedores permitidos o prohibidos?
-- [ ] ¿Qué productos de la Caja pueden ofertarse y con qué condiciones? (Usamos un catálogo supuesto.)
-- [ ] ¿El uso de los datos propios de la Caja para ofertas requiere un consentimiento específico?
-- [ ] Si el KPI es conversión, ¿qué tasa de aceptación referencial pueden compartir para el escenario?
-- [ ] ¿El jurado valora la conformidad con algún estándar de APIs abiertas, o basta un sandbox coherente?
-- [ ] ¿Pueden Legal y Compliance revisar el texto de consentimiento antes del 03.12?
-- [ ] **Seguridad:** ¿qué controles espera ver la Caja en el sandbox (autenticación de la entidad receptora, auditoría, cifrado, retención)?
+- [ ] ¿Qué busca ganar la Caja con Open Finance: conocer mejor al cliente, captar clientes de otras entidades, retener, incluir? ¿Cuál pesa más y cómo mediría el éxito de una oferta (aceptación, monto colocado)?
+- [ ] ¿Se imagina a la Caja solo como receptora de datos de otras entidades o también como proveedora?
+- [ ] ¿Qué reglas de consentimiento (alcance, vigencia, finalidad, revocación) deben respetar las ofertas hechas con datos de terceros? ¿Legal y Compliance revisarían el texto?
+- [ ] ¿Qué productos de la Caja podrían ofrecerse a partir de esta información y con qué condiciones generales?
+- [ ] ¿Qué datos propios de la Caja pueden usarse para ofertas sin pedir un consentimiento adicional?
+- [ ] ¿Qué controles de seguridad esperan ver (autenticación entre entidades, auditoría, cifrado, retención)?
+- [ ] ¿Se espera conformidad con algún estándar de APIs abiertas o basta un entorno de prueba coherente que simule el intercambio?
+- [ ] ¿Hay restricciones para usar IA externa (aun con datos sintéticos)?
+
+Si la organización no responde, seguimos con los **supuestos marcados** en este documento y medimos el KPI con un backtest sobre datos sintéticos propios (el comunicado del 21.11 indica que en esta etapa no se entregan datos).
 
 ## Anexo C. Lista de revisión (criterios del pase a finalistas)
 

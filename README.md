@@ -19,13 +19,13 @@ Espacio de trabajo del equipo para el **Cajathon 2026**, hackathon de IA de **Ca
 | `retos/<ID>/` | Un reto por carpeta: ficha, concepto, panorama, postulación, generador de datos |
 | `docs/` | Investigación, plan, mensajes listos, preexistente, validación |
 | `boveda/` | Bóveda Obsidian (abrir la carpeta raíz): competencia, decisiones, nodo por reto, tablero |
-| `scripts/` | `sinergia/` (parejas y prioridad), `conceptos/` (borradores), `boveda/` (tablero) |
+| `scripts/` | `sinergia/` (parejas y prioridad), `conceptos/` (borradores), `boveda/` (tablero), `auditoria/` (dificultad de los datos) |
 | `backend/` · `frontend/` | Esqueleto para el evento; sin funcionalidad crítica antes del 03.12 |
 
 ## Comandos
 
 ```powershell
-pip install pytest pandas numpy
+pip install pytest pandas numpy scikit-learn
 python -m pytest -q                         # todas las pruebas
 python scripts/boveda/generar_boveda.py     # regenera el tablero
 python retos/RIE-03/datos/generar.py        # datos sintéticos de un reto

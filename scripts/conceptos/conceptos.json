@@ -12,13 +12,20 @@
       ],
       "demo": "Cartera sintética de miles de clientes. Se muestra la cola del día, se abre un caso con sus señales, se aprueba la acción propuesta y se compara el backtest con y sin la solución.",
       "diferenciacion": "No solo predice: explica cada alerta y recomienda la acción concreta con revisión humana, controlando falsos positivos.",
-      "riesgos_clave": ["Falsos positivos y fatiga de alertas", "Sesgos en el modelo", "No se pueden tomar decisiones crediticias automáticas"],
+      "riesgos_clave": [
+        "Falsos positivos y fatiga de alertas",
+        "Sesgos en el modelo",
+        "No se pueden tomar decisiones crediticias automáticas"
+      ],
       "preguntas_owner": [
-        "¿Cuál es la morosidad actual de la cartera y cómo se mide (mora > 8, > 30 días)? ¿Cuál sería la mejora que consideran relevante?",
-        "¿Qué señales de deterioro monitorean hoy y con qué frecuencia?",
-        "¿Qué columnas y volumen tendrán los datos sintéticos (historial de pagos, saldos, actividad económica)?",
-        "¿Qué canales de contacto preventivo son viables para el gestor?",
-        "¿Hay restricciones para usar modelos de IA externos con datos sintéticos?"
+        "¿Cómo define hoy la Caja el «deterioro» de un cliente MYPE y en qué momento se entera (días de atraso, calificación, visita)? ¿Con cuánta anticipación sería útil avisar: 30, 60 o 90 días?",
+        "¿Qué señales siguen hoy los analistas para sospechar que un cliente empeora, y cada cuánto las revisan?",
+        "¿Cómo se mide hoy la morosidad y la recuperación (mora > 8 días, > 30 días, cartera en riesgo)? ¿Cuál de esas medidas es la prioritaria para este desafío?",
+        "¿Cuántos clientes gestiona un analista al día y cuántos contactos preventivos son razonables sin saturar al cliente?",
+        "¿Qué puede ofrecer el analista por su cuenta (recordatorio, reprogramación, asesoría) y qué requiere comité? ¿Qué canales de contacto son aceptables?",
+        "¿En qué herramienta trabaja hoy el analista y dónde debería aparecer la alerta?",
+        "¿Qué esperan ver en la explicación de una alerta para confiar en ella?",
+        "¿Hay restricciones para usar IA externa (aun con datos sintéticos) o variables que no deben usarse por criterios de equidad?"
       ]
     },
     "NEG-01": {
@@ -32,7 +39,11 @@
       ],
       "demo": "Un cliente agrícola y uno comercial: se muestra su flujo estimado, el cronograma uniforme vs. el ajustado, la validación de política y el efecto en cumplimiento y rentabilidad.",
       "diferenciacion": "Combina pronóstico de flujo y optimización del cronograma con validación de rentabilidad; no es un simple simulador de cuotas.",
-      "riesgos_clave": ["Incertidumbre en la proyección de ingresos", "Sobreendeudamiento", "Cumplimiento de políticas y normativa"],
+      "riesgos_clave": [
+        "Incertidumbre en la proyección de ingresos",
+        "Sobreendeudamiento",
+        "Cumplimiento de políticas y normativa"
+      ],
       "preguntas_owner": [
         "¿Qué variantes de cronograma flexible permite hoy la normativa y la política de la Caja?",
         "¿Cuál es la línea base de cumplimiento y de rentabilidad por producto?",
@@ -51,12 +62,20 @@
       ],
       "demo": "Un cliente otorga consentimiento, la Caja consulta tres entidades simuladas, se arma su perfil y el agente propone una oferta explicando qué datos usó.",
       "diferenciacion": "Experiencia de consentimiento clara y recomendaciones trazables al dato autorizado, sobre un sandbox reutilizable.",
-      "riesgos_clave": ["Privacidad y consentimiento", "No asumir APIs ni datos reales", "Normativa aplicable"],
+      "riesgos_clave": [
+        "Privacidad y consentimiento",
+        "No asumir APIs ni datos reales",
+        "Normativa aplicable"
+      ],
       "preguntas_owner": [
-        "¿Qué marco regulatorio de consentimiento debemos asumir para el prototipo?",
-        "¿Qué KPI de negocio prioriza la Caja en Open Finance (conversión, retención, inclusión)?",
-        "¿Habrá APIs simuladas propias o debemos construir el sandbox?",
-        "¿Qué entidades y tipos de información multientidad se simulan?"
+        "¿Qué busca ganar la Caja con Open Finance: conocer mejor al cliente, captar clientes de otras entidades, retener, incluir? ¿Cuál pesa más y cómo mediría el éxito de una oferta (aceptación, monto colocado)?",
+        "¿Se imagina a la Caja solo como receptora de datos de otras entidades o también como proveedora?",
+        "¿Qué reglas de consentimiento (alcance, vigencia, finalidad, revocación) deben respetar las ofertas hechas con datos de terceros? ¿Legal y Compliance revisarían el texto?",
+        "¿Qué productos de la Caja podrían ofrecerse a partir de esta información y con qué condiciones generales?",
+        "¿Qué datos propios de la Caja pueden usarse para ofertas sin pedir un consentimiento adicional?",
+        "¿Qué controles de seguridad esperan ver (autenticación entre entidades, auditoría, cifrado, retención)?",
+        "¿Se espera conformidad con algún estándar de APIs abiertas o basta un entorno de prueba coherente que simule el intercambio?",
+        "¿Hay restricciones para usar IA externa (aun con datos sintéticos)?"
       ]
     },
     "RIE-01": {
@@ -70,11 +89,20 @@
       ],
       "demo": "Se activa un escenario de lluvias intensas en la costa norte: el mapa muestra zonas y clientes expuestos, la cartera en riesgo y las acciones sugeridas.",
       "diferenciacion": "Escenarios climáticos conectados con la exposición crediticia y acciones concretas, con incertidumbre explícita.",
-      "riesgos_clave": ["Incertidumbre de escenarios", "Exposición no es pérdida", "Calidad de datos geográficos y climáticos"],
+      "riesgos_clave": [
+        "Incertidumbre de escenarios",
+        "Exposición no es pérdida",
+        "Calidad de datos geográficos y climáticos"
+      ],
       "preguntas_owner": [
-        "¿Qué fuentes climáticas y mapas de amenaza podemos usar (públicas o sintéticas)?",
-        "¿Cuál es hoy el indicador de exposición o pérdida por eventos climáticos?",
-        "¿Qué acciones preventivas son viables para la Caja (reprogramación, alertas, seguros)?"
+        "¿Cómo mide y gestiona hoy la Caja el riesgo por eventos climáticos (El Niño, lluvias, sequías)? ¿Qué pérdida o mora se les atribuye y quién la calcula?",
+        "¿Qué acciones preventivas son viables (alerta, visita, reprogramación, ampliación de plazo, capital de reposición, microseguro) y cuáles requieren comité o normativa? ¿Qué implica una reprogramación preventiva para la calificación?",
+        "¿Cuántos gestores hay por agencia y cuántas visitas por semana son realistas ante una emergencia?",
+        "¿Qué sabe hoy la Caja de sus clientes que ayude a medir su exposición (ubicación, actividad, seguro, ingresos secundarios, reservas)?",
+        "¿Se puede usar información pública de clima y mapas de amenaza como referencia?",
+        "¿Cuál es el resultado principal que esperan: mora evitada, exposición identificada a tiempo, clientes contactados antes del evento?",
+        "¿Dónde vería el gestor la alerta hoy y con qué anticipación sirve?",
+        "¿Hay restricciones para usar IA externa (aun con datos sintéticos)? ¿Cuál es el formato exacto de la postulación y la hora límite del 26.11?"
       ]
     },
     "RIE-02": {
@@ -88,11 +116,20 @@
       ],
       "demo": "Se carga un lote de solicitudes con redes ocultas; el grafo resalta una red, el agente arma el expediente con la evidencia y el investigador decide.",
       "diferenciacion": "Evidencia verificable y control de falsos positivos para distinguir relaciones legítimas de patrones sospechosos.",
-      "riesgos_clave": ["Falsos positivos y reputación del cliente", "Protección de datos", "No concluir fraude solo por coincidencias"],
+      "riesgos_clave": [
+        "Falsos positivos y reputación del cliente",
+        "Protección de datos",
+        "No concluir fraude solo por coincidencias"
+      ],
       "preguntas_owner": [
-        "¿Qué tipos de vínculos son más relevantes para la Caja (teléfono, dispositivo, dirección, referencia)?",
-        "¿Habrá casos simulados etiquetados para validar el detector?",
-        "¿Cuál es la tasa actual de falsos positivos y el tiempo de revisión por caso?"
+        "¿Cómo detecta hoy la Caja el fraude por vínculos y redes (reglas actuales, revisión manual, alertas)? ¿Cuánto tarda revisar un caso y qué parte de las alertas resulta falsa?",
+        "¿Qué tipos de vínculo son los más relevantes en la práctica (teléfono, dispositivo, dirección, referencias, contactos, negocio)?",
+        "¿Qué relaciones legítimas son frecuentes y exigen cuidado (familias, mercados, gremios, gestores)?",
+        "¿Quién es el especialista que revisaría las alertas y cuál es su flujo y herramienta actuales?",
+        "¿Qué acciones puede orientar una alerta antes de un desembolso y cuáles son decisiones sobre el cliente que exigen revisión humana?",
+        "¿Existe un monto a partir del cual la revisión es reforzada? (Hoy suponemos S/ 10,000.)",
+        "¿Cómo medirían el éxito: redes detectadas, tiempo de revisión, menos falsos positivos?",
+        "¿Hay restricciones para usar IA externa (aun con datos sintéticos)?"
       ]
     },
     "NEG-03": {
@@ -106,7 +143,11 @@
       ],
       "demo": "Un analista deja su cartera; el nuevo recibe la ficha de traspaso por cliente, la lista priorizada y el mensaje sugerido para el primer contacto.",
       "diferenciacion": "Combina memoria resumida de la relación con priorización predictiva; no es solo un resumen de historial.",
-      "riesgos_clave": ["No asumir que cambiar de analista implica perder al cliente", "Privacidad de datos", "Resúmenes sin evidencia (alucinación)"],
+      "riesgos_clave": [
+        "No asumir que cambiar de analista implica perder al cliente",
+        "Privacidad de datos",
+        "Resúmenes sin evidencia (alucinación)"
+      ],
       "preguntas_owner": [
         "¿Cuál es la tasa actual de desvinculación tras un cambio de analista y cómo se mide?",
         "¿Qué interacciones se registran hoy y dónde (CRM, notas)?",
@@ -124,7 +165,11 @@
       ],
       "demo": "Se selecciona una provincia, el mapa prioriza distritos, y el agente entrega el brief con la actividad económica, la cobertura financiera y el abordaje sugerido.",
       "diferenciacion": "Brief accionable por zona, con evidencia y sin discriminación ni inferencias sensibles.",
-      "riesgos_clave": ["Sesgos y exclusión injustificada", "Uso responsable de fuentes públicas", "Potencial no es elegibilidad"],
+      "riesgos_clave": [
+        "Sesgos y exclusión injustificada",
+        "Uso responsable de fuentes públicas",
+        "Potencial no es elegibilidad"
+      ],
       "preguntas_owner": [
         "¿Qué datos territoriales y de cobertura financiera podemos usar?",
         "¿Cuál es la línea base de conversión de prospectos y cómo se mide?",
@@ -142,7 +187,11 @@
       ],
       "demo": "Se comparan el esquema actual y uno propuesto: se ven el efecto en crecimiento, calidad de cartera, equidad y costo, con la explicación de cada regla.",
       "diferenciacion": "Ajuste justo por contexto y optimización con presupuesto, con transparencia sobre cada regla.",
-      "riesgos_clave": ["Equidad entre colaboradores", "Normativa laboral", "Incentivos perjudiciales para clientes o cartera"],
+      "riesgos_clave": [
+        "Equidad entre colaboradores",
+        "Normativa laboral",
+        "Incentivos perjudiciales para clientes o cartera"
+      ],
       "preguntas_owner": [
         "¿Cuáles son hoy los indicadores y metas de los analistas y su peso?",
         "¿Qué restricciones presupuestarias y laborales debe respetar el modelo?",

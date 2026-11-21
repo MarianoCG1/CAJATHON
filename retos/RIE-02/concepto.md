@@ -125,22 +125,20 @@ Incluye pruebas automáticas, reporte de validación (`docs/validacion.md`) y un
 | Pitch y demo | pitch | 2 | 2 | 2.8 | 2.8 |
 | **Total** | | **36** | **29** | **42.5** | **31.3** |
 
-## Anexo B. Preguntas para el owner
+## Anexo B. Preguntas para el owner (de comprensión)
 
-Prioridad alta:
+Son preguntas para entender el problema y su operación; **no piden datos** (la organización indicó que en esta etapa no los entrega).
 
-- [ ] ¿Cuál es la línea base: reglas actuales, tasa de falsos positivos y tiempo de revisión por caso, y cómo se mide hoy?
-- [ ] El expediente menciona casos simulados y datos sintéticos referenciales: ¿vendrán etiquetados (redes de fraude y relaciones legítimas)? ¿En qué formato y volumen?
-- [ ] ¿Qué tipos de vínculos son más relevantes (teléfono, dispositivo, dirección, referencia, contacto, negocio) y cuáles estarán en los datos? ¿Habrá conexiones (IP, sesión) y ubicaciones?
-- [ ] ¿Se permite usar LLM externos (Claude, OpenAI) o solo modelos locales? ¿Qué datos pueden salir del entorno?
-- [ ] ¿Quién es el especialista (prevención, investigación, riesgos) y cuál es su flujo y herramienta actuales?
+- [ ] ¿Cómo detecta hoy la Caja el fraude por vínculos y redes (reglas actuales, revisión manual, alertas)? ¿Cuánto tarda revisar un caso y qué parte de las alertas resulta falsa?
+- [ ] ¿Qué tipos de vínculo son los más relevantes en la práctica (teléfono, dispositivo, dirección, referencias, contactos, negocio)?
+- [ ] ¿Qué relaciones legítimas son frecuentes y exigen cuidado (familias, mercados, gremios, gestores)?
+- [ ] ¿Quién es el especialista que revisaría las alertas y cuál es su flujo y herramienta actuales?
+- [ ] ¿Qué acciones puede orientar una alerta antes de un desembolso y cuáles son decisiones sobre el cliente que exigen revisión humana?
+- [ ] ¿Existe un monto a partir del cual la revisión es reforzada? (Hoy suponemos S/ 10,000.)
+- [ ] ¿Cómo medirían el éxito: redes detectadas, tiempo de revisión, menos falsos positivos?
+- [ ] ¿Hay restricciones para usar IA externa (aun con datos sintéticos)?
 
-Prioridad media:
-
-- [ ] ¿Qué columnas y volumen tendrán los datos sintéticos (dispositivo, referencias, tipo de inmueble, antigüedad del cliente)? ¿Direcciones y teléfonos vienen normalizados?
-- [ ] ¿Existe un umbral de monto de revisión reforzada? (Hoy suponemos S/ 10,000.)
-- [ ] ¿Qué acciones de prevención puede orientar una alerta antes de un desembolso y cuáles se consideran decisiones que afectan al cliente?
-- [ ] ¿Qué relaciones legítimas requieren cuidado especial (familias, mercados, gremios, gestores)?
+Si la organización no responde, seguimos con los **supuestos marcados** en este documento y medimos el KPI con un backtest sobre datos sintéticos propios (el comunicado del 21.11 indica que en esta etapa no se entregan datos).
 
 ## Anexo C. Lista de revisión (criterios del pase a finalistas)
 

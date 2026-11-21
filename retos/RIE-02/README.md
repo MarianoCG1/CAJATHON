@@ -30,7 +30,7 @@ Marca las casillas editando este archivo y haz commit. El avance automático lo 
 - [ ] Copiar el expediente desde la plataforma a `retos/RIE-02/expediente.md` (solo local).
 - [ ] **Revisión cruzada** (Antonio): leer `concepto.md`, `panorama.md` y `postulacion.md` contra el expediente y el Anexo C de `concepto.md`; anotar objeciones en `retos/RIE-02/revision.md`.
 - [ ] La pareja líder resuelve las objeciones (v2) y actualiza `postulacion.md`.
-- [ ] Reformular las preguntas del Anexo B del concepto a preguntas de **comprensión** del problema (la organización dijo que en esta etapa no entrega datos).
+- [x] Preguntas del Anexo B reformuladas a **comprensión** del problema (21.11, Mariano).
 - [ ] Decisión de postular (sí/no) — la toma el coordinador con el equipo.
 
 ## Reglas de este reto
@@ -43,8 +43,13 @@ Marca las casillas editando este archivo y haz commit. El avance automático lo 
 
 Detección de redes inusuales con análisis de grafos sobre solicitudes, que prioriza los casos más sospechosos y arma para el investigador un expediente con la evidencia, distinguiendo relaciones legítimas de patrones de riesgo.
 
-## Preguntas para el owner (a reformular como comprensión)
+## Preguntas para el owner (de comprensión; ver Anexo B del concepto)
 
-- ¿Qué tipos de vínculos son más relevantes para la Caja (teléfono, dispositivo, dirección, referencia)?
-- ¿Habrá casos simulados etiquetados para validar el detector?
-- ¿Cuál es la tasa actual de falsos positivos y el tiempo de revisión por caso?
+- ¿Cómo detecta hoy la Caja el fraude por vínculos y redes (reglas actuales, revisión manual, alertas)? ¿Cuánto tarda revisar un caso y qué parte de las alertas resulta falsa?
+- ¿Qué tipos de vínculo son los más relevantes en la práctica (teléfono, dispositivo, dirección, referencias, contactos, negocio)?
+- ¿Qué relaciones legítimas son frecuentes y exigen cuidado (familias, mercados, gremios, gestores)?
+- ¿Quién es el especialista que revisaría las alertas y cuál es su flujo y herramienta actuales?
+- ¿Qué acciones puede orientar una alerta antes de un desembolso y cuáles son decisiones sobre el cliente que exigen revisión humana?
+- ¿Existe un monto a partir del cual la revisión es reforzada? (Hoy suponemos S/ 10,000.)
+- ¿Cómo medirían el éxito: redes detectadas, tiempo de revisión, menos falsos positivos?
+- ¿Hay restricciones para usar IA externa (aun con datos sintéticos)?

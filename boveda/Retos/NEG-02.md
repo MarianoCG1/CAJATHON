@@ -60,10 +60,14 @@ Sandbox de Open Finance con APIs y consentimientos simulados que construye una v
 
 ## Preguntas para el owner
 
-- ¿Qué marco regulatorio de consentimiento debemos asumir para el prototipo?
-- ¿Qué KPI de negocio prioriza la Caja en Open Finance (conversión, retención, inclusión)?
-- ¿Habrá APIs simuladas propias o debemos construir el sandbox?
-- ¿Qué entidades y tipos de información multientidad se simulan?
+- ¿Qué busca ganar la Caja con Open Finance: conocer mejor al cliente, captar clientes de otras entidades, retener, incluir? ¿Cuál pesa más y cómo mediría el éxito de una oferta (aceptación, monto colocado)?
+- ¿Se imagina a la Caja solo como receptora de datos de otras entidades o también como proveedora?
+- ¿Qué reglas de consentimiento (alcance, vigencia, finalidad, revocación) deben respetar las ofertas hechas con datos de terceros? ¿Legal y Compliance revisarían el texto?
+- ¿Qué productos de la Caja podrían ofrecerse a partir de esta información y con qué condiciones generales?
+- ¿Qué datos propios de la Caja pueden usarse para ofertas sin pedir un consentimiento adicional?
+- ¿Qué controles de seguridad esperan ver (autenticación entre entidades, auditoría, cifrado, retención)?
+- ¿Se espera conformidad con algún estándar de APIs abiertas o basta un entorno de prueba coherente que simule el intercambio?
+- ¿Hay restricciones para usar IA externa (aun con datos sintéticos)?
 
 Las respuestas del owner actualizan KPI y línea base; el comunicado del 21.11 indica que en esta etapa no entregan datos.
 

@@ -9,6 +9,7 @@ Actualizado el 21.11.2026. Los generadores de datos son preexistentes para **los
 | Repo base / estructura | Carpetas por reto (`retos/<ID>/`), `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, README, fichas de reto, `.gitignore`, `pytest.ini`, esqueleto vacío de `backend/` y `frontend/` | Equipo | 21.11.2026 | No (preexistente) |
 | `scripts/sinergia/` | Herramienta de planificación: puntaje de sinergia por pareja y prioridad de desafíos. No forma parte del producto | Equipo | 21.11.2026 | No (preexistente) |
 | `scripts/conceptos/` | Generador de borradores de concepto. No forma parte del producto | Equipo | 21.11.2026 | No (preexistente) |
+| `scripts/auditoria/` | Comprobaciones de dificultad de los datasets sintéticos (¿se resuelve con una regla trivial?). No son los modelos de los retos ni forman parte del producto | Equipo | 21.11.2026 | No (preexistente) |
 | `scripts/boveda/` y `boveda/` | Generador y notas de la bóveda de conocimiento (competencia, decisiones, tablero de avance). No forma parte del producto | Equipo | 21.11.2026 | No (preexistente) |
 | `retos/RIE-03/datos/` (`generar.py`, `test_generar.py`) | Generador de cartera MYPE sintética para RIE-03: clientes, créditos, cuotas, saldos, señales mensuales, gestiones y verdad de terreno. Semilla fija. No contiene modelo, agente, API, interfaz ni backtest | Equipo | 21.11.2026 | No (preexistente) |
 | `retos/RIE-03/datos/sintetico/` | Salida del generador anterior (CSV, diccionario y metadatos). 100 % sintética | Equipo | 21.11.2026 | No (preexistente) |

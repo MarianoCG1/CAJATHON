@@ -136,17 +136,20 @@ Incluye pruebas automáticas, reporte de validación (`docs/validacion.md`), aud
 
 (v0: 33 h. El generador pasa a ser preexistente; se suma tiempo a backtest y pruebas.)
 
-## Anexo B. Preguntas para el owner (por prioridad)
+## Anexo B. Preguntas para el owner (de comprensión)
 
-- [ ] **KPI y línea base:** ¿cuál es la morosidad actual de la cartera y cómo se mide (mora > 8, > 30 días)? ¿Qué mejora consideran relevante y qué horizonte de anticipación es útil (30, 60, 90 días)?
-- [ ] **Datos:** ¿qué columnas, volumen y periodo tendrán los datos sintéticos (historial de pagos, saldos, actividad económica, eventos de incumplimiento)? ¿Con qué tasa de incumplimiento?
-- [ ] **IA externa y protección de datos:** ¿hay restricciones para usar modelos de IA externos con datos sintéticos, o solo modelos locales? ¿Qué campos puede ver un modelo externo si más adelante se usan datos de la Caja?
-- [ ] **Señales actuales:** ¿qué señales de deterioro monitorean hoy y con qué frecuencia?
-- [ ] **Canales y flujo:** ¿qué canales de contacto preventivo son viables para el gestor? ¿En qué sistema trabaja hoy y dónde se integraría una cola diaria?
-- [ ] **Capacidad:** ¿cuántos clientes puede gestionar un analista al día? (define k y la fatiga aceptable)
-- [ ] **Intervención:** ¿qué propuestas puede ofrecer un gestor sin pasar por comité y cuáles están fuera de límites?
-- [ ] **Efectividad:** ¿existe alguna referencia de la efectividad de la gestión temprana?
-- [ ] **Equidad:** ¿qué variables no pueden usarse y se espera una auditoría por grupo?
+Son preguntas para entender el problema y su operación; **no piden datos** (la organización indicó que en esta etapa no los entrega).
+
+- [ ] ¿Cómo define hoy la Caja el «deterioro» de un cliente MYPE y en qué momento se entera (días de atraso, calificación, visita)? ¿Con cuánta anticipación sería útil avisar: 30, 60 o 90 días?
+- [ ] ¿Qué señales siguen hoy los analistas para sospechar que un cliente empeora, y cada cuánto las revisan?
+- [ ] ¿Cómo se mide hoy la morosidad y la recuperación (mora > 8 días, > 30 días, cartera en riesgo)? ¿Cuál de esas medidas es la prioritaria para este desafío?
+- [ ] ¿Cuántos clientes gestiona un analista al día y cuántos contactos preventivos son razonables sin saturar al cliente?
+- [ ] ¿Qué puede ofrecer el analista por su cuenta (recordatorio, reprogramación, asesoría) y qué requiere comité? ¿Qué canales de contacto son aceptables?
+- [ ] ¿En qué herramienta trabaja hoy el analista y dónde debería aparecer la alerta?
+- [ ] ¿Qué esperan ver en la explicación de una alerta para confiar en ella?
+- [ ] ¿Hay restricciones para usar IA externa (aun con datos sintéticos) o variables que no deben usarse por criterios de equidad?
+
+Si la organización no responde, seguimos con los **supuestos marcados** en este documento y medimos el KPI con un backtest sobre datos sintéticos propios (el comunicado del 21.11 indica que en esta etapa no se entregan datos).
 
 ## Anexo C. Lista de revisión (criterios del pase a finalistas)
 

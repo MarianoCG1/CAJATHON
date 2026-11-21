@@ -31,7 +31,7 @@ Marca las casillas editando este archivo y haz commit. El avance automático lo 
 - [ ] **Revisión cruzada** (David): leer `concepto.md`, `panorama.md` y `postulacion.md` contra el expediente y el Anexo C de `concepto.md`; anotar objeciones en `retos/NEG-02/revision.md`.
 - [ ] La pareja líder resuelve las objeciones (v2) y actualiza `postulacion.md`.
 - [ ] Comprobar que los datos sintéticos no se resuelven con una regla trivial (en RIE-02 ya se endureció): correr el generador y probar un modelo simple.
-- [ ] Reformular las preguntas del Anexo B del concepto a preguntas de **comprensión** del problema (la organización dijo que en esta etapa no entrega datos).
+- [x] Preguntas del Anexo B reformuladas a **comprensión** del problema (21.11, Mariano).
 - [ ] Decisión de postular (sí/no) — la toma el coordinador con el equipo.
 
 ## Reglas de este reto
@@ -44,9 +44,13 @@ Marca las casillas editando este archivo y haz commit. El avance automático lo 
 
 Sandbox con APIs y consentimientos simulados que arma una vista 360 del cliente a partir de varias entidades y un agente que identifica oportunidades de producto o servicio, siempre dentro del consentimiento otorgado.
 
-## Preguntas para el owner (a reformular como comprensión)
+## Preguntas para el owner (de comprensión; ver Anexo B del concepto)
 
-- ¿Qué marco regulatorio de consentimiento debemos asumir para el prototipo?
-- ¿Qué KPI de negocio prioriza la Caja en Open Finance (conversión, retención, inclusión)?
-- ¿Habrá APIs simuladas propias o debemos construir el sandbox?
-- ¿Qué entidades y tipos de información multientidad se simulan?
+- ¿Qué busca ganar la Caja con Open Finance: conocer mejor al cliente, captar clientes de otras entidades, retener, incluir? ¿Cuál pesa más y cómo mediría el éxito de una oferta (aceptación, monto colocado)?
+- ¿Se imagina a la Caja solo como receptora de datos de otras entidades o también como proveedora?
+- ¿Qué reglas de consentimiento (alcance, vigencia, finalidad, revocación) deben respetar las ofertas hechas con datos de terceros? ¿Legal y Compliance revisarían el texto?
+- ¿Qué productos de la Caja podrían ofrecerse a partir de esta información y con qué condiciones generales?
+- ¿Qué datos propios de la Caja pueden usarse para ofertas sin pedir un consentimiento adicional?
+- ¿Qué controles de seguridad esperan ver (autenticación entre entidades, auditoría, cifrado, retención)?
+- ¿Se espera conformidad con algún estándar de APIs abiertas o basta un entorno de prueba coherente que simule el intercambio?
+- ¿Hay restricciones para usar IA externa (aun con datos sintéticos)?

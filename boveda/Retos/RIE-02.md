@@ -60,9 +60,14 @@ Detector de redes sospechosas entre personas, negocios, teléfonos, direcciones 
 
 ## Preguntas para el owner
 
-- ¿Qué tipos de vínculos son más relevantes para la Caja (teléfono, dispositivo, dirección, referencia)?
-- ¿Habrá casos simulados etiquetados para validar el detector?
-- ¿Cuál es la tasa actual de falsos positivos y el tiempo de revisión por caso?
+- ¿Cómo detecta hoy la Caja el fraude por vínculos y redes (reglas actuales, revisión manual, alertas)? ¿Cuánto tarda revisar un caso y qué parte de las alertas resulta falsa?
+- ¿Qué tipos de vínculo son los más relevantes en la práctica (teléfono, dispositivo, dirección, referencias, contactos, negocio)?
+- ¿Qué relaciones legítimas son frecuentes y exigen cuidado (familias, mercados, gremios, gestores)?
+- ¿Quién es el especialista que revisaría las alertas y cuál es su flujo y herramienta actuales?
+- ¿Qué acciones puede orientar una alerta antes de un desembolso y cuáles son decisiones sobre el cliente que exigen revisión humana?
+- ¿Existe un monto a partir del cual la revisión es reforzada? (Hoy suponemos S/ 10,000.)
+- ¿Cómo medirían el éxito: redes detectadas, tiempo de revisión, menos falsos positivos?
+- ¿Hay restricciones para usar IA externa (aun con datos sintéticos)?
 
 Las respuestas del owner actualizan KPI y línea base; el comunicado del 21.11 indica que en esta etapa no entregan datos.
 

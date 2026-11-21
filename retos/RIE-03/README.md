@@ -31,7 +31,7 @@ Marca las casillas editando este archivo y haz commit. El avance automático lo 
 - [ ] **Revisión cruzada** (Glem): leer `concepto.md`, `panorama.md` y `postulacion.md` contra el expediente y el Anexo C de `concepto.md`; anotar objeciones en `retos/RIE-03/revision.md`.
 - [ ] La pareja líder resuelve las objeciones (v2) y actualiza `postulacion.md`.
 - [ ] Comprobar que los datos sintéticos no se resuelven con una regla trivial (en RIE-02 ya se endureció): correr el generador y probar un modelo simple.
-- [ ] Reformular las preguntas del Anexo B del concepto a preguntas de **comprensión** del problema (la organización dijo que en esta etapa no entrega datos).
+- [x] Preguntas del Anexo B reformuladas a **comprensión** del problema (21.11, Mariano).
 - [ ] Decisión de postular (sí/no) — la toma el coordinador con el equipo.
 
 ## Reglas de este reto
@@ -44,10 +44,13 @@ Marca las casillas editando este archivo y haz commit. El avance automático lo 
 
 Cola diaria priorizada de clientes con riesgo de deterioro, con la explicación de las señales que la originan y una intervención recomendada por un agente (canal, momento, propuesta). El gestor aprueba, edita o descarta; nada se ejecuta de forma automática.
 
-## Preguntas para el owner (a reformular como comprensión)
+## Preguntas para el owner (de comprensión; ver Anexo B del concepto)
 
-- ¿Cuál es la morosidad actual de la cartera y cómo se mide (mora > 8, > 30 días)? ¿Cuál sería la mejora que consideran relevante?
-- ¿Qué señales de deterioro monitorean hoy y con qué frecuencia?
-- ¿Qué columnas y volumen tendrán los datos sintéticos (historial de pagos, saldos, actividad económica)?
-- ¿Qué canales de contacto preventivo son viables para el gestor?
-- ¿Hay restricciones para usar modelos de IA externos con datos sintéticos?
+- ¿Cómo define hoy la Caja el «deterioro» de un cliente MYPE y en qué momento se entera (días de atraso, calificación, visita)? ¿Con cuánta anticipación sería útil avisar: 30, 60 o 90 días?
+- ¿Qué señales siguen hoy los analistas para sospechar que un cliente empeora, y cada cuánto las revisan?
+- ¿Cómo se mide hoy la morosidad y la recuperación (mora > 8 días, > 30 días, cartera en riesgo)? ¿Cuál de esas medidas es la prioritaria para este desafío?
+- ¿Cuántos clientes gestiona un analista al día y cuántos contactos preventivos son razonables sin saturar al cliente?
+- ¿Qué puede ofrecer el analista por su cuenta (recordatorio, reprogramación, asesoría) y qué requiere comité? ¿Qué canales de contacto son aceptables?
+- ¿En qué herramienta trabaja hoy el analista y dónde debería aparecer la alerta?
+- ¿Qué esperan ver en la explicación de una alerta para confiar en ella?
+- ¿Hay restricciones para usar IA externa (aun con datos sintéticos) o variables que no deben usarse por criterios de equidad?

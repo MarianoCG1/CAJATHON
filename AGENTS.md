@@ -45,7 +45,7 @@ docs/
   validacion.md      evidencia de pruebas (se llena en el evento)
   consulta-organizacion.md · mensaje-equipo.md · mensaje-glem.md   textos listos para enviar
 boveda/              bóveda Obsidian: competencia, decisiones, nodo por reto y Tablero de avance
-scripts/             sinergia/ (parejas y prioridad) · conceptos/ (borradores) · boveda/ (tablero)
+scripts/             sinergia/ (parejas y prioridad) · conceptos/ (borradores) · boveda/ (tablero) · auditoria/ (dificultad de los datos)
 backend/ frontend/   esqueleto vacío para el evento; NO poner aquí la funcionalidad crítica antes del 03.12
 ```
 
@@ -74,7 +74,7 @@ backend/ frontend/   esqueleto vacío para el evento; NO poner aquí la funciona
 Python 3.10+ (el stack del evento será 3.11+). Desde la raíz:
 
 ```powershell
-pip install pytest pandas numpy                      # lo mínimo para las pruebas actuales
+pip install pytest pandas numpy scikit-learn         # lo mínimo para las pruebas actuales
 python -m pytest -q                                  # todas las pruebas (≈165)
 python scripts/boveda/generar_boveda.py              # regenera Tablero y nodos de la bóveda
 python scripts/sinergia/sinergia.py                  # informe de parejas y prioridad

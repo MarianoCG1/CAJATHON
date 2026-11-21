@@ -60,11 +60,14 @@ Modelo de alerta temprana de deterioro de pago con explicación de señales y un
 
 ## Preguntas para el owner
 
-- ¿Cuál es la morosidad actual de la cartera y cómo se mide (mora > 8, > 30 días)? ¿Cuál sería la mejora que consideran relevante?
-- ¿Qué señales de deterioro monitorean hoy y con qué frecuencia?
-- ¿Qué columnas y volumen tendrán los datos sintéticos (historial de pagos, saldos, actividad económica)?
-- ¿Qué canales de contacto preventivo son viables para el gestor?
-- ¿Hay restricciones para usar modelos de IA externos con datos sintéticos?
+- ¿Cómo define hoy la Caja el «deterioro» de un cliente MYPE y en qué momento se entera (días de atraso, calificación, visita)? ¿Con cuánta anticipación sería útil avisar: 30, 60 o 90 días?
+- ¿Qué señales siguen hoy los analistas para sospechar que un cliente empeora, y cada cuánto las revisan?
+- ¿Cómo se mide hoy la morosidad y la recuperación (mora > 8 días, > 30 días, cartera en riesgo)? ¿Cuál de esas medidas es la prioritaria para este desafío?
+- ¿Cuántos clientes gestiona un analista al día y cuántos contactos preventivos son razonables sin saturar al cliente?
+- ¿Qué puede ofrecer el analista por su cuenta (recordatorio, reprogramación, asesoría) y qué requiere comité? ¿Qué canales de contacto son aceptables?
+- ¿En qué herramienta trabaja hoy el analista y dónde debería aparecer la alerta?
+- ¿Qué esperan ver en la explicación de una alerta para confiar en ella?
+- ¿Hay restricciones para usar IA externa (aun con datos sintéticos) o variables que no deben usarse por criterios de equidad?
 
 Las respuestas del owner actualizan KPI y línea base; el comunicado del 21.11 indica que en esta etapa no entregan datos.
 

@@ -9,7 +9,7 @@ El repositorio es **privado**: Mariano debe invitar a cada persona como colabora
 ```powershell
 git clone https://github.com/MarianoCG1/CAJATHON.git
 cd CAJATHON
-pip install pytest pandas numpy
+pip install pytest pandas numpy scikit-learn
 python -m pytest -q
 ```
 

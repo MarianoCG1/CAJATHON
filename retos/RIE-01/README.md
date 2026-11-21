@@ -31,7 +31,7 @@ Marca las casillas editando este archivo y haz commit. El avance automático lo 
 - [ ] **Revisión cruzada** (Glem): leer `concepto.md`, `panorama.md` y `postulacion.md` contra el expediente y el Anexo C de `concepto.md`; anotar objeciones en `retos/RIE-01/revision.md`.
 - [ ] La pareja líder resuelve las objeciones (v2) y actualiza `postulacion.md`.
 - [ ] Comprobar que los datos sintéticos no se resuelven con una regla trivial (en RIE-02 ya se endureció): correr el generador y probar un modelo simple.
-- [ ] Reformular las preguntas del Anexo B del concepto a preguntas de **comprensión** del problema (la organización dijo que en esta etapa no entrega datos).
+- [x] Preguntas del Anexo B reformuladas a **comprensión** del problema (21.11, Mariano).
 - [ ] Decisión de postular (sí/no) — la toma el coordinador con el equipo.
 
 ## Reglas de este reto
@@ -44,8 +44,13 @@ Marca las casillas editando este archivo y haz commit. El avance automático lo 
 
 Mapa de exposición climática de la cartera con escenarios, que prioriza clientes y zonas con mayor vulnerabilidad y propone acciones preventivas a través de un agente, sin asumir que exposición equivale a incumplimiento.
 
-## Preguntas para el owner (a reformular como comprensión)
+## Preguntas para el owner (de comprensión; ver Anexo B del concepto)
 
-- ¿Qué fuentes climáticas y mapas de amenaza podemos usar (públicas o sintéticas)?
-- ¿Cuál es hoy el indicador de exposición o pérdida por eventos climáticos?
-- ¿Qué acciones preventivas son viables para la Caja (reprogramación, alertas, seguros)?
+- ¿Cómo mide y gestiona hoy la Caja el riesgo por eventos climáticos (El Niño, lluvias, sequías)? ¿Qué pérdida o mora se les atribuye y quién la calcula?
+- ¿Qué acciones preventivas son viables (alerta, visita, reprogramación, ampliación de plazo, capital de reposición, microseguro) y cuáles requieren comité o normativa? ¿Qué implica una reprogramación preventiva para la calificación?
+- ¿Cuántos gestores hay por agencia y cuántas visitas por semana son realistas ante una emergencia?
+- ¿Qué sabe hoy la Caja de sus clientes que ayude a medir su exposición (ubicación, actividad, seguro, ingresos secundarios, reservas)?
+- ¿Se puede usar información pública de clima y mapas de amenaza como referencia?
+- ¿Cuál es el resultado principal que esperan: mora evitada, exposición identificada a tiempo, clientes contactados antes del evento?
+- ¿Dónde vería el gestor la alerta hoy y con qué anticipación sirve?
+- ¿Hay restricciones para usar IA externa (aun con datos sintéticos)? ¿Cuál es el formato exacto de la postulación y la hora límite del 26.11?

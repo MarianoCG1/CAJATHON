@@ -154,23 +154,20 @@ Incluye pruebas automáticas (ver `retos/RIE-01/panorama.md` §i), reporte de va
 | Colchón | — | — | 1,5 | Mariano · David |
 | **Total** | | **32** | **32** | |
 
-## Anexo B. Preguntas para el owner
+## Anexo B. Preguntas para el owner (de comprensión)
 
-Prioridad 1:
-- [ ] ¿Cuál es el KPI oficial y su línea base? ¿Cómo se mide hoy la exposición o pérdida por eventos climáticos, y quién la calcula?
-- [ ] ¿Entregan datos sintéticos? ¿Qué tablas, columnas y volumen? ¿Traen ubicación del cliente (ubigeo, coordenadas o solo agencia)?
-- [ ] ¿Se permite un proveedor externo de LLM o solo modelos locales?
-- [ ] ¿Qué acciones preventivas son viables para la Caja (alerta, visita, reprogramación, ampliación de plazo, capital de reposición, microseguro) y cuáles requieren comité o normativa?
+Son preguntas para entender el problema y su operación; **no piden datos** (la organización indicó que en esta etapa no los entrega).
 
-Prioridad 2:
-- [ ] ¿Qué fuentes climáticas y mapas de amenaza podemos usar (públicas o sintéticas)? ¿Se permite combinar datos públicos reales con clientes sintéticos?
-- [ ] ¿Hay registro de eventos pasados y su efecto en la mora, aunque sea agregado por distrito?
-- [ ] ¿Qué clasificación de actividad económica se usa y hay estacionalidad de ingresos?
-- [ ] ¿Se registran seguros, ingresos secundarios o reservas del cliente?
-- [ ] ¿Cuántos gestores por agencia y cuántas visitas por semana son realistas?
-- [ ] ¿Qué aprobación existe hoy para una reprogramación preventiva y qué implica para la calificación? (con Compliance y la normativa vigente)
-- [ ] ¿Qué sistema usa hoy el gestor y dónde se mostraría la alerta?
-- [ ] ¿Formato exacto del concepto en la plataforma y hora límite del 26.11?
+- [ ] ¿Cómo mide y gestiona hoy la Caja el riesgo por eventos climáticos (El Niño, lluvias, sequías)? ¿Qué pérdida o mora se les atribuye y quién la calcula?
+- [ ] ¿Qué acciones preventivas son viables (alerta, visita, reprogramación, ampliación de plazo, capital de reposición, microseguro) y cuáles requieren comité o normativa? ¿Qué implica una reprogramación preventiva para la calificación?
+- [ ] ¿Cuántos gestores hay por agencia y cuántas visitas por semana son realistas ante una emergencia?
+- [ ] ¿Qué sabe hoy la Caja de sus clientes que ayude a medir su exposición (ubicación, actividad, seguro, ingresos secundarios, reservas)?
+- [ ] ¿Se puede usar información pública de clima y mapas de amenaza como referencia?
+- [ ] ¿Cuál es el resultado principal que esperan: mora evitada, exposición identificada a tiempo, clientes contactados antes del evento?
+- [ ] ¿Dónde vería el gestor la alerta hoy y con qué anticipación sirve?
+- [ ] ¿Hay restricciones para usar IA externa (aun con datos sintéticos)? ¿Cuál es el formato exacto de la postulación y la hora límite del 26.11?
+
+Si la organización no responde, seguimos con los **supuestos marcados** en este documento y medimos el KPI con un backtest sobre datos sintéticos propios (el comunicado del 21.11 indica que en esta etapa no se entregan datos).
 
 ## Anexo C. Lista de revisión (criterios del pase a finalistas)
 
