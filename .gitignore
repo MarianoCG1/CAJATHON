@@ -1,0 +1,32 @@
+# --- Confidencial: texto literal de los expedientes de la Caja (no subir a ningún repo) ---
+retos/*/expediente.md
+
+# --- Datos sintéticos: se regeneran con los scripts y su semilla fija (~40 MB) ---
+retos/*/datos/sintetico/
+
+# --- Obsidian: estado local del editor ---
+boveda/.obsidian/
+.obsidian/workspace*
+.obsidian/cache
+
+# --- Python ---
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.ruff_cache/
+
+# --- Node ---
+node_modules/
+dist/
+
+# --- Secretos y entorno ---
+.env
+.env.*
+*.key
+*.pem
+
+# --- Sistema ---
+.DS_Store
+Thumbs.db

@@ -1,0 +1,153 @@
+{
+  "_nota": "Contenido base de cada concepto. Problema y owners salen de los expedientes de la plataforma (21.11.2026, resumidos con nuestras palabras). Funcionalidad crítica, KPI candidatos, demo y diferenciación son SUPUESTOS nuestros hasta validarlos con el owner.",
+  "desafios": {
+    "RIE-03": {
+      "owners": "Wilson, Harold, Paul",
+      "problema": "La capacidad de pago de un microempresario se deteriora de forma gradual antes del primer atraso. Hoy esas señales se detectan tarde o se confunden con fluctuaciones normales, lo que produce intervenciones tardías o alertas innecesarias.",
+      "funcionalidad_critica": "Cola diaria priorizada de clientes con riesgo de deterioro, con la explicación de las señales que la originan y una intervención recomendada por un agente (canal, momento, propuesta). El gestor aprueba, edita o descarta; nada se ejecuta de forma automática.",
+      "kpi_candidatos": [
+        "Tasa de paso a atraso a 30 días de la cartera alertada con intervención vs. sin intervención (backtest)",
+        "Precisión de las alertas en el top-k diario y tasa de falsos positivos",
+        "Días de anticipación promedio respecto del primer atraso"
+      ],
+      "demo": "Cartera sintética de miles de clientes. Se muestra la cola del día, se abre un caso con sus señales, se aprueba la acción propuesta y se compara el backtest con y sin la solución.",
+      "diferenciacion": "No solo predice: explica cada alerta y recomienda la acción concreta con revisión humana, controlando falsos positivos.",
+      "riesgos_clave": ["Falsos positivos y fatiga de alertas", "Sesgos en el modelo", "No se pueden tomar decisiones crediticias automáticas"],
+      "preguntas_owner": [
+        "¿Cuál es la morosidad actual de la cartera y cómo se mide (mora > 8, > 30 días)? ¿Cuál sería la mejora que consideran relevante?",
+        "¿Qué señales de deterioro monitorean hoy y con qué frecuencia?",
+        "¿Qué columnas y volumen tendrán los datos sintéticos (historial de pagos, saldos, actividad económica)?",
+        "¿Qué canales de contacto preventivo son viables para el gestor?",
+        "¿Hay restricciones para usar modelos de IA externos con datos sintéticos?"
+      ]
+    },
+    "NEG-01": {
+      "owners": "Luis",
+      "problema": "Muchos microempresarios tienen ingresos estacionales, pero los cronogramas de cuotas uniformes no siguen ese ritmo. Esto genera tensiones de liquidez incluso en negocios viables y eleva el riesgo de incumplimiento.",
+      "funcionalidad_critica": "Dado un cliente, el sistema estima su flujo de ingresos estacional, propone un cronograma de cuotas ajustado, valida automáticamente capacidad de pago, tasa, plazo y rentabilidad contra la política, y explica la propuesta al analista, que decide.",
+      "kpi_candidatos": [
+        "Tasa de cumplimiento de cuotas con cronograma ajustado vs. uniforme (backtest sintético)",
+        "Reducción de la probabilidad de incumplimiento sin bajar el margen de la Caja",
+        "Porcentaje de propuestas que cumplen la política de crédito"
+      ],
+      "demo": "Un cliente agrícola y uno comercial: se muestra su flujo estimado, el cronograma uniforme vs. el ajustado, la validación de política y el efecto en cumplimiento y rentabilidad.",
+      "diferenciacion": "Combina pronóstico de flujo y optimización del cronograma con validación de rentabilidad; no es un simple simulador de cuotas.",
+      "riesgos_clave": ["Incertidumbre en la proyección de ingresos", "Sobreendeudamiento", "Cumplimiento de políticas y normativa"],
+      "preguntas_owner": [
+        "¿Qué variantes de cronograma flexible permite hoy la normativa y la política de la Caja?",
+        "¿Cuál es la línea base de cumplimiento y de rentabilidad por producto?",
+        "¿Habrá datos sintéticos de ingresos por mes y estacionalidad por actividad?",
+        "¿Qué restricciones de tasa, plazo y rentabilidad mínima debe respetar la propuesta?"
+      ]
+    },
+    "NEG-02": {
+      "owners": "Roger, Arturo",
+      "problema": "La información financiera de un cliente está repartida entre varias instituciones, lo que impide una visión integral. Open Finance permite compartirla con autorización, pero la Caja necesita convertirla en servicios de más valor y en competitividad.",
+      "funcionalidad_critica": "Sandbox con APIs y consentimientos simulados que arma una vista 360 del cliente a partir de varias entidades y un agente que identifica oportunidades de producto o servicio, siempre dentro del consentimiento otorgado.",
+      "kpi_candidatos": [
+        "Porcentaje de clientes con una oportunidad de producto identificada y consentida",
+        "Mejora del conocimiento del cliente (completitud del perfil) con y sin datos multientidad",
+        "Tasa de conversión estimada de las ofertas personalizadas (simulada)"
+      ],
+      "demo": "Un cliente otorga consentimiento, la Caja consulta tres entidades simuladas, se arma su perfil y el agente propone una oferta explicando qué datos usó.",
+      "diferenciacion": "Experiencia de consentimiento clara y recomendaciones trazables al dato autorizado, sobre un sandbox reutilizable.",
+      "riesgos_clave": ["Privacidad y consentimiento", "No asumir APIs ni datos reales", "Normativa aplicable"],
+      "preguntas_owner": [
+        "¿Qué marco regulatorio de consentimiento debemos asumir para el prototipo?",
+        "¿Qué KPI de negocio prioriza la Caja en Open Finance (conversión, retención, inclusión)?",
+        "¿Habrá APIs simuladas propias o debemos construir el sandbox?",
+        "¿Qué entidades y tipos de información multientidad se simulan?"
+      ]
+    },
+    "RIE-01": {
+      "owners": "Miriam",
+      "problema": "Lluvias intensas, inundaciones o sequías afectan los ingresos y la capacidad de pago de los negocios financiados, sobre todo en zonas vulnerables. La Caja no siempre anticipa qué parte de su cartera está expuesta.",
+      "funcionalidad_critica": "Mapa de exposición climática de la cartera con escenarios, que prioriza clientes y zonas con mayor vulnerabilidad y propone acciones preventivas a través de un agente, sin asumir que exposición equivale a incumplimiento.",
+      "kpi_candidatos": [
+        "Porcentaje de cartera expuesta identificado anticipadamente por escenario",
+        "Precisión de la priorización frente a eventos simulados (backtest sintético)",
+        "Pérdida esperada evitada con acciones preventivas (estimada)"
+      ],
+      "demo": "Se activa un escenario de lluvias intensas en la costa norte: el mapa muestra zonas y clientes expuestos, la cartera en riesgo y las acciones sugeridas.",
+      "diferenciacion": "Escenarios climáticos conectados con la exposición crediticia y acciones concretas, con incertidumbre explícita.",
+      "riesgos_clave": ["Incertidumbre de escenarios", "Exposición no es pérdida", "Calidad de datos geográficos y climáticos"],
+      "preguntas_owner": [
+        "¿Qué fuentes climáticas y mapas de amenaza podemos usar (públicas o sintéticas)?",
+        "¿Cuál es hoy el indicador de exposición o pérdida por eventos climáticos?",
+        "¿Qué acciones preventivas son viables para la Caja (reprogramación, alertas, seguros)?"
+      ]
+    },
+    "RIE-02": {
+      "owners": "Carlos",
+      "problema": "Algunos fraudes involucran varias personas, negocios o solicitudes que, vistos de forma aislada, parecen normales. Las conexiones por teléfonos, dispositivos, direcciones o referencias pueden delatarlos, pero compartir un dato no implica fraude.",
+      "funcionalidad_critica": "Detección de redes inusuales con análisis de grafos sobre solicitudes, que prioriza los casos más sospechosos y arma para el investigador un expediente con la evidencia, distinguiendo relaciones legítimas de patrones de riesgo.",
+      "kpi_candidatos": [
+        "Precisión y recall sobre redes de fraude inyectadas en datos sintéticos",
+        "Reducción de falsos positivos frente a reglas simples",
+        "Tiempo de preparación de un caso para el investigador"
+      ],
+      "demo": "Se carga un lote de solicitudes con redes ocultas; el grafo resalta una red, el agente arma el expediente con la evidencia y el investigador decide.",
+      "diferenciacion": "Evidencia verificable y control de falsos positivos para distinguir relaciones legítimas de patrones sospechosos.",
+      "riesgos_clave": ["Falsos positivos y reputación del cliente", "Protección de datos", "No concluir fraude solo por coincidencias"],
+      "preguntas_owner": [
+        "¿Qué tipos de vínculos son más relevantes para la Caja (teléfono, dispositivo, dirección, referencia)?",
+        "¿Habrá casos simulados etiquetados para validar el detector?",
+        "¿Cuál es la tasa actual de falsos positivos y el tiempo de revisión por caso?"
+      ]
+    },
+    "NEG-03": {
+      "owners": "Wilson, Harold, Paul",
+      "problema": "Cuando un analista cambia de cartera o deja la institución, parte del conocimiento sobre el negocio y el comportamiento del cliente se pierde. El vínculo se debilita y crece el riesgo de desvinculación.",
+      "funcionalidad_critica": "Agente de traspaso que resume la relación, el historial y las señales de cada cliente para el nuevo analista y prioriza, con un modelo de riesgo de desvinculación, a quién contactar primero y con qué mensaje, con revisión humana.",
+      "kpi_candidatos": [
+        "Tasa de retención o renovación de clientes tras un cambio de analista (backtest)",
+        "Tiempo hasta el primer contacto efectivo del nuevo analista",
+        "Precisión del modelo de riesgo de desvinculación"
+      ],
+      "demo": "Un analista deja su cartera; el nuevo recibe la ficha de traspaso por cliente, la lista priorizada y el mensaje sugerido para el primer contacto.",
+      "diferenciacion": "Combina memoria resumida de la relación con priorización predictiva; no es solo un resumen de historial.",
+      "riesgos_clave": ["No asumir que cambiar de analista implica perder al cliente", "Privacidad de datos", "Resúmenes sin evidencia (alucinación)"],
+      "preguntas_owner": [
+        "¿Cuál es la tasa actual de desvinculación tras un cambio de analista y cómo se mide?",
+        "¿Qué interacciones se registran hoy y dónde (CRM, notas)?",
+        "¿Podemos asumir datos sintéticos de interacciones y renovaciones?"
+      ]
+    },
+    "COM-01": {
+      "owners": "Wilson",
+      "problema": "La prospección comercial depende de la experiencia del analista y de referencias. Pueden existir zonas o segmentos con potencial de inclusión financiera que no resultan evidentes con los métodos tradicionales.",
+      "funcionalidad_critica": "Mapa de potencial comercial que prioriza zonas y segmentos con datos territoriales y económicos, y genera para cada oportunidad un brief de prospección que el analista puede usar, sin inferir elegibilidad ni capacidad de pago.",
+      "kpi_candidatos": [
+        "Tasa de conversión de prospectos de zonas priorizadas vs. prospección tradicional (backtest sintético)",
+        "Número de zonas o segmentos nuevos identificados con potencial",
+        "Productividad de la prospección (prospectos efectivos por jornada)"
+      ],
+      "demo": "Se selecciona una provincia, el mapa prioriza distritos, y el agente entrega el brief con la actividad económica, la cobertura financiera y el abordaje sugerido.",
+      "diferenciacion": "Brief accionable por zona, con evidencia y sin discriminación ni inferencias sensibles.",
+      "riesgos_clave": ["Sesgos y exclusión injustificada", "Uso responsable de fuentes públicas", "Potencial no es elegibilidad"],
+      "preguntas_owner": [
+        "¿Qué datos territoriales y de cobertura financiera podemos usar?",
+        "¿Cuál es la línea base de conversión de prospectos y cómo se mide?",
+        "¿Qué fuentes digitales públicas están permitidas?"
+      ]
+    },
+    "COM-02": {
+      "owners": "Wilson, Harold, Paul",
+      "problema": "Los incentivos comerciales influyen en el comportamiento del analista y pueden priorizar el crecimiento sobre la calidad de cartera. Además, el desempeño depende del territorio, la madurez de la cartera y la experiencia.",
+      "funcionalidad_critica": "Simulador de esquemas de incentivos que ajusta el desempeño por territorio y madurez de cartera, optimiza el esquema bajo restricción de presupuesto y explica el efecto de cada regla, sin modificar remuneraciones de forma automática.",
+      "kpi_candidatos": [
+        "Productividad ajustada por territorio y calidad de cartera bajo distintos esquemas (simulación)",
+        "Índice de equidad entre analistas del esquema propuesto",
+        "Costo del esquema frente al presupuesto"
+      ],
+      "demo": "Se comparan el esquema actual y uno propuesto: se ven el efecto en crecimiento, calidad de cartera, equidad y costo, con la explicación de cada regla.",
+      "diferenciacion": "Ajuste justo por contexto y optimización con presupuesto, con transparencia sobre cada regla.",
+      "riesgos_clave": ["Equidad entre colaboradores", "Normativa laboral", "Incentivos perjudiciales para clientes o cartera"],
+      "preguntas_owner": [
+        "¿Cuáles son hoy los indicadores y metas de los analistas y su peso?",
+        "¿Qué restricciones presupuestarias y laborales debe respetar el modelo?",
+        "¿Habrá datos sintéticos por analista (cartera, territorio, antigüedad)?"
+      ]
+    }
+  }
+}

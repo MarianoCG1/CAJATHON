@@ -1,0 +1,151 @@
+{
+  "_nota": "Fuente: expedientes publicados en la plataforma (leídos el 21.11.2026) para título, eje, insumos y exigencias. Las 'hipotesis' y los 'paquetes' (tareas, habilidad y horas) son ESTIMACIONES NUESTRAS, no datos oficiales. Horas = trabajo de una persona para un MVP funcional con pruebas. Ajustar tras hablar con cada owner.",
+  "desafios": {
+    "COM-01": {
+      "titulo": "Encontrar oportunidades donde otros no ven clientes",
+      "eje": "2 Experiencia, retención y crecimiento",
+      "hipotesis": "Mapa de potencial comercial por zona/segmento con un modelo de priorización y un agente que genera el brief de prospección para el analista.",
+      "paquetes": [
+        ["Datos territoriales y de negocios sintéticos", "data_eng", 3],
+        ["Modelo de potencial y priorización de zonas", "data_sci", 5],
+        ["Mapa interactivo y fichas de zona", "web", 4],
+        ["Diseño del flujo del analista", "ux", 2],
+        ["Agente que explica la zona y propone el abordaje", "agentes", 3],
+        ["Redacción de briefs con IA generativa", "ia_gen", 2],
+        ["API y persistencia", "backend", 3],
+        ["KPI de captación y backtest", "biz", 3],
+        ["Criterios de inclusión financiera y sesgos", "fin", 2],
+        ["Pruebas y validación", "qa", 2],
+        ["Pitch y demo", "pitch", 2]
+      ]
+    },
+    "COM-02": {
+      "titulo": "Incentivos que impulsan un desempeño integral",
+      "eje": "1 Productividad y transformación comercial",
+      "hipotesis": "Simulador de esquemas de incentivos con ajuste por territorio y madurez de cartera, que optimiza entre crecimiento, calidad de cartera y presupuesto, con un asistente que explica el efecto de cada regla.",
+      "paquetes": [
+        ["Datos sintéticos de analistas, metas y cartera", "data_eng", 3],
+        ["Modelo de desempeño ajustado por territorio y madurez", "data_sci", 5],
+        ["Optimización de esquema bajo restricción de presupuesto", "data_sci", 3],
+        ["Asistente que explica y compara esquemas", "agentes", 3],
+        ["Simulador interactivo", "web", 4],
+        ["Diseño del simulador y de la vista del analista", "ux", 2],
+        ["API y motor de reglas", "backend", 3],
+        ["Diseño de incentivos, equidad y presupuesto", "biz", 4],
+        ["Proceso de evaluación y reconocimiento", "proc", 3],
+        ["Pruebas y validación", "qa", 2],
+        ["Pitch y demo", "pitch", 2]
+      ]
+    },
+    "NEG-01": {
+      "titulo": "Cuotas que se adaptan al flujo del negocio",
+      "eje": "4 Inclusión financiera y resiliencia",
+      "hipotesis": "Motor que estima el flujo estacional de ingresos de cada microempresario, propone un cronograma de cuotas ajustado y valida rentabilidad y riesgo antes de ofrecerlo, con un agente que lo explica al analista.",
+      "paquetes": [
+        ["Datos sintéticos de ingresos, estacionalidad y pagos", "data_eng", 3],
+        ["Modelo de flujo de ingresos y estacionalidad", "ml", 4],
+        ["Optimización del cronograma de cuotas", "data_sci", 4],
+        ["Motor de cronogramas y validación de políticas", "backend", 3],
+        ["Agente que explica la propuesta al analista", "agentes", 3],
+        ["Mensajes y simulaciones con IA generativa", "ia_gen", 2],
+        ["Simulador de cuotas", "web", 3],
+        ["Diseño del flujo del analista", "ux", 2],
+        ["Políticas de crédito, tasas y rentabilidad", "fin", 4],
+        ["KPI y backtest de cumplimiento y rentabilidad", "biz", 3],
+        ["Pruebas y validación", "qa", 2],
+        ["Pitch y demo", "pitch", 2]
+      ]
+    },
+    "NEG-02": {
+      "titulo": "Open Finance: competir en un ecosistema abierto",
+      "eje": "5 Open Finance y nuevos modelos de competencia",
+      "hipotesis": "Sandbox de Open Finance con APIs y consentimientos simulados que construye una vista 360 del cliente y un agente que detecta oportunidades de producto con su autorización.",
+      "paquetes": [
+        ["APIs simuladas multi-entidad", "backend", 5],
+        ["Gestión de consentimiento y seguridad", "backend", 3],
+        ["Datos sintéticos multientidad", "data_eng", 3],
+        ["Perfil financiero 360 y segmentación", "data_sci", 3],
+        ["Agente que detecta oportunidades y recomienda productos", "agentes", 4],
+        ["IA generativa para propuestas personalizadas", "ia_gen", 2],
+        ["Interfaz de cliente y consentimiento", "web", 4],
+        ["Diseño de la experiencia de consentimiento", "ux", 3],
+        ["Propuestas de valor y catálogo de productos", "fin", 4],
+        ["Modelo de negocio y KPI", "biz", 3],
+        ["Pruebas y validación", "qa", 2],
+        ["Pitch y demo", "pitch", 2]
+      ]
+    },
+    "NEG-03": {
+      "titulo": "Continuidad del vínculo cuando cambia el analista",
+      "eje": "2 Experiencia, retención y crecimiento",
+      "hipotesis": "Agente de traspaso que resume la relación, historial y señales de cada cliente para el nuevo analista, más un modelo que prioriza a los clientes con riesgo de desvinculación y sugiere la primera acción.",
+      "paquetes": [
+        ["Datos sintéticos de interacciones, cambios de analista y renovaciones", "data_eng", 3],
+        ["Modelo de riesgo de desvinculación", "ml", 4],
+        ["Agente de traspaso que resume y recomienda", "agentes", 5],
+        ["Resúmenes y mensajes con IA generativa", "ia_gen", 4],
+        ["API y persistencia", "backend", 3],
+        ["Ficha de traspaso e interfaz del analista", "web", 3],
+        ["Diseño del flujo de traspaso", "ux", 3],
+        ["Proceso de traspaso y gobierno", "proc", 3],
+        ["KPI de retención y backtest", "biz", 3],
+        ["Pruebas y validación", "qa", 2],
+        ["Pitch y demo", "pitch", 2]
+      ]
+    },
+    "RIE-01": {
+      "titulo": "Microfinanzas resilientes al clima",
+      "eje": "4 Inclusión financiera y resiliencia",
+      "hipotesis": "Mapa de exposición de la cartera a eventos climáticos con escenarios, que prioriza a los clientes expuestos y recomienda acciones preventivas a través de un agente.",
+      "paquetes": [
+        ["Datos geográficos, climáticos y de cartera sintéticos", "data_eng", 4],
+        ["Modelo de exposición y vulnerabilidad", "data_sci", 4],
+        ["Escenarios climáticos y propagación a la cartera", "ml", 3],
+        ["Mapa de riesgo interactivo", "web", 4],
+        ["Diseño del mapa y del flujo del gestor", "ux", 2],
+        ["Agente de alertas y acciones preventivas", "agentes", 3],
+        ["API y persistencia", "backend", 3],
+        ["Impacto en cartera y KPI", "biz", 3],
+        ["Políticas de riesgo y criterios financieros", "fin", 2],
+        ["Pruebas y validación", "qa", 2],
+        ["Pitch y demo", "pitch", 2]
+      ]
+    },
+    "RIE-02": {
+      "titulo": "Descubrir redes de riesgo ocultas",
+      "eje": "3 Riesgo, fraude y recuperaciones inteligentes",
+      "hipotesis": "Detector de redes sospechosas entre personas, negocios, teléfonos, direcciones y dispositivos con análisis de grafos, que prioriza casos y entrega la evidencia a un investigador con ayuda de un agente.",
+      "paquetes": [
+        ["Datos sintéticos con redes de fraude inyectadas", "data_eng", 5],
+        ["Análisis de grafos y detección de anomalías", "data_sci", 5],
+        ["Modelo de priorización de casos", "ml", 3],
+        ["Visualización de grafo interactiva", "web", 5],
+        ["Diseño de la vista del investigador", "ux", 2],
+        ["Agente que arma el expediente de evidencia", "agentes", 4],
+        ["API y persistencia", "backend", 3],
+        ["Reglas de fraude y criterios de revisión", "fin", 2],
+        ["KPI y falsos positivos", "biz", 2],
+        ["Pruebas, falsos positivos y validación", "qa", 3],
+        ["Pitch y demo", "pitch", 2]
+      ]
+    },
+    "RIE-03": {
+      "titulo": "Anticipar el deterioro de pago antes del atraso",
+      "eje": "3 Riesgo, fraude y recuperaciones inteligentes",
+      "hipotesis": "Modelo de alerta temprana de deterioro de pago con explicación de señales y un agente que recomienda la intervención preventiva (canal, momento, propuesta), con revisión humana.",
+      "paquetes": [
+        ["Datos sintéticos de cartera, pagos y saldos", "data_eng", 3],
+        ["Modelo de deterioro y calibración", "ml", 5],
+        ["Explicabilidad y control de falsos positivos", "data_sci", 3],
+        ["Agente que recomienda la intervención", "agentes", 5],
+        ["API y persistencia", "backend", 3],
+        ["Cola priorizada del gestor", "web", 3],
+        ["Diseño del flujo del gestor y explicación de alertas", "ux", 2],
+        ["Señales relevantes vs. fluctuación normal", "fin", 2],
+        ["KPI, backtest y caso de negocio", "biz", 3],
+        ["Pruebas y validación", "qa", 2],
+        ["Pitch y demo", "pitch", 2]
+      ]
+    }
+  }
+}

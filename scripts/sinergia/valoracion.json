@@ -1,0 +1,13 @@
+{
+  "_nota": "Valoración 1-5 por desafío. TODO es SUPUESTO nuestro (no viene de la Caja). impacto: cuánto puede mover el negocio y qué tan claro es el KPI; medibilidad: qué tan bien se puede mostrar un antes/después con datos sintéticos; competencia: cuántos equipos creemos que lo elegirán (5 = muchos). Corregir tras hablar con los owners y ver cuántos equipos van a cada desafío.",
+  "valoracion": {
+    "RIE-03": {"impacto": 5, "medibilidad": 5, "competencia": 5},
+    "NEG-01": {"impacto": 4, "medibilidad": 4, "competencia": 3},
+    "RIE-02": {"impacto": 4, "medibilidad": 4, "competencia": 3},
+    "NEG-03": {"impacto": 3, "medibilidad": 3, "competencia": 3},
+    "COM-01": {"impacto": 3, "medibilidad": 3, "competencia": 4},
+    "COM-02": {"impacto": 3, "medibilidad": 2, "competencia": 2},
+    "NEG-02": {"impacto": 4, "medibilidad": 2, "competencia": 2},
+    "RIE-01": {"impacto": 3, "medibilidad": 3, "competencia": 2}
+  }
+}

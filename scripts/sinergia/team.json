@@ -1,0 +1,60 @@
+{
+  "_nota": "Niveles 0-5. 'fuente': 'plataforma' = leído del perfil de Mariano (niveles declarados); 'supuesto' = estimado a partir de las habilidades marcadas y la presentación de cada perfil, SIN niveles declarados. Cada integrante debe corregir sus niveles: el ranking depende de ellos.",
+  "habilidades": {
+    "backend": "Backend, APIs e integración",
+    "web": "Desarrollo web / front-end",
+    "ia_gen": "IA generativa (LLM, prompts, RAG)",
+    "agentes": "Agentes de IA",
+    "ml": "Machine Learning",
+    "data_sci": "Data Science, estadística, grafos, optimización",
+    "data_eng": "Ingeniería de datos / datos sintéticos / ETL",
+    "bi": "Dashboards y BI",
+    "qa": "Pruebas y QA",
+    "ux": "UX/UI e investigación de usuarios",
+    "biz": "Análisis de negocio, KPI y backtest",
+    "proc": "Mejora de procesos",
+    "fin": "Dominio financiero / microfinanzas",
+    "pitch": "Pitch y storytelling"
+  },
+  "integrantes": {
+    "Mariano": {
+      "rol": "Developer, coordinador",
+      "niveles": {
+        "backend": 5, "web": 4, "ia_gen": 4, "agentes": 5, "ml": 5,
+        "data_sci": 4, "data_eng": 3, "bi": 2, "qa": 3, "ux": 1,
+        "biz": 3, "proc": 3, "fin": 2, "pitch": 3
+      },
+      "fuente": {
+        "plataforma": ["backend", "web", "ia_gen", "agentes", "ml"],
+        "supuesto": ["data_sci", "data_eng", "bi", "qa", "ux", "biz", "proc", "fin", "pitch"]
+      }
+    },
+    "Glem": {
+      "rol": "Analista de datos",
+      "niveles": {
+        "backend": 4, "web": 3, "ia_gen": 3, "agentes": 3, "ml": 4,
+        "data_sci": 4, "data_eng": 4, "bi": 4, "qa": 3, "ux": 1,
+        "biz": 2, "proc": 1, "fin": 1, "pitch": 3
+      },
+      "fuente": {"plataforma": [], "supuesto": ["todos"]}
+    },
+    "Antonio": {
+      "rol": "Economista",
+      "niveles": {
+        "backend": 2, "web": 2, "ia_gen": 3, "agentes": 2, "ml": 2,
+        "data_sci": 3, "data_eng": 2, "bi": 4, "qa": 1, "ux": 1,
+        "biz": 4, "proc": 3, "fin": 4, "pitch": 3
+      },
+      "fuente": {"plataforma": [], "supuesto": ["todos"]}
+    },
+    "David": {
+      "rol": "Ing. industrial / UX-UI",
+      "niveles": {
+        "backend": 1, "web": 2, "ia_gen": 2, "agentes": 1, "ml": 1,
+        "data_sci": 1, "data_eng": 1, "bi": 1, "qa": 2, "ux": 4,
+        "biz": 2, "proc": 3, "fin": 1, "pitch": 3
+      },
+      "fuente": {"plataforma": [], "supuesto": ["todos"]}
+    }
+  }
+}
