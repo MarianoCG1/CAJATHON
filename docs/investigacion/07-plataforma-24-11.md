@@ -5,6 +5,7 @@ Resumen **con nuestras palabras** de lo publicado. Los textos literales de exped
 ## 1. Postulación del Concepto de solución
 
 - La pestaña «Concepto de solución» dice: **«Cerrado temporalmente. Postulación: del miércoles 25 al jueves 26 de noviembre.»** El formulario **no existe todavía**, así que **no se conocen aún sus campos, límites de longitud ni archivos adjuntos**.
+- **Comprobación del 25.11, 00:01 (Perú):** la pestaña sigue «cerrado temporalmente»; el formulario aún no está visible. Se vuelve a mirar cada 20 minutos.
 - Las bases públicas (v4) dicen «Diseño y postulación de Solution Concepts: 20 al 24.11» y «la organización comunicará el formato y mecanismo de presentación». **Manda la plataforma: 25–26.11.** Hora límite del jueves: no publicada.
 - Las bases fijan **el contenido mínimo** de un Solution Concept: problema abordado, concepto de solución, impacto esperado, enfoque tecnológico, tecnología preexistente, funcionalidad crítica, nivel de desarrollo esperado, factibilidad y dependencias. Es la estructura que ya usan nuestros conceptos y la mejor apuesta para los campos del formulario.
 - La pestaña dice «postularán la solución de su equipo **al desafío**» (singular) y «Mi equipo» muestra el equipo registrado en «Desafío de Recuperaciones», que ya no existe. Sigue sin confirmarse si se aceptan **varios** conceptos por equipo. **Regla de decisión: si el formulario solo deja uno, se postula RIE-03.**
