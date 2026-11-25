@@ -1,0 +1,175 @@
+{
+  "titulo": "NEG-02 · Asesor de oportunidades con consentimiento verificable",
+  "lema": "Open Finance simulado: la Caja ve más del cliente solo cuando él lo autoriza, y cada oferta muestra el dato y el consentimiento que la originó.",
+  "persona": {
+    "nombre": "Lucía",
+    "rol": "Ejecutiva de negocios (personaje ficticio)",
+    "contexto": "Lucía atiende a microempresarios y personas. Quiere ofrecerles lo que de verdad les conviene, pero solo ve lo que ellos hacen con la Caja. Es un personaje ficticio, creado para explicar la solución."
+  },
+  "historia": {
+    "antes": [
+      "Solo ve los productos del cliente en la Caja.",
+      "No sabe si paga deudas más caras en otra entidad ni si tiene ahorro ocioso.",
+      "Puede ofrecer crédito a quien ya está sobreendeudado.",
+      "Si usara datos de otras entidades, no habría forma de probar que el cliente lo autorizó."
+    ],
+    "despues": [
+      "El cliente autoriza qué puede ver la Caja, de qué entidad, por cuánto tiempo y para qué.",
+      "Lucía ve una vista integral solo de lo autorizado.",
+      "Cada oferta muestra el dato, la entidad y el consentimiento que la originó.",
+      "Si el cliente revoca, la vista se reduce de inmediato; si hay sobreendeudamiento, el sistema se abstiene."
+    ],
+    "momento_clave": "El cliente revoca una entidad y la oferta de consolidación desaparece sola, porque el consentimiento se aplica en el código y no en la interfaz."
+  },
+  "tres_frases": [
+    "Lucía quiere ofrecer lo que conviene, pero hoy solo ve una parte del cliente y no puede usar datos ajenos sin consentimiento.",
+    "Con un control de consentimiento en el código, la Caja ve solo lo autorizado, propone productos con evidencia y se abstiene si hay sobreendeudamiento.",
+    "Cada consulta queda registrada, el cliente puede revocar en cualquier momento y la decisión final es siempre de Lucía."
+  ],
+  "problema": {
+    "titular": "El cliente tiene su vida financiera repartida y nadie ve el cuadro completo",
+    "puntos": [
+      "El desafío plantea aprovechar el intercambio seguro y autorizado de información financiera para dar más valor a los clientes.",
+      "Suponemos que hoy la Caja ve con detalle solo lo suyo, y de otras entidades, como mucho, información agregada (a validar con el owner).",
+      "Sin esa visión podría ofrecer crédito a quien ya está sobreendeudado (hipótesis nuestra).",
+      "Debe garantizarse privacidad, seguridad y uso autorizado, con datos sintéticos e integraciones simuladas."
+    ],
+    "nota": "Resultado esperado del desafío: fortalecer la competitividad de la Caja con nuevas propuestas de valor basadas en el intercambio autorizado de información."
+  },
+  "solucion": {
+    "titular": "Un sandbox donde el consentimiento decide qué se puede ver",
+    "flujo": ["Cliente otorga consentimiento", "Control de consentimiento en código", "Consulta a 3 o más entidades simuladas", "Vista integral del cliente", "Motor de oportunidades con evidencia", "Agente explica o se abstiene", "Ejecutivo decide", "Auditoría y KPI en 3 brazos"],
+    "nota": "El sistema propone; decide el ejecutivo. No hay APIs ni datos reales, ni conformidad declarada con un estándar de Open Finance."
+  },
+  "como_funciona": [
+    {"paso": "El cliente otorga un consentimiento", "detalle": "Con alcance, vigencia, finalidad y entidad; puede revocarlo cuando quiera."},
+    {"paso": "Control de consentimiento", "detalle": "Único camino a los datos de otras entidades; aplica alcance, vigencia, finalidad y receptor, y registra cada acceso."},
+    {"paso": "Vista integral", "detalle": "Une lo autorizado de varias entidades y estima el ingreso con un modelo predictivo."},
+    {"paso": "Motor de oportunidades", "detalle": "Consolidación de deuda, capital de trabajo MYPE, captación de ahorro y domiciliación, cada una con su evidencia."},
+    {"paso": "Abstención", "detalle": "Si la visión integral muestra sobreendeudamiento, no se ofrece crédito."},
+    {"paso": "Ejecutivo y medición", "detalle": "El ejecutivo aprueba, edita o descarta; el KPI se mide en tres brazos sintéticos."}
+  ],
+  "pantallas": [
+    {
+      "tipo": "consentimiento",
+      "titular": "El consentimiento: qué ve la Caja, de quién y por cuánto tiempo",
+      "titulo": "Consentimientos de CLI-0457 (cliente ficticio) · oferta y bitácora",
+      "nota": "Maqueta ilustrativa con entidades y datos ficticios. La interfaz real se construye en el evento.",
+      "elementos": {
+        "encabezado": "Consentimientos de CLI-0457 (cliente ficticio)",
+        "consentimientos": [
+          {"entidad": "Banco Andino Demo", "alcance": "Productos y saldos", "vigencia": "hasta 03/2027", "activo": true},
+          {"entidad": "Financiera Sol Andina Demo", "alcance": "Productos y condiciones", "vigencia": "hasta 03/2027", "activo": true},
+          {"entidad": "Cooperativa Cumbre Demo", "alcance": "Productos y saldos", "vigencia": "hasta 06/2027", "activo": true},
+          {"entidad": "Fintech Kuntur Demo", "alcance": "Transacciones", "vigencia": "vencido", "activo": false}
+        ],
+        "nota": "El cliente puede revocar en cualquier momento; la vista se reduce de inmediato.",
+        "oferta": ["Consolidación de deuda (propuesta)", "Tiene 2 créditos externos con tasa alta (autorizado)", "Su capacidad de pago estimada lo permite", "Ahorro potencial: escenario, no promesa", "Decide el ejecutivo"],
+        "bitacora": ["10:02 Consulta de Productos a Banco Andino Demo: permitida", "10:02 Consulta de Transacciones a Fintech Kuntur Demo: DENEGADA", "10:03 El cliente revoca Cooperativa Cumbre Demo: vista reducida"]
+      }
+    },
+    {
+      "tipo": "cola",
+      "titular": "Las oportunidades: cada una con su evidencia, y una abstención",
+      "titulo": "Oportunidades de la ejecutiva (solo con consentimiento vigente)",
+      "subtitulo": "Clientes con consentimiento · ordenados por relevancia",
+      "nota": "Maqueta ilustrativa con datos ficticios. La última fila es una abstención: no se ofrece crédito.",
+      "elementos": [
+        {"id": "CLI-0457", "nivel": 0.8, "porque": ["2 créditos externos con tasa alta (autorizado)", "Capacidad de pago estimada suficiente"], "accion": "Proponer consolidación"},
+        {"id": "CLI-1180", "nivel": 0.62, "porque": ["Ahorro ocioso en otra entidad (autorizado)", "Saldos visibles por consentimiento"], "accion": "Proponer cuenta de ahorro"},
+        {"id": "CLI-0732", "nivel": 0.55, "porque": ["Sus abonos crecen en el segundo semestre", "MYPE con flujo regular"], "accion": "Proponer capital de trabajo"},
+        {"id": "CLI-1655", "nivel": 0.45, "porque": ["Sus ingresos llegan a otra entidad", "Ya es cliente de la Caja"], "accion": "Proponer domiciliación"},
+        {"id": "CLI-0219", "nivel": 0.9, "porque": ["Su cuota total supera su capacidad estimada", "La visión multientidad lo muestra"], "accion": "ABSTENCIÓN: no ofrecer crédito"}
+      ]
+    }
+  ],
+  "evidencia": {
+    "cifras": [
+      {"valor": "13 %", "etiqueta": "de las oportunidades y abstenciones que existen las ve la Caja sola"},
+      {"valor": "31 %", "etiqueta": "con los consentimientos del conjunto (tasa supuesta de 65 %)"},
+      {"valor": "95 %", "etiqueta": "con información completa: tope teórico, no una capacidad medida"}
+    ],
+    "honestidad": "Dato preliminar medido sobre datos sintéticos propios, no sobre la Caja. El 95 % es un techo mecánico porque la verdad se define con las mismas reglas; el 31 % depende de una tasa de consentimiento que fijamos nosotros y se medirá su sensibilidad. Lo que demostramos es que el consentimiento, no el modelo, es lo que más limita lo alcanzable."
+  },
+  "impacto": {
+    "titular": "Más oportunidades dentro del consentimiento, y cero fugas",
+    "kpi": [
+      "Porcentaje de clientes con una oportunidad válida identificada dentro de su consentimiento",
+      "Completitud del perfil con y sin datos de varias entidades",
+      "Alcance a quienes aún no son clientes (aproximación a la inclusión)",
+      "Calidad: cero fugas en la batería adversarial; 100 % de ofertas con consentimiento vigente y trazabilidad"
+    ]
+  },
+  "tecnologia": {
+    "titular": "El consentimiento se hace cumplir en el código y se prueba",
+    "filas": [
+      ["Servicio de consentimiento", "Alcance, vigencia, finalidad, receptor y revocación; estado calculado y auditado."],
+      ["Control de acceso", "Único camino a los datos de otras entidades; lo no autorizado no llega al motor ni al agente."],
+      ["Vista integral", "Une lo autorizado y estima el ingreso con un modelo predictivo (scikit-learn)."],
+      ["Motor de oportunidades", "Reglas con evidencia y linaje: cuatro ofertas y una abstención."],
+      ["Agente", "Explica con herramientas acotadas y verifica que cada cifra exista en lo autorizado; proveedor intercambiable y modo sin red."],
+      ["Batería adversarial", "Consentimiento vencido, revocado, de otro receptor, solo vista, alcance insuficiente y ventana histórica excedida."]
+    ],
+    "preexistente": "Preexistente (21.11.2026, del equipo): generador de datos sintéticos con 41 pruebas y un script de auditoría de los datos. Todo lo demás, incluida la medición del KPI, se construye en el evento."
+  },
+  "plan": {
+    "titular": "28 horas el mínimo, 36 el completo, frente a unas 32 a 34 disponibles",
+    "bloques": [
+      {"bloque": "Datos y APIs simuladas con credencial", "horas": "3,5", "entregable": "Sandbox consultable"},
+      {"bloque": "Consentimiento, control y auditoría", "horas": "3", "entregable": "Lo no autorizado no pasa"},
+      {"bloque": "Vista integral e ingreso estimado", "horas": "3,5", "entregable": "Perfil y completitud"},
+      {"bloque": "Motor de oportunidades con linaje", "horas": "3", "entregable": "Ofertas y abstención con evidencia"},
+      {"bloque": "Agente con redacción verificada", "horas": "2,5", "entregable": "Explicación citada"},
+      {"bloque": "Experiencia de consentimiento e interfaz", "horas": "7", "entregable": "Otorgar, revocar y decidir"},
+      {"bloque": "Catálogo y reglas de oferta responsable", "horas": "2", "entregable": "Ofertas con criterio"},
+      {"bloque": "KPI de tres brazos", "horas": "3", "entregable": "Número antes y después"},
+      {"bloque": "Pruebas y validación", "horas": "4", "entregable": "Batería adversarial en verde"},
+      {"bloque": "Pitch, demo e integración", "horas": "4,5", "entregable": "Demo ensayada"}
+    ],
+    "nota": "Mínimo comprometido (28 h): control de consentimiento, modelo de ingreso estimado y motor con evidencia; el agente con IA y la interfaz completa se recortan primero. Escenario pesimista: unas 41 h, solo con recortes. Nunca se recorta el control de consentimiento ni la evidencia."
+  },
+  "supuestos": [
+    "KPI y línea base oficiales: por confirmar; línea base metodológica con el brazo «solo Caja»",
+    "La Caja solo recibe datos de otras entidades; no es proveedora",
+    "Centrales de riesgo: se asume información agregada; posible cuarto brazo",
+    "Tasa de consentimiento de 65 % y catálogo de tasas: definidos por el equipo",
+    "IA externa solo para redactar, con datos sintéticos y modo sin red"
+  ],
+  "proximos_pasos": [
+    "Revisión cruzada humana del concepto y del catálogo supuesto",
+    "Validar con Legal el texto de consentimiento si hay canal",
+    "Verificar que el conjunto sintético tenga un prospecto con tres entidades y un caso sobreendeudado para la demo",
+    "Preparar el entorno del evento sin construir la funcionalidad crítica"
+  ],
+  "demo": [
+    {"min": 0.5, "accion": "Un cliente ficticio otorga consentimiento a tres entidades simuladas", "mensaje": "El cliente decide qué ve la Caja, de quién, por cuánto tiempo y para qué."},
+    {"min": 1.0, "accion": "La Caja consulta a través del control; una consulta fuera de alcance es denegada", "mensaje": "El consentimiento se aplica en el código: lo no autorizado no llega al motor ni al agente, y todo queda en la bitácora."},
+    {"min": 1.0, "accion": "Vista integral y oferta de consolidación con evidencia", "mensaje": "Cada oferta muestra el dato, la entidad y el consentimiento que la originó."},
+    {"min": 1.0, "accion": "El cliente revoca una entidad", "mensaje": "La vista se reduce de inmediato y la oferta desaparece."},
+    {"min": 0.5, "accion": "Un cliente sobreendeudado recibe una abstención", "mensaje": "La visión integral también sirve para no ofrecer."},
+    {"min": 1.0, "accion": "KPI en tres brazos", "mensaje": "Solo Caja, con los consentimientos del conjunto y con consentimiento total; valida el mecanismo, no el impacto comercial real."}
+  ],
+  "plan_b": [
+    "Si falla el modelo de lenguaje externo: usar el modo con plantilla, sin red.",
+    "Si falla la interfaz: mostrar las consultas y la bitácora desde la API en texto.",
+    "Si falla la medición en vivo: mostrar los resultados guardados con semilla fija."
+  ],
+  "preguntas": [
+    {"p": "¿Cuál es el impacto en el KPI?", "r": "No hay línea base oficial, así que no afirmamos una cifra sobre la Caja. Medimos en un sandbox sintético, con tres brazos, cuántos clientes tienen una oportunidad válida dentro de su consentimiento. Como dato preliminar, con las mismas reglas la Caja sola identifica el 13 % de las oportunidades y abstenciones que existen, con los consentimientos del conjunto el 31 % (tasa supuesta de 65 %) y con información completa el 95 %, que es un tope teórico."},
+    {"p": "¿Por qué el consentimiento se aplica en el código y no en la interfaz?", "r": "Porque una casilla en la interfaz no impide que un dato no autorizado llegue al motor o al agente. En nuestro diseño el control de consentimiento es el único camino a los datos de otras entidades, aplica alcance, vigencia, finalidad y receptor, registra cada acceso y se prueba con una batería adversarial que debe dar cero fugas."},
+    {"p": "¿La Caja no ve ya el endeudamiento externo por las centrales de riesgo?", "r": "Es un supuesto que hacemos explícito: suponemos que la Caja tendría, como mucho, información agregada de centrales de riesgo, y que no ve tasas, ahorro ni flujo de ingresos de otras entidades. Si el owner confirma que las centrales ya forman parte del flujo, añadimos un cuarto brazo: Caja más central de riesgo."},
+    {"p": "¿El 31 % no depende de supuestos suyos?", "r": "Sí, y lo decimos: depende de una tasa de consentimiento de 65 % que definimos nosotros y de reglas de alcance. En el evento medimos la sensibilidad a esa tasa. El 95 % es un tope teórico porque la verdad se define con las mismas reglas."},
+    {"p": "¿Qué pasa con un cliente sobreendeudado?", "r": "El sistema se abstiene: no ofrece crédito y lo explica con la evidencia autorizada. La estimación del ingreso es el punto más débil de esta parte (precisión de 0,5 a 0,8 en nuestras pruebas) y se reportará con intervalos."},
+    {"p": "¿Qué parte es inteligencia artificial?", "r": "Un modelo predictivo estima el ingreso, el motor detecta oportunidades con linaje y un agente explica con herramientas acotadas y verifica que cada cifra citada exista en los datos autorizados. El mínimo comprometido incluye el modelo de ingreso y el motor; el agente con redacción por IA se incorpora si el tiempo lo permite y siempre existe el modo con plantilla sin red."},
+    {"p": "¿Cabe en 8 horas por persona?", "r": "El mínimo estimado es de 28 horas-persona y el completo de 36, frente a unas 32 a 34 disponibles; en el escenario pesimista el mínimo sube a unas 41 y solo cabe con recortes ya definidos: primero la redacción con IA y la interfaz, nunca el control de consentimiento ni la evidencia."},
+    {"p": "¿Y si la Caja no entrega datos?", "r": "No los necesitamos: el generador propio produce clientes y entidades ficticias, transacciones, catálogo y consentimientos. Si la Caja aporta datos o un esquema, se adaptan."},
+    {"p": "¿Cumplen algún estándar de Open Finance?", "r": "No declaramos conformidad con ningún estándar. El sandbox simula el intercambio con credencial por entidad receptora, auditoría y minimización; los requisitos reales de TI y Seguridad quedarían para una etapa posterior."},
+    {"p": "¿Qué es preexistente?", "r": "El generador de datos sintéticos con 41 pruebas y un script de auditoría de los datos, ambos del equipo y creados el 21.11.2026. El servicio de consentimiento, las APIs simuladas, la vista integral, el motor, el agente, la interfaz y la medición del KPI se construyen en el evento."}
+  ],
+  "no_prometemos": [
+    "Una cifra de impacto comercial sobre la Caja: no hay línea base.",
+    "APIs o datos reales, ni conformidad con un estándar de Open Finance.",
+    "Decisiones o scoring crediticio automáticos.",
+    "Que el 95 % sea una capacidad medida: es un tope teórico."
+  ]
+}

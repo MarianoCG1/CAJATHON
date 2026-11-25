@@ -161,15 +161,14 @@ def pantalla_consentimiento(p: dict) -> str:
     e = p["elementos"]
     c = _texto(20, 62, e["encabezado"], 12, NAVY, "700")
     c += f'<rect x="20" y="74" width="350" height="26" fill="#eef6f6"/>'
-    for x, t in ((30, "Entidad"), (150, "Alcance"), (270, "Vigencia"), (330, "")):
-        c += _texto(x, 91, t, 10.5, TEAL, "700")
+    c += _texto(30, 91, "Entidad · alcance · vigencia", 10.5, TEAL, "700") + _texto(330, 91, "Activo", 10.5, TEAL, "700", "middle")
     y = 102
     for f in e["consentimientos"][:5]:
-        c += f'<line x1="20" y1="{y + 34}" x2="370" y2="{y + 34}" stroke="#e4ebf1"/>'
-        c += _texto(30, y + 21, f["entidad"], 10.5, NAVY, "600") + _texto(150, y + 21, f["alcance"], 10) + _texto(270, y + 21, f["vigencia"], 10, GRIS)
+        c += f'<line x1="20" y1="{y + 40}" x2="370" y2="{y + 40}" stroke="#e4ebf1"/>'
+        c += _texto(30, y + 17, f["entidad"], 11, NAVY, "700") + _texto(30, y + 33, f["alcance"] + " · " + f["vigencia"], 10, GRIS)
         on = f["activo"]
-        c += f'<rect x="334" y="{y + 9}" width="30" height="16" rx="8" fill="{TEAL if on else "#cbd5e1"}"/><circle cx="{356 if on else 342}" cy="{y + 17}" r="6" fill="#fff"/>'
-        y += 38
+        c += f'<rect x="315" y="{y + 12}" width="30" height="16" rx="8" fill="{TEAL if on else "#cbd5e1"}"/><circle cx="{337 if on else 323}" cy="{y + 20}" r="6" fill="#fff"/>'
+        y += 44
     c += _texto(20, 308, e["nota"], 10, GRIS)
     c += f'<rect x="392" y="74" width="348" height="150" rx="6" fill="#fff" stroke="#e4ebf1"/>'
     c += _texto(404, 94, "Oferta propuesta al ejecutivo", 10.5, TEAL, "700")
