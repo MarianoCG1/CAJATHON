@@ -55,6 +55,16 @@ El texto corrido es `retos/<ID>/postulacion.md` (ya existe).
 - [x] R4.3 Revisión independiente y correcciones.
 - [x] R4.4 Ficha PDF y diagrama.
 
+## Material de presentación por reto (`retos/<ID>/presentacion/`, pedido de Mariano el 25.11)
+
+Contenido: storytelling (persona ficticia, antes y después), guion de demo con tiempos, preguntas del jurado con respuestas honestas y un deck de 11 láminas en PDF con flujo, pantallas ilustrativas, evidencia y plan. Fuente única: `contenido.json`; se genera con `python scripts/presentacion/armar.py <ID>`. Todo es ilustrativo (maquetas con datos ficticios): **no es un prototipo** y no adelanta la funcionalidad crítica.
+
+- [x] P1 RIE-03: contenido, deck PDF y textos.
+- [ ] P2 NEG-02: `contenido.json` (pantallas de tipo `consentimiento` y `caso`), generar y revisar las láminas.
+- [ ] P3 RIE-01: `contenido.json` (pantallas de tipo `mapa` y `cola`), generar y revisar las láminas.
+- [ ] P4 RIE-02: `contenido.json` (pantallas de tipo `grafo` y `caso`), generar y revisar las láminas.
+- [ ] P5 Declarar `scripts/presentacion/` en `docs/preexistente.md`, enlazar el material desde `retos/README.md`, regenerar el tablero y correr las pruebas.
+
 ## Cierre del día
 
 - [x] Z1 `docs/preexistente.md`, `boveda/Tablero.md`, `README` y `retos/README.md` al día; pruebas en verde.
