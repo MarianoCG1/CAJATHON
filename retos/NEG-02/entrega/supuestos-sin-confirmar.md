@@ -12,5 +12,7 @@ No hubo respuesta del owner para este desafío (el envío de tickets cerró el 2
 | Seguridad del sandbox | Credencial por entidad receptora, auditoría de cada acceso y minimización; los requisitos reales de TI y Seguridad quedan para una etapa posterior. |
 | IA externa | Solo para redactar explicaciones, con datos sintéticos; hay modo sin red; la política real está por confirmar. |
 | Datos de la Caja | No se entregan: se usa el sandbox sintético propio, adaptable a un esquema de la Caja. |
+| Centrales de riesgo | Se asume que la Caja ve de otras entidades, como mucho, información agregada de centrales de riesgo; si el owner confirma que ya es parte del flujo, se añade un cuarto brazo, Caja más central de riesgo. |
+| Tasa de consentimiento | El 31 % preliminar usa una tasa de consentimiento de 65 % definida por nosotros; se medirá la sensibilidad. |
 
 Si la organización responde o entrega datos, se actualiza el concepto; ninguna cifra de impacto se afirma sin línea base.
