@@ -57,9 +57,9 @@ El texto corrido es `retos/<ID>/postulacion.md` (ya existe).
 
 ## Cierre del día
 
-- [ ] Z1 `docs/preexistente.md`, `boveda/Tablero.md`, `README` y `retos/README.md` al día; pruebas en verde.
+- [x] Z1 `docs/preexistente.md`, `boveda/Tablero.md`, `README` y `retos/README.md` al día; pruebas en verde.
 - [ ] Z2 Commit y push de lo terminado (sin textos literales de expedientes, FAQ ni tickets).
-- [ ] Z3 Mensaje corto para el chat del equipo con el estado de cada reto (queda como archivo `docs/mensaje-estado-24-11.md`; no se envía).
+- [x] Z3 Mensaje corto para el chat del equipo con el estado de cada reto (queda como archivo `docs/mensaje-estado-24-11.md`; no se envía).
 
 ## 25.11 — cuando abra el formulario
 

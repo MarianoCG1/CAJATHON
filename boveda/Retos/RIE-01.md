@@ -27,7 +27,7 @@ Volver al [[boveda/00-HUB-Cajathon|HUB]] · [[boveda/Tablero|Tablero]]
 - [x] Generador de datos sintéticos con pruebas
 - [x] Texto de postulación
 
-`██████ 6/6` · [POR CONFIRMAR]: 46 · (supuesto): 20 · postulación: 704 palabras
+`██████ 6/6` · [POR CONFIRMAR]: 46 · (supuesto): 20 · postulación: 816 palabras
 
 ## Documentos
 
