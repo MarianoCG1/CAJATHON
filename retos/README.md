@@ -40,6 +40,10 @@ Calendario completo y reglas: `docs/plan-conceptos.md`.
 
 Los cuatro retos desarrollados tienen `retos/<ID>/entrega/` con todo lo necesario para postular: `campos.md` (los 8 componentes del Solution Concept, en versión corta y completa), `resumen-corto.md`, `ficha-1-pagina.pdf`, `supuestos-sin-confirmar.md` y `checklist-envio.md`. Se regeneran con `python scripts/entrega/armar_paquete.py <ID>` y `python scripts/entrega/ficha_pdf.py <ID>` a partir de `postulacion.md` y `entrega/cortos.json`. El plan y su avance están en `docs/plan-entrega-25-11.md`.
 
+## Material de presentación
+
+Los mismos cuatro retos tienen `retos/<ID>/presentacion/`: `storytelling.md` (persona ficticia, antes y después), `guion-demo.md` (guion con tiempos para la fase presencial), `preguntas-jurado.md` (preguntas esperables con respuestas honestas) y `deck.pdf` (11 láminas con flujo, maquetas ilustrativas, evidencia y plan). Fuente única: `contenido.json`; se regenera con `python scripts/presentacion/armar.py <ID>`. Las pantallas son **maquetas con datos ficticios**, no un prototipo.
+
 ## Carga de trabajo (aviso)
 
 Los cuatro retos sin desarrollar recaen en Glem, Antonio y David (con Mariano revisando COM-02); Mariano ya concentró los cuatro desarrollados. Mientras revisan, Mariano puede apoyar a quien se atrase, empezando por NEG-01.

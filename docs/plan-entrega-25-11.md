@@ -62,8 +62,8 @@ Contenido: storytelling (persona ficticia, antes y después), guion de demo con 
 - [x] P1 RIE-03: contenido, deck PDF y textos.
 - [x] P2 NEG-02: `contenido.json` (pantallas de tipo `consentimiento` y `caso`), generar y revisar las láminas.
 - [x] P3 RIE-01: `contenido.json` (pantallas de tipo `mapa` y `cola`), generar y revisar las láminas.
-- [ ] P4 RIE-02: `contenido.json` (pantallas de tipo `grafo` y `caso`), generar y revisar las láminas.
-- [ ] P5 Declarar `scripts/presentacion/` en `docs/preexistente.md`, enlazar el material desde `retos/README.md`, regenerar el tablero y correr las pruebas.
+- [x] P4 RIE-02: `contenido.json` (pantallas de tipo `grafo` y `caso`), generar y revisar las láminas.
+- [x] P5 Declarar `scripts/presentacion/` en `docs/preexistente.md`, enlazar el material desde `retos/README.md`, regenerar el tablero y correr las pruebas.
 
 ## Cierre del día
 

@@ -146,7 +146,7 @@ def pantalla_grafo(p: dict) -> str:
         r = 11 if n["tipo"] == "persona" else 9
         c += f'<circle cx="{n["x"]}" cy="{n["y"]}" r="{r}" fill="{forma.get(n["tipo"], GRIS)}" stroke="#fff" stroke-width="2"/>'
         c += _texto(n["x"], n["y"] + 24, n["id"], 9, GRIS, "400", "middle")
-    c += _texto(20, 358, "Persona · Teléfono · Dispositivo · Dirección · Negocio. En rojo, los vínculos que el modelo pondera por lo raros que son.", 9.5, GRIS)
+    c += _texto(20, 352, "Persona · Teléfono · Dispositivo · Dirección · Negocio", 9.5, GRIS) + _texto(20, 367, "En rojo: vínculos que el modelo pondera por lo raros que son", 9.5, GRIS)
     c += f'<rect x="470" y="74" width="270" height="250" rx="6" fill="#fff" stroke="#e4ebf1"/>'
     c += _texto(482, 94, "Expediente de la red", 10.5, TEAL, "700")
     for i, t in enumerate(e["expediente"][:6]):
