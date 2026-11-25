@@ -1,6 +1,6 @@
 # Panorama de abastecimiento — NEG-02 · Open Finance: competir en un ecosistema financiero abierto
 
-> Versión 1.1 (ronda 2: cotejo con el expediente literal, alcance MVP, prueba pesimista de horas) · 21.11.2026 · Pareja líder: Antonio + Mariano · Revisor: David · Owners (plataforma): Roger, Arturo.
+> Versión 1.1 (ronda 2: cotejo con el expediente literal, alcance MVP, prueba pesimista de horas) · 21.11.2026 · Pareja líder: Antonio + Mariano · Revisor: David · Owners (plataforma): (ver plataforma).
 > Material **confidencial**: repo privado. Lo marcado **(supuesto)** o **[POR CONFIRMAR]** no viene de la Caja. Los datos son 100 % sintéticos.
 > Este documento acompaña a `retos/NEG-02/concepto.md`. No se ha construido nada de la funcionalidad crítica: solo existe el generador de datos (`retos/NEG-02/datos/`) y esta documentación.
 
@@ -469,7 +469,7 @@ Separar B de C permite decir cuánto de la oportunidad depende de la experiencia
 
 ---
 
-## 7. Preguntas para el owner (Roger, Arturo)
+## 7. Preguntas para el owner ((ver plataforma))
 
 Ordenadas por prioridad (las tres primeras condicionan el puntaje de impacto):
 

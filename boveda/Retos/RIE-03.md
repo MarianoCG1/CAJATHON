@@ -16,7 +16,7 @@ actualizado: 2026-11-21
 Volver al [[boveda/00-HUB-Cajathon|HUB]] · [[boveda/Tablero|Tablero]]
 
 **Estado:** Listo para revisión cruzada · **Prioridad:** #1 · **Eje:** 3 Riesgo, fraude y recuperaciones inteligentes
-**Pareja líder:** David + Mariano · **Revisor:** Glem · **Owners (plataforma):** Wilson, Harold, Paul
+**Pareja líder:** David + Mariano · **Revisor:** Glem · **Owners (plataforma):** (ver plataforma)
 
 ## Avance (automático)
 
@@ -27,7 +27,7 @@ Volver al [[boveda/00-HUB-Cajathon|HUB]] · [[boveda/Tablero|Tablero]]
 - [x] Generador de datos sintéticos con pruebas
 - [x] Texto de postulación
 
-`██████ 6/6` · [POR CONFIRMAR]: 15 · (supuesto): 14 · postulación: 878 palabras
+`██████ 6/6` · [POR CONFIRMAR]: 15 · (supuesto): 14 · postulación: 1161 palabras
 
 ## Documentos
 

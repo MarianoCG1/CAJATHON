@@ -6,7 +6,7 @@
 | **Eje** | 5 Open Finance y nuevos modelos de competencia |
 | **Pareja líder** | Antonio + Mariano |
 | **Revisor (no escribe este reto)** | David |
-| **Owners en la plataforma** | Roger, Arturo |
+| **Owners en la plataforma** | (ver plataforma) |
 | **Avance** | se calcula solo: `boveda/Tablero.md` |
 
 ## En una frase

@@ -1,6 +1,6 @@
 # Concepto de solución — NEG-02 · Open Finance: competir en un ecosistema financiero abierto
 
-> **BORRADOR v1.1 (21.11.2026; cotejado con el expediente literal en `retos/NEG-02/expediente.md`).** Prioridad **#3** · Pareja líder **Antonio + Mariano** · Revisor **David** (pendiente) · Eje: 5 Open Finance y nuevos modelos de competencia · Owners (plataforma): Roger, Arturo.
+> **BORRADOR v1.1 (21.11.2026; cotejado con el expediente literal en `retos/NEG-02/expediente.md`).** Prioridad **#3** · Pareja líder **Antonio + Mariano** · Revisor **David** (pendiente) · Eje: 5 Open Finance y nuevos modelos de competencia · Owners (plataforma): (ver plataforma).
 > Lo marcado **(supuesto)** o **[POR CONFIRMAR]** no viene de la Caja. No presentarlo como hecho. Material confidencial: repo privado.
 > El expediente no trae KPI ni línea base. Detalle de datos, arquitectura, plan del evento, medición y pruebas: `retos/NEG-02/panorama.md`.
 

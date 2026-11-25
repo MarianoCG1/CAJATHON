@@ -16,7 +16,7 @@ actualizado: 2026-11-21
 Volver al [[boveda/00-HUB-Cajathon|HUB]] · [[boveda/Tablero|Tablero]]
 
 **Estado:** Borrador v0 · **Prioridad:** #6 · **Eje:** 2 Experiencia, retención y crecimiento
-**Pareja líder:** David + Glem · **Revisor:** Antonio · **Owners (plataforma):** Wilson, Harold, Paul
+**Pareja líder:** David + Glem · **Revisor:** Antonio · **Owners (plataforma):** (ver plataforma)
 
 ## Avance (automático)
 

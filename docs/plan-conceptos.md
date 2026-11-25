@@ -60,7 +60,7 @@ Si el tiempo aprieta, se recorta desde el final de la lista (COM-02, COM-01), no
 ## 5. Consultas a los owners
 
 - Se envían por ticket apenas se abran, o por WhatsApp/correo de la organización mientras tanto.
-- Cada borrador tiene su Anexo B con las preguntas. Se agrupan por owner: Wilson, Harold y Paul son owners de RIE-03, NEG-03 y COM-02; Wilson también de COM-01.
+- Cada borrador tiene su Anexo B con las preguntas. Se agrupan por owner: (ver plataforma) son owners de RIE-03, NEG-03 y COM-02; (ver plataforma) también de COM-01.
 - Prioridad de preguntas: **KPI y línea base**, datos sintéticos (columnas y volumen) y política de IA externa.
 
 ## 6. Reglas que no se rompen

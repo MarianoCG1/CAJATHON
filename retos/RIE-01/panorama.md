@@ -528,7 +528,7 @@ Criterio interno de aceptación (**supuesto**; no es un objetivo de impacto): la
 
 ---
 
-## (g) Preguntas para el owner (Miriam, según la plataforma)
+## (g) Preguntas para el owner ((ver plataforma), según la plataforma)
 
 Prioridad 1 (cambian el diseño):
 1. **KPI oficial y línea base**: ¿cuál es el indicador y cómo se mide hoy la exposición o pérdida por eventos climáticos? ¿Quién lo calcula y con qué frecuencia?
@@ -639,7 +639,7 @@ Comparado palabra por palabra con `retos/RIE-01/expediente.md` (texto literal, a
 | H5 | «**Incertidumbre de los escenarios**» | Cubierta para severidad e intensidad | Límite declarado en §c.3: no asignamos probabilidades a los escenarios ni generamos escenarios alternativos |
 
 ### Lo que sí coincide
-* **Dato literal:** Desafío de Riesgos, owner Miriam, eje 4 «Inclusión financiera y resiliencia». ✔
+* **Dato literal:** Desafío de Riesgos, owner (ver plataforma), eje 4 «Inclusión financiera y resiliencia». ✔
 * **Insumos del expediente** (ubicación, actividad, información climática, mapas de amenazas, escenarios, exposición crediticia, datos sintéticos): cubiertos con las salvedades H4 y la nota de «datos referenciales». ✔
 * **«Exposición no implica pérdidas ni incumplimiento»:** el expediente nombra dos cosas distintas, pérdida económica del negocio e incumplimiento crediticio. Las tres capas las separan: *afectada* (pérdida económica del negocio, medida como caída de ingreso), *mora* (incumplimiento), y *expuesta* solo como contexto. Un riesgo de dilución que sí existía: el KPI candidato del v0 («% de cartera **expuesta** identificado») se leía como si exposición fuera daño; **K1 ahora se define sobre cartera afectada**, no expuesta. ✔
 * **Incertidumbre de escenarios:** rangos p10–p50–p90, eventos de backtest distintos del escenario ex ante y eventos más severos que la historia (con el límite H5). ✔

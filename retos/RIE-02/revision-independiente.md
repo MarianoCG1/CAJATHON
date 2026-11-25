@@ -37,7 +37,7 @@ Severidad: A = alta, M = media, B = baja. «Texto sugerido» es el reemplazo o l
 
 ## Verificaciones que salieron bien
 
-- Fidelidad: `concepto.md` v1.1 ya retiró las atribuciones erróneas del v0 (reputación, decisiones crediticias automáticas); las restricciones del expediente están todas presentes y no se diluyen; el owner (Carlos) y el eje son correctos.
+- Fidelidad: `concepto.md` v1.1 ya retiró las atribuciones erróneas del v0 (reputación, decisiones crediticias automáticas); las restricciones del expediente están todas presentes y no se diluyen; el owner ((ver plataforma)) y el eje son correctos.
 - Cifras: ninguna cifra de impacto, KPI ni línea base inventada; línea base y cifra de impacto quedan [POR CONFIRMAR] y «a validar con el owner». Los porcentajes de la postulación coinciden con el script de auditoría; 37 pruebas, 3,701 solicitudes (manifest), 30 redes de fraude y 93 de señuelo, y las sumas de horas (29, 42.5, 31.3; recortes 11.2; colchón 2.7 h) cuadran.
 - Reformateo: las ocho secciones `## N.` de `postulacion.md` son idénticas a las versiones completas de `campos.md`; no se perdió contenido. Los recuentos de caracteres de `campos.md` son exactos y `cortos.json` coincide con las versiones cortas.
 - Reglas: en `retos/RIE-02/datos/` solo hay generador, pruebas y salida sintética; los documentos y teléfonos llevan prefijo `FIC-`; `backend/app` solo trae `__init__.py` vacíos. No hay rastro de datos reales.

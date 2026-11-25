@@ -16,7 +16,7 @@ actualizado: 2026-11-21
 Volver al [[boveda/00-HUB-Cajathon|HUB]] · [[boveda/Tablero|Tablero]]
 
 **Estado:** Listo para revisión cruzada · **Prioridad:** #4 · **Eje:** 4 Inclusión financiera y resiliencia
-**Pareja líder:** Antonio + Mariano · **Revisor:** Glem · **Owners (plataforma):** Miriam
+**Pareja líder:** Antonio + Mariano · **Revisor:** Glem · **Owners (plataforma):** (ver plataforma)
 
 ## Avance (automático)
 
@@ -27,7 +27,7 @@ Volver al [[boveda/00-HUB-Cajathon|HUB]] · [[boveda/Tablero|Tablero]]
 - [x] Generador de datos sintéticos con pruebas
 - [x] Texto de postulación
 
-`██████ 6/6` · [POR CONFIRMAR]: 46 · (supuesto): 20 · postulación: 816 palabras
+`██████ 6/6` · [POR CONFIRMAR]: 44 · (supuesto): 22 · postulación: 1034 palabras
 
 ## Documentos
 

@@ -12,5 +12,7 @@ No hubo respuesta del owner para este desafío (el envío de tickets cerró el 2
 | Quién revisa y con qué flujo | Especialista de prevención o investigación; herramienta y flujo actuales por confirmar. |
 | IA externa | Solo para redactar el expediente, con datos sintéticos; hay plantilla sin red; política real por confirmar. |
 | Datos de la Caja | No se entregan: se usa el generador propio; si llegan, se mapean al mismo esquema. |
+| Flujo y momento de la evaluación | La evaluación ocurre al ingresar la solicitud, antes del desembolso, para pedir verificación preventiva o escalar a investigación. |
+| Ejemplos de relaciones legítimas | Familias, mercados, tabletas de agencia, gremios y gestores son ejemplos nuestros, a validar con la Caja. |
 
 Si la organización responde o entrega datos, se actualiza el concepto; ninguna cifra de impacto se afirma sin línea base.

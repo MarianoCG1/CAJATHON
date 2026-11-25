@@ -1,6 +1,6 @@
 # Concepto de solución — NEG-01 · Cuotas que se adaptan al flujo del negocio
 
-> **BORRADOR v0 (generado).** Prioridad **#2** · Pareja líder **Antonio + Glem** · Eje: 4 Inclusión financiera y resiliencia · Owners (plataforma): Luis.
+> **BORRADOR v0 (generado).** Prioridad **#2** · Pareja líder **Antonio + Glem** · Eje: 4 Inclusión financiera y resiliencia · Owners (plataforma): (ver plataforma).
 > Lo marcado **(supuesto)** o **[POR CONFIRMAR]** no viene de la Caja. No presentarlo como hecho. Material confidencial: repo privado.
 
 ## 1. Problema abordado

@@ -6,7 +6,7 @@
 | **Eje** | 2 Experiencia, retención y crecimiento |
 | **Pareja líder** | David + Glem |
 | **Revisor (no escribe este reto)** | Antonio |
-| **Owners en la plataforma** | Wilson, Harold, Paul |
+| **Owners en la plataforma** | (ver plataforma) |
 | **Avance** | se calcula solo: `boveda/Tablero.md` |
 
 ## En una frase

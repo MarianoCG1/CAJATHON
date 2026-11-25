@@ -1,6 +1,6 @@
 # Concepto de solución — RIE-02 · Descubrir redes de riesgo ocultas
 
-> **BORRADOR v1.1 (21.11.2026, corregido tras cotejar con el expediente literal).** Prioridad **#5** · Pareja líder **David + Mariano** · Revisor: Antonio · Eje: 3 Riesgo, fraude y recuperaciones inteligentes · Owner (plataforma): Carlos.
+> **BORRADOR v1.1 (21.11.2026, corregido tras cotejar con el expediente literal).** Prioridad **#5** · Pareja líder **David + Mariano** · Revisor: Antonio · Eje: 3 Riesgo, fraude y recuperaciones inteligentes · Owner (plataforma): (ver plataforma).
 > Lo marcado **(supuesto)** o **[POR CONFIRMAR]** no viene de la Caja. No presentarlo como hecho. Material confidencial: repo privado.
 > Expediente literal: `retos/RIE-02/expediente.md`. Datos, arquitectura, plan del evento, medición y cotejo: `retos/RIE-02/panorama.md`. Texto para pegar en la plataforma: `retos/RIE-02/postulacion.md`.
 

@@ -368,7 +368,7 @@ Recortes en orden y horas que liberan en el escenario pesimista: Louvain → com
 
 ---
 
-## (g) Preguntas para el owner (Carlos)
+## (g) Preguntas para el owner ((ver plataforma))
 
 Prioridad alta (cambian el diseño):
 
@@ -480,7 +480,7 @@ Comparado palabra por palabra contra `retos/RIE-02/expediente.md` (texto literal
 
 | Expediente | Dónde se cubre |
 |---|---|
-| Owner: Carlos; Eje 3 | Encabezado del concepto |
+| Owner: (ver plataforma); Eje 3 | Encabezado del concepto |
 | «respetar la protección de datos personales» | (f), seudonimización, datos sintéticos, proveedor local o plantilla |
 | «alertas… sustentadas en evidencia verificable» | Expediente con citas y verificador (c.7) |
 | «considerar posibles falsos positivos» | Señuelos, R1/R2/R4, tasa de FP sobre señuelos |

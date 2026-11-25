@@ -6,7 +6,7 @@
 | **Eje** | 4 Inclusión financiera y resiliencia |
 | **Pareja líder** | Antonio + Glem |
 | **Revisor (no escribe este reto)** | David |
-| **Owners en la plataforma** | Luis |
+| **Owners en la plataforma** | (ver plataforma) |
 | **Avance** | se calcula solo: `boveda/Tablero.md` |
 
 ## En una frase

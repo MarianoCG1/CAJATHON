@@ -1,6 +1,6 @@
 # Concepto de solución — COM-01 · Encontrar oportunidades donde otros no ven clientes
 
-> **BORRADOR v0 (generado).** Prioridad **#7** · Pareja líder **Antonio + Glem** · Eje: 2 Experiencia, retención y crecimiento · Owners (plataforma): Wilson.
+> **BORRADOR v0 (generado).** Prioridad **#7** · Pareja líder **Antonio + Glem** · Eje: 2 Experiencia, retención y crecimiento · Owners (plataforma): (ver plataforma).
 > Lo marcado **(supuesto)** o **[POR CONFIRMAR]** no viene de la Caja. No presentarlo como hecho. Material confidencial: repo privado.
 
 ## 1. Problema abordado

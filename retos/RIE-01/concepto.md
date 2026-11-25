@@ -1,6 +1,6 @@
 # Concepto de solución — RIE-01 · Microfinanzas resilientes al clima
 
-> **v1, ajustado el 24.11.2026 tras la auditoría de datos y la revisión independiente.** Prioridad **#4** · Pareja líder **Antonio + Mariano** · Revisor: Glem (pendiente) · Eje: 4 Inclusión financiera y resiliencia · Owner (plataforma): Miriam.
+> **v1, ajustado el 24.11.2026 tras la auditoría de datos y la revisión independiente.** Prioridad **#4** · Pareja líder **Antonio + Mariano** · Revisor: Glem (pendiente) · Eje: 4 Inclusión financiera y resiliencia · Owner (plataforma): (ver plataforma).
 > Lo marcado **(supuesto)** o **[POR CONFIRMAR]** no viene de la Caja. No presentarlo como hecho. Material confidencial: repo privado.
 > Detalle de datos, arquitectura, plan del evento y backtest: `retos/RIE-01/panorama.md`. Generador de datos sintéticos: `retos/RIE-01/datos/`.
 > Nombre de trabajo de la solución: **Radar Climático de Cartera** **(supuesto)**.

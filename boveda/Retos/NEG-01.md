@@ -16,7 +16,7 @@ actualizado: 2026-11-21
 Volver al [[boveda/00-HUB-Cajathon|HUB]] · [[boveda/Tablero|Tablero]]
 
 **Estado:** Borrador v0 · **Prioridad:** #2 · **Eje:** 4 Inclusión financiera y resiliencia
-**Pareja líder:** Antonio + Glem · **Revisor:** David · **Owners (plataforma):** Luis
+**Pareja líder:** Antonio + Glem · **Revisor:** David · **Owners (plataforma):** (ver plataforma)
 
 ## Avance (automático)
 

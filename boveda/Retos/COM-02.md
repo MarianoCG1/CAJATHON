@@ -16,7 +16,7 @@ actualizado: 2026-11-21
 Volver al [[boveda/00-HUB-Cajathon|HUB]] · [[boveda/Tablero|Tablero]]
 
 **Estado:** Borrador v0 · **Prioridad:** #8 · **Eje:** 1 Productividad y transformación comercial
-**Pareja líder:** David + Glem · **Revisor:** Mariano · **Owners (plataforma):** Wilson, Harold, Paul
+**Pareja líder:** David + Glem · **Revisor:** Mariano · **Owners (plataforma):** (ver plataforma)
 
 ## Avance (automático)
 

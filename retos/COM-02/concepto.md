@@ -1,6 +1,6 @@
 # Concepto de solución — COM-02 · Incentivos que impulsan un desempeño integral
 
-> **BORRADOR v0 (generado).** Prioridad **#8** · Pareja líder **David + Glem** · Eje: 1 Productividad y transformación comercial · Owners (plataforma): Wilson, Harold, Paul.
+> **BORRADOR v0 (generado).** Prioridad **#8** · Pareja líder **David + Glem** · Eje: 1 Productividad y transformación comercial · Owners (plataforma): (ver plataforma).
 > Lo marcado **(supuesto)** o **[POR CONFIRMAR]** no viene de la Caja. No presentarlo como hecho. Material confidencial: repo privado.
 
 ## 1. Problema abordado

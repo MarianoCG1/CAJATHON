@@ -16,7 +16,7 @@ actualizado: 2026-11-21
 Volver al [[boveda/00-HUB-Cajathon|HUB]] · [[boveda/Tablero|Tablero]]
 
 **Estado:** Listo para revisión cruzada · **Prioridad:** #3 · **Eje:** 5 Open Finance y nuevos modelos de competencia
-**Pareja líder:** Antonio + Mariano · **Revisor:** David · **Owners (plataforma):** Roger, Arturo
+**Pareja líder:** Antonio + Mariano · **Revisor:** David · **Owners (plataforma):** (ver plataforma)
 
 ## Avance (automático)
 
@@ -27,7 +27,7 @@ Volver al [[boveda/00-HUB-Cajathon|HUB]] · [[boveda/Tablero|Tablero]]
 - [x] Generador de datos sintéticos con pruebas
 - [x] Texto de postulación
 
-`██████ 6/6` · [POR CONFIRMAR]: 16 · (supuesto): 13 · postulación: 836 palabras
+`██████ 6/6` · [POR CONFIRMAR]: 16 · (supuesto): 13 · postulación: 1138 palabras
 
 ## Documentos
 

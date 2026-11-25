@@ -1,6 +1,6 @@
 # Concepto de solución — RIE-03 · Anticipar el deterioro de pago antes del atraso
 
-> **v1 (pareja líder, 21.11.2026).** Prioridad **#1** · Pareja líder **David + Mariano** · Revisor **Glem** · Eje: 3 Riesgo, fraude y recuperaciones inteligentes · Owners (plataforma): Wilson, Harold, Paul.
+> **v1 (pareja líder, 21.11.2026).** Prioridad **#1** · Pareja líder **David + Mariano** · Revisor **Glem** · Eje: 3 Riesgo, fraude y recuperaciones inteligentes · Owners (plataforma): (ver plataforma).
 > Lo marcado **(supuesto)** o **[POR CONFIRMAR]** no viene de la Caja. No presentarlo como hecho. Material confidencial: repo privado.
 > Detalle de datos, arquitectura, plan del evento y backtest: `retos/RIE-03/panorama.md`.
 

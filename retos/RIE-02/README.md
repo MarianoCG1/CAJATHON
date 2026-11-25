@@ -6,7 +6,7 @@
 | **Eje** | 3 Riesgo, fraude y recuperaciones inteligentes |
 | **Pareja líder** | David + Mariano |
 | **Revisor (no escribe este reto)** | Antonio |
-| **Owners en la plataforma** | Carlos |
+| **Owners en la plataforma** | (ver plataforma) |
 | **Avance** | se calcula solo: `boveda/Tablero.md` |
 
 ## En una frase

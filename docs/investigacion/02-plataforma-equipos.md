@@ -27,14 +27,14 @@ Esto **no coincide** con los roles de CLAUDE.md (analista de datos, economista, 
 
 | Código | Eje | Título | Owner(s) (primer nombre) | Idea central |
 |---|---|---|---|---|
-| COM-01 | 2 Experiencia, retención y crecimiento | Encontrar oportunidades donde otros no ven clientes | Wilson | Priorizar zonas/segmentos con potencial de inclusión financiera con datos territoriales y señales digitales públicas |
-| COM-02 | 1 Productividad y transformación comercial | Incentivos que impulsan un desempeño integral | Wilson, Harold, Paul | Modelos de incentivos para analistas que equilibren crecimiento, calidad de cartera y colaboración |
-| NEG-01 | 4 Inclusión financiera y resiliencia | Cuotas que se adaptan al flujo del negocio | Luis | Alternativas de pago según estacionalidad de ingresos sin comprometer sostenibilidad |
-| NEG-02 | 5 Open Finance | Open Finance: competir en un ecosistema abierto | Roger, Arturo | Propuestas de valor con intercambio autorizado de información (APIs y consentimientos simulados) |
-| NEG-03 | 2 Experiencia, retención y crecimiento | Continuidad del vínculo cuando cambia el analista | Wilson, Harold, Paul | Anticipar desvinculación y asegurar continuidad al cambiar de analista |
-| RIE-01 | 4 Inclusión financiera y resiliencia | Microfinanzas resilientes al clima | Miriam | Anticipar riesgos climáticos sobre negocios financiados |
-| RIE-02 | 3 Riesgo, fraude y recuperaciones inteligentes | Descubrir redes de riesgo ocultas | Carlos | Detectar redes de fraude entre personas, negocios y solicitudes (grafos) |
-| RIE-03 | 3 Riesgo, fraude y recuperaciones inteligentes | Anticipar el deterioro de pago antes del atraso | Wilson, Harold, Paul | Alerta temprana de deterioro de capacidad de pago e intervención preventiva |
+| COM-01 | 2 Experiencia, retención y crecimiento | Encontrar oportunidades donde otros no ven clientes | (ver plataforma) | Priorizar zonas/segmentos con potencial de inclusión financiera con datos territoriales y señales digitales públicas |
+| COM-02 | 1 Productividad y transformación comercial | Incentivos que impulsan un desempeño integral | (ver plataforma) | Modelos de incentivos para analistas que equilibren crecimiento, calidad de cartera y colaboración |
+| NEG-01 | 4 Inclusión financiera y resiliencia | Cuotas que se adaptan al flujo del negocio | (ver plataforma) | Alternativas de pago según estacionalidad de ingresos sin comprometer sostenibilidad |
+| NEG-02 | 5 Open Finance | Open Finance: competir en un ecosistema abierto | (ver plataforma) | Propuestas de valor con intercambio autorizado de información (APIs y consentimientos simulados) |
+| NEG-03 | 2 Experiencia, retención y crecimiento | Continuidad del vínculo cuando cambia el analista | (ver plataforma) | Anticipar desvinculación y asegurar continuidad al cambiar de analista |
+| RIE-01 | 4 Inclusión financiera y resiliencia | Microfinanzas resilientes al clima | (ver plataforma) | Anticipar riesgos climáticos sobre negocios financiados |
+| RIE-02 | 3 Riesgo, fraude y recuperaciones inteligentes | Descubrir redes de riesgo ocultas | (ver plataforma) | Detectar redes de fraude entre personas, negocios y solicitudes (grafos) |
+| RIE-03 | 3 Riesgo, fraude y recuperaciones inteligentes | Anticipar el deterioro de pago antes del atraso | (ver plataforma) | Alerta temprana de deterioro de capacidad de pago e intervención preventiva |
 
 ### RIE-03 en detalle (el más cercano a Recuperaciones)
 
@@ -44,7 +44,7 @@ Esto **no coincide** con los roles de CLAUDE.md (analista de datos, economista, 
 
 ## 5. Panorama de la competencia
 
-- **8 desafíos publicados** (la web y las bases hablan de «seis»; hay más de los anunciados) para **18 equipos** → ~2 equipos por desafío si el reparto fuera parejo **(supuesto)**. Los owners son pocos: Wilson, Harold y Paul figuran en COM-02, NEG-03 y RIE-03, lo que sugiere que un mismo grupo lidera varios desafíos.
+- **8 desafíos publicados** (la web y las bases hablan de «seis»; hay más de los anunciados) para **18 equipos** → ~2 equipos por desafío si el reparto fuera parejo **(supuesto)**. Los owners son pocos: (ver plataforma) figuran en COM-02, NEG-03 y RIE-03, lo que sugiere que un mismo grupo lidera varios desafíos.
 - RIE-03 compite en el mismo eje que Recuperaciones. Si REC-01 se publica, es probable que se solape con RIE-03 (alerta temprana de mora) y con el tema de cobranza. **(supuesto)** Nuestra diferenciación debe estar en la **acción** (qué hace el gestor con cada caso: priorización, canal, mensaje, acuerdo de pago) y no en solo predecir la mora.
 - No hay información sobre qué equipos eligieron qué desafío. No buscarla por vías no oficiales.
 

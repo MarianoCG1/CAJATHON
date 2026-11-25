@@ -6,7 +6,7 @@
 | **Eje** | 1 Productividad y transformación comercial |
 | **Pareja líder** | David + Glem |
 | **Revisor (no escribe este reto)** | Mariano |
-| **Owners en la plataforma** | Wilson, Harold, Paul |
+| **Owners en la plataforma** | (ver plataforma) |
 | **Avance** | se calcula solo: `boveda/Tablero.md` |
 
 ## En una frase
