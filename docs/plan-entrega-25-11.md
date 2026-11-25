@@ -2,6 +2,8 @@
 
 Fuente de verdad del trabajo autónomo de Claude. **Cada tarea terminada se marca aquí con `[x]` y se hace commit.** Contexto de la plataforma: `docs/investigacion/07-plataforma-24-11.md`. Regla general: no se pregunta ni se espera confirmación; se decide, se anota la decisión y se sigue. **Lo único que no se hace sin un «sí» explícito de Mariano es enviar la postulación en la plataforma** (acción irreversible); todo lo demás se deja listo para pegar.
 
+> **Nota operativa (25.11, 07:21):** la sesión de la plataforma expiró y requiere que Mariano inicie sesión en el navegador integrado. Mientras no lo haga, **F1 no es posible**: no se escriben credenciales ni se intenta evitarlo; se anota y se sigue con las demás tareas sin marcar (I5, I6). Cuando la sesión esté activa, F1 pasa a ser lo primero.
+
 ## Hechos que condicionan la ruta
 
 - El formulario abre el **mié 25.11** (cierra jue 26.11, hora por confirmar). Hoy no existe: se desconocen campos, límites y adjuntos. Se prepara el contenido en **4 formatos** para cubrir cualquier forma: (1) campos por componente (los 8 de las bases), (2) texto corrido, (3) resumen corto, (4) ficha de una página (PDF).
