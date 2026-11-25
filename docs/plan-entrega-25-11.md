@@ -46,7 +46,7 @@ El texto corrido es `retos/<ID>/postulacion.md` (ya existe).
 ### 3. RIE-01 · Radar climático (prioridad #4)
 - [x] R1.1 Ajustes: cambiar el criterio de aceptación («superar a las reglas en 5 de 6 eventos») por uno defendible con la señal real (no peor que la mejor regla simple al mismo presupuesto, *lift* ≥ 2× sobre el azar con capacidad realista, rango p10–p90 que cubra la mora en ≥ 4 de 6); declarar el impacto como *lift* moderado; KPI principal K1.
 - [x] R1.2 Paquete de entrega.
-- [ ] R1.3 Revisión independiente y correcciones.
+- [x] R1.3 Revisión independiente y correcciones.
 - [x] R1.4 Ficha PDF y diagrama.
 
 ### 4. RIE-02 · Redes de riesgo (prioridad #5)
@@ -71,5 +71,7 @@ El texto corrido es `retos/<ID>/postulacion.md` (ya existe).
 
 ## Registro de decisiones tomadas sin consultar
 
+- 24.11 — RIE-01: la postulación compromete la **versión mínima** del panorama (K1 y K2 en 3 eventos) y presenta K3, K4 y seis eventos como ampliación; se declara el script de auditoría como preexistente (entrena un modelo de referencia solo para medir la dificultad de los datos); el bloque «Complejidad tecnológica» de RIE-01 se capturó de la plataforma y se alineó el concepto.
+- 24.11 — Se sacó de las postulaciones la frase «cola diaria» donde los datos son mensuales solo si el revisor lo pidió (ver revisiones).
 - 24.11 — La entrega se prepara en 4 formatos porque el formulario no existe todavía.
 - 24.11 — La revisión independiente la hace un agente revisor (no humano) por falta de tiempo; se rotula así.

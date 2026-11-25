@@ -3,32 +3,65 @@
   "resumen": "El analista elige un escenario climático y la herramienta separa, con rangos, la cartera expuesta, la probablemente afectada y la mora adicional esperada. Un mapa y un ranking priorizan zonas y clientes según las visitas que cada agencia puede hacer, y un agente propone acciones del catálogo con su evidencia. El gestor decide. Se mide con un backtest sobre eventos simulados con resultado oculto, frente a azar y reglas simples.",
   "cortos": {
     "1": "Lluvias intensas, inundaciones o sequías pueden afectar la actividad de los microempresarios, sobre todo en zonas vulnerables o con actividades sensibles al clima, y con ello sus ingresos y su capacidad de pago. El reto es anticipar esos riesgos y orientar estrategias preventivas que fortalezcan la resiliencia de los negocios financiados, sin asumir que estar expuesto equivale a pérdida o incumplimiento, reconociendo la incertidumbre de los escenarios y sustentando las recomendaciones en evidencia, con protección de datos y respeto de las políticas de riesgo de la Caja.",
-    "2": "Radar Climático de Cartera (nombre de trabajo). El analista elige un escenario (por ejemplo, inundación severa en la costa norte) y la herramienta responde tres preguntas por separado, cada una con rango: cuánta cartera está expuesta, cuánta es probablemente afectada y cuánta mora adicional cabe esperar. Un modelo combina amenaza en el sector del cliente, vulnerabilidad de su actividad, colchón financiero y carga de deuda. Mapa y ranking priorizan según las visitas que cada agencia puede hacer. Un agente propone, con evidencia, acciones del catálogo de la Caja. Decide siempre el gestor.",
-    "3": "KPI propuestos (a validar con el owner): porcentaje de cartera afectada identificado antes del evento con la capacidad disponible; precisión de la priorización frente a reglas simples (por zona o por monto); pérdida evitada estimada, siempre como rango; continuidad de los negocios afectados. Backtest reproducible sobre eventos simulados con resultado oculto, con y sin la solución. Línea base y cifra de impacto, por validar con el owner. Esperamos un efecto moderado y verificable (mejor que el azar y que las reglas simples con la capacidad real de visitas, con rangos calibrados), no una predicción casi perfecta.",
-    "4": "Python, FastAPI y React. Modelo estadístico calibrado con eventos históricos y validado en el tiempo; simulación de escenarios para entregar rangos; optimización para repartir acciones entre los gestores disponibles; agente con herramientas acotadas cuyo modelo de lenguaje es intercambiable (Claude, OpenAI o local) y que también funciona sin IA externa. El prototipo no se conecta a sistemas de la Caja. Uso de IA externa a confirmar con la política de la Caja. Los registros usan identificadores, sin datos personales.",
-    "5": "Antes del evento existen solo: un generador de datos totalmente sintéticos, con 40 pruebas automáticas, herramienta general del equipo creada el 21.11.2026 (titular: el equipo), y librerías abiertas bajo sus licencias. Sin datos reales ni código de terceros indebido. Si la Caja entrega datos o mapas, se usarán en su lugar. Modelo, escenarios, mapa, priorización, agente, API, interfaz y backtest se construyen durante el evento.",
-    "6": "Un solo flujo de punta a punta: elegir un escenario, ver cartera expuesta, afectada y en riesgo de mora con rango, priorizar en mapa y ranking respetando la capacidad de visitas de cada agencia, recibir el plan que sugiere el agente (solo acciones del catálogo, con evidencia y costo), aprobarlo o rechazarlo con registro, y medir el KPI con y sin la solución en seis eventos de prueba. Se desarrolla íntegramente en la fase presencial.",
+    "2": "Radar Climático de Cartera (nombre de trabajo). El analista elige un escenario (por ejemplo, inundación severa en la costa norte) y la herramienta responde tres preguntas por separado, cada una con rango: cuánta cartera está expuesta, cuánta es probablemente afectada y cuánta mora adicional cabe esperar. Un modelo combina amenaza en el sector del cliente, vulnerabilidad de su actividad, colchón financiero y carga de deuda. Mapa y ranking priorizan según las visitas que cada agencia puede hacer (capacidad supuesta). Un agente propone, con evidencia, acciones de un catálogo por validar con la Caja. Decide siempre el gestor.",
+    "3": "KPI propuestos (a validar con el owner): porcentaje de cartera afectada identificado antes del evento con la capacidad disponible; precisión de la priorización frente a reglas simples; pérdida evitada estimada (rango); continuidad de los negocios afectados. Backtest reproducible sobre eventos simulados con resultado oculto, con y sin la solución. Línea base y cifra de impacto, por validar. Evidencia preliminar sobre datos sintéticos propios (una semilla): con visitas a ≈ 8 % de la cartera, el azar captura ≈ 8 % de los incumplimientos y un modelo de referencia ≈ 20 % (≈ 2,5×). El efecto de las acciones se simula con efectividades supuestas.",
+    "4": "Python, FastAPI y React. Modelo estadístico calibrado con eventos históricos y validado en el tiempo; simulación de escenarios para entregar rangos; optimización para repartir acciones entre los gestores disponibles; agente con herramientas acotadas cuyo modelo de lenguaje es intercambiable (Claude, OpenAI o local) y que también funciona sin IA externa. El prototipo no se conectará a sistemas de la Caja (alcance del equipo). Uso de IA externa a confirmar con la política de la Caja. Los registros usan identificadores, sin datos personales.",
+    "5": "Antes del evento existen solo: (1) un generador de datos sintéticos de este desafío, con 40 pruebas automáticas, creado el 21.11.2026 (titular: el equipo); (2) un script de auditoría que mide la dificultad de esos datos y entrena un modelo de referencia solo con ese fin (no es el modelo de la solución); y (3) librerías abiertas bajo sus licencias. Sin datos reales ni código de terceros. Modelo, escenarios, mapa, priorización, agente, API, interfaz y backtest se construyen en el evento.",
+    "6": "Un solo flujo de punta a punta: elegir un escenario, ver cartera expuesta, afectada y en riesgo de mora con rango, priorizar en mapa y ranking respetando la capacidad de visitas de cada agencia, recibir el plan que sugiere el agente (solo acciones del catálogo, con evidencia y costo), aprobarlo o rechazarlo con registro, y medir el KPI con y sin la solución en tres a seis eventos de prueba. Se desarrolla íntegramente en la fase presencial.",
     "7": "Prototipo funcional de punta a punta, con pruebas automáticas, reporte de validación y una demostración de cinco minutos que termina con el número antes y después del KPI, incluido un evento más severo que la historia. Los resultados serán sobre datos sintéticos; el impacto real depende de los datos y las acciones de la Caja, a validar con el owner. Fuera de alcance: integración con el core, envío real de mensajes, ejecución de acciones y pronóstico meteorológico propio.",
-    "8": "32 horas-persona (cuatro personas, ocho horas cada una), con hitos de control y recortes ordenados, sin perder el flujo de punta a punta. Evidencia medida sobre datos sintéticos propios: con visitas de dos semanas (≈ 8 % de la cartera) el azar captura el 8 % de los incumplimientos, una fórmula de tres factores cerca del 18 % y un modelo entrenado con la historia el 20 %: el problema no es trivial. A confirmar con la Caja: KPI y línea base, datos disponibles, política de IA externa y catálogo de acciones permitido por sus políticas de riesgo."
+    "8": "32 horas-persona. Versión mínima comprometida, de punta a punta: escenario, tres cifras con rango, ranking en mapa de puntos, plan del agente con aprobación y backtest de K1 y K2 en al menos tres eventos; si alcanza, se suman simulación, IA, asignación óptima, K3, K4 y seis eventos. Medido sobre datos sintéticos propios: una fórmula simple de tres factores ya captura ≈ 18 % de los incumplimientos con visitas de dos semanas (azar ≈ 8 %), así que la ventaja del modelo está en la resolución de sector y en rangos calibrados. A confirmar con la Caja: KPI y línea base, datos, política de IA externa y catálogo de acciones."
   },
   "ficha": {
     "problema": "Lluvias, inundaciones y sequías pueden afectar a los microempresarios en zonas vulnerables o con actividades sensibles al clima. Hay que anticipar el riesgo sin asumir que exposición significa pérdida.",
-    "solucion": "Radar Climático de Cartera: ante un escenario, separa con rangos la cartera expuesta, la afectada y la mora adicional esperada; mapa y ranking según las visitas disponibles; un agente propone acciones del catálogo. Decide el gestor.",
-    "impacto": "KPI propuestos: cartera afectada identificada antes del evento, precisión frente a reglas simples, pérdida evitada estimada (rango) y continuidad de los negocios. Efecto moderado y verificable; línea base por confirmar.",
+    "solucion": "Radar Climático de Cartera: ante un escenario, separa con rangos la cartera expuesta, la afectada y la mora adicional esperada; mapa y ranking según las visitas disponibles; un agente propone acciones de un catálogo por validar. Decide el gestor.",
+    "impacto": "KPI propuestos: cartera afectada identificada antes del evento, precisión frente a reglas simples, pérdida evitada (rango, con efectividades supuestas) y continuidad. Medido sobre datos sintéticos propios: ≈ 2,5× sobre el azar con visitas a ≈ 8 % de la cartera. Línea base por confirmar.",
     "tecnologia": "Python, FastAPI, React; modelo calibrado con simulación de escenarios y optimización de visitas; agente con IA intercambiable y modo sin red.",
-    "preexistente": "Generador de datos sintéticos (40 pruebas), creado el 21.11.2026. Todo lo demás se construye en el evento.",
-    "critica": "Escenario, cartera expuesta, afectada y en mora con rango, ranking con capacidad de visitas, plan del agente aprobado o rechazado, y KPI con y sin la solución en seis eventos de prueba.",
-    "factibilidad": "32 horas-persona con recortes definidos. Medido sobre datos sintéticos propios: con visitas de dos semanas, el azar captura 8 % de los incumplimientos, una fórmula de tres factores cerca del 18 % y un modelo con historia el 20 %.",
-    "flujo": ["Escenario climático", "Amenaza local por sector", "Vulnerabilidad del negocio", "Impacto crediticio con rango", "Mapa y ranking con capacidad de visitas", "Agente propone acciones", "Gestor aprueba o rechaza", "Backtest con y sin la solución"]
+    "preexistente": "Generador de datos sintéticos (40 pruebas) y un script de auditoría de dificultad de los datos, creados antes del evento. Todo lo demás se construye en el evento.",
+    "critica": "Escenario, cartera expuesta, afectada y en mora con rango, ranking con capacidad de visitas, plan del agente aprobado o rechazado, y KPI con y sin la solución en tres a seis eventos.",
+    "factibilidad": "32 horas-persona; versión mínima comprometida (K1 y K2 en 3 eventos) y ampliada si alcanza. Medido sobre datos sintéticos propios: una fórmula de tres factores ya captura ≈ 18 % (azar ≈ 8 %); la ventaja del modelo está en el sector y en los rangos.",
+    "flujo": [
+      "Escenario climático",
+      "Amenaza local por sector",
+      "Vulnerabilidad del negocio",
+      "Impacto crediticio con rango",
+      "Mapa y ranking con capacidad de visitas",
+      "Agente propone acciones",
+      "Gestor aprueba o rechaza",
+      "Backtest con y sin la solución"
+    ]
   },
   "asumimos": [
-    {"tema": "KPI oficial y línea base", "supuesto": "No hay cifra. Proxies nuestros para el backtest: azar, regla de zona, zona + actividad y orden por saldo; no sustituyen la línea base de la Caja."},
-    {"tema": "Cómo se identifica hoy la cartera expuesta", "supuesto": "Se reacciona cuando aparece la mora, no antes (lectura del equipo)."},
-    {"tema": "Acciones preventivas viables", "supuesto": "Catálogo supuesto: alerta, visita, reprogramación, ampliación de plazo, capital de reposición, asesoría de continuidad y microseguro si existe; sujeto a las políticas de riesgo."},
-    {"tema": "Capacidad de gestores", "supuesto": "Visitas por semana por agencia según el generador sintético; valores reales por confirmar."},
-    {"tema": "Resolución geográfica", "supuesto": "Sector cuando hay datos; distrito si no. Ubicación del cliente por confirmar."},
-    {"tema": "Mecanismos del clima", "supuesto": "Daño a infraestructura, inventarios y acceso a mercados se resumen en la caída de ingreso del negocio; no se modelan por separado."},
-    {"tema": "IA externa", "supuesto": "Solo para redactar explicaciones, con datos sintéticos; modo sin red disponible; política real por confirmar."},
-    {"tema": "Datos de la Caja", "supuesto": "No se entregan: se usa el generador propio; si llegan datos o mapas, se usan en su lugar."}
+    {
+      "tema": "KPI oficial y línea base",
+      "supuesto": "No hay cifra. Proxies nuestros para el backtest: azar, regla de zona, zona + actividad y orden por saldo; no sustituyen la línea base de la Caja."
+    },
+    {
+      "tema": "Cómo se identifica hoy la cartera expuesta",
+      "supuesto": "Se reacciona cuando aparece la mora, no antes (lectura del equipo)."
+    },
+    {
+      "tema": "Acciones preventivas viables",
+      "supuesto": "Catálogo supuesto: alerta, visita, reprogramación, ampliación de plazo, capital de reposición, asesoría de continuidad y microseguro si existe; sujeto a las políticas de riesgo."
+    },
+    {
+      "tema": "Capacidad de gestores",
+      "supuesto": "Visitas por semana por agencia según el generador sintético; valores reales por confirmar."
+    },
+    {
+      "tema": "Resolución geográfica",
+      "supuesto": "Sector cuando hay datos; distrito si no. Ubicación del cliente por confirmar."
+    },
+    {
+      "tema": "Mecanismos del clima",
+      "supuesto": "Daño a infraestructura, inventarios y acceso a mercados se resumen en la caída de ingreso del negocio; no se modelan por separado."
+    },
+    {
+      "tema": "IA externa",
+      "supuesto": "Solo para redactar explicaciones, con datos sintéticos; modo sin red disponible; política real por confirmar."
+    },
+    {
+      "tema": "Datos de la Caja",
+      "supuesto": "No se entregan: se usa el generador propio; si llegan datos o mapas, se usan en su lugar."
+    }
   ]
 }

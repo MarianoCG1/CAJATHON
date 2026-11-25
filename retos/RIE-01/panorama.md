@@ -50,7 +50,7 @@ X e Y se obtienen en el evento; hoy no existen y no se estiman.
 3. El generador ya existe, es reproducible (semilla 20261203) y tiene **40 pruebas** que pasan. Es lo único preexistente; el modelo, los escenarios, el mapa y el agente se construyen en el evento.
 4. El dataset trae a propósito dos propiedades que el expediente pide respetar: **exposición ≠ pérdida ni incumplimiento** (el embudo se estrecha) e **incertidumbre de escenarios** (el evento real no coincide con el escenario ex ante). Añade una propiedad propia: **datos geográficos imperfectos** (el mapa visible es grueso y con error); el expediente solo dice que los datos son referenciales.
 5. La verdad del backtest vive aparte (`backtest/`) y no se usa para calibrar: evita que el KPI sea circular.
-6. La solución se mide con 3 KPI candidatos del v0 contra 4 líneas base (azar, regla de zona, regla de zona + actividad, por saldo); la línea base real de la Caja es **[POR CONFIRMAR]**.
+6. La solución se mide con 4 KPI candidatos (K1–K4) contra 4 líneas base (azar, regla de zona, regla de zona + actividad, por saldo); la línea base real de la Caja es **[POR CONFIRMAR]**.
 7. Si la Caja o fuentes públicas dan mapas reales, se sustituyen tablas sin cambiar el modelo (§b.5, **[POR CONFIRMAR]**; no se descargó nada).
 8. MVP revisado: **30,5 h de trabajo + 1,5 h de colchón = 32 h-persona** (4 × 8 h). Recortes ordenados en §d.
 9. Mayor riesgo técnico: **que el backtest sintético parezca un examen que nosotros mismos escribimos**. Mitigación en §e.4 y §f.
@@ -364,7 +364,7 @@ Cada persona queda en 8,0 h. El total no cambia porque el ahorro en datos (−2,
 
 | Bloque | Mariano (backend, agente) | Glem (datos, modelo) | Antonio (KPI, negocio) | David (UX, mapa, demo) |
 |---|---|---|---|---|
-| **D1 10:30–11:30** | Esqueleto FastAPI, contratos Pydantic, CSV → SQLite | Loader y chequeos; embudo de los datos | Fija escenarios, LGD, supuestos de acciones y fórmulas de los 3 KPI | Flujo en wireframe (escenario → mapa → ranking → plan → aprobar); elige librería de mapa |
+| **D1 10:30–11:30** | Esqueleto FastAPI, contratos Pydantic, CSV → SQLite | Loader y chequeos; embudo de los datos | Fija escenarios, LGD, supuestos de acciones y fórmulas de los 4 KPI (los dos últimos solo si hay tiempo) | Flujo en wireframe (escenario → mapa → ranking → plan → aprobar); elige librería de mapa |
 | **D1 11:30–13:00** | `/escenarios` y `/simular` con reglas simples | Amenaza local por sector (v0) calibrada con la historia | `evaluar_kpi.py`: líneas base B0–B3 y métricas M1–M3 | Selector de escenario, mapa por distrito, tabla |
 | ▶ **Hito H1 (13:00)** | Datos en SQLite; un escenario devuelve cartera por distrito y el mapa lo pinta | | | |
 | **D1 14:00–15:15** | Agente: herramientas y `DeterministaProvider` | Vulnerabilidad por cliente + impacto crediticio | Backtest v0 en un evento | Vista del gestor: ranking y ficha con «por qué» |
@@ -464,7 +464,7 @@ Qué lo hace menos arriesgado: los datos ya existen y están probados; el flujo 
 ## (e) Diseño del backtest del KPI contra eventos simulados
 
 ### e.1 Objetivo y KPI
-Medir, sobre eventos con verdad conocida, si la solución **identifica antes** la cartera que luego se deteriora y cuánto se reduce el daño con acciones. Son los 3 KPI candidatos del concepto (**supuesto, a validar con el owner**); el KPI oficial y su línea base son **[POR CONFIRMAR]** y no se inventan.
+Medir, sobre eventos con verdad conocida, si la solución **identifica antes** la cartera que luego se deteriora y cuánto se reduce el daño con acciones. Son los 4 KPI candidatos del concepto (K1–K4) (**supuesto, a validar con el owner**); el KPI oficial y su línea base son **[POR CONFIRMAR]** y no se inventan.
 
 Notación: `S_i` saldo total del cliente, `A_i` afectado, `M_i` incumple ≥ 30 días, `L(K)` lista priorizada ex ante de tamaño K.
 
@@ -626,7 +626,7 @@ Comparado palabra por palabra con `retos/RIE-01/expediente.md` (texto literal, a
 | D4 | Concepto §1; panorama resumen, (a) y (f) | Atribuía al expediente el riesgo «calidad de datos geográficos y climáticos» | No está. Solo dice que los datos son «referenciales» y sin compromiso de entrega. Venía de `riesgos_clave` del v0 | Reclasificado como riesgo **propio**; citada la nota de datos referenciales |
 | D5 | Concepto §1; panorama (c.5), (f) | Diluía la sección «Riesgos»: faltaban «sustentarse en evidencia», «protección de datos» y **«políticas de riesgo de Caja Trujillo»**; esta última no tenía mecanismo | Las tres son exigencias textuales | Las tres citadas; mecanismos: campo `evidencia` obligatorio, ids seudónimos, **catálogo cerrado de acciones [POR CONFIRMAR] con la Caja**; filas nuevas en riesgos; revisión con Compliance y Legal |
 | D6 | Concepto §1; panorama (c.5) | Atribuía la revisión humana a «los desafíos de riesgo» como restricción de este | RIE-01 **no** la menciona (RIE-02 y RIE-03 sí) | Se mantiene como criterio propio, etiquetado **(supuesto)** y con la fuente real |
-| D7 | Concepto §4 | «lo que el expediente exige más allá de un tablero» | El bloque «Complejidad tecnológica» de RIE-01 **no se capturó** | Marcado **[POR CONFIRMAR en la plataforma]**; se cita lo que dicen RIE-02, RIE-03 y NEG-02 |
+| D7 | Concepto §4 | «lo que el expediente exige más allá de un tablero» | El bloque «Complejidad tecnológica» de RIE-01 **no se había capturado** | Capturado el 24.11: pide capacidades avanzadas con valor real y desarrollo funcional; el concepto §4 se alineó |
 
 ### Huecos de cobertura
 
@@ -645,4 +645,4 @@ Comparado palabra por palabra con `retos/RIE-01/expediente.md` (texto literal, a
 * **Incertidumbre de escenarios:** rangos p10–p50–p90, eventos de backtest distintos del escenario ex ante y eventos más severos que la historia (con el límite H5). ✔
 
 ### Pendiente de confirmar en la plataforma
-Bloque «Complejidad tecnológica» de RIE-01 (D7); si los expedientes se actualizaron después del 19.11; formato del concepto y hora límite del 26.11.
+Si los expedientes se actualizaron después del 19.11; formato del concepto y hora límite del 26.11.

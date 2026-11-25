@@ -1,6 +1,6 @@
 # Concepto de solución — RIE-01 · Microfinanzas resilientes al clima
 
-> **BORRADOR v1 (21.11.2026).** Prioridad **#4** · Pareja líder **Antonio + Mariano** · Revisor: Glem (pendiente) · Eje: 4 Inclusión financiera y resiliencia · Owner (plataforma): Miriam.
+> **v1, ajustado el 24.11.2026 tras la auditoría de datos y la revisión independiente.** Prioridad **#4** · Pareja líder **Antonio + Mariano** · Revisor: Glem (pendiente) · Eje: 4 Inclusión financiera y resiliencia · Owner (plataforma): Miriam.
 > Lo marcado **(supuesto)** o **[POR CONFIRMAR]** no viene de la Caja. No presentarlo como hecho. Material confidencial: repo privado.
 > Detalle de datos, arquitectura, plan del evento y backtest: `retos/RIE-01/panorama.md`. Generador de datos sintéticos: `retos/RIE-01/datos/`.
 > Nombre de trabajo de la solución: **Radar Climático de Cartera** **(supuesto)**.
@@ -17,7 +17,7 @@ El problema tiene tres partes que conviene no mezclar:
 
 1. **Dónde está la cartera frente a cada amenaza**: no basta el distrito; dentro de un distrito la ribera de un río y una ladera de secano no sufren lo mismo.
 2. **Quién pierde ingreso y quién puede pagar igual**: un arrozal y una bodega responden distinto, y un cliente con otros ingresos, seguro o reservas aguanta más.
-3. **Qué hacer, a quién y con qué capacidad**: los gestores son pocos y las acciones cuestan.
+3. **Qué hacer, a quién y con qué capacidad**: la capacidad de los gestores y el costo de las acciones son limitados **(supuesto)**.
 
 Lo que el expediente pide respetar (sección «Riesgos»): considerar **la incertidumbre de los escenarios climáticos**; **evitar asumir que la exposición a una amenaza implica necesariamente pérdidas económicas o incumplimiento crediticio**; **sustentar las recomendaciones en evidencia**; y respetar **la protección de datos y las políticas de riesgo de Caja Trujillo**. Cada una tiene un mecanismo en el diseño (§2 y §6): rangos y eventos fuera de muestra; tres cifras separadas (expuesta, afectada, mora); evidencia trazable en cada recomendación; solo ids seudónimos y acciones del catálogo aprobado por la Caja **[POR CONFIRMAR: qué acciones permiten sus políticas de riesgo]**.
 
@@ -55,19 +55,19 @@ El expediente no publica KPI ni línea base. Los siguientes son **candidatos (su
 | **K1. Porcentaje de cartera afectada identificado anticipadamente por escenario** | `Σ_{i∈L} S_i·A_i / Σ_i S_i·A_i`, con una lista de tamaño limitado por la capacidad de gestores |
 | **K2. Precisión de la priorización frente a eventos simulados** | Precisión@K y *lift* frente a la tasa base del evento; captura de saldo en mora `Σ_{i∈L} S_i·M_i / Σ_i S_i·M_i` |
 | **K3. Pérdida esperada evitada con acciones preventivas (estimada)** | `Σ_{i∈L} S_i·M_i·LGD·efectividad − costo de acciones`, reportada como **rango**; depende de supuestos de efectividad y de LGD **[POR CONFIRMAR]** |
-| **K4. Continuidad de los negocios afectados** (resiliencia del cliente, no solo de la cartera) | Entre los clientes afectados, % que se mantiene al día (no cae en mora ≥ 30 días), con y sin acciones; sale de `afectado` y `incumple_30d`. Responde al resultado esperado «proteger la continuidad de los negocios». Candidato nuestro |
+| **K4. Continuidad de los negocios afectados** (resiliencia del cliente, no solo de la cartera) | Entre los clientes afectados, % que se mantiene al día (no cae en mora ≥ 30 días), con y sin acciones; sale de `afectado` y `incumple_30d`. Responde al resultado esperado «proteger la continuidad de los negocios». Candidato nuestro; el efecto de las acciones se simula con efectividades supuestas **(supuesto)** |
 
 - **Línea base:** **[POR CONFIRMAR con el owner]** (cómo se identifica hoy la cartera expuesta). Para el backtest se comparan **proxies nuestros**: azar, regla de zona (distritos de amenaza alta), regla de zona + actividad sensible y orden por saldo. No sustituyen la línea base oficial.
 - **Cifra de impacto esperada:** **[POR COMPLETAR cuando exista la línea base; no inventar]**. No se promete un porcentaje.
 - **Método de medición:** backtest sobre datos sintéticos, con y sin la solución, reproducible con semilla fija; seis eventos de prueba (lluvia, inundación y sequía, de leve a severa) con verdad oculta, calibración solo con eventos históricos, y réplica en varias semillas. Procedimiento completo en `retos/RIE-01/panorama.md` §e.
 - **Qué mide y qué no:** el backtest sintético prueba la **mecánica** de identificar y priorizar, no el nivel de impacto en la Caja. Con datos reales se repetiría la calibración **[POR CONFIRMAR]**.
-- **Criterio interno de aceptación (supuesto, no es meta de impacto; ajustado el 24.11 tras la auditoría de datos):** (1) superar a las reglas de zona (B1) y de saldo (B3) en captura de saldo en mora, al mismo presupuesto, en al menos 5 de 6 eventos; (2) no quedar por debajo de la regla de zona + actividad (B2) más allá del ruido entre semillas, porque esa regla ya captura buena parte de la señal; (3) un *lift* de al menos 2× sobre el azar con la capacidad real de visitas; y (4) que el rango p10–p90 cubra la mora total en al menos 4 de 6. Si no se cumple, se reporta tal cual. **Qué esperar:** la auditoría (`docs/investigacion/06-auditoria-datos.md`) mide que, con visitas de dos semanas (≈ 8 % de la cartera), el azar captura ≈ 8 % de los incumplimientos, una fórmula de tres factores ≈ 17.5 % y un modelo entrenado en la historia ≈ 19.6 %; el techo con la susceptibilidad real del sector es ≈ 24 %. El impacto demostrable es un *lift* moderado (≈ 2.5×), y la diferencia defendible frente a las reglas es la resolución de sector y la incertidumbre calibrada, no la precisión puntual.
+- **Criterio interno de aceptación (supuesto, no es meta de impacto; ajustado el 24.11 tras la auditoría de datos):** (1) superar a las reglas de zona (B1) y de saldo (B3) en captura de saldo en mora, al mismo presupuesto, en todos los eventos medidos salvo uno (5 de 6 si se miden los seis; 2 de 3 si solo se miden tres); (2) no quedar por debajo de la regla de zona + actividad (B2) más allá del ruido entre semillas, porque esa regla ya captura buena parte de la señal; (3) un *lift* medio de al menos 2× sobre el azar en los eventos medidos, con la capacidad real de visitas; y (4) que el rango p10–p90 cubra la mora total en al menos 4 de 6. Si no se cumple, se reporta tal cual. **Qué esperar** (cifras sobre datos sintéticos propios, una sola semilla, intensidad nominal del escenario): la auditoría (`docs/investigacion/06-auditoria-datos.md`) mide que, con visitas de dos semanas (≈ 8 % de la cartera), el azar captura ≈ 8 % de los incumplimientos, una fórmula de tres factores ≈ 17.5 % y un modelo entrenado en la historia ≈ 19.6 %; el techo con la susceptibilidad real del sector es ≈ 24 %. El impacto demostrable es un *lift* moderado (≈ 2.5×), y la diferencia defendible frente a las reglas es la resolución de sector y la incertidumbre calibrada, no la precisión puntual.
 
 ## 4. Enfoque tecnológico
 
 **Pila:** Python 3.11+, FastAPI, Pydantic v2, pandas, scikit-learn (SciPy para la asignación), SQLite, React + Vite + Tailwind, pytest, ruff.
 
-**Dónde está la complejidad real.** El bloque «Complejidad tecnológica» de RIE-01 no se capturó **[POR CONFIRMAR en la plataforma]**; en RIE-02, RIE-03 y NEG-02 dice que no basta con chatbots genéricos, dashboards, formularios o automatizaciones básicas, y asumimos lo mismo aquí:
+**Dónde está la complejidad real.** El bloque «Complejidad tecnológica» de RIE-01 no se capturó se capturó el 24.11 y pide capacidades avanzadas (IA, agentes, analítica predictiva, optimización o automatización avanzada) cuando aporten valor real, no basta con chatbots genéricos, dashboards, formularios o automatizaciones básicas, y exige demostrar desarrollo funcional, integración y valor diferencial frente a soluciones convencionales:
 
 | Componente | Técnica | Por qué aporta valor |
 |---|---|---|
@@ -87,7 +87,7 @@ Hay un conjunto de datos sintéticos propio (distritos del norte del Perú, clie
 
 Se declara en `docs/preexistente.md` (texto propuesto en `retos/RIE-01/panorama.md` §j):
 
-- **Generador de datos sintéticos RIE-01** (`retos/RIE-01/datos/generar.py`) y sus **40 pruebas**, más los **CSV** que produce (`retos/RIE-01/datos/sintetico/`). Titular: equipo; creado el 21.11.2026; sin datos reales ni código de empleadores. Es una herramienta general: contiene los datos y un diagnóstico de calidad del dataset, pero **no** el modelo de exposición, los escenarios operativos, el mapa ni el agente.
+- **Generador de datos sintéticos RIE-01** (`retos/RIE-01/datos/generar.py`) y sus **40 pruebas**, más los **CSV** que produce (`retos/RIE-01/datos/sintetico/`). Titular: equipo; creado el 21.11.2026; sin datos reales ni código de empleadores. Es el generador de este desafío: contiene los datos y un diagnóstico de calidad del dataset, pero **no** el modelo de exposición, los escenarios operativos, el mapa ni el agente.
 - Librerías de código abierto (FastAPI, pandas, scikit-learn, SciPy, React, etc.) bajo sus licencias.
 - Estructura del repositorio y herramientas de planificación del equipo (no forman parte del producto).
 - **No se reutiliza código de empleadores ni de otros clientes. No se usan datos reales ni personales.** Los nombres de distritos son geografía pública con coordenadas aproximadas; los parámetros del mundo sintético son supuestos propios, no datos de la Caja.
@@ -131,7 +131,7 @@ Incluye pruebas automáticas (ver `retos/RIE-01/panorama.md` §i), reporte de va
 - **Cobertura de habilidades del equipo:** 83% (modelo de sinergia, con supuestos). Sin brechas relevantes.
 - **Brechas de la pareja líder** (las cubre el resto del equipo): diseño del mapa y del flujo del gestor (2 h) → David.
 - **Dependencias:** datos o mapas de la Caja (el expediente aclara que son referenciales y no implican compromiso de entrega: si no llegan, se usa el generador, ya listo); política de IA externa **[POR CONFIRMAR]** (hay variante determinista); KPI y línea base **[POR CONFIRMAR]**; catálogo real de acciones y su costo **[POR CONFIRMAR]**; si hay conexión a internet en el Hub para teselas de mapa y LLM externo (la demo no depende de ello).
-- **Recorte si falta tiempo** (en orden): teselas ⇒ puntos en SVG (≈ 1,0 h); redacción con LLM ⇒ plantillas deterministas (≈ 2,0 h); Monte Carlo ⇒ rango analítico (≈ 1,0 h); asignación entera ⇒ voraz (≈ 0,5 h); sequía fuera de la demo (≈ 0,5 h); sector ⇒ solo distrito (≈ 1,5 h, último recurso). **Núcleo que no se recorta:** escenario → tres cifras con rango → ranking en mapa → plan con aprobación → backtest con un KPI frente a una línea base.
+- **Recorte si falta tiempo** (en orden): teselas ⇒ puntos en SVG (≈ 1,0 h); redacción con LLM ⇒ plantillas deterministas (≈ 2,0 h); Monte Carlo ⇒ rango analítico (≈ 1,0 h); asignación entera ⇒ voraz (≈ 0,5 h); sequía fuera de la demo (≈ 0,5 h); sector ⇒ solo distrito (≈ 1,5 h, último recurso). En la prueba pesimista (`panorama.md` §d.2) el esfuerzo sube a 45 h y se necesitan además tres recortes: backtest de 3 eventos con K1 y K2, aprobación en memoria y tercera capa simplificada; **la postulación compromete esa versión mínima** y presenta el resto como ampliación. **Núcleo que no se recorta:** escenario → tres cifras con rango → ranking en mapa → plan con aprobación → backtest con un KPI frente a una línea base.
 - **Riesgos principales:** confundir exposición con pérdida (tres capas y rangos); backtest circular (verdad oculta, eventos fuera de muestra, ablaciones y réplica por semillas); parámetros de acciones inventados (rangos y sensibilidad, validar con el owner). Tabla completa en el panorama §f.
 
 ---
@@ -182,7 +182,7 @@ Si la organización no responde, seguimos con los **supuestos marcados** en este
 - [ ] Revisado por alguien que no lo escribió.
 
 Puntos que el revisor debería mirar con especial atención:
-1. El problema (§1) ya se cotejó con `retos/RIE-01/expediente.md` (ver «Cotejo con el expediente» al final del panorama). Falta confirmar el bloque «Complejidad tecnológica», no capturado.
+1. El problema (§1) ya se cotejó con `retos/RIE-01/expediente.md` (ver «Cotejo con el expediente» al final del panorama). El bloque «Complejidad tecnológica» se capturó el 24.11 (ver §4).
 2. ¿Los KPI K1–K4 son los que pediría el owner? Son candidatos nuestros.
 3. ¿La separación en tres capas (expuesta, afectada, mora) se entiende sin explicación oral?
 4. ¿Las 32 h son realistas? El generador reduce la tarea de datos; modelo y backtest suben.
