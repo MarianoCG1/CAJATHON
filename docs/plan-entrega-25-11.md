@@ -58,7 +58,7 @@ El texto corrido es `retos/<ID>/postulacion.md` (ya existe).
 ## Cierre del día
 
 - [x] Z1 `docs/preexistente.md`, `boveda/Tablero.md`, `README` y `retos/README.md` al día; pruebas en verde.
-- [ ] Z2 (commit local hecho; **push bloqueado**: ver registro) Commit y push de lo terminado (sin textos literales de expedientes, FAQ ni tickets).
+- [x] Z2 (push autorizado por Mariano el 25.11 y hecho hasta 89c0ee4) Commit y push de lo terminado (sin textos literales de expedientes, FAQ ni tickets).
 - [x] Z3 Mensaje corto para el chat del equipo con el estado de cada reto (queda como archivo `docs/mensaje-estado-24-11.md`; no se envía).
 
 ## 25.11 — cuando abra el formulario
@@ -70,6 +70,8 @@ El texto corrido es `retos/<ID>/postulacion.md` (ya existe).
 - [ ] F4 Dejar a Mariano una nota con los 3 pasos exactos para enviar. **Enviar solo si Mariano lo autoriza explícitamente en el chat.**
 
 ## Registro de decisiones tomadas sin consultar
+
+- 25.11 — Mariano autorizó el push en el chat; se hizo (13 commits, hasta `89c0ee4`). El repo seguía público al momento del push. Los commits posteriores quedan locales salvo nueva autorización.
 
 - 24.11 — **Push bloqueado.** El sistema de permisos negó `git push` por posible filtración de información sensible: el repositorio de GitHub sigue **público** y los commits llevan contenido derivado de los expedientes de la Caja. No se intentó evitar el bloqueo. Todo queda en commits locales hasta que Mariano pase el repo a privado o autorice el push en el chat.
 - 24.11 — NEG-02: premisa de deuda externa pasa a supuesto (centrales de riesgo), 31 % rotulado con la tasa de consentimiento supuesta (65 %), script de auditoría declarado como preexistente, plan pesimista de 41 h dicho en el texto.
