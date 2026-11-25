@@ -36,6 +36,10 @@ El orden sale de `scripts/sinergia/` (cobertura de habilidades de la pareja, sin
 
 Calendario completo y reglas: `docs/plan-conceptos.md`.
 
+## Paquete de entrega (25–26.11)
+
+Los cuatro retos desarrollados tienen `retos/<ID>/entrega/` con todo lo necesario para postular: `campos.md` (los 8 componentes del Solution Concept, en versión corta y completa), `resumen-corto.md`, `ficha-1-pagina.pdf`, `supuestos-sin-confirmar.md` y `checklist-envio.md`. Se regeneran con `python scripts/entrega/armar_paquete.py <ID>` y `python scripts/entrega/ficha_pdf.py <ID>` a partir de `postulacion.md` y `entrega/cortos.json`. El plan y su avance están en `docs/plan-entrega-25-11.md`.
+
 ## Carga de trabajo (aviso)
 
 Los cuatro retos sin desarrollar recaen en Glem, Antonio y David (con Mariano revisando COM-02); Mariano ya concentró los cuatro desarrollados. Mientras revisan, Mariano puede apoyar a quien se atrase, empezando por NEG-01.

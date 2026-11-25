@@ -66,6 +66,7 @@ El texto corrido es `retos/<ID>/postulacion.md` (ya existe).
 - [ ] F1 Leer el formulario en el navegador integrado (campos, límites, adjuntos, si admite varios conceptos y la hora límite) **sin enviar nada**. Anotarlo en `docs/investigacion/07-plataforma-24-11.md` §1.
 - [ ] F2 Adaptar el paquete a esos campos: un archivo `retos/<ID>/entrega/pegar-en-formulario.md` por reto, ya recortado a los límites reales.
 - [ ] F3 Si admite uno solo: dejar listo solo RIE-03 y marcar los demás como material de portafolio.
+- [ ] F5 (opcional, solo si el formulario admite enlace o adjunto de video) Preparar un explicativo de 45–60 s de RIE-03 con las skills de HyperFrames; si no lo admite, se deja para la fase presencial.
 - [ ] F4 Dejar a Mariano una nota con los 3 pasos exactos para enviar. **Enviar solo si Mariano lo autoriza explícitamente en el chat.**
 
 ## Registro de decisiones tomadas sin consultar
