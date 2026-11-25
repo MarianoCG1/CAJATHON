@@ -1,0 +1,17 @@
+{
+  "colores": {
+    "tinta": "#0E1A3A",
+    "tinta-2": "#16264F",
+    "maiz": "#F4B63F",
+    "turquesa": "#1BB5A8",
+    "terracota": "#E4572E",
+    "papel": "#F7F3EA",
+    "piedra": "#5C6B7A",
+    "niebla": "#DCE3EA"
+  },
+  "tipografia": {
+    "titulos": "Sora",
+    "texto": "Inter",
+    "respaldo": "'Segoe UI', Arial, sans-serif"
+  }
+}

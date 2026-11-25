@@ -30,3 +30,7 @@ dist/
 # --- Sistema ---
 .DS_Store
 Thumbs.db
+
+# --- Video: salidas renderizadas ---
+video/**/out/
+video/**/node_modules/

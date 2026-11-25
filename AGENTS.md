@@ -38,6 +38,7 @@ retos/
     panorama.md      cómo se abastecería: datos, modelo, arquitectura, plan del evento, KPI, riesgos, cotejo
     postulacion.md   texto para pegar en la plataforma
     datos/           generador de datos sintéticos + pruebas (salida en datos/sintetico/, ignorada)
+identidad/           guía de marca de Yupana Labs, logos SVG, patrón y tokens (CSS y JSON)
 docs/
   investigacion/     bases, plataforma, equipo, sinergia, alcance comparado
   plan-conceptos.md  flujo de trabajo y calendario 21–26.11
@@ -67,7 +68,8 @@ backend/ frontend/   esqueleto vacío para el evento; NO poner aquí la funciona
 6. **Lo simple y demostrable gana.** Si algo no cabe en ~8 h por persona en el evento, dilo en el panorama.
 7. **El expediente manda.** Si el concepto y el expediente literal chocan, se corrige el concepto.
 8. **Una persona, una carpeta.** Edita solo los retos que lideras o revisas; si necesitas tocar otro, avisa a la pareja líder.
-9. **No ejecutes por el humano** acciones externas (enviar mensajes a la organización, postular en la plataforma, publicar): prepara el texto y deja que la persona lo haga.
+9. **Identidad Yupana Labs.** Todo material del equipo (decks, fichas, videos, documentos) usa la identidad de `identidad/README.md` (logo, paleta, tipografía y tono). Se regenera con `python scripts/identidad/generar_identidad.py`; no se improvisan colores ni logos.
+10. **No ejecutes por el humano** acciones externas (enviar mensajes a la organización, postular en la plataforma, publicar): prepara el texto y deja que la persona lo haga.
 
 ## 6. Comandos
 

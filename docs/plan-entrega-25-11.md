@@ -65,6 +65,19 @@ Contenido: storytelling (persona ficticia, antes y después), guion de demo con 
 - [x] P4 RIE-02: `contenido.json` (pantallas de tipo `grafo` y `caso`), generar y revisar las láminas.
 - [x] P5 Declarar `scripts/presentacion/` en `docs/preexistente.md`, enlazar el material desde `retos/README.md`, regenerar el tablero y correr las pruebas.
 
+## Identidad Yupana Labs y presentaciones vivas (pedido de Mariano el 25.11)
+
+Identidad en `identidad/` (guía, logos, patrón, tokens). Todo material usa esa identidad. Los decks en PDF y las fichas ya la aplican; `deck.html` se navega con flechas y tiene animaciones de entrada.
+
+- [x] I1 Identidad de marca: guía, logos SVG, patrón y tokens (`scripts/identidad/generar_identidad.py`).
+- [x] I2 Decks y fichas de los cuatro retos con la identidad (portada oscura con patrón, láminas claras y oscuras, franja de tres colores, versión HTML animada).
+- [ ] I3 Video de marca de Yupana Labs (sting de 6–8 s) con HyperFrames (`/motion-graphics`), con la marca de yupana que se llena columna por columna. Proyecto en `video/marca/`; render a MP4 en `video/marca/out/`.
+- [ ] I4 Explicativo animado de RIE-03 (30–45 s, sin narración, con subtítulos en pantalla) con HyperFrames (`/general-video` o `/faceless-explainer`), con la historia de Rosa, la cola priorizada, la evidencia y el cierre. Proyecto en `video/rie-03/`. Usar el guion de `retos/RIE-03/presentacion/storytelling.md`. Sin cifras que no estén en el deck.
+- [ ] I5 Explicativos de NEG-02, RIE-01 y RIE-02 con el mismo método y la misma identidad (uno por tarea).
+- [ ] I6 Revisar los videos fotograma a fotograma (capturas), verificar que no afirmen nada no medido y registrar en el plan la herramienta y el comando de render.
+
+Reglas: no subir los MP4 a servicios externos; si pesan mucho, no versionarlos (`video/**/out/` en `.gitignore`) y dejar el comando de render. Declarar `video/` como preexistente.
+
 ## Cierre del día
 
 - [x] Z1 `docs/preexistente.md`, `boveda/Tablero.md`, `README` y `retos/README.md` al día; pruebas en verde.

@@ -32,7 +32,9 @@ NAVEGADORES = [
     r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
     r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
 ]
-TEAL, NAVY, GRIS, ROJO, AMBAR = "#0b6e6e", "#102a43", "#627d98", "#c0392b", "#d98e04"
+PATRON_URI = (RAIZ / 'identidad' / 'patron-yupana.svg').resolve().as_uri()
+TEAL, NAVY, GRIS, ROJO, AMBAR = "#0F8F85", "#0E1A3A", "#5C6B7A", "#E4572E", "#D98E04"
+ORO, TURQ, PAPEL = "#F4B63F", "#1BB5A8", "#F7F3EA"
 
 
 def esc(t) -> str:
@@ -234,44 +236,94 @@ def flujo_svg(pasos: list[str]) -> str:
 # ---------------------------------------------------------------------------
 
 CSS = f"""
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap');
 @page {{ size: 1280px 720px; margin: 0; }}
 * {{ box-sizing: border-box; }}
-body {{ margin: 0; font-family: 'Segoe UI', Arial, sans-serif; color: #1f2933; background: #fff; }}
-.lam {{ width: 1280px; height: 720px; padding: 46px 64px 40px; position: relative; overflow: hidden; page-break-after: always; break-after: page; }}
+body {{ margin: 0; font-family: Inter, 'Segoe UI', Arial, sans-serif; color: {NAVY}; background: #fff; }}
+h1, h2, h3, .cifra b, .paso .n {{ font-family: Sora, 'Segoe UI', Arial, sans-serif; }}
+.lam {{ width: 1280px; height: 720px; padding: 58px 72px 44px; position: relative; overflow: hidden; page-break-after: always; break-after: page; background: {PAPEL}; }}
 .lam:last-child {{ page-break-after: auto; break-after: auto; }}
-.marca {{ position: absolute; top: 20px; left: 64px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: {TEAL}; font-weight: 600; }}
-.num {{ position: absolute; bottom: 18px; right: 64px; font-size: 12px; color: {GRIS}; }}
-.pie {{ position: absolute; bottom: 18px; left: 64px; font-size: 11px; color: {GRIS}; }}
-h1 {{ font-size: 44px; line-height: 1.1; margin: 0 0 14px; color: {NAVY}; }}
-h2 {{ font-size: 32px; line-height: 1.15; margin: 14px 0 18px; color: {NAVY}; }}
-h3 {{ font-size: 15px; margin: 0 0 8px; color: {TEAL}; text-transform: uppercase; letter-spacing: .08em; }}
-p, li {{ font-size: 19px; line-height: 1.42; }}
+.lam::before {{ content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 6px; background: linear-gradient(90deg, {ORO} 0 38%, {TURQ} 38% 70%, {NAVY} 70%); }}
+.marca {{ position: absolute; top: 24px; left: 72px; display: flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: {GRIS}; font-weight: 600; }}
+.marca svg {{ height: 22px; width: auto; }}
+.num {{ position: absolute; bottom: 20px; right: 72px; font-size: 13px; color: {GRIS}; font-weight: 600; }}
+.pie {{ position: absolute; bottom: 20px; left: 72px; font-size: 11px; color: {GRIS}; }}
+h1 {{ font-size: 54px; line-height: 1.05; margin: 0 0 16px; letter-spacing: -.02em; }}
+h2 {{ font-size: 34px; line-height: 1.12; margin: 10px 0 20px; letter-spacing: -.015em; }}
+h3 {{ font-size: 13px; margin: 0 0 10px; color: {TEAL}; text-transform: uppercase; letter-spacing: .14em; font-weight: 700; }}
+p, li {{ font-size: 19px; line-height: 1.45; }}
+li::marker {{ color: {ORO}; }}
 ul {{ margin: 0; padding-left: 22px; }}
-.portada {{ background: linear-gradient(135deg, {NAVY} 0%, #0b4f5c 100%); color: #fff; }}
-.portada h1 {{ color: #fff; font-size: 52px; max-width: 980px; margin-top: 150px; }}
-.portada .lema {{ font-size: 24px; color: #bfe3e3; max-width: 900px; }}
-.portada .marca, .portada .pie, .portada .num {{ color: #9ed3d3; }}
+.oscura {{ background: {NAVY}; color: #fff; }}
+.oscura h2, .oscura p, .oscura li {{ color: #fff; }}
+.oscura h3 {{ color: {ORO}; }}
+.oscura .marca, .oscura .pie, .oscura .num {{ color: #9FB3C8; }}
+.oscura .nota {{ color: #9FB3C8; }}
+.portada {{ background: {NAVY}; color: #fff; }}
+.portada::after {{ content: ""; position: absolute; inset: 0; background: url('PATRON') center/cover no-repeat; opacity: 1; }}
+.portada > h1, .portada > .lema {{ position: relative; z-index: 2; }}
+.portada .pie, .portada .num {{ z-index: 3; }}
+.portada .marca {{ display: none; }}
+.momento {{ margin-top: 26px; border-radius: 16px; padding: 22px 28px; background: {NAVY}; color: #fff; font-size: 23px; line-height: 1.42; border-left: 8px solid {ORO}; }}
+.momento h3 {{ color: {ORO}; }}
+.portada h1 {{ color: #fff; font-size: 58px; max-width: 1000px; margin-top: 170px; }}
+.portada .lema {{ font-size: 24px; color: #CFE3F0; max-width: 940px; line-height: 1.4; }}
+.portada .marca, .portada .pie, .portada .num {{ color: #9FB3C8; }}
+.portada .logo-grande {{ position: absolute; top: 56px; left: 72px; height: 64px; z-index: 3; }}
 .dos {{ display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }}
-.caja {{ border: 1px solid #d9e2ec; border-radius: 12px; padding: 18px 22px; }}
-.caja.antes {{ background: #fff5f5; border-color: #f5c6c6; }}
-.caja.despues {{ background: #eef6f6; border-color: #b9dcdc; }}
-.cifras {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 10px 0 18px; }}
-.cifra {{ border: 1px solid #d9e2ec; border-radius: 12px; padding: 16px 20px; }}
-.cifra b {{ display: block; font-size: 40px; color: {TEAL}; line-height: 1.05; }}
-.cifra span {{ font-size: 15px; color: {GRIS}; }}
+.caja {{ border: 1px solid #DCE3EA; border-radius: 16px; padding: 20px 24px; background: #fff; box-shadow: 0 6px 18px rgba(14,26,58,.06); }}
+.caja.antes {{ background: #FFF4EF; border-color: #F4C9B8; border-left: 6px solid {ROJO}; }}
+.caja.despues {{ background: #EAF8F6; border-color: #BFE6E1; border-left: 6px solid {TURQ}; }}
+.cifras {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin: 10px 0 22px; }}
+.cifra {{ border-radius: 16px; padding: 18px 22px; background: #16264F; border: 1px solid rgba(255,255,255,.12); }}
+.cifra b {{ display: block; font-size: 52px; color: {ORO}; line-height: 1.02; letter-spacing: -.02em; }}
+.cifra span {{ font-size: 15px; color: #CFE3F0; }}
 table {{ border-collapse: collapse; width: 100%; font-size: 17px; }}
-th {{ text-align: left; color: {TEAL}; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; padding: 6px 10px; border-bottom: 2px solid #d9e2ec; }}
-td {{ padding: 8px 10px; border-bottom: 1px solid #e4ebf1; vertical-align: top; }}
-.nota {{ font-size: 14px; color: {GRIS}; margin-top: 10px; }}
-.paso {{ display: grid; grid-template-columns: 44px 1fr; gap: 14px; margin-bottom: 11px; align-items: start; }}
-.paso .n {{ width: 44px; height: 44px; border-radius: 50%; background: {TEAL}; color: #fff; font-weight: 700; font-size: 20px; display: flex; align-items: center; justify-content: center; }}
-.paso b {{ font-size: 18px; color: {NAVY}; }} .paso span {{ font-size: 16px; color: #3e4c59; display: block; }}
+th {{ text-align: left; color: {TEAL}; font-size: 12px; text-transform: uppercase; letter-spacing: .14em; padding: 6px 10px; border-bottom: 2px solid {ORO}; }}
+td {{ padding: 8px 10px; border-bottom: 1px solid #E4DFD2; vertical-align: top; }}
+.nota {{ font-size: 14px; color: {GRIS}; margin-top: 12px; }}
+.paso {{ display: grid; grid-template-columns: 46px 1fr; gap: 14px; margin-bottom: 12px; align-items: start; }}
+.paso .n {{ width: 46px; height: 46px; border-radius: 50%; background: {ORO}; color: {NAVY}; font-weight: 800; font-size: 20px; display: flex; align-items: center; justify-content: center; }}
+.paso b {{ font-size: 18px; color: {NAVY}; }} .paso span {{ font-size: 16px; color: #3E4C59; display: block; }}
+@keyframes subir {{ from {{ opacity: 0; transform: translateY(18px); }} to {{ opacity: 1; transform: none; }} }}
+body.nav {{ background: #050B1D; overflow: hidden; }}
+body.nav .lam {{ position: absolute; left: 50%; top: 50%; display: none; transform-origin: 0 0; }}
+body.nav .lam.on {{ display: block; }}
+body.nav .lam.on > *:not(.marca):not(.pie):not(.num):not(.logo-grande) {{ animation: subir .6s both; }}
+body.nav .lam.on > *:nth-child(3) {{ animation-delay: .05s; }} body.nav .lam.on > *:nth-child(4) {{ animation-delay: .18s; }}
+body.nav .lam.on > *:nth-child(5) {{ animation-delay: .3s; }} body.nav .lam.on > *:nth-child(6) {{ animation-delay: .42s; }}
+@media print {{ body.nav {{ background: #fff; overflow: visible; }} body.nav .lam {{ position: relative !important; left: auto !important; top: auto !important; display: block !important; transform: none !important; }}
+  body.nav .lam.on > * {{ animation: none !important; }} }}
 """
 
 
+LOGO_MARCA = None
+
+
+def _logo_mini() -> str:
+    global LOGO_MARCA
+    if LOGO_MARCA is None:
+        s = (RAIZ / "identidad" / "logo-marca.svg").read_text(encoding="utf-8")
+        LOGO_MARCA = re.sub(r'\swidth="\d+" height="\d+"', "", s).strip()
+    return LOGO_MARCA
+
+
 def lamina(num: int, cuerpo: str, clase="", pie="") -> str:
-    return (f'<section class="lam {clase}"><div class="marca">Yupana Labs · Cajathon 2026 · Concepto de solución</div>{cuerpo}'
+    grande = ""
+    if clase == "portada":
+        h = (RAIZ / "identidad" / "logo-horizontal.svg").read_text(encoding="utf-8")
+        grande = '<div class="logo-grande">' + re.sub(r'\swidth="\d+" height="\d+"', ' height="64"', h).strip() + "</div>"
+    return (f'<section class="lam {clase}"><div class="marca">{_logo_mini()}Yupana Labs · Cajathon 2026 · Concepto de solución</div>{grande}{cuerpo}'
             f'<div class="pie">{esc(pie)}</div><div class="num">{num}</div></section>')
+
+
+SCRIPT_NAV = """<script>
+(function(){var L=[].slice.call(document.querySelectorAll('.lam'));if(!L.length)return;document.body.classList.add('nav');var i=0;
+function fit(){var s=Math.min(innerWidth/1280,innerHeight/720);L.forEach(function(e){e.style.transform='scale('+s+') translate(-50%,-50%)';});}
+function show(n){i=Math.max(0,Math.min(L.length-1,n));L.forEach(function(e,k){e.classList.toggle('on',k===i);});location.hash='#'+(i+1);}
+addEventListener('keydown',function(e){if(['ArrowRight','PageDown',' '].indexOf(e.key)>=0)show(i+1);if(['ArrowLeft','PageUp'].indexOf(e.key)>=0)show(i-1);if(e.key==='Home')show(0);if(e.key==='End')show(L.length-1);});
+addEventListener('click',function(e){show(e.clientX>innerWidth/2?i+1:i-1);});addEventListener('resize',fit);fit();show((parseInt(location.hash.slice(1))||1)-1);})();
+</script>"""
 
 
 def deck_html(id_: str, c: dict) -> str:
@@ -285,7 +337,7 @@ def deck_html(id_: str, c: dict) -> str:
     L.append(lamina(n, f'<h3>La historia de {esc(c["persona"]["nombre"])} (personaje ficticio)</h3><h2>{esc(c["persona"]["rol"])}: un día antes y un día después</h2>'
                     f'<div class="dos"><div class="caja antes"><h3>Antes</h3><ul>' + "".join(f"<li>{esc(x)}</li>" for x in h["antes"]) + '</ul></div>'
                     f'<div class="caja despues"><h3>Después</h3><ul>' + "".join(f"<li>{esc(x)}</li>" for x in h["despues"]) + '</ul></div></div>'
-                    f'<p class="nota">Momento clave: {esc(h["momento_clave"])}</p>', "", pie)); n += 1
+                    f'<div class="momento"><h3>El momento clave</h3>{esc(h["momento_clave"])}</div>', "", pie)); n += 1
     L.append(lamina(n, f'<h3>La solución en una imagen</h3><h2>{esc(c["solucion"]["titular"])}</h2>' + flujo_svg(c["solucion"]["flujo"])
                     + f'<p class="nota">{esc(c["solucion"]["nota"])}</p>', "", pie)); n += 1
     pasos = "".join(f'<div class="paso"><div class="n">{i + 1}</div><div><b>{esc(p["paso"])}</b><span>{esc(p["detalle"])}</span></div></div>' for i, p in enumerate(c["como_funciona"]))
@@ -297,7 +349,7 @@ def deck_html(id_: str, c: dict) -> str:
     kp = "".join(f"<li>{esc(x)}</li>" for x in c["impacto"]["kpi"])
     L.append(lamina(n, f'<h3>Impacto y evidencia</h3><h2>{esc(c["impacto"]["titular"])}</h2><div class="cifras">{ev}</div>'
                     f'<div class="dos"><div><h3>KPI propuestos (a validar con el owner)</h3><ul>{kp}</ul></div>'
-                    f'<div><h3>Qué sí y qué no afirmamos</h3><p>{esc(c["evidencia"]["honestidad"])}</p></div></div>', "", pie)); n += 1
+                    f'<div><h3>Qué sí y qué no afirmamos</h3><p>{esc(c["evidencia"]["honestidad"])}</p></div></div>', "oscura", pie)); n += 1
     filas = "".join(f'<tr><td>{esc(a)}</td><td>{esc(b)}</td></tr>' for a, b in c["tecnologia"]["filas"])
     L.append(lamina(n, f'<h3>Tecnología y preexistente</h3><h2>{esc(c["tecnologia"]["titular"])}</h2><table><tr><th>Capa</th><th>Qué hace y por qué aporta</th></tr>{filas}</table>'
                     f'<p class="nota">{esc(c["tecnologia"]["preexistente"])}</p>', "", pie)); n += 1
@@ -306,8 +358,8 @@ def deck_html(id_: str, c: dict) -> str:
                     f'<p class="nota">{esc(c["plan"]["nota"])}</p>', "", pie)); n += 1
     L.append(lamina(n, f'<h3>Supuestos y próximos pasos</h3><h2>Lo que aún no sabemos y cómo lo cerramos</h2><div class="dos"><div><h3>Supuestos</h3><ul>'
                     + "".join(f"<li>{esc(x)}</li>" for x in c["supuestos"]) + '</ul></div><div><h3>Próximos pasos</h3><ul>'
-                    + "".join(f"<li>{esc(x)}</li>" for x in c["proximos_pasos"]) + "</ul></div></div>", "", pie))
-    return f'<!doctype html><html lang="es"><head><meta charset="utf-8"><title>{esc(c["titulo"])}</title><style>{CSS}</style></head><body>{"".join(L)}</body></html>'
+                    + "".join(f"<li>{esc(x)}</li>" for x in c["proximos_pasos"]) + "</ul></div></div>", "oscura", pie))
+    return f'<!doctype html><html lang="es"><head><meta charset="utf-8"><title>{esc(c["titulo"])}</title><style>{CSS.replace("PATRON", PATRON_URI)}</style></head><body>{"".join(L)}{SCRIPT_NAV}</body></html>'
 
 
 # ---------------------------------------------------------------------------
