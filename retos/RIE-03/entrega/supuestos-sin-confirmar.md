@@ -8,9 +8,11 @@ No hubo respuesta del owner para este desafío (el envío de tickets cerró el 2
 | Línea base de morosidad | No hay cifra. Se compara con la política reactiva simulada y con reglas simples de atraso; no sustituye a la línea base oficial. |
 | Capacidad del gestor (tamaño k de la cola) | k configurable; el valor se fija en el evento. |
 | Canales de contacto preventivo | Llamada, WhatsApp o visita según la preferencia del cliente sintético; viabilidad real por confirmar. |
-| Intervenciones sin comité | Recordatorio, asesoría y propuesta de reprogramación sujeta a aprobación; límites reales por confirmar. |
+| Intervenciones sin comité | Recordatorio, asesoría y sugerencia al analista de evaluar una reprogramación (no se ofrece ni se promete al cliente); límites reales por confirmar. |
 | IA externa | Se usa solo para redactar borradores, con datos sintéticos, y existe un modo sin red; la política real está por confirmar. |
 | Datos de la Caja | No se entregan: usamos un generador propio y un esquema al que se podrían mapear datos de la Caja. |
-| Equidad y datos personales | Sexo, edad y zona solo auditan sesgos y no entran al modelo; los registros usan identificadores. |
+| Equidad y datos personales | Sexo y edad solo auditan sesgos y no entran al modelo; la zona solo define cohortes de comparación y también se audita por grupo; los registros usan identificadores. |
+| Fuentes de señal | Se asume que hay actividad de cuenta y deuda en otras entidades; si la Caja no las tiene, el esquema se adapta a lo disponible (por confirmar). |
+| Cadencia de la cola | Se recalcula por fecha de corte (mensual en los datos sintéticos); una cadencia diaria sería un supuesto a validar. |
 
 Si la organización responde o entrega datos, se actualiza el concepto; ninguna cifra de impacto se afirma sin línea base.

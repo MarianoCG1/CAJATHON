@@ -30,7 +30,7 @@ Marca las casillas editando este archivo y haz commit. El avance automático lo 
 - [ ] Copiar el expediente desde la plataforma a `retos/RIE-03/expediente.md` (solo local).
 - [ ] **Revisión cruzada** (Glem): leer `concepto.md`, `panorama.md` y `postulacion.md` contra el expediente y el Anexo C de `concepto.md`; anotar objeciones en `retos/RIE-03/revision.md`.
 - [ ] La pareja líder resuelve las objeciones (v2) y actualiza `postulacion.md`.
-- [ ] Comprobar que los datos sintéticos no se resuelven con una regla trivial (en RIE-02 ya se endureció): correr el generador y probar un modelo simple.
+- [x] Comprobar que los datos sintéticos no se resuelven con una regla trivial (auditoría en `docs/investigacion/06-auditoria-datos.md`).
 - [x] Preguntas del Anexo B reformuladas a **comprensión** del problema (21.11, Mariano).
 - [ ] Decisión de postular (sí/no) — la toma el coordinador con el equipo.
 

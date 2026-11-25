@@ -248,7 +248,7 @@ class LLMProvider(Protocol):
 Una alerta entra a la cola solo si, además de un score alto, cumple:
 
 1. **Persistencia**: la caída lleva ≥ N meses (N a calibrar, 2–3 **(supuesto)**), no un mes aislado.
-2. **Contraste estacional**: la variable cae frente al mismo mes del año anterior o frente a la mediana de su cohorte (sector × zona), no solo frente al mes previo.
+2. **Contraste estacional**: la variable cae frente al mismo mes del año anterior o frente a la mediana de su cohorte del sector, no solo frente al mes previo.
 3. **Convergencia**: ≥ 2 familias de señales apuntan en la misma dirección (ingreso/cuenta, conducta de pago, endeudamiento externo).
 4. **Control de fatiga**: tope por gestor, enfriamiento de 30 días tras un descarte, y deduplicación de alertas repetidas.
 5. **Incertidumbre explícita**: cada score lleva un rango (método a elegir en el evento, p. ej. remuestreo del modelo o conjunto de modelos); una alerta con rango muy amplio se muestra como «baja confianza» y pesa menos en la priorización.
@@ -341,7 +341,7 @@ Cobertura de habilidades de la pareja líder según `scripts/sinergia`: 85 % con
 | Recorte adicional | Ahorro pesimista |
 |---|---|
 | 6. Flujo de diseño → wireframe mínimo (1.5 → 0.5 h base) | 1.4 h |
-| 7. Reglas de dominio y caso de negocio → tres señales validadas con Caja Experts (2 → 1 h base) | 1.4 h |
+| 7. Reglas de dominio y caso de negocio → tres señales validadas con los Challenge Owners (2 → 1 h base) | 1.4 h |
 | 8. Pitch → guion fijo ensayado una vez (2 → 1 h base) | 1.4 h |
 | 9. Backtest → solo B0 y B1 como comparadores (−0.5 h base) | 0.7 h |
 | **Subtotal** | **4.9 h → quedan 31.7 h** |

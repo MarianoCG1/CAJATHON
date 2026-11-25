@@ -34,7 +34,7 @@ El texto corrido es `retos/<ID>/postulacion.md` (ya existe).
 ### 1. RIE-03 · Anticipar el deterioro (prioridad #1; fallback único)
 - [x] R3.1 Ajustes: incluir en Factibilidad la evidencia medida («señales tempranas elevan el AUC de 0.81 a 0.92; entre clientes al día, el 10 % mejor puntuado concentra ≈ 2/3 de los casos», sobre datos sintéticos propios) y hablar en *lift*, no en precisión absoluta; reforzar «IA externa solo para demo/intercambiable».
 - [x] R3.2 Paquete de entrega (5 archivos).
-- [ ] R3.3 Revisión independiente y correcciones.
+- [x] R3.3 Revisión independiente y correcciones.
 - [x] R3.4 Ficha PDF y diagrama (`scripts/entrega/ficha_pdf.py`; diagrama de flujo en la ficha).
 
 ### 2. NEG-02 · Open Finance con consentimiento (prioridad #3)
@@ -72,6 +72,6 @@ El texto corrido es `retos/<ID>/postulacion.md` (ya existe).
 ## Registro de decisiones tomadas sin consultar
 
 - 24.11 — RIE-01: la postulación compromete la **versión mínima** del panorama (K1 y K2 en 3 eventos) y presenta K3, K4 y seis eventos como ampliación; se declara el script de auditoría como preexistente (entrena un modelo de referencia solo para medir la dificultad de los datos); el bloque «Complejidad tecnológica» de RIE-01 se capturó de la plataforma y se alineó el concepto.
-- 24.11 — Se sacó de las postulaciones la frase «cola diaria» donde los datos son mensuales solo si el revisor lo pidió (ver revisiones).
+- 24.11 — RIE-03: «cola diaria» pasa a «cola priorizada» (los datos son mensuales); la evidencia estrella pasa a la población que importa (clientes al día: AUC 0,84, ≈ 2/3 en el 10 % mejor, precisión 4,7 %); se declara el script de auditoría como preexistente; el plan base es el mínimo viable de 31,5 h; se agrega una ilustración aritmética del efecto rotulada como escenario.
 - 24.11 — La entrega se prepara en 4 formatos porque el formulario no existe todavía.
 - 24.11 — La revisión independiente la hace un agente revisor (no humano) por falta de tiempo; se rotula así.
