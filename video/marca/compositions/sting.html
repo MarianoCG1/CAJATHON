@@ -1,0 +1,54 @@
+<template>
+  <style>
+      :root {
+        --tinta: #0E1A3A;
+        --maiz: #F4B63F;
+        --turquesa: #1BB5A8;
+        --niebla: #9FB3C8;
+        --font-display: Outfit, Inter, sans-serif;
+      }
+      #root { position: absolute; inset: 0; overflow: hidden; background:
+        radial-gradient(1100px 700px at 50% 45%, #1A2C5E 0%, var(--tinta) 70%); font-family: var(--font-display); }
+      #marca { position: absolute; left: 724px; top: 240px; width: 472px; height: 600px; }
+      .anillo { position: absolute; width: 88px; height: 88px; border-radius: 50%; border: 4px solid rgba(255,255,255,.22); opacity: 0; }
+      .semilla { position: absolute; width: 88px; height: 88px; border-radius: 50%; background: var(--maiz); opacity: 0; }
+      .semilla.chispa { background: var(--turquesa); }
+      .onda { position: absolute; width: 88px; height: 88px; border-radius: 50%; border: 5px solid var(--turquesa); opacity: 0; }
+      #nombre { position: absolute; left: 815px; top: 350px; }
+      #yupana { display: flex; font-size: 210px; font-weight: 700; letter-spacing: -0.04em; color: #fff; line-height: 1; }
+      .letra { display: inline-block; opacity: 0; }
+      #labs { display: flex; margin-top: 6px; font-size: 62px; font-weight: 400; color: var(--niebla); letter-spacing: 0.1em; }
+      .lab { display: inline-block; opacity: 0; }
+      #lema { position: absolute; left: 0; width: 1920px; top: 800px; text-align: center; font-family: Inter, sans-serif; font-size: 52px; font-weight: 500; color: #CFE3F0; opacity: 0; }
+      #lema b { color: var(--maiz); font-weight: 700; }
+  </style>
+  <div id="root" data-composition-id="sting" data-width="1920" data-height="1080">
+    <div id="marca"><div class="anillo" id="a-0-0" style="left:0px;top:512px"></div><div class="semilla" id="s-0-0" style="left:0px;top:512px"></div><div class="anillo" id="a-0-1" style="left:0px;top:384px"></div><div class="anillo" id="a-0-2" style="left:0px;top:256px"></div><div class="anillo" id="a-0-3" style="left:0px;top:128px"></div><div class="anillo" id="a-0-4" style="left:0px;top:0px"></div><div class="anillo" id="a-1-0" style="left:128px;top:512px"></div><div class="semilla" id="s-1-0" style="left:128px;top:512px"></div><div class="anillo" id="a-1-1" style="left:128px;top:384px"></div><div class="semilla" id="s-1-1" style="left:128px;top:384px"></div><div class="anillo" id="a-1-2" style="left:128px;top:256px"></div><div class="anillo" id="a-1-3" style="left:128px;top:128px"></div><div class="anillo" id="a-1-4" style="left:128px;top:0px"></div><div class="anillo" id="a-2-0" style="left:256px;top:512px"></div><div class="semilla" id="s-2-0" style="left:256px;top:512px"></div><div class="anillo" id="a-2-1" style="left:256px;top:384px"></div><div class="semilla" id="s-2-1" style="left:256px;top:384px"></div><div class="anillo" id="a-2-2" style="left:256px;top:256px"></div><div class="semilla" id="s-2-2" style="left:256px;top:256px"></div><div class="anillo" id="a-2-3" style="left:256px;top:128px"></div><div class="anillo" id="a-2-4" style="left:256px;top:0px"></div><div class="anillo" id="a-3-0" style="left:384px;top:512px"></div><div class="semilla" id="s-3-0" style="left:384px;top:512px"></div><div class="anillo" id="a-3-1" style="left:384px;top:384px"></div><div class="semilla" id="s-3-1" style="left:384px;top:384px"></div><div class="anillo" id="a-3-2" style="left:384px;top:256px"></div><div class="semilla" id="s-3-2" style="left:384px;top:256px"></div><div class="anillo" id="a-3-3" style="left:384px;top:128px"></div><div class="semilla" id="s-3-3" style="left:384px;top:128px"></div><div class="anillo" id="a-3-4" style="left:384px;top:0px"></div><div class="semilla chispa" id="s-3-4" style="left:384px;top:0px"></div><div class="onda" id="onda" style="left:384px;top:0px"></div></div>
+    <div id="nombre"><div id="yupana"><span class="letra" id="l0">y</span><span class="letra" id="l1">u</span><span class="letra" id="l2">p</span><span class="letra" id="l3">a</span><span class="letra" id="l4">n</span><span class="letra" id="l5">a</span></div><div id="labs"><span class="lab" id="b0">L</span><span class="lab" id="b1">A</span><span class="lab" id="b2">B</span><span class="lab" id="b3">S</span></div></div>
+    <div id="lema">Contar bien para <b>decidir mejor</b></div>
+  </div>
+  <script>
+      const COLUMNAS = [1, 2, 3, 5];
+      const tl = gsap.timeline({ paused: true });
+      COLUMNAS.forEach((n, i) => {
+        for (let j = 0; j < 5; j++) {
+          tl.fromTo("#a-" + i + "-" + j, { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, 0.1 + i * 0.07 + j * 0.03);
+        }
+      });
+      COLUMNAS.forEach((n, i) => {
+        for (let j = 0; j < n; j++) {
+          tl.fromTo("#s-" + i + "-" + j, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.42, ease: "back.out(1.6)" }, 0.75 + i * 0.3 + j * 0.1);
+        }
+      });
+      tl.fromTo("#onda", { opacity: 0.9, scale: 1 }, { opacity: 0, scale: 3.2, duration: 0.8, ease: "power2.out" }, 2.0);
+      tl.fromTo("#marca", { x: 0, y: 0, scale: 1 }, { x: -325, y: -70, scale: 0.55, duration: 0.9, ease: "power3.inOut" }, 2.7);
+      for (let k = 0; k < 6; k++) {
+        tl.fromTo("#l" + k, { opacity: 0, filter: "blur(10px)", y: 14 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.5, ease: "power3.out" }, 3.15 + k * 0.1);
+      }
+      for (let k = 0; k < 4; k++) {
+        tl.fromTo("#b" + k, { opacity: 0, x: 0 }, { opacity: 1, x: k * 30, duration: 0.9, ease: "power3.out" }, 3.7 + k * 0.05);
+      }
+      tl.fromTo("#lema", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.6, ease: "power3.out" }, 4.9);
+      window.__timelines["sting"] = tl;
+  </script>
+</template>

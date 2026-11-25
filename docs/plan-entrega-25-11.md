@@ -71,7 +71,7 @@ Identidad en `identidad/` (guía, logos, patrón, tokens). Todo material usa esa
 
 - [x] I1 Identidad de marca: guía, logos SVG, patrón y tokens (`scripts/identidad/generar_identidad.py`).
 - [x] I2 Decks y fichas de los cuatro retos con la identidad (portada oscura con patrón, láminas claras y oscuras, franja de tres colores, versión HTML animada).
-- [ ] I3 Video de marca de Yupana Labs (sting de 6–8 s) con HyperFrames (`/motion-graphics`), con la marca de yupana que se llena columna por columna. Proyecto en `video/marca/`; render a MP4 en `video/marca/out/`.
+- [x] I3 Video de marca de Yupana Labs (sting de 8 s) con HyperFrames: la yupana se llena columna por columna, aparece el nombre y el lema. Proyecto en `video/marca/`; MP4 en `video/marca/out/yupana-labs-sting.mp4` (653 KB, renderizado en 46 s; no se versiona). Verificación `check` sin errores ni advertencias. HyperFrames ya no tiene el flujo `/motion-graphics`: se usa `/hyperframes` y sus referencias.
 - [ ] I4 Explicativo animado de RIE-03 (30–45 s, sin narración, con subtítulos en pantalla) con HyperFrames (`/general-video` o `/faceless-explainer`), con la historia de Rosa, la cola priorizada, la evidencia y el cierre. Proyecto en `video/rie-03/`. Usar el guion de `retos/RIE-03/presentacion/storytelling.md`. Sin cifras que no estén en el deck.
 - [ ] I5 Explicativos de NEG-02, RIE-01 y RIE-02 con el mismo método y la misma identidad (uno por tarea).
 - [ ] I6 Revisar los videos fotograma a fotograma (capturas), verificar que no afirmen nada no medido y registrar en el plan la herramienta y el comando de render.
@@ -93,6 +93,10 @@ Reglas: no subir los MP4 a servicios externos; si pesan mucho, no versionarlos (
 - [ ] F4 Dejar a Mariano una nota con los 3 pasos exactos para enviar. **Enviar solo si Mariano lo autoriza explícitamente en el chat.**
 
 ## Registro de decisiones tomadas sin consultar
+
+- 25.11 — Identidad: nombre inspirado en la yupana (solo inspiración visual, sin afirmaciones históricas); paleta tinta, maíz, turquesa, terracota y papel; Sora e Inter en documentos y Outfit (incluida en HyperFrames) en video.
+- 25.11 — HyperFrames: no se ejecutó el aviso de uso (`events`) que pide su skill porque envía una nota a un servicio externo ligada a la cuenta; se informará a Mariano. `usage --json` devolvió «desconocido».
+- 25.11 — Los videos de más de 15 s deberían llevar música según la guía de HyperFrames; no hay forma local y verificable de obtener música con licencia, así que el primer corte de I4 será silencioso y se dejará anotado.
 
 - 25.11 — Mariano autorizó el push en el chat; se hizo (13 commits, hasta `89c0ee4`). El repo seguía público al momento del push. Los commits posteriores quedan locales salvo nueva autorización.
 
