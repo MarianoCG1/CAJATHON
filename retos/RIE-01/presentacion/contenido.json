@@ -1,0 +1,179 @@
+{
+  "titulo": "RIE-01 · Radar Climático de Cartera: actuar antes del evento, con los gestores disponibles",
+  "lema": "Ante un escenario climático, separa con rangos la cartera expuesta, la probablemente afectada y la mora adicional esperada, y prioriza las visitas según la capacidad real de cada agencia.",
+  "persona": {
+    "nombre": "Marta",
+    "rol": "Gestora de agencia en la costa norte (personaje ficticio)",
+    "contexto": "Marta acompaña a microempresarios de arroz, pesca y comercio. Sabe que viene una temporada de lluvias, pero no puede visitar a todos antes de que ocurra. Es un personaje ficticio, creado para explicar la solución."
+  },
+  "historia": {
+    "antes": [
+      "Se entera del impacto cuando aparece la mora.",
+      "Un mapa de amenaza por distrito no distingue la ribera de un río de una ladera de secano.",
+      "Dos clientes en la misma zona sufren distinto, pero no sabe cuál.",
+      "Tiene pocas visitas por semana y las reparte por intuición o por monto."
+    ],
+    "despues": [
+      "Elige un escenario y ve tres cifras separadas, cada una con rango.",
+      "El ranking prioriza clientes según las visitas que su agencia puede hacer.",
+      "Cada cliente trae el motivo: ubicación, actividad, colchón financiero y carga de deuda.",
+      "Aprueba o rechaza las acciones propuestas y queda registro."
+    ],
+    "momento_clave": "Marta cambia el escenario de lluvia a inundación severa y la lista de clientes a visitar se recalcula: los de la ribera suben, los de la ladera bajan."
+  },
+  "tres_frases": [
+    "Marta no puede visitar a todos antes del evento climático, y un mapa por distrito no le dice a quién priorizar.",
+    "Elige un escenario y la herramienta le dice cuánta cartera está expuesta, cuánta probablemente será afectada y cuánta mora adicional cabe esperar, cada una con rango, y a quién visitar primero con las visitas que tiene.",
+    "Ella aprueba las acciones; medimos el resultado sobre eventos simulados con resultado oculto, contra reglas simples."
+  ],
+  "problema": {
+    "titular": "Los eventos climáticos pueden afectar a los negocios antes de que el banco lo note",
+    "puntos": [
+      "El desafío plantea que lluvias intensas, inundaciones o sequías pueden afectar a microempresarios en zonas vulnerables o con actividades sensibles al clima.",
+      "Debe anticiparse el riesgo sin asumir que exposición equivale a pérdida o incumplimiento.",
+      "Los escenarios son inciertos: hay que mostrar rangos, no una cifra única.",
+      "Las recomendaciones deben apoyarse en evidencia y respetar la protección de datos y las políticas de riesgo."
+    ],
+    "nota": "Resultado esperado del desafío: fortalecer la resiliencia de los clientes y de la cartera mediante la identificación anticipada de riesgos."
+  },
+  "solucion": {
+    "titular": "De un escenario climático a una lista corta de acciones, con incertidumbre visible",
+    "flujo": ["Escenario climático", "Amenaza local por sector", "Vulnerabilidad del negocio", "Impacto crediticio con rango", "Mapa y ranking con capacidad de visitas", "Agente propone acciones", "Gestor aprueba o rechaza", "Backtest con y sin la solución"],
+    "nota": "Tres capas, tres números: expuesta, afectada y mora adicional. Nunca se presenta el saldo en zona de riesgo como si fuera pérdida."
+  },
+  "como_funciona": [
+    {"paso": "Escenario ex ante", "detalle": "El analista elige tipo de amenaza y severidad, por ejemplo una inundación severa en la costa norte."},
+    {"paso": "Amenaza local", "detalle": "Estima la amenaza del sector del cliente, más fina que el distrito cuando hay datos."},
+    {"paso": "Vulnerabilidad del negocio", "detalle": "Considera la actividad, el colchón financiero (seguro, reservas, otros ingresos) y la caída de ingreso esperable."},
+    {"paso": "Impacto crediticio con rango", "detalle": "Calcula la carga de deuda tras la caída de ingreso y entrega rangos para expuesta, afectada y mora."},
+    {"paso": "Priorización con capacidad", "detalle": "Reparte las visitas de cada agencia entre los clientes y zonas de mayor beneficio esperado."},
+    {"paso": "Agente y decisión humana", "detalle": "Propone acciones de un catálogo por validar, con evidencia y costo; el gestor aprueba o rechaza."}
+  ],
+  "pantallas": [
+    {
+      "tipo": "mapa",
+      "titular": "El escenario: tres cifras con rango y un plan sugerido",
+      "titulo": "Radar Climático · inundación severa en la costa norte",
+      "nota": "Maqueta ilustrativa con datos ficticios. Las cifras de la pantalla no son resultados.",
+      "elementos": {
+        "escenario": "Escenario ex ante: inundación severa, costa norte",
+        "zonas": [
+          {"nombre": "Valle del río", "x": 10, "y": 10, "w": 200, "h": 110, "nivel": 0.85, "puntos": 10},
+          {"nombre": "Zona urbana", "x": 220, "y": 10, "w": 200, "h": 90, "nivel": 0.5, "puntos": 8},
+          {"nombre": "Piedemonte", "x": 10, "y": 130, "w": 160, "h": 120, "nivel": 0.3, "puntos": 6},
+          {"nombre": "Litoral pesquero", "x": 180, "y": 130, "w": 240, "h": 120, "nivel": 0.62, "puntos": 9}
+        ],
+        "leyenda": "Más rojo: mayor amenaza local · puntos: clientes ficticios",
+        "cifras": [
+          {"nombre": "Cartera expuesta", "valor": "38 % de la cartera", "rango": "rango 33–44 %"},
+          {"nombre": "Probablemente afectada", "valor": "11 % de la cartera", "rango": "rango 8–15 %"},
+          {"nombre": "Mora adicional esperada", "valor": "3,5 % de la cartera", "rango": "rango 2–5 %"}
+        ],
+        "plan": ["Visitas a los clientes de mayor exposición", "Alerta anticipada al resto de la zona"]
+      }
+    },
+    {
+      "tipo": "cola",
+      "titular": "El ranking: a quién visitar primero con las visitas disponibles",
+      "titulo": "Ranking de clientes según la capacidad de visitas de la agencia",
+      "subtitulo": "Agencia ficticia · capacidad de visitas supuesta · escenario de inundación severa",
+      "nota": "Maqueta ilustrativa con datos ficticios. Las acciones son de un catálogo por validar con la Caja.",
+      "elementos": [
+        {"id": "CLI-00841", "nivel": 0.86, "porque": ["Cultivo de arroz a 300 m del cauce", "Sin seguro; colchón de 1 mes"], "accion": "Visita preventiva"},
+        {"id": "CLI-02310", "nivel": 0.74, "porque": ["Pesca artesanal en zona inundable", "Cuota alta frente a su ingreso"], "accion": "Reprogramación preventiva (aprobación)"},
+        {"id": "CLI-01177", "nivel": 0.61, "porque": ["Hortalizas, sensibles a la inundación", "Tiene ingreso secundario"], "accion": "Alerta anticipada"},
+        {"id": "CLI-03095", "nivel": 0.5, "porque": ["Comercio en zona de amenaza media", "Colchón de 3 meses"], "accion": "Asesoría de continuidad"},
+        {"id": "CLI-00532", "nivel": 0.38, "porque": ["Transporte, poca sensibilidad", "Con microseguro"], "accion": "Sin acción: monitorear"}
+      ]
+    }
+  ],
+  "evidencia": {
+    "cifras": [
+      {"valor": "≈ 8 %", "etiqueta": "de los incumplimientos captura el azar con visitas de dos semanas (≈ 8 % de la cartera)"},
+      {"valor": "≈ 18 %", "etiqueta": "los captura una fórmula de tres factores (amenaza, sensibilidad e intensidad)"},
+      {"valor": "≈ 20 %", "etiqueta": "los captura un modelo de referencia entrenado con la historia (≈ 2,5× el azar)"}
+    ],
+    "honestidad": "Medido solo sobre datos sintéticos propios (una semilla), no sobre la Caja. El dataset es ruidoso: aun conociendo la susceptibilidad real el tope ronda el 24 %. Por eso prometemos un efecto moderado y verificable, y una ventaja que está en la resolución de sector y en los rangos calibrados, no en una precisión puntual alta. El efecto de las acciones se simula con supuestos."
+  },
+  "impacto": {
+    "titular": "Priorizar mejor que el azar y que las reglas simples, con incertidumbre honesta",
+    "kpi": [
+      "K1: porcentaje de cartera afectada identificado antes del evento, con la capacidad de visitas",
+      "K2: precisión de la priorización y captura de saldo en mora frente a reglas simples",
+      "K3: pérdida evitada estimada, como rango y con efectividades supuestas",
+      "K4: continuidad de los negocios afectados. Línea base oficial: por confirmar"
+    ]
+  },
+  "tecnologia": {
+    "titular": "Un modelo en tres capas, simulación de escenarios y un agente acotado",
+    "filas": [
+      ["Modelo en tres capas", "Amenaza local, vulnerabilidad del negocio e impacto crediticio, calibrado con eventos históricos y validado en el tiempo."],
+      ["Escenarios con rango", "Simulación o rango analítico para entregar p10–p50–p90 en lugar de una cifra única."],
+      ["Priorización con capacidad", "Asigna las visitas de cada agencia donde el beneficio esperado es mayor."],
+      ["Agente", "Propone acciones de un catálogo por validar, con evidencia y costo; proveedor de IA intercambiable y modo sin red."],
+      ["API e interfaz", "FastAPI y React con mapa, ranking y aprobación, con registro de cada decisión."],
+      ["Backtest", "Eventos simulados con resultado oculto (mínimo tres, ideal seis) frente a azar y reglas simples."]
+    ],
+    "preexistente": "Preexistente (21.11.2026, del equipo): generador de datos sintéticos con 40 pruebas y un script de auditoría de dificultad. Todo lo demás se construye en el evento."
+  },
+  "plan": {
+    "titular": "32 horas-persona: versión mínima comprometida y ampliación si alcanza",
+    "bloques": [
+      {"bloque": "Carga y validación de datos sintéticos", "horas": "1,5", "entregable": "Cartera y mapa cargados"},
+      {"bloque": "Modelo de amenaza, vulnerabilidad e impacto", "horas": "4,5", "entregable": "Tres capas calibradas"},
+      {"bloque": "Escenarios y propagación con incertidumbre", "horas": "3,5", "entregable": "Rangos por escenario"},
+      {"bloque": "Mapa interactivo y flujo del gestor", "horas": "5,5", "entregable": "Mapa y ranking"},
+      {"bloque": "Agente de acciones preventivas", "horas": "3,5", "entregable": "Plan con evidencia y costo"},
+      {"bloque": "API y persistencia", "horas": "2,5", "entregable": "Registro de decisiones"},
+      {"bloque": "Backtest, KPI y criterios financieros", "horas": "5", "entregable": "K1 y K2 en 3 a 6 eventos"},
+      {"bloque": "Pruebas y validación", "horas": "2,5", "entregable": "Reporte de validación"},
+      {"bloque": "Pitch y demo", "horas": "2", "entregable": "Demo ensayada"},
+      {"bloque": "Colchón", "horas": "1,5", "entregable": "Reserva"}
+    ],
+    "nota": "Mínimo comprometido: escenario, tres cifras con rango analítico, ranking en un mapa de puntos, plan con aprobación y backtest de K1 y K2 en al menos tres eventos. El escenario pesimista sube a unas 45 horas y solo cabe con recortes."
+  },
+  "supuestos": [
+    "KPI y línea base oficiales: por confirmar; se comparan proxies propios (azar, zona, zona más actividad, saldo)",
+    "Catálogo de acciones y capacidad de visitas: supuestos del equipo",
+    "Resolución de sector si hay datos; distrito si no",
+    "Daño a infraestructura y acceso a mercados se resumen en la caída de ingreso",
+    "IA externa solo para redactar, con datos sintéticos y modo sin red"
+  ],
+  "proximos_pasos": [
+    "Revisión cruzada humana del concepto y de los KPI",
+    "Decidir si se refuerza la señal del generador o se acepta un efecto moderado",
+    "Repetir la evidencia con varias semillas e intervalos",
+    "Preparar el entorno del evento sin construir la funcionalidad crítica"
+  ],
+  "demo": [
+    {"min": 0.5, "accion": "Elegir el escenario: inundación severa en la costa norte", "mensaje": "El analista no necesita esperar al evento: trabaja con un escenario ex ante."},
+    {"min": 1.0, "accion": "Mostrar las tres cifras con rango", "mensaje": "Expuesta, afectada y mora adicional son cosas distintas, y cada una trae su incertidumbre."},
+    {"min": 1.0, "accion": "Mapa y ranking con la capacidad de visitas", "mensaje": "Con las visitas que tiene la agencia, estos son los clientes a priorizar y el motivo de cada uno."},
+    {"min": 1.0, "accion": "Plan del agente: aprobar una acción y rechazar otra", "mensaje": "El agente propone con evidencia y costo; el gestor decide y queda registro; nada se ejecuta solo."},
+    {"min": 0.5, "accion": "Cambiar de escenario", "mensaje": "Los clientes de la ribera suben y los de la ladera bajan: la lista se recalcula."},
+    {"min": 1.0, "accion": "Backtest en eventos con resultado oculto, incluido uno más severo que la historia", "mensaje": "Frente al azar y a reglas simples, con la misma capacidad de visitas."}
+  ],
+  "plan_b": [
+    "Si falla el modelo de lenguaje externo: usar el modo con plantillas, sin red.",
+    "Si falla el mapa: mostrar el ranking y las tres cifras desde la API en tabla.",
+    "Si falla el backtest en vivo: mostrar los resultados guardados con semilla fija."
+  ],
+  "preguntas": [
+    {"p": "¿Cuál es el impacto en el KPI?", "r": "No hay línea base oficial, así que no prometemos una cifra sobre la Caja. Sobre datos sintéticos propios, con visitas de dos semanas (cerca del 8 % de la cartera) el azar captura cerca del 8 % de los incumplimientos, una fórmula de tres factores cerca del 18 % y un modelo de referencia cerca del 20 %. Esperamos un efecto moderado y verificable, de unas 2,5 veces el azar."},
+    {"p": "¿No es solo un mapa de calor?", "r": "No. Un mapa de calor muestra amenaza; nosotros separamos expuesta, afectada y mora adicional, mostramos rangos, priorizamos con la capacidad real de visitas y proponemos acciones con evidencia. Y lo medimos contra reglas simples en eventos con resultado oculto."},
+    {"p": "Una regla de zona más actividad ya captura casi lo mismo. ¿Qué aporta el modelo?", "r": "Es cierto: en nuestros datos la ventaja del modelo sobre esa regla es pequeña, unos dos puntos de captura. Por eso no la vendemos como precisión puntual. Lo que aporta es la resolución de sector, los rangos calibrados, la asignación bajo capacidad y la trazabilidad de cada recomendación. El criterio de aceptación es no quedar por debajo de esa regla y superar al azar y a las reglas de zona y de saldo."},
+    {"p": "¿Exposición significa pérdida?", "r": "No, y el diseño lo evita: mostramos tres cifras separadas. Estar expuesto a una amenaza no implica necesariamente pérdida o incumplimiento; por eso la cifra de afectados y la de mora adicional se estiman aparte, con su incertidumbre."},
+    {"p": "¿Cómo manejan la incertidumbre de los escenarios?", "r": "Cada cifra se entrega como rango (p10–p50–p90) y la solución se evalúa con eventos distintos del escenario ex ante, incluido uno más severo que la historia."},
+    {"p": "¿Qué parte es inteligencia artificial?", "r": "El modelo calibrado en tres capas, la simulación de escenarios, la optimización de visitas y un agente que propone acciones con evidencia. El mínimo comprometido usa rango analítico y un agente determinista; el modelo de lenguaje y la simulación por muestreo se añaden si hay tiempo."},
+    {"p": "¿Cabe en 8 horas por persona?", "r": "Estimamos 32 horas-persona, pero en el escenario pesimista son unas 45. Por eso comprometemos una versión mínima de punta a punta: escenario, tres cifras con rango analítico, ranking en un mapa de puntos, plan con aprobación y backtest de K1 y K2 en al menos tres eventos."},
+    {"p": "¿Y si la Caja no entrega datos ni mapas?", "r": "No los necesitamos para el prototipo: el generador propio produce clientes, geografía, mapa de amenaza con error y eventos de prueba con resultado oculto. Si la Caja aporta datos o mapas, los usaremos en su lugar."},
+    {"p": "¿Qué acciones puede proponer el agente?", "r": "Las de un catálogo que la Caja debe validar: alerta anticipada, visita, reprogramación preventiva, ampliación de plazo, capital de reposición, asesoría de continuidad y microseguro si existe. El gestor aprueba o rechaza; nada se ejecuta solo."},
+    {"p": "¿Qué es preexistente?", "r": "El generador de datos sintéticos con 40 pruebas y un script de auditoría de dificultad, del equipo, creados el 21.11.2026. Modelo, escenarios, mapa, priorización, agente, API, interfaz y backtest se construyen en el evento."}
+  ],
+  "no_prometemos": [
+    "Una cifra de impacto sobre la cartera de la Caja: no hay línea base.",
+    "Predicción casi perfecta: el dataset es ruidoso y prometemos un efecto moderado.",
+    "Que las acciones preventivas eviten la mora: su efecto se simula con supuestos.",
+    "Integración con el core, envío real de mensajes ni pronóstico meteorológico propio."
+  ]
+}
