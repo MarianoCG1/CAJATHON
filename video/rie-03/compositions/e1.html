@@ -1,0 +1,41 @@
+<template>
+  <style>
+      :root { --tinta: #0E1A3A; --tinta2: #16264F; --maiz: #F4B63F; --turquesa: #1BB5A8; --terracota: #E4572E; --papel: #F7F3EA; --piedra: #5C6B7A; --niebla: #9FB3C8; --font-display: Outfit, Inter, sans-serif; }
+      #root { position: absolute; inset: 0; overflow: hidden; font-family: Inter, sans-serif; }
+      #root { background: radial-gradient(1200px 760px at 50% 40%, #1A2C5E 0%, var(--tinta) 72%); color: #fff; }
+      .banda { position: absolute; left: 0; top: 0; width: 1920px; height: 10px; background: linear-gradient(90deg, #F4B63F 0 38%, #1BB5A8 38% 70%, #0E1A3A 70%); }
+      #e1-t1, #e1-t2 { position: absolute; left: 120px; font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; }
+      #e1-t1 { top: 150px; font-size: 96px; color: #fff; } #e1-t2 { top: 270px; font-size: 96px; color: var(--maiz); }
+      .w { display: inline-block; opacity: 0; } #e1-graf { position: absolute; left: 310px; top: 560px; }  </style>
+  <div id="root" data-composition-id="e1" data-width="1920" data-height="1080">
+    <div class="banda"></div>
+    <div id="e1-vel">
+    <div id="e1-t1"><span class="w" id="e1a0">Cuando&nbsp;</span><span class="w" id="e1a1">llega&nbsp;</span><span class="w" id="e1a2">el&nbsp;</span><span class="w" id="e1a3">atraso,&nbsp;</span></div><div id="e1-t2"><span class="w" id="e1b0">la&nbsp;</span><span class="w" id="e1b1">oportunidad&nbsp;</span><span class="w" id="e1b2">de&nbsp;</span><span class="w" id="e1b3">ayudar&nbsp;</span><span class="w" id="e1b4">ya&nbsp;</span><span class="w" id="e1b5">pasó.&nbsp;</span></div>
+    <svg id="e1-graf" viewBox="0 0 1300 400" width="1300" height="400">
+      <line x1="100" y1="340" x2="1240" y2="340" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+      <polyline id="e1-linea" points="120,127 280,122 440,132 600,138 760,174 920,200 1080,231 1240,252" fill="none" stroke="#F4B63F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1400" stroke-dashoffset="1400"/>
+      <circle id="e1-marca" cx="1240" cy="252" r="22" fill="#E4572E" opacity="0"/>
+      <text id="e1-etq" x="1270" y="326" font-size="38" font-weight="700" fill="#E4572E" text-anchor="end" opacity="0">primer atraso</text>
+      <text x="120" y="388" font-size="30" fill="#9FB3C8">Actividad del negocio, mes a mes (ilustrativo)</text>
+    </svg></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#e1-vel", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 0);
+    tl.fromTo("#e1a0", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.50);
+    tl.fromTo("#e1a1", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.60);
+    tl.fromTo("#e1a2", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.70);
+    tl.fromTo("#e1a3", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.80);
+    tl.fromTo("#e1b0", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 1.50);
+    tl.fromTo("#e1b1", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 1.62);
+    tl.fromTo("#e1b2", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 1.74);
+    tl.fromTo("#e1b3", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 1.86);
+    tl.fromTo("#e1b4", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 1.98);
+    tl.fromTo("#e1b5", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 2.10);
+    tl.to("#e1-linea", { strokeDashoffset: 0, duration: 2.2, ease: "power2.inOut" }, 1.6);
+    tl.fromTo("#e1-marca", { opacity: 0, scale: 0, transformOrigin: "center" }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 3.8);
+    tl.fromTo("#e1-etq", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 4.1);
+    tl.to("#e1-vel", { opacity: 0, duration: 0.35, ease: "power2.in" }, 5.12);
+    window.__timelines["e1"] = tl;
+  </script>
+</template>

@@ -5,9 +5,20 @@ Videos del equipo, hechos con [HyperFrames](https://hyperframes.heygen.com) (HTM
 | Proyecto | Qué es | Estado |
 |---|---|---|
 | `video/marca/` | Sting de marca de 8 s: la yupana se llena, aparece el nombre y el lema | Hecho |
-| `video/rie-03/` | Explicativo animado de RIE-03 (30–45 s, sin narración) | Pendiente (tarea I4 del plan) |
+| `video/rie-03/` | Explicativo animado de RIE-03: 44 s, 7 escenas (gancho, Rosa, la cola, el caso, decide la persona, lo que medimos, cierre), sin narración ni música | Hecho |
 
 ## Cómo se genera
+
+Cada proyecto tiene su `generar.py` (o `generar_index.py`) que escribe el HTML; el contenido sale de `retos/<ID>/presentacion/contenido.json`. Ejemplo con RIE-03:
+
+```powershell
+python video/rie-03/generar.py
+cd video/rie-03
+npx --yes hyperframes@0.9.94 check
+npx --yes hyperframes@0.9.94 render --output out/rie-03-explicativo.mp4
+```
+
+Y con el sting de marca:
 
 ```powershell
 python video/marca/generar_index.py                                   # regenera el HTML desde el generador

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #0E1A3A; }
+      #root { position: relative; width: 1920px; height: 1080px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="44" data-width="1920" data-height="1080">
+      <div id="e1" data-composition-id="e1" data-composition-src="compositions/e1.html" data-start="0" data-duration="5.5" data-track-index="0" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="e2" data-composition-id="e2" data-composition-src="compositions/e2.html" data-start="5.5" data-duration="5.5" data-track-index="0" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="e3" data-composition-id="e3" data-composition-src="compositions/e3.html" data-start="11" data-duration="8" data-track-index="0" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="e4" data-composition-id="e4" data-composition-src="compositions/e4.html" data-start="19" data-duration="8" data-track-index="0" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="e5" data-composition-id="e5" data-composition-src="compositions/e5.html" data-start="27" data-duration="5" data-track-index="0" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="e6" data-composition-id="e6" data-composition-src="compositions/e6.html" data-start="32" data-duration="6" data-track-index="0" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="e7" data-composition-id="e7" data-composition-src="compositions/e7.html" data-start="38" data-duration="6" data-track-index="0" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

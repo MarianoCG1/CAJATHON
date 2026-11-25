@@ -1,0 +1,34 @@
+<template>
+  <style>
+      :root { --tinta: #0E1A3A; --tinta2: #16264F; --maiz: #F4B63F; --turquesa: #1BB5A8; --terracota: #E4572E; --papel: #F7F3EA; --piedra: #5C6B7A; --niebla: #9FB3C8; --font-display: Outfit, Inter, sans-serif; }
+      #root { position: absolute; inset: 0; overflow: hidden; font-family: Inter, sans-serif; }
+      #root { background: radial-gradient(1200px 760px at 50% 40%, #1A2C5E 0%, var(--tinta) 72%); color: #fff; }
+      .banda { position: absolute; left: 0; top: 0; width: 1920px; height: 10px; background: linear-gradient(90deg, #F4B63F 0 38%, #1BB5A8 38% 70%, #0E1A3A 70%); }
+      #e6-t { position: absolute; left: 120px; top: 130px; font-family: var(--font-display); font-size: 70px; font-weight: 700; color: var(--maiz); letter-spacing: -0.02em; }
+      .w { display: inline-block; opacity: 0; }
+      #e6-cifras { position: absolute; left: 120px; top: 290px; width: 1680px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+      .cif { border-radius: 24px; padding: 34px 36px; background: var(--tinta2); border: 1px solid rgba(255,255,255,.14); opacity: 0; }
+      .cif b { display: block; font-family: var(--font-display); font-size: 150px; line-height: 1; color: var(--maiz); letter-spacing: -0.03em; }
+      .cif span { display: block; margin-top: 16px; font-size: 32px; color: #CFE3F0; line-height: 1.3; }
+      #e6-nota { position: absolute; left: 120px; top: 840px; width: 1500px; font-size: 32px; color: var(--niebla); line-height: 1.4; opacity: 0; }  </style>
+  <div id="root" data-composition-id="e6" data-width="1920" data-height="1080">
+    <div class="banda"></div>
+    <div id="e6-vel">
+    <div id="e6-t"><span class="w" id="e6w0">Lo&nbsp;</span><span class="w" id="e6w1">que&nbsp;</span><span class="w" id="e6w2">medimos&nbsp;</span></div>
+    <div id="e6-cifras"><div class="cif" id="e6c0"><b>0,84</b><span>AUC del modelo entre clientes al día (datos sintéticos propios)</span></div><div class="cif" id="e6c1"><b>≈ 2/3</b><span>de los casos que pasan a atraso están en el 10 % mejor puntuado</span></div><div class="cif" id="e6c2"><b>≈ 7×</b><span>lo que lograría el azar con la misma cola</span></div></div>
+    <div id="e6-nota">Medido solo sobre datos sintéticos propios, no sobre la cartera de la Caja. La precisión absoluta es baja (4,7 %) porque el evento es raro.</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#e6-vel", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 0);
+    tl.fromTo("#e6w0", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.40);
+    tl.fromTo("#e6w1", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.52);
+    tl.fromTo("#e6w2", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.64);
+    tl.fromTo("#e6c0", { opacity: 0, y: 40, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.7, ease: "power3.out" }, 1.00);
+    tl.fromTo("#e6c1", { opacity: 0, y: 40, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.7, ease: "power3.out" }, 1.60);
+    tl.fromTo("#e6c2", { opacity: 0, y: 40, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.7, ease: "power3.out" }, 2.20);
+    tl.fromTo("#e6-nota", { opacity: 0 }, { opacity: 1, duration: 0.7, ease: "power2.out" }, 3.4);
+    tl.to("#e6-vel", { opacity: 0, duration: 0.35, ease: "power2.in" }, 5.62);
+    window.__timelines["e6"] = tl;
+  </script>
+</template>

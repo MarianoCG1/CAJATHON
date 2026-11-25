@@ -1,0 +1,52 @@
+<template>
+  <style>
+      :root { --tinta: #0E1A3A; --tinta2: #16264F; --maiz: #F4B63F; --turquesa: #1BB5A8; --terracota: #E4572E; --papel: #F7F3EA; --piedra: #5C6B7A; --niebla: #9FB3C8; --font-display: Outfit, Inter, sans-serif; }
+      #root { position: absolute; inset: 0; overflow: hidden; font-family: Inter, sans-serif; }
+      #root { background: var(--papel); color: var(--tinta); }
+      .banda { position: absolute; left: 0; top: 0; width: 1920px; height: 10px; background: linear-gradient(90deg, #F4B63F 0 38%, #1BB5A8 38% 70%, #0E1A3A 70%); }
+      #e3-t { position: absolute; left: 120px; top: 118px; width: 1680px; font-family: var(--font-display); font-size: 62px; font-weight: 700; letter-spacing: -0.02em; }
+      .w { display: inline-block; opacity: 0; }
+      #e3-panel { position: absolute; left: 120px; top: 250px; width: 1680px; background: #fff; border-radius: 22px; box-shadow: 0 24px 60px rgba(14,26,58,.14); padding: 26px 34px; }
+      #e3-cab { font-size: 26px; font-weight: 700; color: #0F8F85; padding-bottom: 14px; border-bottom: 3px solid var(--maiz); margin-bottom: 8px; }
+      .fila { display: grid; grid-template-columns: 220px 260px 1fr 470px; align-items: center; gap: 24px; height: 116px; border-bottom: 1px solid #E4DFD2; }
+      .fila b { font-family: var(--font-display); font-size: 34px; } .barra { height: 18px; border-radius: 9px; background: #E4EBF1; overflow: hidden; } .barra i { display: block; height: 100%; border-radius: 9px; }
+      .por span { display: block; font-size: 28px; font-weight: 600; } .por em { display: block; font-style: normal; font-size: 24px; color: var(--piedra); margin-top: 4px; }
+      .acc { font-size: 28px; font-weight: 700; color: var(--tinta); }
+      #e3-pie { position: absolute; left: 120px; top: 1000px; font-size: 22px; color: var(--piedra); }  </style>
+  <div id="root" data-composition-id="e3" data-width="1920" data-height="1080">
+    <div class="banda"></div>
+    <div id="e3-vel">
+    <div id="e3-t"><span class="w" id="e3w0">En&nbsp;</span><span class="w" id="e3w1">cada&nbsp;</span><span class="w" id="e3w2">corte,&nbsp;</span><span class="w" id="e3w3">una&nbsp;</span><span class="w" id="e3w4">lista&nbsp;</span><span class="w" id="e3w5">corta&nbsp;</span><span class="w" id="e3w6">de&nbsp;</span><span class="w" id="e3w7">clientes&nbsp;</span><span class="w" id="e3w8">al&nbsp;</span><span class="w" id="e3w9">día&nbsp;</span><span class="w" id="e3w10">con&nbsp;</span><span class="w" id="e3w11">riesgo.&nbsp;</span></div>
+    <div id="e3-panel"><div id="e3-cab">Cola de clientes con riesgo de deterioro · todos al día hoy</div><div class="fila" id="e3f0"><b>CRE-01274</b><div class="barra"><i id="e3b0" style="background:#E4572E;width:82%"></i></div><div class="por"><span>Abonos −41 % frente a su promedio, 3 meses</span><em>Consultas en otras entidades ×3</em></div><div class="acc">Llamada de acompañamiento</div></div><div class="fila" id="e3f1"><b>CRE-03380</b><div class="barra"><i id="e3b1" style="background:#E4572E;width:71%"></i></div><div class="por"><span>Cobros digitales a la baja</span><em>Pagó 4 días tarde, 2 veces</em></div><div class="acc">WhatsApp: recordatorio amable</div></div><div class="fila" id="e3f2"><b>CRE-00912</b><div class="barra"><i id="e3b2" style="background:#D98E04;width:64%"></i></div><div class="por"><span>Abonos −28 %, no es estacional</span><em>Su deuda en otras entidades sube</em></div><div class="acc">Visita de asesoría</div></div><div class="fila" id="e3f3"><b>CRE-02117</b><div class="barra"><i id="e3b3" style="background:#D98E04;width:50%"></i></div><div class="por"><span>Saldo promedio en cuenta cae</span><em>Señal en 2 familias de señales</em></div><div class="acc">Llamada de acompañamiento</div></div><div class="fila" id="e3f4"><b>CRE-04408</b><div class="barra"><i id="e3b4" style="background:#D98E04;width:44%"></i></div><div class="por"><span>Menos operaciones en cuenta</span><em>Persistente 3 meses</em></div><div class="acc">WhatsApp: ofrecer asesoría</div></div></div>
+    <div id="e3-pie">Maqueta ilustrativa · datos ficticios</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#e3-vel", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 0);
+    tl.fromTo("#e3w0", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.40);
+    tl.fromTo("#e3w1", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.50);
+    tl.fromTo("#e3w2", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.60);
+    tl.fromTo("#e3w3", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.70);
+    tl.fromTo("#e3w4", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.80);
+    tl.fromTo("#e3w5", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.90);
+    tl.fromTo("#e3w6", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 1.00);
+    tl.fromTo("#e3w7", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 1.10);
+    tl.fromTo("#e3w8", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 1.20);
+    tl.fromTo("#e3w9", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 1.30);
+    tl.fromTo("#e3w10", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 1.40);
+    tl.fromTo("#e3w11", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 1.50);
+    tl.fromTo("#e3f0", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.40);
+    tl.fromTo("#e3b0", { scaleX: 0 }, { scaleX: 1, transformOrigin: "left center", duration: 0.7, ease: "power3.out" }, 1.70);
+    tl.fromTo("#e3f1", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.80);
+    tl.fromTo("#e3b1", { scaleX: 0 }, { scaleX: 1, transformOrigin: "left center", duration: 0.7, ease: "power3.out" }, 2.10);
+    tl.fromTo("#e3f2", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.20);
+    tl.fromTo("#e3b2", { scaleX: 0 }, { scaleX: 1, transformOrigin: "left center", duration: 0.7, ease: "power3.out" }, 2.50);
+    tl.fromTo("#e3f3", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.60);
+    tl.fromTo("#e3b3", { scaleX: 0 }, { scaleX: 1, transformOrigin: "left center", duration: 0.7, ease: "power3.out" }, 2.90);
+    tl.fromTo("#e3f4", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 3.00);
+    tl.fromTo("#e3b4", { scaleX: 0 }, { scaleX: 1, transformOrigin: "left center", duration: 0.7, ease: "power3.out" }, 3.30);
+
+    tl.to("#e3-vel", { opacity: 0, duration: 0.35, ease: "power2.in" }, 7.62);
+    window.__timelines["e3"] = tl;
+  </script>
+</template>

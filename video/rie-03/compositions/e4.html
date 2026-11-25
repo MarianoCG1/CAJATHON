@@ -1,0 +1,52 @@
+<template>
+  <style>
+      :root { --tinta: #0E1A3A; --tinta2: #16264F; --maiz: #F4B63F; --turquesa: #1BB5A8; --terracota: #E4572E; --papel: #F7F3EA; --piedra: #5C6B7A; --niebla: #9FB3C8; --font-display: Outfit, Inter, sans-serif; }
+      #root { position: absolute; inset: 0; overflow: hidden; font-family: Inter, sans-serif; }
+      #root { background: radial-gradient(1200px 760px at 50% 40%, #1A2C5E 0%, var(--tinta) 72%); color: #fff; }
+      .banda { position: absolute; left: 0; top: 0; width: 1920px; height: 10px; background: linear-gradient(90deg, #F4B63F 0 38%, #1BB5A8 38% 70%, #0E1A3A 70%); }
+      #e4-t { position: absolute; left: 120px; top: 112px; font-family: var(--font-display); font-size: 62px; font-weight: 700; letter-spacing: -0.02em; }
+      .w { display: inline-block; opacity: 0; }
+      #e4-sub { position: absolute; left: 120px; top: 210px; font-size: 30px; color: var(--niebla); }
+      #e4-graf { position: absolute; left: 120px; top: 290px; }
+      #e4-ev { position: absolute; left: 1210px; top: 300px; width: 600px; list-style: none; }
+      #e4-ev li { font-size: 34px; font-weight: 600; margin-bottom: 26px; padding-left: 38px; position: relative; opacity: 0; }
+      #e4-ev li::before { content: ""; position: absolute; left: 0; top: 12px; width: 18px; height: 18px; border-radius: 50%; background: var(--maiz); }
+      #e4-acc { position: absolute; left: 1210px; top: 700px; width: 600px; padding: 24px 30px; border-radius: 18px; background: rgba(27,181,168,.16); border: 3px solid var(--turquesa); opacity: 0; }
+      #e4-acc small { display: block; font-size: 24px; letter-spacing: .14em; text-transform: uppercase; color: var(--turquesa); font-weight: 700; margin-bottom: 8px; }
+      #e4-acc b { font-family: var(--font-display); font-size: 40px; }  </style>
+  <div id="root" data-composition-id="e4" data-width="1920" data-height="1080">
+    <div class="banda"></div>
+    <div id="e4-vel">
+    <div id="e4-t"><span class="w" id="e4w0">El&nbsp;</span><span class="w" id="e4w1">caso:&nbsp;</span><span class="w" id="e4w2">la&nbsp;</span><span class="w" id="e4w3">evidencia,&nbsp;</span><span class="w" id="e4w4">antes&nbsp;</span><span class="w" id="e4w5">de&nbsp;</span><span class="w" id="e4w6">actuar.&nbsp;</span></div>
+    <div id="e4-sub">CRE-01274 · taller de confecciones · ficticio</div>
+    <svg id="e4-graf" viewBox="0 0 1000 500" width="1000" height="500">
+      <rect x="0" y="0" width="1000" height="500" rx="22" fill="rgba(255,255,255,.05)"/>
+      <text x="40" y="52" font-size="30" font-weight="700" fill="#F4B63F">Abonos mensuales en cuenta (relativos a su promedio)</text>
+      <polyline id="e4-ref" points="60,192 183,183 306,196 429,189 551,186 674,192 797,196 920,189" fill="none" stroke="#9FB3C8" stroke-width="6" stroke-dasharray="14 12" stroke-dashoffset="0" opacity="0"/>
+      <polyline id="e4-cli" points="60,183 183,176 306,189 429,196 551,242 674,275 797,315 920,341" fill="none" stroke="#E4572E" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1500" stroke-dashoffset="1500"/>
+      <text x="40" y="482" font-size="26" fill="#9FB3C8">Roja: el cliente · Punteada: su sector (ilustrativo)</text>
+    </svg>
+    <ul id="e4-ev"><li id="e4l0">Abonos caen 3 meses seguidos</li><li id="e4l1">No es estacional: su sector no cae</li><li id="e4l2">Más consultas en otras entidades</li><li id="e4l3">Dos familias de señales coinciden</li></ul>
+    <div id="e4-acc"><small>Acción propuesta</small><b>Llamada de acompañamiento esta semana</b></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#e4-vel", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 0);
+    tl.fromTo("#e4w0", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.40);
+    tl.fromTo("#e4w1", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.51);
+    tl.fromTo("#e4w2", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.62);
+    tl.fromTo("#e4w3", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.73);
+    tl.fromTo("#e4w4", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.84);
+    tl.fromTo("#e4w5", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 0.95);
+    tl.fromTo("#e4w6", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, 1.06);
+    tl.fromTo("#e4-ref", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 1.2);
+    tl.to("#e4-cli", { strokeDashoffset: 0, duration: 2.2, ease: "power2.inOut" }, 1.5);
+    tl.fromTo("#e4l0", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 2.40);
+    tl.fromTo("#e4l1", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 3.10);
+    tl.fromTo("#e4l2", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 3.80);
+    tl.fromTo("#e4l3", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 4.50);
+    tl.fromTo("#e4-acc", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 5.6);
+    tl.to("#e4-vel", { opacity: 0, duration: 0.35, ease: "power2.in" }, 7.62);
+    window.__timelines["e4"] = tl;
+  </script>
+</template>

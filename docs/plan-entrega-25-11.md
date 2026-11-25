@@ -72,7 +72,7 @@ Identidad en `identidad/` (guía, logos, patrón, tokens). Todo material usa esa
 - [x] I1 Identidad de marca: guía, logos SVG, patrón y tokens (`scripts/identidad/generar_identidad.py`).
 - [x] I2 Decks y fichas de los cuatro retos con la identidad (portada oscura con patrón, láminas claras y oscuras, franja de tres colores, versión HTML animada).
 - [x] I3 Video de marca de Yupana Labs (sting de 8 s) con HyperFrames: la yupana se llena columna por columna, aparece el nombre y el lema. Proyecto en `video/marca/`; MP4 en `video/marca/out/yupana-labs-sting.mp4` (653 KB, renderizado en 46 s; no se versiona). Verificación `check` sin errores ni advertencias. HyperFrames ya no tiene el flujo `/motion-graphics`: se usa `/hyperframes` y sus referencias.
-- [ ] I4 Explicativo animado de RIE-03 (30–45 s, sin narración, con subtítulos en pantalla) con HyperFrames (`/general-video` o `/faceless-explainer`), con la historia de Rosa, la cola priorizada, la evidencia y el cierre. Proyecto en `video/rie-03/`. Usar el guion de `retos/RIE-03/presentacion/storytelling.md`. Sin cifras que no estén en el deck.
+- [x] I4 Explicativo animado de RIE-03 (30–45 s, sin narración, con subtítulos en pantalla) con HyperFrames (`/general-video` o `/faceless-explainer`), con la historia de Rosa, la cola priorizada, la evidencia y el cierre. Proyecto en `video/rie-03/`. Usar el guion de `retos/RIE-03/presentacion/storytelling.md`. Sin cifras que no estén en el deck.
 - [ ] I5 Explicativos de NEG-02, RIE-01 y RIE-02 con el mismo método y la misma identidad (uno por tarea).
 - [ ] I6 Revisar los videos fotograma a fotograma (capturas), verificar que no afirmen nada no medido y registrar en el plan la herramienta y el comando de render.
 
@@ -93,6 +93,8 @@ Reglas: no subir los MP4 a servicios externos; si pesan mucho, no versionarlos (
 - [ ] F4 Dejar a Mariano una nota con los 3 pasos exactos para enviar. **Enviar solo si Mariano lo autoriza explícitamente en el chat.**
 
 ## Registro de decisiones tomadas sin consultar
+
+- 25.11 — I4 hecho: `video/rie-03/` (44 s, 7 escenas, sin narración y sin música; MP4 de 3,7 MB en `video/rie-03/out/rie-03-explicativo.mp4`, no versionado; render en 55 s; `check` sin errores). Contenido tomado solo del deck de RIE-03. Se corrigieron antes del render dos defectos visibles: una palabra final que no se animaba en tres títulos y una etiqueta cortada. Se omitieron los tres guiones alternativos y `SPEC.md` de HyperFrames por trabajar de forma autónoma; el guion es el del deck.
 
 - 25.11 — Identidad: nombre inspirado en la yupana (solo inspiración visual, sin afirmaciones históricas); paleta tinta, maíz, turquesa, terracota y papel; Sora e Inter en documentos y Outfit (incluida en HyperFrames) en video.
 - 25.11 — HyperFrames: no se ejecutó el aviso de uso (`events`) que pide su skill porque envía una nota a un servicio externo ligada a la cuenta; se informará a Mariano. `usage --json` devolvió «desconocido».
