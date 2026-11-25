@@ -45,7 +45,7 @@ docs/
   validacion.md      evidencia de pruebas (se llena en el evento)
   consulta-organizacion.md · mensaje-equipo.md · mensaje-glem.md   textos listos para enviar
 boveda/              bóveda Obsidian: competencia, decisiones, nodo por reto y Tablero de avance
-scripts/             sinergia/ (parejas y prioridad) · conceptos/ (borradores) · boveda/ (tablero) · auditoria/ (dificultad de los datos)
+scripts/             sinergia/ (parejas y prioridad) · conceptos/ (borradores) · boveda/ (tablero) · auditoria/ (dificultad de los datos) · entrega/ (paquetes de entrega y fichas PDF)
 backend/ frontend/   esqueleto vacío para el evento; NO poner aquí la funcionalidad crítica antes del 03.12
 ```
 

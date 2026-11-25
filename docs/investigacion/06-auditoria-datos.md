@@ -1,4 +1,4 @@
-# 06 · Auditoría de dificultad de los datos sintéticos (RIE-03, NEG-02, RIE-01)
+# 06 · Auditoría de dificultad de los datos sintéticos (RIE-03, NEG-02, RIE-01, RIE-02)
 
 Fecha: 21.11.2026 · Responsable: Mariano (tarea 1 de `docs/prompts-inicio.md`) · Herramientas: `scripts/auditoria/` (3 scripts + `test_auditoria.py`).
 
@@ -13,6 +13,7 @@ Fecha: 21.11.2026 · Responsable: Mariano (tarea 1 de `docs/prompts-inicio.md`) 
 | **RIE-03** | **No** | Ninguna variable sola pasa de AUC 0.85. La regla «ya tiene atraso» no sirve para quien está al día. Las señales de alerta temprana aportan ≈ +0.11 de AUC sobre mirar el atraso | Se puede demostrar anticipación real. Hablar en *lift* y captura en el top-k, no en precisión absoluta (la base es muy baja) |
 | **NEG-02** | **No, pero por otra razón** | Con información completa las reglas casi lo resuelven (por construcción de la verdad). Lo que limita es la **visibilidad**: Caja sola 13 %, con consentimientos 31 %, información completa 95 % | El valor demostrable es el **mecanismo del consentimiento**, no la precisión de un clasificador. No vender «el modelo detecta 95 %» |
 | **RIE-01** | **No; es el riesgo contrario** | La señal es moderada: una fórmula de 3 factores da AUC 0.66, el modelo 0.68 y el techo con la susceptibilidad real 0.69. Con 2 semanas de visitas se captura ≈ 20 % de los incumplimientos (azar 8 %) | El impacto es un *lift* de ≈ 2.5×, no una detección casi perfecta. Y la ventaja del modelo sobre la regla de zona + actividad es pequeña (≈ 2 pp): hay que decidirlo antes del evento |
+| **RIE-02** | **No** | Ninguna regla simple de coincidencias logra recall alto y precisión razonable: «cualquier coincidencia» detecta 90 % del fraude pero marca el 100 % de los señuelos (precisión 12 %); exigir dos tipos de vínculo baja los señuelos marcados al 37 % pero detecta solo 43 % | Se puede demostrar el valor de ponderar por rareza y de exigir corroboración de comportamiento, midiendo señuelos marcados y recall por dificultad |
 
 ## RIE-03 — anticipar el deterioro antes del atraso
 
@@ -77,8 +78,24 @@ Se entrena con `impacto_historico` y se mide en `backtest/` (verdad oculta). Obj
 2. La diferencia que sí es defendible es la **resolución de sector** y la **incertidumbre calibrada**, no la precisión puntual.
 3. Hay que decidir si el KPI principal es la captura de saldo en mora (más ruidosa) o la identificación de cartera afectada (K1, AUC similar).
 
+## RIE-02 — redes de riesgo y señuelos legítimos
+
+Partición de evaluación: 1,884 solicitudes (114 de fraude, 397 señuelos legítimos, el resto normales). Reglas de coincidencia por recurso compartido con otra solicitud (teléfono, dispositivo, dirección de domicilio o de negocio, teléfono de referencia):
+
+| Regla | Recall del fraude | Precisión | Señuelos marcados | Normales marcadas |
+|---|---|---|---|---|
+| R1 comparte algún recurso | 0.90 | 0.12 | 1.00 | 0.27 |
+| R2 comparte teléfono | 0.05 | 0.03 | 0.15 | 0.10 |
+| R3 comparte dispositivo | 0.51 | 0.17 | 0.61 | 0.03 |
+| R4 comparte dos o más tipos de recurso | 0.43 | 0.15 | 0.37 | 0.10 |
+| R5 dos tipos y referencia a otro solicitante | 0.11 | 0.16 | 0.18 | 0.00 |
+
+Por dificultad de la red, R4 marca en promedio el 72 % de las solicitudes de las redes de dificultad baja, el 53 % de las medias y el 12 % de las altas.
+
+**Lectura:** no es trivial; el compromiso entre recall y señuelos es fuerte (ninguna regla supera 0.17 de precisión) y las redes difíciles casi no se ven con reglas de coincidencia. Esto deja espacio para la ponderación por rareza del vínculo, la corroboración de comportamiento y el expediente con explicación legítima. **Advertencia:** son reglas a nivel de solicitud; el detector del reto trabaja con grafo y comunidades, y su medición final es por red. Las pruebas fijan que ninguna regla simple logre recall y precisión altos a la vez (`test_rie02_...`).
+
 ## Qué no cubre esta auditoría
 
-- **RIE-02:** ya se endureció en la sesión previa (una regla simple daba 100 %); no se repitió aquí.
+- **RIE-02:** se audita con reglas a nivel de solicitud; la medición del detector (grafo y comunidades) se hace en el evento.
 - No se probó ningún modelo del reto ni se midió efecto de intervenciones: los datos no contienen intervenciones.
 - Los parámetros de los generadores son supuestos nuestros: un resultado «no trivial» aquí no garantiza que los datos que entregue la Caja lo sean.

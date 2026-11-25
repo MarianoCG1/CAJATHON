@@ -13,10 +13,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import auditar_neg02 as neg02
 import auditar_rie01 as rie01
+import auditar_rie02 as rie02
 import auditar_rie03 as rie03
 
 sin_rie03 = pytest.mark.skipif(not (rie03.DATOS / "verdad_terreno.csv").exists(), reason="faltan datos de RIE-03")
 sin_neg02 = pytest.mark.skipif(not (neg02.DATOS / "verdad" / "verdad_oportunidades.csv").exists(), reason="faltan datos de NEG-02")
+sin_rie02 = pytest.mark.skipif(not (rie02.DATOS / "etiquetas_solicitudes.csv").exists(), reason="faltan datos de RIE-02")
 sin_rie01 = pytest.mark.skipif(not (rie01.DATOS / "backtest" / "impacto_backtest.csv").exists(), reason="faltan datos de RIE-01")
 
 
@@ -47,3 +49,16 @@ def test_rie01_una_formula_de_pocos_factores_no_alcanza_para_ganar():
     cap = r["captura_incumplimiento_con_2_semanas_de_visitas"]
     assert cap["regla f_3"] > cap["azar"] * 1.5  # hay señal para priorizar
     assert cap["arboles"] >= cap["regla f_3"] - 0.01
+
+
+@sin_rie02
+def test_rie02_ninguna_regla_simple_logra_recall_y_precision_altos():
+    r = rie02.auditar()["reglas"]
+    for nombre, m in r.items():
+        assert not (m["recall_fraude"] >= 0.8 and m["precision"] >= 0.5), nombre
+    # marcar toda coincidencia atrapa casi todo el fraude pero arrastra a los señuelos legítimos
+    r1 = r["R1 comparte algún recurso"]
+    assert r1["recall_fraude"] > 0.8 and r1["senuelos_marcados"] > 0.9 and r1["precision"] < 0.3
+    # exigir dos tipos de vínculo reduce señuelos pero pierde fraude
+    r4 = r["R4 comparte dos o más tipos de recurso"]
+    assert r4["senuelos_marcados"] < r1["senuelos_marcados"] and r4["recall_fraude"] < r1["recall_fraude"]

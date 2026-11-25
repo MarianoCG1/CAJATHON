@@ -50,10 +50,10 @@ El texto corrido es `retos/<ID>/postulacion.md` (ya existe).
 - [x] R1.4 Ficha PDF y diagrama.
 
 ### 4. RIE-02 · Redes de riesgo (prioridad #5)
-- [ ] R4.1 Verificar con una auditoría rápida que los señuelos siguen siendo difíciles (reglas simples vs. verdad) y anotar el resultado en `docs/investigacion/06-auditoria-datos.md`; incorporar la evidencia a Factibilidad.
-- [ ] R4.2 Paquete de entrega.
+- [x] R4.1 Verificar con una auditoría rápida que los señuelos siguen siendo difíciles (reglas simples vs. verdad) y anotar el resultado en `docs/investigacion/06-auditoria-datos.md`; incorporar la evidencia a Factibilidad.
+- [x] R4.2 Paquete de entrega.
 - [ ] R4.3 Revisión independiente y correcciones.
-- [ ] R4.4 Ficha PDF y diagrama.
+- [x] R4.4 Ficha PDF y diagrama.
 
 ## Cierre del día
 
