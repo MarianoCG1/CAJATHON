@@ -12,7 +12,7 @@ Un asesor de oportunidades con consentimiento verificable. Sobre un sandbox de O
 
 ## 3. Impacto esperado en el KPI
 
-El expediente no publica KPI ni línea base; ambos están por validar con el owner. Proponemos como KPI principal el porcentaje de clientes con una oportunidad válida identificada dentro de su consentimiento, y como complementos la completitud del perfil, el alcance a prospectos (inclusión financiera), el ahorro potencial para el cliente y la reducción de ofertas de crédito indebidas. Condición de calidad: cero usos de datos fuera de consentimiento. La línea base de la Caja y la cifra de impacto están por validar con el owner; no anticipamos ninguna cifra. Medimos con datos sintéticos, comparando la visión con solo datos de la Caja contra la visión con datos autorizados de varias entidades. Valida el mecanismo, no el impacto comercial real.
+El expediente no publica KPI ni línea base; ambos están por validar con el owner. Proponemos como KPI principal el porcentaje de clientes con una oportunidad válida identificada dentro de su consentimiento, y como complementos la completitud del perfil, el alcance a prospectos (inclusión financiera), el ahorro potencial para el cliente y la reducción de ofertas de crédito indebidas. Condición de calidad: cero usos de datos fuera de consentimiento. La línea base de la Caja y la cifra de impacto están por validar con el owner; no anticipamos ninguna cifra. Medimos con datos sintéticos, con tres brazos: solo datos de la Caja (base), datos autorizados de varias entidades según los consentimientos del conjunto (el escenario realista) y consentimiento total (el techo, para dimensionar lo que cuesta no tener consentimiento). Valida el mecanismo, no el impacto comercial real.
 
 ## 4. Enfoque tecnológico
 
@@ -20,7 +20,7 @@ Python, FastAPI y SQLite para las APIs simuladas y el consentimiento; React para
 
 ## 5. Tecnología preexistente
 
-Solo librerías de código abierto y un generador de datos sintéticos del equipo, con sus pruebas, que produce clientes ficticios, entidades ficticias, transacciones, catálogo y consentimientos. Es una herramienta de datos: no contiene la solución. No usamos datos reales, código de empleadores ni de otros clientes.
+Solo librerías de código abierto y un generador de datos sintéticos del equipo, con sus 41 pruebas automáticas, creado el 21.11.2026, que produce clientes ficticios, entidades ficticias, transacciones, catálogo y consentimientos. Es una herramienta de datos: no contiene la solución. No usamos datos reales, código de empleadores ni de otros clientes.
 
 ## 6. Funcionalidad crítica
 
@@ -32,4 +32,4 @@ Prototipo funcional de punta a punta con un caso: un prospecto autoriza a tres e
 
 ## 8. Factibilidad y dependencias
 
-Estimamos 28 horas-persona para el mínimo viable y 36 para el completo, frente a unas 32 a 34 disponibles; si falta tiempo se recorta la redacción con IA y la interfaz, nunca el control de consentimiento ni la evidencia. Un escenario pesimista de horas solo se sostiene con recortes. Dependemos de la respuesta del owner sobre KPI y línea base, política de IA externa y marco de consentimiento. Como los datos son referenciales y sin compromiso de entrega, usaremos nuestro sandbox sintético; si la Caja comparte datos, los adaptaremos.
+Estimamos 28 horas-persona para el mínimo viable y 36 para el completo, frente a unas 32 a 34 disponibles; si falta tiempo se recorta la redacción con IA y la interfaz, nunca el control de consentimiento ni la evidencia. Un escenario pesimista de horas solo se sostiene con recortes. Evidencia preliminar, medida sobre nuestro generador y no sobre la Caja: al aplicar las mismas reglas con distinta visibilidad, la Caja sola ve el 13 % de las oportunidades que existen, con los consentimientos del conjunto el 31 % y con información completa el 95 % (un techo mecánico); es decir, el consentimiento, y no el modelo, es lo que más limita lo alcanzable, y por eso es el centro del diseño. Dependemos de la respuesta del owner sobre KPI y línea base, política de IA externa y marco de consentimiento. Como los datos son referenciales y sin compromiso de entrega, usaremos nuestro sandbox sintético; si la Caja comparte datos, los adaptaremos.

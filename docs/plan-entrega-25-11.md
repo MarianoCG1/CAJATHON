@@ -38,10 +38,10 @@ El texto corrido es `retos/<ID>/postulacion.md` (ya existe).
 - [x] R3.4 Ficha PDF y diagrama (`scripts/entrega/ficha_pdf.py`; diagrama de flujo en la ficha).
 
 ### 2. NEG-02 · Open Finance con consentimiento (prioridad #3)
-- [ ] R2.1 Ajustes: incluir la evidencia medida del mecanismo (Caja sola 13 %, con consentimientos 31 %, información completa 95 %; rotulada como preliminar y por construcción en el techo); KPI en tres brazos; dejar claro que el valor demostrable es el consentimiento verificable, no la precisión de un clasificador.
-- [ ] R2.2 Paquete de entrega.
+- [x] R2.1 Ajustes: incluir la evidencia medida del mecanismo (Caja sola 13 %, con consentimientos 31 %, información completa 95 %; rotulada como preliminar y por construcción en el techo); KPI en tres brazos; dejar claro que el valor demostrable es el consentimiento verificable, no la precisión de un clasificador.
+- [x] R2.2 Paquete de entrega.
 - [ ] R2.3 Revisión independiente y correcciones.
-- [ ] R2.4 Ficha PDF y diagrama.
+- [x] R2.4 Ficha PDF y diagrama.
 
 ### 3. RIE-01 · Radar climático (prioridad #4)
 - [ ] R1.1 Ajustes: cambiar el criterio de aceptación («superar a las reglas en 5 de 6 eventos») por uno defendible con la señal real (no peor que la mejor regla simple al mismo presupuesto, *lift* ≥ 2× sobre el azar con capacidad realista, rango p10–p90 que cubra la mora en ≥ 4 de 6); declarar el impacto como *lift* moderado; KPI principal K1.
