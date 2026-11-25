@@ -1,4 +1,4 @@
-# NEG-02 · Open Finance: competir en un ecosistema abierto
+# NEG-02 · Open Finance: competir en un ecosistema financiero abierto
 
 | | |
 |---|---|

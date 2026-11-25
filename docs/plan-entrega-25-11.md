@@ -40,7 +40,7 @@ El texto corrido es `retos/<ID>/postulacion.md` (ya existe).
 ### 2. NEG-02 · Open Finance con consentimiento (prioridad #3)
 - [x] R2.1 Ajustes: incluir la evidencia medida del mecanismo (Caja sola 13 %, con consentimientos 31 %, información completa 95 %; rotulada como preliminar y por construcción en el techo); KPI en tres brazos; dejar claro que el valor demostrable es el consentimiento verificable, no la precisión de un clasificador.
 - [x] R2.2 Paquete de entrega.
-- [ ] R2.3 Revisión independiente y correcciones.
+- [x] R2.3 Revisión independiente y correcciones.
 - [x] R2.4 Ficha PDF y diagrama.
 
 ### 3. RIE-01 · Radar climático (prioridad #4)

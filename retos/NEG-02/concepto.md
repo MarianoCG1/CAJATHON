@@ -65,7 +65,7 @@ Qué se construye y por qué no es un chatbot ni un panel:
 - **Interfaz** React: pantalla de consentimiento para el cliente y vista del ejecutivo con la oferta y su evidencia.
 - **Pruebas y validación:** pruebas de la guardia, de fuga y de extremo a extremo, más el arnés de KPI (`scripts/evaluar_kpi.py`) y `docs/validacion.md`.
 
-El expediente exige capacidades avanzadas con valor real, desarrollo funcional e integración tecnológica, y descarta chatbots genéricos, dashboards, formularios o automatizaciones básicas. El valor diferencial es el control de consentimiento probado, la estimación predictiva sobre datos multientidad y el agente con evidencia verificable. **Riesgo declarado:** si falta tiempo, el modelo de ingreso y la redacción con LLM son lo primero que se recorta, y el producto quedaría más cerca de reglas con consentimiento (ver escenario pesimista en el panorama §4.4).
+El expediente exige capacidades avanzadas con valor real, desarrollo funcional e integración tecnológica, y advierte que no basta con chatbots genéricos, dashboards, formularios o automatizaciones básicas, y pide desarrollo funcional, integración tecnológica y valor diferencial frente a soluciones convencionales. El valor diferencial es el control de consentimiento probado, la estimación predictiva sobre datos multientidad y el agente con evidencia verificable. **Riesgo declarado:** si falta tiempo, el modelo de ingreso y la redacción con LLM son lo primero que se recorta, y el producto quedaría más cerca de reglas con consentimiento (ver escenario pesimista en el panorama §4.4).
 
 ## 5. Tecnología preexistente
 
@@ -88,7 +88,7 @@ Criterios de «funciona» (para el mínimo de 3/5 en la condición eliminatoria)
 6. El ejecutivo aprueba, edita o descarta; la decisión queda auditada; ninguna acción se ejecuta sola.
 7. `evaluar_kpi.py` entrega el número antes/después de forma reproducible.
 
-Esta funcionalidad se construye **durante la fase presencial**, con commits frecuentes como evidencia. Antes del evento solo existen el generador de datos y la documentación.
+Esta funcionalidad se construye **durante la fase presencial**, con commits frecuentes como evidencia. Antes del evento solo existen el generador de datos, su auditoría de dificultad (`scripts/auditoria/auditar_neg02.py`) y la documentación.
 
 ## 7. Nivel de desarrollo esperado
 

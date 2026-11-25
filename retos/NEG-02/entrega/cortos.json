@@ -2,33 +2,74 @@
   "titulo": "NEG-02 · Asesor de oportunidades con consentimiento verificable para un ecosistema financiero abierto",
   "resumen": "Sandbox de Open Finance simulado en el que la Caja recibe datos de otras entidades solo con consentimiento del cliente (alcance, vigencia, finalidad, revocación), arma su vista integral y propone productos con evidencia trazable al dato y al consentimiento que los originó. También sabe abstenerse ante sobreendeudamiento. El control de consentimiento vive en el código y se prueba. Se mide en tres brazos sintéticos: solo Caja, con consentimientos y consentimiento total.",
   "cortos": {
-    "1": "La información financiera de una persona o negocio está repartida entre varias instituciones y ninguna ve el cuadro completo; compartirla con autorización del cliente puede darle más valor si es segura y cumple la normativa. Hoy la Caja solo conoce lo que el cliente hace con ella: no sabe si tiene deudas más caras en otra entidad, ahorro ocioso o ingresos que llegan a otro lugar, ni atiende a quien aún no es cliente. Además, sin ver el endeudamiento externo podría ofrecer crédito a quien ya está sobreendeudado (hipótesis nuestra).",
-    "2": "Un asesor de oportunidades con consentimiento verificable. Sobre un sandbox de Open Finance simulado, la Caja recibe datos de otras entidades solo cuando el cliente lo autoriza, arma su vista integral y propone productos; cada propuesta muestra qué dato, de qué entidad y bajo qué consentimiento la originó. También sabe abstenerse: si detecta sobreendeudamiento, no ofrece crédito. El consentimiento no es una casilla: un control en el código decide qué se puede ver según alcance, vigencia, finalidad y revocación. El sistema propone; decide siempre el ejecutivo.",
-    "3": "KPI principal propuesto: porcentaje de clientes con una oportunidad válida identificada dentro de su consentimiento; complementos: completitud del perfil, alcance a prospectos (inclusión), ahorro potencial del cliente y reducción de ofertas de crédito indebidas. Condición de calidad: cero usos de datos fuera de consentimiento. Línea base y cifra de impacto, por validar con el owner; no se anticipa ninguna. Medición sintética en tres brazos: solo datos de la Caja (base), datos autorizados de varias entidades según los consentimientos del conjunto (escenario realista) y consentimiento total (techo). Valida el mecanismo, no el impacto comercial real.",
+    "1": "La información financiera de una persona o negocio está repartida entre varias instituciones y ninguna ve el cuadro completo; compartirla con autorización del cliente puede darle más valor si es segura y cumple la normativa. Suponemos que hoy la Caja ve con detalle solo lo que el cliente hace con ella (supuesto a validar con el owner). Sin las tasas, el ahorro ni el flujo de ingresos que el cliente tiene en otras entidades, es difícil saber si paga deudas más caras, si tiene ahorro ocioso o si sus ingresos llegan a otro lugar, y atender a quien aún no es su cliente. Además podría ofrecer crédito a quien ya está sobreendeudado (hipótesis nuestra).",
+    "2": "Un asesor de oportunidades con consentimiento verificable. Sobre un sandbox de Open Finance simulado, la Caja recibe datos de otras entidades solo cuando el cliente lo autoriza, arma su vista integral y propone productos que podrían convenirle; cada propuesta muestra qué dato, de qué entidad y bajo qué consentimiento la originó. También sabe abstenerse: si detecta sobreendeudamiento, no ofrece crédito. El consentimiento no es una casilla: un control en el código decide qué se puede ver según alcance, vigencia, finalidad y revocación. El sistema propone; decide siempre el ejecutivo.",
+    "3": "KPI principal propuesto: porcentaje de clientes con una oportunidad válida identificada dentro de su consentimiento; complementos: completitud del perfil, alcance a quienes aún no son clientes (aproximación a la inclusión), ahorro potencial (con un catálogo de tasas supuesto) y reducción de ofertas de crédito indebidas. Calidad: cero fugas en la batería adversarial y 100 % de ofertas con consentimiento vigente y trazabilidad. Línea base y cifra de impacto, por validar con el owner. Tres brazos sintéticos: solo Caja, con consentimientos y consentimiento total. Dato preliminar sobre datos sintéticos propios: Caja sola 13 %, con consentimientos (tasa supuesta 65 %) 31 %, completa 95 % (tope teórico). Valida el mecanismo, no el impacto comercial real.",
     "4": "Python, FastAPI y SQLite para las APIs simuladas y el consentimiento; React para la interfaz. Un modelo predictivo (scikit-learn) estima el ingreso a partir de los movimientos; un motor detecta oportunidades con evidencia; un agente (Pydantic AI) las explica con herramientas acotadas y verifica que cada cifra citada exista en los datos autorizados. El proveedor de IA es intercambiable y puede funcionar sin red. Cada entidad consultante usa credencial y cada acceso queda registrado. El prototipo no se conecta a sistemas de la Caja.",
-    "5": "Antes del evento existen solo: un generador de datos sintéticos del equipo, con 41 pruebas automáticas, que produce clientes y entidades ficticios, transacciones, catálogo y consentimientos (creado el 21.11.2026; titular: el equipo), y las librerías abiertas bajo sus licencias. Es una herramienta de datos: no contiene la solución. No se usan datos reales ni código de empleadores o de otros clientes. Servicio de consentimiento, APIs simuladas, vista integral, motor, agente, interfaz y medición se construyen en el evento.",
-    "6": "Un cliente otorga un consentimiento con alcance y vigencia; la Caja consulta tres o más entidades simuladas a través del control de consentimiento; se arma la vista integral; y el ejecutivo recibe ofertas, o una abstención, con su evidencia. Si el cliente revoca, la vista se reduce de inmediato. Criterios: lo no autorizado no llega al motor ni al agente (batería adversarial con cero fugas: consentimiento vencido, revocado, de otro receptor, solo vista, alcance insuficiente); el ejecutivo aprueba, edita o descarta; toda decisión queda auditada.",
+    "5": "Antes del evento existen solo: un generador de datos sintéticos del equipo, con 41 pruebas automáticas, que produce clientes y entidades ficticios, transacciones, catálogo y consentimientos, y un script de auditoría que mide cuánto del conjunto de datos es visible con distinta información (análisis del conjunto, no motor ni medición del KPI). Ambos creados el 21.11.2026; titular: el equipo. Librerías abiertas bajo sus licencias. Sin datos reales ni código de empleadores o de otros clientes. Servicio de consentimiento, APIs simuladas, vista integral, motor, agente, interfaz y medición se construyen en el evento.",
+    "6": "Un cliente otorga un consentimiento con alcance y vigencia; la Caja consulta tres o más entidades simuladas a través del control de consentimiento; se arma la vista integral; y el ejecutivo recibe ofertas, o una abstención, con su evidencia. Si el cliente revoca, la vista se reduce de inmediato. Criterios: lo no autorizado no llega al motor ni al agente (batería adversarial con cero fugas: consentimiento vencido, revocado, de otro receptor, solo vista, alcance insuficiente, ventana histórica excedida); el ejecutivo aprueba, edita o descarta; toda decisión queda auditada.",
     "7": "Prototipo funcional de punta a punta con un caso: un prospecto autoriza a tres entidades, la Caja propone consolidar sus deudas y explica los datos usados; el cliente revoca una entidad y la propuesta desaparece; un cliente sobreendeudado recibe una abstención. Incluye pruebas automáticas, reporte de validación y el número antes y después del KPI. Fuera de alcance: APIs o datos reales, conformidad con un estándar de Open Finance, scoring o decisiones crediticias.",
-    "8": "28 horas-persona para el mínimo viable y 36 para el completo, frente a unas 32 a 34 disponibles; si falta tiempo se recorta la redacción con IA y la interfaz, nunca el control de consentimiento ni la evidencia. Evidencia preliminar medida sobre nuestro generador (no sobre la Caja): con las mismas reglas, la Caja sola ve el 13 % de las oportunidades, con los consentimientos del conjunto el 31 % y con información completa el 95 % (techo mecánico): el consentimiento es lo que más limita. Pendiente del owner: KPI y línea base, política de IA externa y marco de consentimiento. Sin datos de la Caja usamos nuestro sandbox."
+    "8": "28 horas-persona para el mínimo viable y 36 para el completo, frente a 32 a 34 disponibles; en un escenario pesimista el mínimo sube a unas 41 h y solo cabe con recortes ya definidos (primero la redacción con IA y la interfaz, nunca el consentimiento ni la evidencia). Mínimo comprometido: control de consentimiento, modelo de ingreso estimado y motor con evidencia. Dato preliminar sobre datos sintéticos propios: Caja sola 13 % de las oportunidades y abstenciones, con consentimientos 31 % (tasa supuesta 65 %), completa 95 % (tope teórico). Pendiente: KPI y línea base, IA externa y marco de consentimiento."
   },
   "ficha": {
-    "problema": "La información financiera del cliente está repartida entre instituciones. La Caja solo ve lo que el cliente hace con ella: pierde oportunidades y podría ofrecer crédito a quien ya está sobreendeudado (hipótesis del equipo).",
+    "problema": "La información financiera del cliente está repartida entre instituciones. Suponemos que la Caja ve con detalle solo lo suyo (a validar con el owner): pierde oportunidades y podría ofrecer crédito a quien ya está sobreendeudado (hipótesis del equipo).",
     "solucion": "Sandbox de Open Finance simulado: la Caja recibe datos de otras entidades solo con consentimiento, arma una vista integral y propone productos con el dato y el consentimiento que los originó; también se abstiene ante sobreendeudamiento. Decide siempre el ejecutivo.",
-    "impacto": "KPI propuesto: % de clientes con una oportunidad válida identificada dentro de su consentimiento; cero usos fuera de consentimiento. Tres brazos sintéticos: solo Caja, con consentimientos y consentimiento total. Línea base por confirmar.",
+    "impacto": "KPI propuesto: % de clientes con una oportunidad válida dentro de su consentimiento; cero fugas en la batería adversarial. Tres brazos sintéticos. Dato preliminar sobre datos sintéticos propios: Caja sola 13 %, con consentimientos (tasa supuesta 65 %) 31 %, completa 95 % (tope teórico). Línea base por confirmar.",
     "tecnologia": "Python, FastAPI, SQLite, scikit-learn y React; control de consentimiento en código; agente (Pydantic AI) con proveedor intercambiable y modo sin red.",
-    "preexistente": "Generador de datos sintéticos (41 pruebas) con clientes, entidades, transacciones y consentimientos ficticios, creado el 21.11.2026. Todo lo demás se construye en el evento.",
+    "preexistente": "Generador de datos sintéticos (41 pruebas) y un script de auditoría de los datos, creados el 21.11.2026. Todo lo demás, incluida la medición del KPI, se construye en el evento.",
     "critica": "Cliente otorga consentimiento, la Caja consulta 3 o más entidades por el control de consentimiento, vista integral y ofertas o abstención con evidencia; al revocar, la vista se reduce de inmediato.",
-    "factibilidad": "28 a 36 horas-persona con recortes definidos. Medido sobre nuestro generador: la Caja sola ve 13 % de las oportunidades, con consentimientos 31 % y con información completa 95 % (techo mecánico): el consentimiento es lo que más limita.",
-    "flujo": ["Cliente otorga consentimiento", "Control de consentimiento en código", "Consulta a 3 o más entidades simuladas", "Vista integral del cliente", "Motor de oportunidades con evidencia", "Agente explica o se abstiene", "Ejecutivo decide", "Auditoría y KPI en 3 brazos"]
+    "factibilidad": "28 a 36 horas-persona (pesimista: 41 h con recortes definidos). Mínimo comprometido: consentimiento, modelo de ingreso y motor con evidencia. Dato preliminar sobre datos sintéticos propios: 13 % / 31 % / 95 %.",
+    "flujo": [
+      "Cliente otorga consentimiento",
+      "Control de consentimiento en código",
+      "Consulta a 3 o más entidades simuladas",
+      "Vista integral del cliente",
+      "Motor de oportunidades con evidencia",
+      "Agente explica o se abstiene",
+      "Ejecutivo decide",
+      "Auditoría y KPI en 3 brazos"
+    ]
   },
   "asumimos": [
-    {"tema": "KPI y línea base", "supuesto": "Sin cifra oficial. Línea base metodológica: el mismo motor con solo datos de la Caja (brazo base); no sustituye a la línea base de la Caja."},
-    {"tema": "Rol de la Caja", "supuesto": "Solo receptora de datos de otras entidades; no proveedora."},
-    {"tema": "Marco de consentimiento", "supuesto": "Alcance, vigencia, finalidad, receptor y revocación según las reglas del sandbox; sin declarar conformidad con ningún estándar de Open Finance."},
-    {"tema": "Productos y condiciones", "supuesto": "Catálogo supuesto del equipo; las condiciones comerciales son ilustrativas."},
-    {"tema": "Datos propios de la Caja para ofertas", "supuesto": "Se tratan como usables sin consentimiento adicional solo dentro del sandbox; por confirmar con Legal."},
-    {"tema": "Seguridad del sandbox", "supuesto": "Credencial por entidad receptora, auditoría de cada acceso y minimización; los requisitos reales de TI y Seguridad quedan para una etapa posterior."},
-    {"tema": "IA externa", "supuesto": "Solo para redactar explicaciones, con datos sintéticos; hay modo sin red; la política real está por confirmar."},
-    {"tema": "Datos de la Caja", "supuesto": "No se entregan: se usa el sandbox sintético propio, adaptable a un esquema de la Caja."}
+    {
+      "tema": "KPI y línea base",
+      "supuesto": "Sin cifra oficial. Línea base metodológica: el mismo motor con solo datos de la Caja (brazo base); no sustituye a la línea base de la Caja."
+    },
+    {
+      "tema": "Rol de la Caja",
+      "supuesto": "Solo receptora de datos de otras entidades; no proveedora."
+    },
+    {
+      "tema": "Marco de consentimiento",
+      "supuesto": "Alcance, vigencia, finalidad, receptor y revocación según las reglas del sandbox; sin declarar conformidad con ningún estándar de Open Finance."
+    },
+    {
+      "tema": "Productos y condiciones",
+      "supuesto": "Catálogo supuesto del equipo; las condiciones comerciales son ilustrativas."
+    },
+    {
+      "tema": "Datos propios de la Caja para ofertas",
+      "supuesto": "Se tratan como usables sin consentimiento adicional solo dentro del sandbox; por confirmar con Legal."
+    },
+    {
+      "tema": "Seguridad del sandbox",
+      "supuesto": "Credencial por entidad receptora, auditoría de cada acceso y minimización; los requisitos reales de TI y Seguridad quedan para una etapa posterior."
+    },
+    {
+      "tema": "IA externa",
+      "supuesto": "Solo para redactar explicaciones, con datos sintéticos; hay modo sin red; la política real está por confirmar."
+    },
+    {
+      "tema": "Datos de la Caja",
+      "supuesto": "No se entregan: se usa el sandbox sintético propio, adaptable a un esquema de la Caja."
+    },
+    {
+      "tema": "Centrales de riesgo",
+      "supuesto": "Se asume que la Caja ve de otras entidades, como mucho, información agregada de centrales de riesgo; si el owner confirma que ya es parte del flujo, se añade un cuarto brazo, Caja más central de riesgo."
+    },
+    {
+      "tema": "Tasa de consentimiento",
+      "supuesto": "El 31 % preliminar usa una tasa de consentimiento de 65 % definida por nosotros; se medirá la sensibilidad."
+    }
   ]
 }
