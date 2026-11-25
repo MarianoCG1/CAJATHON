@@ -44,10 +44,10 @@ El texto corrido es `retos/<ID>/postulacion.md` (ya existe).
 - [x] R2.4 Ficha PDF y diagrama.
 
 ### 3. RIE-01 · Radar climático (prioridad #4)
-- [ ] R1.1 Ajustes: cambiar el criterio de aceptación («superar a las reglas en 5 de 6 eventos») por uno defendible con la señal real (no peor que la mejor regla simple al mismo presupuesto, *lift* ≥ 2× sobre el azar con capacidad realista, rango p10–p90 que cubra la mora en ≥ 4 de 6); declarar el impacto como *lift* moderado; KPI principal K1.
-- [ ] R1.2 Paquete de entrega.
+- [x] R1.1 Ajustes: cambiar el criterio de aceptación («superar a las reglas en 5 de 6 eventos») por uno defendible con la señal real (no peor que la mejor regla simple al mismo presupuesto, *lift* ≥ 2× sobre el azar con capacidad realista, rango p10–p90 que cubra la mora en ≥ 4 de 6); declarar el impacto como *lift* moderado; KPI principal K1.
+- [x] R1.2 Paquete de entrega.
 - [ ] R1.3 Revisión independiente y correcciones.
-- [ ] R1.4 Ficha PDF y diagrama.
+- [x] R1.4 Ficha PDF y diagrama.
 
 ### 4. RIE-02 · Redes de riesgo (prioridad #5)
 - [ ] R4.1 Verificar con una auditoría rápida que los señuelos siguen siendo difíciles (reglas simples vs. verdad) y anotar el resultado en `docs/investigacion/06-auditoria-datos.md`; incorporar la evidencia a Factibilidad.

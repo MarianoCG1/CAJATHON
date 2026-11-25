@@ -495,7 +495,7 @@ Métricas de apoyo: **M4 calibración** (cobertura del intervalo p10–p90 de la
 6. **Replicar en varios mundos**: repetir con, por ejemplo, 20 semillas del generador y reportar media ± desviación; así un resultado no depende de un sorteo.
 7. **Reportar** en `docs/validacion.md`: tabla con/sin por evento, K3 como rango, ablaciones y fallas.
 
-Criterio interno de aceptación (**supuesto**; no es un objetivo de impacto): la solución supera a B1 y B3 en captura de saldo en mora al mismo K en al menos 5 de 6 eventos, y el intervalo p10–p90 cubre la mora total en al menos 4 de 6. Si no se cumple, se reporta tal cual y se explica.
+Criterio interno de aceptación (**supuesto**; no es un objetivo de impacto): la solución supera a B1 y B3 en captura de saldo en mora al mismo K en al menos 5 de 6 eventos; no queda por debajo de B2 más allá del ruido entre semillas; logra un *lift* de al menos 2× sobre el azar (B0) con la capacidad real de visitas; y el intervalo p10–p90 cubre la mora total en al menos 4 de 6. Si no se cumple, se reporta tal cual y se explica. Ajustado el 24.11 con la auditoría de datos (`docs/investigacion/06-auditoria-datos.md`): el dataset es ruidoso (techo ≈ 24 % de captura con visitas de dos semanas frente a ≈ 8 % del azar), por lo que se promete *lift* moderado y no una detección casi perfecta.
 
 ### e.4 Cómo evitar un backtest circular
 * La verdad se genera con **variables ocultas** (microclima por sector y evento, ruido individual) y el mapa visible tiene error: ningún modelo llega al 100 %.

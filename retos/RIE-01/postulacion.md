@@ -12,7 +12,7 @@ Radar Climático de Cartera (nombre de trabajo). El analista elige un escenario,
 
 ## 3. Impacto esperado en el KPI
 
-El KPI oficial y la línea base están a validar con el owner; no los inventamos. Proponemos medir el porcentaje de cartera afectada que se identifica antes del evento con la capacidad disponible, la precisión de la priorización frente a reglas simples (por zona o por monto), la pérdida evitada estimada, siempre como rango, y la continuidad de los negocios afectados. La medición será un backtest reproducible sobre eventos simulados con resultados ocultos, con y sin la solución. La cifra de impacto esperada está a validar con el owner cuando exista la línea base.
+El KPI oficial y la línea base están a validar con el owner; no los inventamos. Proponemos medir el porcentaje de cartera afectada que se identifica antes del evento con la capacidad disponible, la precisión de la priorización frente a reglas simples (por zona o por monto), la pérdida evitada estimada, siempre como rango, y la continuidad de los negocios afectados. La medición será un backtest reproducible sobre eventos simulados con resultados ocultos, con y sin la solución. La cifra de impacto esperada está a validar con el owner cuando exista la línea base. Esperamos un efecto moderado y verificable: priorizar mejor que el azar y que las reglas simples con la capacidad real de visitas, con rangos de incertidumbre calibrados, y no una predicción casi perfecta.
 
 ## 4. Enfoque tecnológico
 
@@ -20,7 +20,7 @@ Python, FastAPI y React. Un modelo estadístico calibrado con eventos histórico
 
 ## 5. Tecnología preexistente
 
-Un generador de datos totalmente sintéticos con sus pruebas, herramienta general del equipo creada antes del evento, sin datos reales ni código de terceros, y librerías de código abierto bajo sus licencias. No se usa ningún dato real ni personal. Si la Caja entrega datos o mapas, los usaremos en su lugar. Todo lo demás se construye durante el evento.
+Un generador de datos totalmente sintéticos con sus 40 pruebas automáticas, herramienta general del equipo creada el 21.11.2026, antes del evento, sin datos reales ni código de terceros, y librerías de código abierto bajo sus licencias. No se usa ningún dato real ni personal. Si la Caja entrega datos o mapas, los usaremos en su lugar. Todo lo demás se construye durante el evento.
 
 ## 6. Funcionalidad crítica
 
@@ -32,4 +32,4 @@ Prototipo funcional de punta a punta, con pruebas automáticas, reporte de valid
 
 ## 8. Factibilidad y dependencias
 
-Alcance estimado en 32 horas-persona (cuatro personas, ocho horas cada una), con hitos de control y recortes ordenados si el tiempo aprieta, sin perder el flujo de punta a punta. Dependencias a confirmar con la Caja: KPI y línea base, datos disponibles, política de IA externa y catálogo de acciones permitido por sus políticas de riesgo.
+Alcance estimado en 32 horas-persona (cuatro personas, ocho horas cada una), con hitos de control y recortes ordenados si el tiempo aprieta, sin perder el flujo de punta a punta. Evidencia medida sobre nuestros datos sintéticos, no sobre la Caja: el problema no es trivial, porque una fórmula de tres factores (amenaza del distrito, sensibilidad de la actividad e intensidad del escenario) no basta para resolverlo; con visitas de dos semanas, equivalentes a cerca del 8 % de la cartera, el azar captura el 8 % de los incumplimientos, esa fórmula cerca del 18 % y un modelo entrenado con la historia el 20 %. Dependencias a confirmar con la Caja: KPI y línea base, datos disponibles, política de IA externa y catálogo de acciones permitido por sus políticas de riesgo.
