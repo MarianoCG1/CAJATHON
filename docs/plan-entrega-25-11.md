@@ -32,10 +32,10 @@ El texto corrido es `retos/<ID>/postulacion.md` (ya existe).
 ## Ruta específica por reto
 
 ### 1. RIE-03 · Anticipar el deterioro (prioridad #1; fallback único)
-- [ ] R3.1 Ajustes: incluir en Factibilidad la evidencia medida («señales tempranas elevan el AUC de 0.81 a 0.92; entre clientes al día, el 10 % mejor puntuado concentra ≈ 2/3 de los casos», sobre datos sintéticos propios) y hablar en *lift*, no en precisión absoluta; reforzar «IA externa solo para demo/intercambiable».
-- [ ] R3.2 Paquete de entrega (5 archivos).
+- [x] R3.1 Ajustes: incluir en Factibilidad la evidencia medida («señales tempranas elevan el AUC de 0.81 a 0.92; entre clientes al día, el 10 % mejor puntuado concentra ≈ 2/3 de los casos», sobre datos sintéticos propios) y hablar en *lift*, no en precisión absoluta; reforzar «IA externa solo para demo/intercambiable».
+- [x] R3.2 Paquete de entrega (5 archivos).
 - [ ] R3.3 Revisión independiente y correcciones.
-- [ ] R3.4 Ficha PDF y diagrama.
+- [x] R3.4 Ficha PDF y diagrama (`scripts/entrega/ficha_pdf.py`; diagrama de flujo en la ficha).
 
 ### 2. NEG-02 · Open Finance con consentimiento (prioridad #3)
 - [ ] R2.1 Ajustes: incluir la evidencia medida del mecanismo (Caja sola 13 %, con consentimientos 31 %, información completa 95 %; rotulada como preliminar y por construcción en el techo); KPI en tres brazos; dejar claro que el valor demostrable es el consentimiento verificable, no la precisión de un clasificador.
