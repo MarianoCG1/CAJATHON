@@ -55,7 +55,8 @@ def validar(f: dict) -> list[str]:
         err.append(f"nombre: {largo(f['nombre'])} > {MAX_NOMBRE}")
     for clave, _, _, maximo, obligatoria in CAMPOS:
         t = f.get(clave, "")
-        if obligatoria and not t:
+        nuevo_desde_cero = clave == "existing_description" and f["starting_point"] == "new"
+        if obligatoria and not t and not nuevo_desde_cero:
             err.append(f"{clave}: obligatorio y vacío")
         if largo(t) > maximo:
             err.append(f"{clave}: {largo(t)} > {maximo}")
@@ -88,9 +89,11 @@ def markdown(id_: str, f: dict) -> str:
             for i, d in enumerate(f["existing_developments"], 1):
                 L += [f"**Desarrollo preexistente {i}:** nombre «{d['name']}» · tipo: {d['type']} · nivel: {d['maturity']} · titularidad: {d['ownership']}", ""]
         n[p] = n.get(p, 0) + 1
+        if clave == "existing_description" and f["starting_point"] == "new":
+            continue
         L += [f"**{pregunta}** {'(obligatoria)' if obligatoria else '(opcional)'} — {largo(f[clave])}/{maximo}", "", "```text", f[clave], "```", ""]
         if clave == "solution_differentiation":
-            L += ["**Material visual complementario** (opcional, PDF/PNG/JPG, hasta 3 de 10 MB): subir los archivos de `adjuntos/`:", ""]
+            L += ["**Material visual complementario** (opcional, PDF/PNG/JPG, hasta 3 de 10 MB): " + ("subir los archivos de `adjuntos/`:" if f["adjuntos"] else "todavía no preparado."), ""]
             L += [f"- `{a}`" for a in f["adjuntos"]] + [""]
             L += [f"**Enlace complementario** (opcional): {f['visual_link'] or 'dejar vacío'}", ""]
     L += [f"## Paso 6 · {PASOS[6]}", "", f"- **Tipo de requerimiento:** {DATOS[f['data_requirement']]}", "",
