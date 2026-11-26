@@ -14,7 +14,7 @@ Ritmo: plan de pagos al ciclo del negocio
 
 ## Paso 2 · Concepto de solución
 
-**¿En qué consiste su solución y cómo aborda la problemática del desafío?** (obligatoria) — 1451/2000
+**¿En qué consiste su solución y cómo aborda la problemática del desafío?** (obligatoria) — 1682/2000
 
 ```text
 Hoy la evaluación pondera un ingreso estándar único y el sistema central solo genera cuotas fijas con una periodicidad única. Los negocios que dependen de campañas, cosechas o clima pueden quedarse sin liquidez en sus meses bajos aunque sean viables, y dos negocios del mismo rubro pueden tener ciclos distintos.
@@ -25,16 +25,16 @@ Ritmo es una herramienta para el Asesor de Negocios que, desde la admisión, est
 (B) un motor que arma el plan, con monto y periodo por cuota, bajo las reglas del producto;
 (C) la explicación de por qué cada cuota es alta o baja y su comparación con la cuota fija en escenarios base y adversos.
 
-Permite presentar al comité el ciclo estimado, las cuotas, la relación Cuota/Utilidad Neta por etapa y los supuestos. El asesor conserva su criterio y el comité decide; nada se aprueba solo. Trata los riesgos del desafío: estimación optimista (holgura frente a escenarios adversos), concentración de capital (tope por cuota), encarecimiento (se muestra el costo frente a la cuota fija), sobreendeudamiento (utilidad neta de otras deudas y carga familiar) y dependencia del modelo (todo es visible y editable). Funciona sin conexión a los sistemas de la Caja.
+Permite presentar al comité el ciclo estimado, las cuotas, la relación Cuota/Utilidad Neta por etapa y los supuestos. El asesor conserva su criterio y el comité decide; nada se aprueba solo. Trata los riesgos del desafío: estimación optimista (holgura frente a escenarios adversos), concentración de capital (tope por cuota), encarecimiento (se muestra el costo frente a la cuota fija), sobreendeudamiento (utilidad neta de otras deudas y carga familiar) y dependencia del modelo (todo es visible y editable). Sirve para créditos nuevos (admisión, ampliación y recuperación), clientes formales e informales, con o sin historial, y distintos rubros, zonas y productos. Respeta políticas, condiciones contractuales y normativa. Web adaptable al móvil, sin conexión a los sistemas de la Caja.
 ```
 
-**¿Cómo funcionaría su solución?** (obligatoria) — 1378/2000
+**¿Cómo funcionaría su solución?** (obligatoria) — 1639/2000
 
 ```text
 1. El asesor ingresa sector, zona, modelo de negocio y lo recogido en campo: ventas en meses buenos, regulares y malos, costos, gastos, carga familiar, evidencias de transacciones y fechas de campaña.
 2. El modelo del ciclo parte del patrón estacional del sector y la zona (series y calendarios públicos) y lo ajusta al cliente: cuanta más evidencia, más pesa su dato; sin ella, hereda el del sector. Entrega la utilidad neta por etapa durante la vida del crédito, con banda de incertidumbre y escenarios adversos (caída de ventas, campaña retrasada, El Niño).
-3. Con monto, TEA, seguros y plazo, un programa de optimización elige cuánto capital amortiza cada cuota. En cada etapa: Cuota/UN ≤ factor del asesor ≤ factor del producto y, como holgura, la cuota cubierta por la utilidad de los escenarios adversos. Respeta cuota mínima, plazo, TEA única y topes de concentración y de periodos sin amortizar.
-4. Aplica las reglas del owner: TED base 360 por días exactos, seguros por interés simple, prelación seguros, interés y capital, y pendientes sin interés cuando un valle no alcanza.
+3. Con monto, TEA, seguros y plazo, un programa de optimización elige cuánto capital amortiza cada cuota. En cada etapa la Cuota/Utilidad Neta no supera un factor de trabajo, que queda por debajo del tope del producto (holgura configurable; el asesor puede bajarlo más), y además la cuota debe caber en la utilidad de los escenarios adversos. La utilidad neta descuenta otras deudas y, en personas naturales o parcialmente formales, la carga familiar. Respeta cuota mínima, plazo, TEA única y topes de concentración y de periodos sin amortizar.
+4. Aplica las reglas del owner: TEA única y editable (sin superar la tasa máxima del BCRP), TED base 360 por días exactos, seguros por interés simple, prelación seguros, interés y capital, y pendientes sin interés cuando un valle no alcanza.
 5. Si el monto no cabe, dice qué restricción lo impide y propone el monto máximo para ese plazo o el plazo que necesita ese monto.
 6. Muestra el motivo de cada cuota y la comparación con la cuota fija; el asesor ajusta (factor, etapa, fecha de pago), recalcula y exporta la hoja para comité.
 ```
@@ -55,14 +55,14 @@ Frente a simuladores de cuota fija y cronogramas estacionales con cuotas iguales
 
 ## Paso 3 · Impacto esperado
 
-**¿Qué impacto generaría su solución y cómo contribuiría al resultado esperado del desafío?** (obligatoria) — 1525/2000
+**¿Qué impacto generaría su solución y cómo contribuiría al resultado esperado del desafío?** (obligatoria) — 1696/2000
 
 ```text
 Para el cliente: cuotas que caben en su utilidad en cada etapa. Para la Caja: un plan sustentado ante el comité con riesgos cuantificados antes del desembolso, y apoyo a la retención de clientes estacionales.
 
 KPI del prototipo: periodos en que la cuota supera la capacidad (Cuota/UN > factor, y cuota > utilidad), plan adaptado frente a cuota fija, en escenario base y adversos. Secundarios: costo y TCEA, ajuste al ciclo, concentración de capital e ingreso de la Caja. No medimos mora, como indicó el owner; la retención se mediría en un piloto, con línea base por confirmar.
 
-Ejemplo ilustrativo (cálculo propio con las reglas del owner y utilidades supuestas; no es una medición): un productor con ingresos de campaña pide S/ 8,000 a 12 meses (TEA 40 %, factor 0,65; utilidad entre S/ 400 y S/ 4,200, promedio S/ 1,304). Con el promedio califica para cuota fija de S/ 801, pero esa cuota supera su utilidad en 8 de 12 meses. Seguir el ciclo sin holgura corrige el año normal, pero un mes de retraso en la cosecha le deja S/ 1,940 sin cubrir. Con holgura caben S/ 6,887 a 12 meses, o S/ 8,000 a 17 meses, sin meses en déficit en los escenarios definidos. Es así por construcción, porque el plan se diseña contra ellos; por eso el banco de pruebas lo evaluará contra el ciclo verdadero de perfiles sintéticos. Alargar el plazo cuesta: el interés sube de S/ 1,572 (cuota fija a 12 meses) a S/ 1,908, y la herramienta lo muestra para que el cliente y el comité decidan.
+Ejemplo ilustrativo (cálculo propio con las reglas del owner y utilidades supuestas; no es una medición): un productor con ingresos de campaña pide S/ 8,000 a 12 meses (TEA 40 %, factor 0,65; utilidad entre S/ 400 y S/ 4,200, promedio S/ 1,304). Con el promedio califica para cuota fija de S/ 801, pero esa cuota supera su utilidad en 8 de 12 meses. Seguir el ciclo sin holgura corrige el año normal, pero un mes de retraso en la cosecha le deja S/ 1,940 sin cubrir. Con holgura caben S/ 6,887 a 12 meses, o S/ 8,000 a 17 meses, sin meses en déficit en los escenarios definidos. Es así por construcción, porque el plan se diseña contra ellos; por eso el banco de pruebas lo evaluará contra el ciclo verdadero de perfiles sintéticos. El ejemplo usa el tope (0,65) para mostrar el efecto; con holgura bajo el tope (0,60) siguen cabiendo S/ 8,000 a 17 meses, con S/ 2,060 de interés, o S/ 6,533 a 12 meses. Alargar el plazo cuesta: el interés sube de S/ 1,572 (cuota fija a 12 meses) a S/ 1,908, y la herramienta lo muestra para que el cliente y el comité decidan.
 
 Las cifras de impacto saldrán de ese banco de pruebas.
 ```

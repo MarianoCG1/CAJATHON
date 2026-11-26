@@ -46,7 +46,7 @@ python -m pytest -q
 |---|---|---|---|
 | 1 | **Calcular NEG-01 por tu cuenta** (reglas abajo) y buscar casos que rompan el motor: valle sin capacidad, monto que no cabe, ciclo plano | 50 min | Confirmas o refutas cada cifra; 3 casos de prueba escritos |
 | 2 | **NEG-01 contra el expediente** actualizado y sus 10 preguntas frecuentes: qué falta, qué contradice, qué presentamos como hecho siendo supuesto | 40 min | Lista priorizada de cambios al formulario |
-| 3 | **Plataforma:** comunicados y expedientes nuevos desde anoche; comparar los campos reales con `formulario.md` (pide al coordinador lo que solo él ve) | 15 min | «Sin cambios» o qué cambió |
+| 3 | **Plataforma:** revisada a las 3:50 p. m. sin comunicados nuevos desde anoche. Vuelve a mirar a las 7 y avisa si hay algo | 5 min | «Sin cambios» o qué cambió |
 | 4 | **Atacar COM-01** (`retos/COM-01/`): reproducir la simulación y cuestionarla. ¿La comparación «solo cartera» es justa? ¿Algún supuesto fabrica la ventaja? ¿Las cifras del formulario salen del script? | 55 min | Objeciones y cuáles invalidan una afirmación |
 | 5 | **RIE-03 rápido:** repetir la auditoría y revisar el contraste con el caso real (`docs/casos-reales.md`) | 20 min | Errores o «sin hallazgos» |
 | 6 | **Construibilidad de las 3:** por opción, módulo más riesgoso, horas que tú estimas para tu parte y qué recortarías. Llenar tu voto en `docs/tres-opciones.md` | 30 min | Voto y justificación en 5 líneas |
@@ -87,6 +87,8 @@ git show origin/reto/neg-01-antonio:retos/NEG-01/concepto.md
 - Utilidad de enero a diciembre: 450, 400, 500, 2800, 4200, 3200, 900, 700, 650, 700, 600, 550. La cuota del 15 se paga con la utilidad del mes anterior.
 - El Niño: abril 650, mayo 1960, junio 2940, julio 2240. Caída general: −20 %.
 - Holgura en **todos** los meses: cuota = menor entre 0,65 × utilidad, utilidad con El Niño y utilidad con caída.
+- Repetir con factor 0,60 (holgura bajo el tope que pide el expediente): debe dar 17 meses con interés 2,060, o 6,533 a 12 meses.
+- A las 6:30 cruza tus resultados con Antonio.
 - Cifras a verificar: cuota fija 801; 8 de 12 meses en déficit; déficit 1,861; con holgura 6,887 a 12 meses o 8,000 a 17.
 
 ## Reglas generales

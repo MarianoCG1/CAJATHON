@@ -9,7 +9,7 @@ Este repositorio es el espacio de trabajo del equipo **Yupana Labs** para el **C
 - El formulario cierra **hoy, 26.11, a las 11:59 p. m.** y admite **un solo desafío** por equipo.
 - Hay tres opciones listas: **NEG-01**, **COM-01** y **RIE-03**. Ver `docs/tres-opciones.md`; la decisión se toma hoy desde las 8 p. m. (`docs/reunion-26-11.md`).
 - Textos para pegar: `retos/<ID>/entrega/formulario.md` y `adjuntos/`. El concepto de NEG-01 vive en la rama `reto/neg-01-antonio`.
-- Revisión de Glem de hoy: `docs/glem-hasta-las-8.md`.
+- Tareas de hoy: Glem en `docs/glem-hasta-las-8.md` y Antonio en `docs/antonio-hasta-las-8.md`.
 - Ningún agente envía nada a la plataforma.
 
 ## 1. El escenario

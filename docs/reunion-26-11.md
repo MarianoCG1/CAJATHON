@@ -55,7 +55,9 @@ No verifiqué los datos de fuentes externas que cita el panorama (series del BCR
 
 Es un cambio respecto de anoche: esa comparación no incluía el trabajo de Antonio.
 
-Tareas de Glem hasta las 8: `docs/glem-hasta-las-8.md`.
+Tareas hasta las 8: `docs/glem-hasta-las-8.md` y `docs/antonio-hasta-las-8.md`.
+
+Plataforma revisada el 26.11 a las 3:50 p. m.: sin comunicados nuevos; ningún borrador iniciado. En NEG-01 se añadió la holgura bajo el tope que pide el expediente.
 
 ## Preguntas para decidir en la reunión
 

@@ -54,7 +54,7 @@
     {"paso": "Lo que el asesor observa", "detalle": "Ventas en meses buenos, regulares y malos, costos, gastos, carga familiar, transacciones y campañas."},
     {"paso": "Ciclo del negocio", "detalle": "Patrón del sector y la zona ajustado al cliente según su evidencia; utilidad neta por etapa con banda."},
     {"paso": "Escenarios", "detalle": "Caída de ventas, campaña retrasada y El Niño, definidos antes de calcular."},
-    {"paso": "Plan de pagos", "detalle": "Monto y periodo por cuota, Cuota/UN bajo el factor en cada etapa, holgura en escenarios adversos y prelación del owner."},
+    {"paso": "Plan de pagos", "detalle": "Monto y periodo por cuota, Cuota/UN con holgura bajo el tope en cada etapa, escenarios adversos y prelación del owner."},
     {"paso": "Explicación y comparación", "detalle": "Motivo de cada cuota y contraste con la cuota fija: tensión, costo, concentración y exposición."},
     {"paso": "Decisión", "detalle": "El asesor ajusta factor, etapa o fecha; exporta la hoja y el comité aprueba."}
   ],
@@ -106,13 +106,13 @@
           "Valle: cuota baja, cubre intereses",
           "Cima: amortiza el máximo capital",
           "Abril: limita el escenario adverso",
-          "Siempre Cuota/UN ≤ 0,65"
+          "Con holgura bajo el tope del producto"
         ],
         "incertidumbre": "S/ 8,000 pide 17 meses y más interés.",
         "accion": "Proponer al comité",
         "nota": "El asesor puede bajar el factor.",
         "pie": "Nada se aprueba solo.",
-        "limite": "S/ 8,000 a 17 meses: interés S/ 1,908 frente a S/ 1,572 de la cuota fija a 12."
+        "limite": "Ejemplo al tope 0,65. Con holgura (0,60): S/ 8,000 a 17 meses, interés S/ 2,060 (cuota fija a 12: S/ 1,572)."
       }
     }
   ],
