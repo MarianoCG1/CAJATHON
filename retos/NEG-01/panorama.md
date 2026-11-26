@@ -57,7 +57,7 @@ El expediente lista flujos de ingresos, estacionalidad, historial de pagos, cond
 
 | Necesidad del expediente | Dónde se cubre |
 |---|---|
-| (A) Modelo predictivo del ciclo que combine sector, zona y cliente | §c.2 patrones + ajuste por agregación parcial |
+| (A) Modelo predictivo del ciclo que combine sector, zona y cliente | §c.2 patrones + ajuste por agregación parcial + proyección con El Niño |
 | (B) Motor que construya el plan bajo las restricciones del producto | §c.3 cronograma y §c.4 programa lineal |
 | (C) Explicación de por qué cada cuota es alta o baja | §c.5 motivos por restricción activa |
 | Resultado 3: presentar al comité ciclo, cuotas, Cuota/UN y supuestos | Interfaz: hoja para comité |
@@ -71,17 +71,20 @@ El expediente lista flujos de ingresos, estacionalidad, historial de pagos, cond
 
 ## (b) Cómo abastecerlo: datos sintéticos y públicos
 
-### b.1 Capa pública: patrones sector × zona **(supuesto de fuentes; a descargar y procesar en el evento o declarar como insumo previo)**
+### b.1 Capa pública: fuentes verificadas el 25.11.2026
 
-| Fuente | Qué aporta | Uso |
-|---|---|---|
-| BCRP (series regionales y nacionales de producción, síntesis de La Libertad) | Estacionalidad mensual por sector | Índice estacional por actividad |
-| INEI (producción nacional por sector, mensual) | Estacionalidad de comercio, manufactura y servicios | Índice estacional |
-| MIDAGRI (calendarios de siembra y cosecha por cultivo y región) | Meses de cosecha y venta por cultivo y zona | Ubicar cimas y valles agrícolas por zona |
-| SENAMHI / ENFEN (anomalías y alertas de El Niño) | Episodios climáticos y su intensidad | Escenarios adversos por sensibilidad sectorial |
-| Calendarios comerciales | Campaña escolar, Día de la Madre, Fiestas Patrias, Navidad, temporada de verano | Picos de comercio y servicios |
+| Fuente | Qué hay (verificado) | Uso | Estado |
+|---|---|---|---|
+| BCRPData, API pública | Producción agropecuaria nacional mensual por cultivo, en miles de toneladas: `PN01777AM` papa, `PN01778AM` arroz cáscara (y otros cultivos de la misma familia de códigos) | Estacionalidad por cultivo y sensibilidad a El Niño | ✅ La API respondió el 25.11 con datos a junio de 2025 |
+| BCRP, Sucursal Trujillo | «Síntesis de actividad económica de La Libertad» y presentaciones mensuales (PDF): producción agropecuaria y de otros sectores por mes en la región | Patrón regional (La Libertad) | ✅ Publicadas mensualmente; se extraen de PDF |
+| MIDAGRI (SIEA) | Boletín mensual «El Agro en Cifras» y evaluación mensual de la dinámica agropecuaria por región; calendario de cosecha de Agromercado (17 productos, dic. 2025): el arroz tiene cosecha casi continua en la costa norte irrigada | Calendarios de campaña por cultivo y región; intenciones de siembra | ✅ PDF; el detalle por provincia está por verificar en el portal del SIEA |
+| INIA (MIDAGRI) | Calendario agrícola de la Región Costa: meses recomendados de siembra y cosecha por cultivo y departamento | Ubicar cimas y valles por cultivo y zona | ✅ PDF en el repositorio del INIA |
+| NOAA CPC | Índice ONI (trimestres móviles) | Estado de El Niño y regresiones históricas | ✅ Descarga directa; último dato: **ASO 2026 = +2,46** (descargado el 25.11.2026) |
+| IGP / ENFEN | ICEN (Niño 1+2, El Niño costero) y comunicados oficiales del ENFEN | Estado y pronóstico de El Niño costero, que pesa más en la costa norte | ⚠️ La ruta antigua `met.igp.gob.pe/datos/icen.txt` ya no existe (404); se toma de los informes del IGP y los comunicados del ENFEN |
+| SENAMHI | Pronóstico estacional (por ejemplo, señaló al valle de Jequetepeque como favorable para iniciar la campaña arrocera 2025-2026 en octubre) | Ajustar el inicio de campaña del año del crédito | ✅ Boletines PDF |
+| Calendarios comerciales | Campaña escolar, Día de la Madre, Fiestas Patrias, Navidad, temporada de verano | Picos de comercio y servicios | Conocimiento público |
 
-Procesamiento: descomposición estacional (STL o X-13) de cada serie para obtener el factor por mes y su volatilidad; para cultivos, factores derivados del calendario de cosecha por zona. Resultado: una tabla `patron(actividad, zona, mes) → factor, σ`.
+Procesamiento: descomposición estacional (STL o X-13) de cada serie para obtener el factor por mes y su volatilidad; para cultivos, factores derivados del calendario de cosecha por zona. Resultado: una tabla `patron(actividad, zona, mes) → factor, σ`. **Limitación honesta:** la información pública mensual llega a nivel de región y de cultivo; el detalle por provincia o valle sale de los calendarios de INIA y MIDAGRI y del ajuste del asesor, no de una serie mensual por provincia.
 
 ### b.2 Capa sintética: perfiles de negocio con verdad conocida
 
@@ -127,6 +130,7 @@ Patrón sector × zona ──► Ajuste al cliente ──► UN por etapa (base,
 - Ajuste por agregación parcial: `log ŝ(m) = w · log s_c(m) + (1 − w) · log s_sz(m)`, con `w = n / (n + κ)`, donde `n` es la evidencia efectiva (pocos datos declarados: bajo; varios meses de transacciones: alto) y `κ` se calibra en el banco de pruebas.
 - Ventas por mes: `V(m) = V̄ · ŝ(m)`; **UN por mes** según la estructura de §b.2; **UN por etapa** = suma de la UN de los días de cada periodo.
 - Banda: cuantiles a partir de `σ_sz` y del error del ajuste; escenarios adversos según §b.2.
+- **Proyección de los meses del crédito:** para cada sector se estima su sensibilidad a El Niño con la historia (anomalía de producción mensual frente al ONI/ICEN con rezagos de 0 a 6 meses, incluidos 2017 y 2023). Con el estado previsto (comunicado del ENFEN, ONI reciente, pronóstico del SENAMHI, intenciones de siembra) se ajustan los meses concretos del crédito y se asigna peso a los escenarios adversos. Si falta tiempo en el evento, el estado de El Niño lo fija el asesor como escenario y no se estima la sensibilidad.
 - Etapas: tramos consecutivos de cima, transición y valle; definen las fechas candidatas de pago (la periodicidad sale del ciclo, no es necesariamente mensual).
 
 ### c.3 Cronograma (reglas del owner)
@@ -140,20 +144,20 @@ Para cada periodo `t` de `d_t` días, con saldo de capital `S_{t−1}`:
 - Aplicación de la cuota: primero seguros pendientes y del periodo, luego interés pendiente y del periodo, luego capital. Lo no cubierto queda pendiente en su concepto: suma a la deuda, no al saldo de capital.
 - TCEA: tasa interna de retorno de los flujos (desembolso y cuotas con seguros), anualizada.
 
-### c.4 Motor: programa lineal
+### c.4 Motor: programa de optimización
 
-Variables: `k_t ≥ 0`, capital amortizado en el periodo `t`. Como `S_{t−1} = Monto − Σ_{j<t} k_j`, el interés y el desgravamen son **lineales** en las `k`, y la cuota `C_t = D_t + M_t + I_t + k_t` también.
+Variables por periodo `t`: `k_t ≥ 0` (capital amortizado), `q_t ≥ 0` (pago de seguros e interés, del periodo y pendientes), `P_t ≥ 0` (seguros e interés pendientes al cierre) y una binaria `z_t` (1 si el periodo amortiza capital).
 
-- **Objetivo:** minimizar `Σ_t (I_t + D_t)`, el costo total para el cliente. Equivale a amortizar lo antes posible, lo que lleva el capital a las cimas.
-- **Restricciones:**
-  - `Σ_t k_t = Monto`
-  - `C_t ≤ f · UN_t` en cada etapa, con `f = factor del asesor ≤ factor del producto`
-  - `C_t ≥ cuota mínima` del producto **[POR CONFIRMAR]**
-  - `k_t ≤ c · Monto` (concentración; `c` = 35 % **(supuesto, configurable)**)
-  - Periodos sin amortización: como máximo `g` consecutivos y `G` en total **(supuesto, configurable)**; si hace falta contar periodos, se usa la variante entera (`scipy.optimize.milp`, HiGHS)
-  - Holgura de estrés: `C_t ≤ UN_t^adverso` **(regla del equipo: supuesto)**; si vuelve el problema infactible, se reporta y el asesor decide
-- **Sin solución:** se relajan las restricciones una a una para identificar cuál impide el plan y se informa qué cambiar (monto, plazo, factor o fechas).
-- Tamaño: decenas de variables por crédito; se resuelve en milisegundos.
+- Saldo de capital: `S_t = Monto − Σ_{j≤t} k_j`. Interés y desgravamen del periodo (`I_t`, `D_t`) son lineales en `S_{t−1}`; el multirriesgo `M_t` es constante.
+- Pendientes: `P_t = P_{t−1} + I_t + D_t + M_t − q_t`. Lo pendiente **no genera interés** y **no suma al saldo de capital** (regla del owner).
+- Prelación: solo se amortiza capital si no quedan pendientes: `k_t ≤ Monto · z_t` y `P_t ≤ Grande · (1 − z_t)`.
+- Cuota: `C_t = q_t + k_t`.
+- **Capacidad (regla del producto):** `C_t ≤ f · UN_t^esperada`, con `f = factor del asesor ≤ factor del producto`.
+- **Holgura (regla robusta, supuesto configurable):** `C_t ≤ UN_t^s` para cada escenario adverso `s` configurado. El ejemplo de §j muestra por qué: sin ella, un mes de retraso en la cosecha devuelve el déficit.
+- Producto: `Σ_t k_t = Monto`, `P_n = 0`, `C_t ≥ cuota mínima` **[POR CONFIRMAR]**, `k_t ≤ c · Monto` (concentración, `c` = 35 % **(supuesto)**), y como máximo `g` periodos consecutivos y `G` en total con `z_t = 0` **(supuesto)**.
+- **Objetivo:** menor costo total `Σ (I_t + D_t + M_t)`. Como el interés corre sobre el saldo, minimizar el costo equivale a amortizar lo antes posible dentro de la capacidad, que lleva el capital a las cimas como pide el owner.
+- **Sin solución:** el motor relaja una restricción a la vez para identificar cuál impide el plan, y calcula dos salidas: el **monto máximo** que cabe en el plazo pedido (búsqueda sobre el monto) y el **plazo mínimo** que necesita el monto pedido (búsqueda sobre el plazo). En el ejemplo de §j: S/ 6,888 a 12 meses o S/ 8,000 a 16 meses.
+- Tamaño: decenas de variables continuas y una binaria por periodo (12 a 36); HiGHS (`scipy.optimize.milp`) lo resuelve en milisegundos.
 
 ### c.5 Explicación por cuota
 
@@ -237,18 +241,46 @@ Los planes se construyen con lo que el asesor observaría, pero se evalúan cont
 ## (i) Plan de pruebas (en el evento)
 
 - Cronograma: casos hechos a mano por Antonio (TED, días exactos, seguros, prelación, pendientes) con tolerancia de céntimos.
-- Motor: con ciclo plano reproduce la cuota fija; con ciclo estacional, las cuotas altas caen en las cimas; nunca viola Cuota/UN ≤ factor; respeta concentración y gracia; caso infactible devuelve diagnóstico.
+- Motor: con ciclo plano reproduce la cuota fija; con ciclo estacional, las cuotas altas caen en las cimas; nunca viola Cuota/UN ≤ factor ni la holgura frente a los escenarios adversos; respeta concentración y gracia; en un valle sin capacidad deja pendientes sin interés y no amortiza capital hasta saldarlos; caso infactible devuelve diagnóstico con monto máximo y plazo mínimo.
+- Ejemplo de §j como prueba de regresión: cuota fija S/ 801; S/ 8,000 a 12 meses inviable con holgura; salidas S/ 6,888 a 12 meses y 16 meses de plazo (con tolerancia de céntimos).
 - Ciclo: sin evidencia propia devuelve el patrón del sector; con evidencia fuerte se acerca al dato del cliente.
 - Explicación: toda cifra del resumen coincide con el motor.
 - Banco de pruebas: misma semilla, mismas cifras.
 
-## (j) Entrada para `docs/preexistente.md`
+## (j) Ejemplo ilustrativo calculado (25.11.2026)
+
+Cálculo hecho a mano con las reglas del owner, apoyado en un script de un solo uso que no forma parte del producto ni del repo. **No es una medición ni la salida del motor**: sirve para mostrar el problema y validar el diseño. Se reproducirá como prueba automática en el evento.
+
+**Caso:** pequeño productor de arroz del valle de Jequetepeque; S/ 8,000 a 12 meses; TEA 40 %; desgravamen 0,96 % anual sobre saldo; desembolso 15.01.2027; cuotas el día 15; factor 0,65. Todo **(supuesto)**.
+
+**UN mensual (S/; ilustrativa, calendario por verificar con INIA):**
+
+| ene | feb | mar | abr | may | jun | jul | ago | set | oct | nov | dic |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 450 | 400 | 500 | 2,800 | 4,200 | 3,200 | 900 | 700 | 650 | 700 | 600 | 550 |
+
+Escenarios: **El Niño** (abril cae a S/ 650 y la cosecha llega un mes tarde con −30 %: may 1,960, jun 2,940, jul 2,240) y **caída general** (−20 % en todos los meses).
+
+| Plan | Cuotas (S/) | Cuota > UN (base / El Niño / caída) | Déficit acumulado S/ (base / El Niño / caída) | Interés S/ | Capital en las 2 cuotas mayores |
+|---|---|---|---|---|---|
+| Cuota fija, 12 m | 801 × 12 | 8 / 9 / 9 | 1,861 / 2,012 / 2,852 | 1,572 | 19 % |
+| Adaptado literal, 12 m | 292, 260, 325, 1,820, 2,730, 2,080, 585, 455, 422, 373, 0, 0 | 0 / 2 / 0 | 0 / 1,940 / 0 | 1,306 | 56 % |
+| Adaptado robusto, S/ 8,000 a 12 m | no cabe: queda un saldo de S/ 1,937 al final | — | — | — | — |
+| Adaptado robusto, **S/ 6,888 a 12 m** | 292, 260, 325, 650, 1,960, 2,080, 585, 455, 422, 455, 390, 358 | 0 / 0 / 0 | 0 / 0 / 0 | — | — |
+| Adaptado robusto, **S/ 8,000 a 16 m** | 292, 260, 325, 650, 1,960, 2,080, 585, 455, 422, 455, 390, 357, 292, 260, 325, 845 | 0 / 0 / 0 | 0 / 0 / 0 | — | — |
+| Cuota fija, S/ 8,000 a 16 m | 635 × 16 | 8 de 16 en base | 1,228 en base | — | — |
+
+TCEA de la cuota fija y del plan literal: 41,3 % en ambos (misma TEA). En el plan de 16 meses, el segundo año se evaluó con la UN base.
+
+**Conclusiones para el diseño:** (1) con la UN promedio, el cliente «califica» con cuota fija (801 ≤ 0,65 × 1,304 = 848), pero la cuota supera la utilidad en 8 de 12 meses; (2) la regla literal sin holgura es frágil ante un retraso de campaña y concentra capital; (3) la regla robusta elimina el déficit en los tres escenarios, pero exige ajustar monto o plazo, y el motor debe proponer ambas salidas; (4) menos interés para el cliente es menos ingreso para la Caja, y la herramienta lo muestra.
+
+## (k) Entrada para `docs/preexistente.md`
 
 Ninguna por ahora. Si se construye el generador de perfiles antes del evento, se añade aquí y en `docs/preexistente.md` con fecha, titularidad (el equipo) y número de pruebas.
 
 ## Cotejo con el expediente
 
-Cotejado el 25.11.2026 contra la versión del expediente actualizada ese día (19:02), sus 10 preguntas frecuentes y el ticket del equipo (24.11).
+Cotejado el 25.11.2026 contra la versión del expediente actualizada ese día (19:02), sus 10 preguntas frecuentes y el ticket del equipo (24.11). Revisado otra vez tras la profundización del mismo día: la prelación y los pendientes del owner ahora están en la formulación del motor (§c.4), no solo en el cronograma.
 
 ### Desviaciones encontradas en el borrador v0 y corrección
 
@@ -269,7 +301,7 @@ Usuario principal (Asesor de Negocios; valida Riesgos; aprueba el comité), prin
 
 ### Lo que decimos y el expediente no dice (todo marcado como supuesto)
 
-Nombre «Ritmo»; agregación parcial como método de ajuste; programa lineal con objetivo de menor costo; tope de concentración del 35 %; regla de holgura con la UN adversa; topes de gracia; rubros, zonas y distribuciones de la cartera sintética; −20 % como caída de ventas; asistente de notas de campo.
+Nombre «Ritmo»; agregación parcial como método de ajuste; proyección con la sensibilidad a El Niño; programa de optimización con objetivo de menor costo y binarias de prelación; tope de concentración del 35 %; regla de holgura robusta frente a escenarios adversos; los datos del ejemplo de §j; topes de gracia; rubros, zonas y distribuciones de la cartera sintética; −20 % como caída de ventas; asistente de notas de campo.
 
 ### Observación
 

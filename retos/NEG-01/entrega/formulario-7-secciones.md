@@ -19,7 +19,7 @@ Ritmo ayuda al Asesor de Negocios a estimar el ciclo económico de cada cliente 
 
 **Versión corta**
 
-Hoy la evaluación usa un ingreso promedio y el core solo genera cuotas fijas; los negocios estacionales se ahogan en los valles aunque sean viables. Ritmo tiene tres piezas. (A) Modelo del ciclo: el patrón estacional del sector y la zona (BCRP, INEI, MIDAGRI, SENAMHI, calendarios comerciales) se ajusta a cada cliente según su evidencia; entrega la utilidad neta por etapa con su banda de incertidumbre. (B) Motor de optimización: elige el capital de cada cuota para que Cuota/UN ≤ factor en cada etapa, con cuota mínima, plazo y topes de concentración y gracia; entre los planes válidos escoge el de menor costo, que amortiza más en las cimas. (C) Explicación: el motivo de cada cuota y la comparación con la cuota fija. El asesor puede bajar el factor o corregir una etapa; el comité decide.
+Hoy la evaluación usa un ingreso promedio y el core solo genera cuotas fijas; los negocios estacionales se ahogan en los valles aunque sean viables. Ritmo tiene tres piezas. (A) Modelo del ciclo: el patrón del sector y la zona (BCRP, MIDAGRI, calendarios comerciales) se ajusta al cliente según su evidencia y se proyecta a los meses del crédito con el estado previsto de El Niño (ENFEN, ONI); entrega la utilidad neta por etapa con su banda. (B) Motor de optimización: amortiza el máximo capital en las cimas con Cuota/UN ≤ factor en cada etapa y, además, con la cuota cubierta por la utilidad en los escenarios adversos; aplica la prelación y los pendientes que fijó el owner; si el monto no cabe, propone el monto o el plazo que sí cabe. (C) El motivo de cada cuota y su comparación con la cuota fija. El asesor ajusta; el comité decide.
 
 **Versión completa**
 
@@ -27,9 +27,9 @@ Los ingresos de muchos microempresarios dependen de campañas, cosechas, clima y
 
 Ritmo es una herramienta para el Asesor de Negocios con las tres piezas que pide el desafío:
 
-(A) **Modelo del ciclo en dos capas.** El patrón estacional del sector y la zona, construido con series y calendarios públicos, se ajusta a cada cliente con lo que el asesor recoge en campo (ventas en meses buenos, regulares y malos, costos, gastos, carga familiar, evidencias de transacciones, fechas de campaña). Cuanta más evidencia, más pesa el dato propio; sin evidencia, el cliente hereda el patrón de su sector y zona. Entrega la utilidad neta esperada por etapa durante la vida del crédito, con banda de incertidumbre y escenarios adversos.
+(A) **Modelo del ciclo en dos capas.** El patrón estacional del sector y la zona, construido con series y calendarios públicos, se ajusta a cada cliente con lo que el asesor recoge en campo (ventas en meses buenos, regulares y malos, costos, gastos, carga familiar, evidencias de transacciones, fechas de campaña). Cuanta más evidencia, más pesa el dato propio; sin evidencia, el cliente hereda el patrón de su sector y zona. Luego proyecta los meses concretos del crédito con el estado previsto de los factores externos: la sensibilidad de cada sector a El Niño se estima con la historia (producción mensual del BCRP frente a los índices ONI e ICEN, incluidos 2017 y 2023) y se aplica al estado que anuncian el ENFEN y el SENAMHI. Entrega la utilidad neta esperada por etapa durante la vida del crédito, con banda de incertidumbre y escenarios adversos.
 
-(B) **Motor del plan de pagos.** Con monto, TEA, seguros y plazo, un programa lineal elige cuánto capital amortiza cada cuota. Respeta en cada etapa Cuota/UN ≤ factor del asesor ≤ factor del producto, cuota mínima, plazo máximo, TEA única y topes de concentración de capital y de periodos sin amortizar. Entre todos los planes que cumplen, elige el de menor costo total para el cliente, que es el que amortiza el máximo capital en las cimas. Aplica las reglas del owner: TED base 360 por días exactos, seguros por interés simple, prelación seguros → interés → capital y pendientes en su concepto. Si no hay plan posible, indica qué restricción lo impide.
+(B) **Motor del plan de pagos.** Con monto, TEA, seguros y plazo, un programa de optimización elige cuánto capital amortiza cada cuota. Respeta en cada etapa Cuota/UN ≤ factor del asesor ≤ factor del producto y, como holgura, que la cuota quede cubierta por la utilidad de los escenarios adversos. También respeta cuota mínima, plazo máximo, TEA única y topes de concentración de capital y de periodos sin amortizar. Amortiza el máximo capital en las cimas y, entre los planes posibles, elige el de menor costo total para el cliente. Aplica las reglas del owner: TED base 360 por días exactos, seguros por interés simple, prelación seguros → interés → capital, y pendientes sin interés cuando un valle no cubre ni los intereses. Si el monto no cabe, indica qué restricción lo impide y propone el monto máximo para ese plazo o el plazo que necesita ese monto.
 
 (C) **Explicación y prueba de estrés.** Cada cuota trae su motivo (etapa, utilidad esperada, Cuota/UN y restricción que la limita) y el plan se compara con la cuota fija equivalente en escenario base y adversos.
 
@@ -39,7 +39,7 @@ El asesor conserva su criterio (factor menor, corrección de una etapa, fecha de
 
 **Versión corta**
 
-KPI del prototipo: porcentaje de periodos en tensión (cuota > factor × utilidad, y cuota > utilidad) del plan adaptado frente a la cuota fija, en escenario base y adversos (caída de ventas, campaña retrasada, El Niño). Secundarios: costo total y TCEA para el cliente (muestra si hay encarecimiento), ajuste de las cuotas al ciclo, error del ciclo estimado, concentración de capital, e ingreso y exposición de la Caja. No medimos mora, como indicó el owner. Se mide en un banco de pruebas reproducible con perfiles sintéticos de varios rubros, zonas y productos, cuyo ciclo verdadero se conoce. Las cifras saldrán de esa medición; no las inventamos. La retención, indicador de negocio señalado por el owner, se mediría en un piloto con línea base a confirmar.
+KPI del prototipo: meses en que la cuota supera la capacidad (Cuota/UN > factor, y cuota > utilidad), plan adaptado frente a cuota fija, en escenario base y adversos. Secundarios: costo y TCEA, ajuste al ciclo, concentración e ingreso de la Caja. No medimos mora, como indicó el owner; la retención se mediría en un piloto. Ejemplo ilustrativo calculado con las reglas del owner (no es una medición): un arrocero de Jequetepeque pide S/ 8,000 a 12 meses. Con su utilidad promedio califica para cuota fija (S/ 801), pero esa cuota supera su utilidad en 8 de 12 meses. Con holgura frente a El Niño, el motor propone S/ 6,888 a 12 meses o S/ 8,000 a 16 meses, sin ningún mes de déficit en año normal, con El Niño ni con caída de ventas de 20 %. Las cifras de impacto saldrán del banco de pruebas con perfiles sintéticos.
 
 **Versión completa**
 
@@ -53,6 +53,16 @@ Para el cliente: cuotas que caben en su utilidad en cada etapa, menos meses de a
 | Concentración de capital y periodos sin amortizar | Mismo banco de pruebas |
 | Ingreso financiero y saldo expuesto de la Caja | Mismo banco de pruebas |
 | **Negocio (piloto):** retención y renovación | Línea base a confirmar con la Caja |
+
+**Ejemplo ilustrativo** (calculado a mano con las reglas del owner; no es una medición). Un pequeño arrocero del valle de Jequetepeque pide S/ 8,000 a 12 meses (TEA 40 %, factor 0,65; utilidad mensual ilustrativa entre S/ 400 y S/ 4,200, promedio S/ 1,304):
+
+| Plan | Meses con cuota > utilidad (año normal / El Niño / caída de 20 %) | Déficit acumulado del cliente |
+|---|---|---|
+| Cuota fija, S/ 801 × 12 | 8 / 9 / 9 de 12 | S/ 1,861 / 2,012 / 2,852 |
+| Siguiendo el ciclo sin holgura | 0 / 2 / 0 | S/ 0 / 1,940 / 0 |
+| Ritmo con holgura: S/ 6,888 a 12 meses, o S/ 8,000 a 16 meses | 0 / 0 / 0 | S/ 0 |
+
+Con la utilidad promedio el cliente «califica» para la cuota fija, pero esa cuota supera su utilidad en 8 de 12 meses. Seguir el ciclo sin holgura es frágil ante un mes de retraso en la cosecha. Con holgura, Ritmo no fuerza el monto pedido: propone el monto o el plazo que sí caben.
 
 Línea base del prototipo: la cuota fija equivalente que genera hoy el core (mismas condiciones). No medimos mora de cartera, como indicó el owner. Los planes se construyen con lo que observaría el asesor y se evalúan contra el ciclo verdadero de cada perfil y contra escenarios adversos fijados de antemano. Las cifras saldrán de esa medición; no las inventamos.
 
@@ -103,15 +113,15 @@ Fuera de alcance: integración con el core, reprogramaciones y refinanciaciones,
 
 **Versión corta**
 
-No usamos datos de la Caja (el owner indicó que no se entregarán) ni historial de pagos, que no es buena fuente para estimar el ciclo. Usamos dos fuentes: (1) series y calendarios públicos para el patrón del sector y la zona: BCRP e INEI (estacionalidad por sector), MIDAGRI (siembra y cosecha por cultivo y zona), SENAMHI/ENFEN (El Niño) y calendarios comerciales (campaña escolar, Fiestas Patrias, Navidad, verano); (2) una cartera sintética de unos 2,000 negocios de La Libertad (arroz, caña, papa, calzado, bodegas, restaurantes, transporte, aves), cada uno con un ciclo verdadero conocido y lo que vería el asesor: ventas por tipo de mes, costos, gastos, carga familiar, transacciones y fechas de campaña. Condiciones del producto (factor, cuota mínima, plazo, TEA, seguros) configurables.
+No usamos datos de la Caja (no se entregarán) ni historial de pagos, que el owner descartó para estimar el ciclo. Fuentes públicas: BCRP (producción mensual por cultivo, como arroz y papa, y síntesis mensual de La Libertad); MIDAGRI e INIA (calendarios de siembra y cosecha, intenciones de siembra); NOAA (índice ONI), IGP y ENFEN (El Niño costero); SENAMHI (pronóstico estacional); calendarios comerciales. Datos del negocio: cartera sintética de unos 2,000 negocios de La Libertad (arroz, caña, papa, calzado, bodegas, restaurantes, transporte, aves), cada uno con ciclo verdadero conocido y lo que vería el asesor: ventas por tipo de mes, costos, gastos, carga familiar, transacciones y fechas de campaña. Condiciones del producto configurables.
 
 **Versión completa**
 
 | Insumo | Fuente | Uso |
 |---|---|---|
-| Estacionalidad por sector | BCRP (series regionales y nacionales), INEI (producción por sector) | Patrón del sector |
-| Calendario de siembra y cosecha por cultivo y zona | MIDAGRI | Cimas y valles agrícolas por zona |
-| Episodios climáticos | SENAMHI / ENFEN | Escenarios adversos (El Niño) |
+| Estacionalidad por cultivo y sector | BCRPData (producción mensual por cultivo, por ejemplo arroz cáscara PN01778AM y papa PN01777AM); síntesis mensual de La Libertad del BCRP (Sucursal Trujillo); INEI (producción por sector) | Patrón del sector y la región |
+| Calendario de siembra y cosecha por cultivo y zona | MIDAGRI (El Agro en Cifras, evaluación regional, intenciones de siembra) e INIA (calendario agrícola de la Región Costa) | Cimas y valles agrícolas por zona |
+| Episodios climáticos | NOAA (índice ONI), IGP (ICEN) y comunicados del ENFEN; pronóstico estacional del SENAMHI | Sensibilidad de cada sector a El Niño y escenarios adversos |
 | Calendarios comerciales | Campaña escolar, Día de la Madre, Fiestas Patrias, Navidad, verano | Picos de comercio y servicios |
 | Datos del negocio | Cartera sintética propia: ventas en meses buenos, regulares y malos; costos; gastos; carga familiar; evidencias de transacciones; fechas de campaña | Ajuste al cliente y banco de pruebas |
 | Condiciones del producto | Factor Cuota/UN (ejemplos del owner: 0,65 inclusión, 0,85 Pequeña Empresa), cuota mínima, plazo máximo, TEA, seguros | Restricciones del motor, todas configurables |

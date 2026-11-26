@@ -1,6 +1,6 @@
 # Concepto de solución — NEG-01 · Plan de pagos adaptado al ciclo económico del negocio
 
-> **v1 (pareja líder, 25.11.2026).** Prioridad **#2** · Pareja líder **Antonio + Glem** · Revisor **David** · Eje: 4 Inclusión financiera y resiliencia · Owners (plataforma): (ver plataforma).
+> **v1.1 (pareja líder, 25.11.2026; profundizado el mismo día: motor con pendientes y regla robusta, ejemplo numérico, proyección con El Niño, fuentes verificadas).** Prioridad **#2** · Pareja líder **Antonio + Glem** · Revisor **David** · Eje: 4 Inclusión financiera y resiliencia · Owners (plataforma): (ver plataforma).
 > Reescrito sobre el expediente **actualizado el 25.11 (19:02)**, sus 10 preguntas frecuentes y la respuesta a nuestro ticket del 24.11. El título del reto en la plataforma cambió de «Cuotas que se adaptan al flujo del negocio» a «Plan de pagos adaptado al ciclo económico del negocio».
 > Lo marcado **(supuesto)** o **[POR CONFIRMAR]** no viene de la Caja. No presentarlo como hecho. Material confidencial: repo privado.
 > Detalle de datos, fórmulas, arquitectura, plan del evento y evaluación: `retos/NEG-01/panorama.md`.
@@ -28,8 +28,13 @@ Tres piezas, que son las tres que el expediente pide como mínimo:
 1. **(A) Modelo del ciclo económico, en dos capas.**
    - *Patrón del sector y la zona* (la «capa pública»): un índice estacional por actividad y zona, con su volatilidad, construido a partir de series y calendarios públicos (BCRP, INEI, MIDAGRI, SENAMHI, calendarios comerciales; ver panorama §b). Responde a «cómo se mueve, en promedio, una bodega en La Esperanza o un arrocero en Pacasmayo» **(ejemplos de zona: supuesto)**.
    - *Ajuste al cliente* (la «capa propia»): el patrón se corrige con lo que el asesor recoge en campo (ventas en meses buenos, regulares y malos, costos, gastos, carga familiar, evidencias de transacciones y fechas de campaña). El peso del dato propio crece con la cantidad y la calidad de la evidencia (**agregación parcial** o *partial pooling*): un cliente sin evidencia hereda el patrón de su sector y zona; uno con evidencia sólida se aparta de él. Así se responde al «dos negocios del mismo rubro pueden tener ciclos distintos».
-   - Salida: la **Utilidad Neta esperada por etapa** durante toda la vida del crédito, con **banda de incertidumbre** (escenario base y escenarios adversos: caída de ventas, campaña retrasada, El Niño). No usa el historial de pagos de una cartera, como pidió el owner.
-2. **(B) Motor del plan de pagos (optimización con restricciones).** Con el monto, la TEA, los seguros y el plazo, resuelve un **programa lineal** que elige cuánto capital amortiza cada cuota. Respeta, en cada etapa, **Cuota ÷ UN esperada ≤ factor elegido por el asesor ≤ factor del producto**; cuota mínima, plazo máximo y TEA única; topes de concentración de capital y de periodos sin amortización. Entre todos los planes que cumplen, elige **el de menor costo total para el cliente**, que es justamente el que amortiza el máximo capital en las cimas, como pide el owner. El cronograma se calcula con las reglas que el owner detalló: TEA → TED base 360 por días exactos, seguros por interés simple, prelación **seguros → interés → capital** y conceptos impagos que quedan pendientes en su propio concepto. Si no hay plan posible, el motor dice qué restricción lo impide y qué cambiaría (monto, plazo o factor).
+   - *Proyección de los meses del crédito* (la capa que lo vuelve predictivo): el modelo no se queda en el «año promedio». Ajusta los meses concretos del crédito con el estado previsto de los factores externos: El Niño (índices ONI de NOAA e ICEN del IGP, y los comunicados del ENFEN), el pronóstico estacional del SENAMHI y las intenciones de siembra del MIDAGRI. La **sensibilidad de cada sector a El Niño** se estima con la historia: series mensuales de producción del BCRP (por ejemplo arroz cáscara `PN01778AM` y papa `PN01777AM`) y las síntesis regionales de La Libertad del BCRP, frente al ONI/ICEN con rezagos, incluidos los episodios de 2017 y 2023. Así el modelo puede decir, por ejemplo, «con El Niño en curso, la cosecha de abril se proyecta más baja y más tarde».
+   - Salida: la **Utilidad Neta esperada por etapa** durante toda la vida del crédito, con **banda de incertidumbre** y escenarios adversos con su peso (caída de ventas, campaña retrasada, El Niño). No usa el historial de pagos de una cartera, como pidió el owner.
+2. **(B) Motor del plan de pagos (optimización con restricciones).** Con el monto, la TEA, los seguros y el plazo, resuelve un **programa de optimización** pequeño (lineal, con una variable binaria por periodo para la prelación) que elige cuánto capital amortiza cada cuota. Respeta dos niveles de capacidad:
+   - **Regla del producto:** Cuota ÷ UN esperada ≤ factor elegido por el asesor ≤ factor del producto, en cada etapa.
+   - **Regla de holgura (robusta):** la cuota también debe quedar cubierta por la UN de cada escenario adverso relevante. Esta regla es nuestra respuesta al riesgo de «estimación optimista», y el ejemplo de §3 muestra por qué hace falta.
+
+   Además respeta cuota mínima, plazo máximo, TEA única y topes de concentración de capital y de periodos sin amortización. Dentro de esos límites amortiza el **máximo capital en las cimas**, como pide el owner, y entre los planes posibles elige **el de menor costo total para el cliente**. En un valle profundo, donde la capacidad no alcanza ni para seguros e intereses, la cuota los paga en parte y **lo no cubierto queda pendiente en su concepto**, sin generar interés y sin poder pagarse capital mientras haya pendientes (prelación seguros → interés → capital). El cronograma usa las reglas del owner: TEA → TED base 360 por días exactos y seguros por interés simple. Si el monto no cabe en el plazo pedido, el motor no fuerza el plan: dice qué restricción lo impide y propone las salidas, por ejemplo el **monto máximo** que cabe en ese plazo o el **plazo** que necesita ese monto.
 3. **(C) Explicación y prueba de estrés para el comité.** Cada cuota trae su motivo, calculado por el motor y no inventado por un modelo de lenguaje: en qué etapa cae, qué UN espera, qué Cuota/UN resulta y qué restricción la limita (por ejemplo, «alta: cosecha de arroz, UN esperada alta, Cuota/UN 0,61 ≤ 0,65» o «baja: valle entre campañas; cubre seguros e intereses»). El plan se compara con **la cuota fija equivalente** (mismo monto, TEA, seguros y plazo) en escenario base y adversos. Un modelo de lenguaje intercambiable solo redacta el resumen para el comité a partir de esos números, y una verificación en código rechaza cualquier cifra que no coincida.
 
 **Diferenciación:** hoy existen simuladores de cuota fija y cronogramas estacionales homogéneos. Nosotros entregamos **un ciclo estimado y explicado**, **un plan óptimo con restricciones verificables** y **la cuantificación de beneficios y riesgos frente a la cuota fija**, en una sola herramienta para el asesor. No es un dashboard ni un chatbot: el valor está en el modelo del ciclo y en el motor de optimización.
@@ -53,6 +58,25 @@ El expediente no publica KPI ni línea base. El owner indicó que el plan funcio
 - **Cifra de impacto esperada:** **[POR COMPLETAR]** con lo que mida el banco de pruebas. No se inventa.
 - **Método:** simulación reproducible con semilla fija sobre perfiles sintéticos, con escenarios adversos definidos antes de correrla (no se ajustan para que el resultado se vea mejor).
 
+### Ejemplo ilustrativo (cálculo a mano con las reglas del owner; no es una medición ni la salida del motor)
+
+Un pequeño productor de arroz del valle de Jequetepeque pide **S/ 8,000 a 12 meses**. Supuestos: TEA 40 %, desgravamen 0,96 % anual sobre el saldo, desembolso el 15.01, factor 0,65 (el ejemplo de inclusión del owner). La UN mensual es ilustrativa: cosecha de abril a junio, siembra de noviembre a enero, sin otros ingresos. **El calendario está por verificar con el calendario agrícola de INIA**, porque en la costa norte el arroz se cosecha casi todo el año según MIDAGRI. La UN va de S/ 400 en febrero a S/ 4,200 en mayo, con un **promedio de S/ 1,304**. Escenarios: **El Niño** (cosecha −30 % y un mes tarde) y **caída general de ventas** (−20 %).
+
+| Plan | Cuotas | Meses con cuota > UN (base / El Niño / caída) | Déficit acumulado del cliente (base / El Niño / caída) |
+|---|---|---|---|
+| **Cuota fija** (lo de hoy) | 12 × S/ 801 | 8 / 9 / 9 de 12 | S/ 1,861 / 2,012 / 2,852 |
+| **Adaptado, regla literal** (máximo capital en cimas, solo escenario base) | S/ 260–2,730; termina en el mes 10 | 0 / 2 / 0 | S/ 0 / 1,940 / 0 |
+| **Adaptado robusto, S/ 6,888 a 12 meses** | S/ 260–2,080 | 0 / 0 / 0 | S/ 0 / 0 / 0 |
+| **Adaptado robusto, S/ 8,000 a 16 meses** | S/ 260–2,080 | 0 / 0 / 0 | S/ 0 / 0 / 0 |
+| Cuota fija, S/ 8,000 a 16 meses | 16 × S/ 635 | 8 de 16 en base | S/ 1,228 en base |
+
+Lo que enseña el ejemplo:
+
+1. **El problema es real aun cuando el cliente «califica».** Con la UN promedio, la cuota fija pasa el filtro (S/ 801 frente a una capacidad de 0,65 × 1,304 = S/ 848), pero supera la utilidad en 8 de los 12 meses.
+2. **Seguir el ciclo sin holgura es frágil.** El plan literal elimina el déficit en el año normal, pero si la cosecha se atrasa un mes el déficit es casi el mismo que con la cuota fija, y concentra el 56 % del capital en dos cuotas. Por eso el motor usa la regla robusta.
+3. **El motor dice la verdad sobre el monto.** Con holgura frente a El Niño, S/ 8,000 a 12 meses no cabe. En vez de forzarlo, ofrece S/ 6,888 a 12 meses o S/ 8,000 a 16 meses, que alcanza la cosecha siguiente. Ambas salidas no tienen ningún mes de déficit en los tres escenarios.
+4. **El costo cambia con la estructura.** El plan literal paga S/ 1,306 de interés frente a S/ 1,572 de la cuota fija (menos costo para el cliente y menos ingreso para la Caja). La TCEA es prácticamente igual (41,3 %), porque la TEA es la misma. La herramienta muestra ese intercambio y no lo esconde.
+
 ## 4. Enfoque tecnológico
 
 Pila: Python 3.11+, FastAPI, Pydantic v2, pandas, statsmodels y scikit-learn, SciPy (`linprog` con HiGHS) para la optimización, SQLite, Pydantic AI con proveedor de LLM intercambiable, React + Vite + Tailwind, pytest.
@@ -60,16 +84,17 @@ Pila: Python 3.11+, FastAPI, Pydantic v2, pandas, statsmodels y scikit-learn, Sc
 | Capa | Qué hace | Aporta valor real porque… |
 |---|---|---|
 | Patrones públicos | Índice estacional y volatilidad por actividad × zona (descomposición estacional de series públicas y calendarios de campaña) | Da al asesor lo que hoy no tiene: el ciclo de su sector y su zona |
+| Proyección | Sensibilidad de cada sector a El Niño estimada con la historia (series del BCRP frente a ONI/ICEN con rezagos); ajuste de los meses del crédito con el estado previsto (ENFEN, pronóstico del SENAMHI, intenciones de siembra) | Predice el año del crédito, no un año promedio; los escenarios adversos tienen fundamento |
 | Modelo del ciclo | Ajuste al cliente por agregación parcial; UN por etapa con banda de incertidumbre y escenarios adversos | Responde a que dos negocios del mismo rubro difieren; la incertidumbre es explícita y alimenta la holgura |
 | Asistente de campo (opcional) | Un LLM convierte las notas del asesor («vende más en campaña escolar y Navidad; febrero flojo») en parámetros del ciclo, que el asesor confirma | Usa IA donde aporta: estructurar información cualitativa de campo; nunca decide |
-| Motor del plan | Programa lineal: minimiza el costo total sujeto a Cuota/UN ≤ factor por etapa, cuota mínima, plazo, concentración y gracia; cronograma con TED base 360, seguros y prelación con pendientes | Cumple las reglas del producto **por construcción** y es auditable: cada restricción activa se puede mostrar |
+| Motor del plan | Programa lineal con una binaria por periodo (prelación): máximo capital en cimas y menor costo, sujeto a Cuota/UN ≤ factor por etapa, holgura frente a escenarios adversos, cuota mínima, plazo, concentración y gracia; pendientes sin interés en valles profundos; si no cabe, propone monto o plazo | Cumple las reglas del producto **por construcción** y es auditable: cada restricción activa se puede mostrar |
 | Prueba de estrés | Recalcula el plan adaptado y la cuota fija en escenarios adversos, con la prelación y los pendientes | Cuantifica beneficios y riesgos para el cliente y la Caja, como pide el resultado esperado 4 |
 | Explicación | Motivo de cada cuota a partir de la etapa, la UN y la restricción activa; resumen para comité redactado por LLM y verificado en código | Explicable por diseño; el LLM no puede introducir cifras |
 | API e interfaz | FastAPI; interfaz del asesor: ciclo → plan → comparación → hoja para comité | El asesor y el comité ven lo mismo, con los supuestos a la vista |
 
 Cómo se mitiga cada riesgo del expediente:
 
-- **Ciclo optimista:** la restricción se evalúa sobre la UN esperada de cada etapa, como pide el owner, y además el plan pasa una prueba de estrés: en el escenario adverso la cuota debe quedar cubierta por la UN (**regla de holgura: supuesto, configurable**). El asesor puede usar un factor menor al del producto.
+- **Ciclo optimista:** la restricción se evalúa sobre la UN esperada de cada etapa, como pide el owner, y además la cuota debe quedar cubierta por la UN de cada escenario adverso relevante (**regla de holgura: supuesto, configurable**). El ejemplo de §3 muestra que sin esta regla un mes de retraso en la cosecha devuelve el déficit. Los escenarios usan el estado previsto de El Niño, y el asesor puede usar un factor menor al del producto.
 - **Concentración de capital:** tope por cuota a la proporción de capital (p. ej. ≤ 35 % del monto **(supuesto, configurable)**) y número mínimo de cuotas que amortizan.
 - **Encarecimiento:** el objetivo del motor es el menor costo total; hay tope de periodos consecutivos sin amortizar y se muestra la TCEA frente a la cuota fija.
 - **Sobreendeudamiento:** la UN ya descuenta el gasto financiero de otras deudas y, en personas naturales o parcialmente formales, la carga familiar; se respetan el factor y los límites del producto.
@@ -96,7 +121,9 @@ Cómo se mitiga cada riesgo del expediente:
 **Criterios de aceptación** (verificables con pruebas, base del mínimo 3/5):
 
 - El cronograma reproduce las reglas del owner: TEA → TED base 360 por días exactos; seguros por interés simple; prelación seguros → interés → capital; lo no cubierto queda pendiente en su concepto y se paga primero en el periodo siguiente.
-- Ninguna cuota supera factor × UN esperada de su etapa; el factor usado nunca supera el del producto.
+- Ninguna cuota supera factor × UN esperada de su etapa; el factor usado nunca supera el del producto; con la regla de holgura activa, ninguna cuota supera la UN de los escenarios adversos configurados.
+- En un valle donde la capacidad no cubre seguros e intereses, la cuota los paga en parte, lo demás queda pendiente sin generar interés y no se amortiza capital hasta saldarlo.
+- El caso del ejemplo de §3 se reproduce como prueba: S/ 8,000 a 12 meses se declara inviable con holgura y el motor propone S/ 6,888 a 12 meses o 16 meses de plazo.
 - Con un ciclo plano, el plan coincide con la cuota fija (control de cordura); con un ciclo estacional, las cuotas altas caen en las cimas.
 - Ninguna cuota concentra más capital que el tope configurado y no hay más periodos sin amortizar que los permitidos.
 - Si no existe plan posible, el sistema lo dice y nombra la restricción que lo impide; no entrega un plan que incumple.
@@ -116,7 +143,7 @@ Incluye pruebas automáticas del cálculo financiero y del motor, reporte de val
 ## 8. Factibilidad y dependencias
 
 - **Esfuerzo estimado del MVP: 31 horas-persona (supuesto)** de 32 disponibles (4 personas × ~8 h netas). Núcleo no recortable: 26 h. Detalle y plan hora a hora en `panorama.md` §d.
-- **Por qué es factible:** el cálculo financiero es determinista y se puede probar contra casos hechos a mano; el programa lineal es pequeño (decenas de variables por crédito) y se resuelve en milisegundos con SciPy; el modelo del ciclo parte de patrones por sector y zona, no de un entrenamiento pesado.
+- **Por qué es factible:** el cálculo financiero es determinista y se puede probar contra casos hechos a mano (el ejemplo de §3 ya está calculado y será la primera prueba); el programa de optimización es pequeño (decenas de variables y una binaria por periodo) y se resuelve en milisegundos con SciPy y HiGHS; el modelo del ciclo parte de patrones por sector y zona, no de un entrenamiento pesado.
 - **Cobertura del equipo:** Antonio (economista, sector financiero) lleva reglas del producto, KPI y prueba de estrés; Glem, datos y modelo del ciclo; Mariano, motor, API y LLM; David, interfaz del asesor y hoja para comité.
 - **Dependencias:**
   - Datos: la Caja **no entregará datos**, ni anonimizados. Usamos perfiles sintéticos propios y series públicas.
@@ -124,7 +151,7 @@ Incluye pruebas automáticas del cálculo financiero y del motor, reporte de val
   - LLM externo: el owner lo permite **solo para la demo**, con datos sintéticos y sin conexión a sus sistemas; el proveedor es intercambiable y hay modo sin red por plantillas.
   - Línea base de retención y diseño de un piloto: **[POR CONFIRMAR]**.
 - **Riesgos principales:** patrones públicos con poca granularidad por zona (se mitiga con calendarios de campaña y el ajuste del asesor), un ciclo optimista (prueba de estrés y holgura), un problema sin solución factible (diagnóstico de la restricción) y tiempo de interfaz (vista mínima primero).
-- **Recorte si falta tiempo** (en orden): asistente de notas de campo con LLM → resumen para comité con LLM (queda por plantilla) → varios escenarios adversos (queda uno) → pulido visual. **No se recorta:** ciclo con banda, motor con reglas del owner, explicación por cuota, comparación con cuota fija y pruebas.
+- **Recorte si falta tiempo** (en orden): asistente de notas de campo con LLM → resumen para comité con LLM (queda por plantilla) → sensibilidad a El Niño estimada con la historia (queda un escenario El Niño fijado por el asesor) → varios escenarios adversos (queda uno) → pulido visual. **No se recorta:** ciclo con banda, motor con reglas del owner, explicación por cuota, comparación con cuota fija y pruebas.
 
 ---
 
@@ -133,7 +160,7 @@ Incluye pruebas automáticas del cálculo financiero y del motor, reporte de val
 | Tarea | Habilidad | Horas |
 |---|---|---|
 | Perfiles y escenarios sintéticos (o carga del generador, si existe) | data_eng | 2 |
-| Patrones sector × zona y modelo del ciclo con banda | ml | 4 |
+| Patrones sector × zona, modelo del ciclo con banda y proyección con El Niño | ml | 4 |
 | Motor de optimización y cronograma con las reglas del owner | data_sci | 5 |
 | Prueba de estrés y comparación con cuota fija | biz | 3 |
 | Explicación por cuota y resumen verificado para comité | agentes | 2 |
