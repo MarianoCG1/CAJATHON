@@ -1,57 +1,120 @@
-# Glem: qué avanzar hasta las 8 p. m. (26.11)
+# Glem: plan de trabajo de hoy hasta las 7:45 p. m. (26.11)
 
-El formulario cierra **hoy a las 11:59 p. m.** Meta del equipo: enviar antes de las 10:30. Solo se envía **un** desafío y solo el coordinador edita el formulario.
+El formulario cierra **hoy a las 11:59 p. m.** Meta del equipo: enviar antes de las 10:30. Solo se envía **un** desafío y es el que construiremos en la final. Tu revisión decide en buena parte cuál.
 
 ## Mensaje para pegar en el chat
 
 ```
-Glem, hoy cerramos. Llego a las 8 y enviamos antes de las 10:30.
-Lee primero docs/reunion-26-11.md. Tu parte, en este orden:
-1) Verificar el cálculo de NEG-01 (cuota fija S/ 801; con holgura S/ 8,000 no cabe en 16 meses, sí en 17).
-2) Contrastar el formulario de NEG-01 con el expediente y las preguntas frecuentes actuales.
-3) Mirar si hay comunicados o cambios nuevos en la plataforma.
-4) Revisar las fuentes que citamos y elegir un negocio con estacionalidad clara para la demo.
-A las 7:45 mándame: tu voto (NEG-01, COM-01 o RIE-03), errores encontrados y cambios que propones.
-Pídele a Antonio que corrija el plazo (16 → 17) en su concepto y panorama.
+Glem, hoy cerramos la entrega y necesito que tomes la revisión de todo mientras llego (8 p. m.).
+Haz git pull en main y abre docs/glem-hasta-las-8.md: ahí está tu plan por bloques y un prompt para tu agente.
+
+Contexto: tenemos 3 opciones (docs/tres-opciones.md): A) NEG-01 de Antonio, B) COM-01 y C) RIE-03.
+La que enviemos hoy es la que construiremos en el evento, así que revisa pensando en «¿esto lo sacamos en 8 horas?».
+
+Lo que te toca:
+1) NEG-01: verificar el cálculo (ojo: con holgura S/ 8,000 necesita 17 meses, no 16) y contrastar con el expediente y las preguntas frecuentes.
+2) Revisar la plataforma: comunicados, cambios del expediente y que nuestros textos calcen con los campos reales.
+3) COM-01: nadie externo lo ha revisado; intenta romperlo (simulación y afirmaciones).
+4) RIE-03: revisión rápida.
+5) Para cada opción: riesgo de construcción, horas reales y tu voto.
+
+A las 7:45 mándame un resumen: voto, errores y cambios. Y súbelo en tu rama glem/revision-26-11.
+Pídele a Antonio que corrija el plazo en su concepto y panorama, y a David que lea las 3 opciones y vote.
 ```
 
-## Tareas, en orden
+## Preparación (10 min)
 
-| # | Tarea | Tiempo | Listo cuando |
+```powershell
+git pull
+```
+
+```powershell
+git switch -c glem/revision-26-11
+```
+
+```powershell
+pip install pytest pandas numpy scikit-learn scipy
+```
+
+```powershell
+python -m pytest -q
+```
+
+## Plan por bloques
+
+| Bloque | Qué haces | Tiempo | Entregable |
 |---|---|---|---|
-| 1 | Leer `docs/reunion-26-11.md` y el formulario de NEG-01; hojear el de COM-01 | 30 min | Tienes una primera opinión |
-| 2 | **Verificar el cálculo** en una hoja aparte (reglas abajo) | 60 min | Confirmas o refutas 801, 8 de 12, 1,861, 6,887 y 17 meses |
-| 3 | **Contrastar** el formulario de NEG-01 con el expediente actualizado y sus 10 preguntas frecuentes | 45 min | Lista de lo que falta o contradice |
-| 4 | Revisar comunicados y cambios nuevos en la plataforma | 10 min | «Sin cambios» o qué cambió |
-| 5 | Comprobar las fuentes citadas (BCRP, MIDAGRI, SENAMHI) y proponer un negocio y zona con estacionalidad clara, con fuente | 45 min | Una propuesta con enlace |
-| 6 | Escribir las 5 preguntas más difíciles que haría un jurado de la Caja y cómo responderlas | 30 min | 5 preguntas con respuesta |
+| 1 | **Calcular NEG-01 por tu cuenta** (reglas abajo) y buscar casos que rompan el motor: valle sin capacidad, monto que no cabe, ciclo plano | 50 min | Confirmas o refutas cada cifra; 3 casos de prueba escritos |
+| 2 | **NEG-01 contra el expediente** actualizado y sus 10 preguntas frecuentes: qué falta, qué contradice, qué presentamos como hecho siendo supuesto | 40 min | Lista priorizada de cambios al formulario |
+| 3 | **Plataforma:** comunicados y expedientes nuevos desde anoche; comparar los campos reales con `formulario.md` (pide al coordinador lo que solo él ve) | 15 min | «Sin cambios» o qué cambió |
+| 4 | **Atacar COM-01** (`retos/COM-01/`): reproducir la simulación y cuestionarla. ¿La comparación «solo cartera» es justa? ¿Algún supuesto fabrica la ventaja? ¿Las cifras del formulario salen del script? | 55 min | Objeciones y cuáles invalidan una afirmación |
+| 5 | **RIE-03 rápido:** repetir la auditoría y revisar el contraste con el caso real (`docs/casos-reales.md`) | 20 min | Errores o «sin hallazgos» |
+| 6 | **Construibilidad de las 3:** por opción, módulo más riesgoso, horas que tú estimas para tu parte y qué recortarías. Llenar tu voto en `docs/tres-opciones.md` | 30 min | Voto y justificación en 5 líneas |
+| 7 | **Cinco preguntas duras** de un jurado de la Caja para la opción que votas, con respuesta | 20 min | 5 preguntas y respuestas |
+| 8 | Resumen y push de tu rama | 15 min | `retos/revision-glem-26-11.md` |
 
-Si no alcanza el tiempo: 2, 3 y 4 son los importantes.
+Si te falta tiempo: bloques 1, 2, 3 y 6 son los imprescindibles.
 
-## Reglas para la tarea 2
+## Comandos para los bloques 4 y 5
+
+```powershell
+python scripts/auditoria/auditar_com01.py --semillas 200
+```
+
+```powershell
+python scripts/auditoria/auditar_com01.py --sensibilidad
+```
+
+```powershell
+python retos/RIE-03/datos/generar.py
+```
+
+```powershell
+python scripts/auditoria/auditar_rie03.py
+```
+
+El concepto y el panorama de Antonio están en su rama:
+
+```powershell
+git show origin/reto/neg-01-antonio:retos/NEG-01/concepto.md
+```
+
+## Reglas para el bloque 1
 
 - Caso: S/ 8,000, TEA 40 %, desgravamen 0,96 % anual sobre saldo, desembolso 15.01.2027, cuotas el día 15, factor 0,65.
 - Tasa diaria = (1 + TEA)^(1/360) − 1; interés por días exactos sobre el saldo de capital.
 - Orden de pago: seguros, interés y capital; lo no cubierto queda pendiente sin generar interés.
-- Utilidad mensual de enero a diciembre: 450, 400, 500, 2800, 4200, 3200, 900, 700, 650, 700, 600, 550. La cuota del 15 de un mes se paga con la utilidad del mes anterior.
-- Escenario El Niño: abril 650, mayo 1960, junio 2940, julio 2240. Caída general: −20 % todos los meses.
-- Regla de holgura, en **todos** los meses del plazo: cuota = menor entre 0,65 × utilidad, utilidad con El Niño y utilidad con caída.
+- Utilidad de enero a diciembre: 450, 400, 500, 2800, 4200, 3200, 900, 700, 650, 700, 600, 550. La cuota del 15 se paga con la utilidad del mes anterior.
+- El Niño: abril 650, mayo 1960, junio 2940, julio 2240. Caída general: −20 %.
+- Holgura en **todos** los meses: cuota = menor entre 0,65 × utilidad, utilidad con El Niño y utilidad con caída.
+- Cifras a verificar: cuota fija 801; 8 de 12 meses en déficit; déficit 1,861; con holgura 6,887 a 12 meses o 8,000 a 17.
 
 ## Reglas generales
 
 - Solo datos sintéticos. Nada del expediente ni respuestas literales en el repositorio.
-- No construir el motor ni la interfaz: eso se hace en el evento. La hoja de verificación no se sube.
-- No edites los archivos de otros: anota tus observaciones en `retos/NEG-01/revision-glem.md` o mándalas por el chat.
+- No construir el motor ni la interfaz: se hacen en el evento. Tus hojas de verificación no se suben.
+- No edites archivos de otros: tus observaciones van en `retos/revision-glem-26-11.md`. La corrección del plazo la hace Antonio en su rama.
+- Nadie envía el formulario salvo el coordinador.
 
 ## Prompt para tu agente (Claude, GPT o Antigravity)
 
 ```
-Estoy en el repo CAJATHON (equipo Yupana Labs). Lee AGENTS.md, docs/reunion-26-11.md,
-docs/glem-hasta-las-8.md y retos/NEG-01/entrega/formulario.md. Para el concepto y el panorama
-de NEG-01, usa: git show origin/reto/neg-01-antonio:retos/NEG-01/concepto.md (y panorama.md).
-Ayúdame con las tareas de docs/glem-hasta-las-8.md: verifica el cálculo de forma independiente,
-sin copiar el del documento; contrasta el formulario con el expediente que te pegaré (no lo
-guardes en el repo); y señala errores, supuestos presentados como hechos y puntos débiles que
-vería un jurado. No construyas el motor ni la interfaz, no envíes nada y no hagas push.
-Responde en español.
+Soy Glem, del equipo Yupana Labs, repo CAJATHON. Lee AGENTS.md (sección «Estado al 26.11»),
+docs/tres-opciones.md y docs/glem-hasta-las-8.md. El concepto y el panorama de NEG-01 están en la
+rama origin/reto/neg-01-antonio (usa git show). Ayúdame con los bloques en orden, uno por uno y
+avisando el tiempo. Sé crítico: verifica los cálculos de forma independiente sin copiar los del
+documento, intenta refutar las afirmaciones de COM-01 y señala supuestos presentados como hechos.
+Si te pego el expediente, úsalo para contrastar y no lo guardes en el repo. No construyas el motor
+ni la interfaz, no envíes nada a la plataforma y solo haz push de mi rama glem/revision-26-11
+cuando yo lo pida. Responde en español y termina con un resumen para WhatsApp.
+```
+
+## Para Antonio y David
+
+```
+Antonio: en tu ejemplo, con la regla de holgura aplicada a todo el plazo, S/ 8,000 necesita 17 meses y no 16. ¿Lo corriges en concepto y panorama? A las 8 quiero que nos expliques el cálculo sin leer.
+```
+
+```
+David: lee docs/tres-opciones.md (10 min), dinos cuál pantalla te ves construyendo en 8 horas y vota antes de las 8:45. El formulario obliga a declarar que todos lo revisamos.
 ```

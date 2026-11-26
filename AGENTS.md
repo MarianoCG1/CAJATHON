@@ -4,6 +4,14 @@ Este repositorio es el espacio de trabajo del equipo **Yupana Labs** para el **C
 
 > Claude Code lee `CLAUDE.md`, Codex/GPT y otros leen `AGENTS.md`, Antigravity/Gemini lee `GEMINI.md`. Los tres apuntan aquí. Todo el trabajo y los documentos van **en español**.
 
+## Estado al 26.11 (esto manda sobre lo que contradiga más abajo)
+
+- El formulario cierra **hoy, 26.11, a las 11:59 p. m.** y admite **un solo desafío** por equipo.
+- Hay tres opciones listas: **NEG-01**, **COM-01** y **RIE-03**. Ver `docs/tres-opciones.md`; la decisión se toma hoy desde las 8 p. m. (`docs/reunion-26-11.md`).
+- Textos para pegar: `retos/<ID>/entrega/formulario.md` y `adjuntos/`. El concepto de NEG-01 vive en la rama `reto/neg-01-antonio`.
+- Revisión de Glem de hoy: `docs/glem-hasta-las-8.md`.
+- Ningún agente envía nada a la plataforma.
+
 ## 1. El escenario
 
 Somos **una consultora TI** que resuelve problemas con tecnología. La Caja publicó **8 desafíos** (los «encargos»). Hasta el **25.11** (la plataforma abre ese día) nuestro trabajo es **desarrollar la idea de cada encargo** y dejar listo el **Concepto de solución** que la plataforma pide. Eso es lo único que se entrega ahora.
