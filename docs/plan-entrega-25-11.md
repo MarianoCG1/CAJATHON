@@ -80,6 +80,10 @@ Identidad en `identidad/` (guía, logos, patrón, tokens). Todo material usa esa
 
 Reglas: no subir los MP4 a servicios externos; si pesan mucho, no versionarlos (`video/**/out/` en `.gitignore`) y dejar el comando de render. Declarar `video/` como preexistente.
 
+## Archivos por si piden adjunto o plantilla
+
+- [x] E1 Versión editable en Word de cada concepto (`retos/<ID>/entrega/concepto.docx`, `python scripts/entrega/armar_docx.py`), con las 8 secciones y la identidad de Yupana Labs.
+
 ## Cierre del día
 
 - [x] Z1 `docs/preexistente.md`, `boveda/Tablero.md`, `README` y `retos/README.md` al día; pruebas en verde.
@@ -95,6 +99,8 @@ Reglas: no subir los MP4 a servicios externos; si pesan mucho, no versionarlos (
 - [ ] F4 Dejar a Mariano una nota con los 3 pasos exactos para enviar. **Enviar solo si Mariano lo autoriza explícitamente en el chat.**
 
 ## Registro de decisiones tomadas sin consultar
+
+- 25.11, 21:01 — Con la sesión de la plataforma sin iniciar, se adelantó la versión en Word (E1) antes que los videos restantes (I5): sirve para adjuntar o llenar una plantilla si la plataforma la pide.
 
 - 25.11 — I4 hecho: `video/rie-03/` (44 s, 7 escenas, sin narración y sin música; MP4 de 3,7 MB en `video/rie-03/out/rie-03-explicativo.mp4`, no versionado; render en 55 s; `check` sin errores). Contenido tomado solo del deck de RIE-03. Se corrigieron antes del render dos defectos visibles: una palabra final que no se animaba en tres títulos y una etiqueta cortada. Se omitieron los tres guiones alternativos y `SPEC.md` de HyperFrames por trabajar de forma autónoma; el guion es el del deck.
 
