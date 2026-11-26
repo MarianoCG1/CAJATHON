@@ -2,6 +2,17 @@
 
 Material confidencial del equipo.
 
+## Actualización 5:15 p. m. (esto reemplaza las cifras de más abajo)
+
+Antonio entregó sus correcciones y las verifiqué con un cálculo aparte.
+
+- **Reglas nuevas de NEG-01:** factor de trabajo 0,585 (90 % del tope), máximo 25 % del capital por cuota y escenarios adversos en todo el plazo. Caben **S/ 5,895 a 12 meses** o **S/ 8,000 a 17 meses** (interés S/ 2,106).
+- **Cuadran:** tasa diaria e interés del periodo, cuota fija, pendientes en los meses bajos, el caso completo del productor y las tasas de la SBS (55,10 % y 47,87 %, Caja Trujillo, octubre 2026).
+- **Dos errores por corregir en sus documentos:** en el caso del ciclo plano la capacidad es S/ 762,94 (no 762,84), así que quedan S/ 544,93 sin pagar y la última cuota es S/ 561; y **con la tasa real de 55,10 % el plazo es 18 meses, no 17**.
+- **El formulario para pegar es `retos/NEG-01/entrega/formulario.md`**, ya actualizado. El de «7 secciones» no calza con los campos de la plataforma.
+- **El alcance creció** (tres vistas, registro de ajustes, más seguros y validaciones) sin recalcular las horas. En el formulario quedó el orden de recorte.
+- Falta el voto de Antonio y no hay nada subido por Glem.
+
 ## Lo primero: la hora
 
 El formulario cierra **hoy a las 11:59 p. m.** Cuatro horas desde las 8 p. m. llegan justo a la medianoche: **no hay margen**. Meta: **enviar antes de las 10:30 p. m.**

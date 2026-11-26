@@ -2,6 +2,8 @@
 
 El formulario cierra **hoy a las 11:59 p. m.** Meta: enviar antes de las 10:30. NEG-01 es la opción recomendada y tú eres quien la domina: de tu parte depende que podamos defenderla y construirla.
 
+> **5 p. m.:** entregado. Lo que falta corregir está en `docs/reunion-26-11.md`, sección «Actualización».
+
 ## Mensaje para pegar en el chat
 
 ```

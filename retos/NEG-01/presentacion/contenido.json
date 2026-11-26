@@ -51,12 +51,30 @@
     "nota": "Nada se aprueba solo. El prototipo no se conecta a los sistemas de la Caja."
   },
   "como_funciona": [
-    {"paso": "Lo que el asesor observa", "detalle": "Ventas en meses buenos, regulares y malos, costos, gastos, carga familiar, transacciones y campañas."},
-    {"paso": "Ciclo del negocio", "detalle": "Patrón del sector y la zona ajustado al cliente según su evidencia; utilidad neta por etapa con banda."},
-    {"paso": "Escenarios", "detalle": "Caída de ventas, campaña retrasada y El Niño, definidos antes de calcular."},
-    {"paso": "Plan de pagos", "detalle": "Monto y periodo por cuota, Cuota/UN con holgura bajo el tope en cada etapa, escenarios adversos y prelación del owner."},
-    {"paso": "Explicación y comparación", "detalle": "Motivo de cada cuota y contraste con la cuota fija: tensión, costo, concentración y exposición."},
-    {"paso": "Decisión", "detalle": "El asesor ajusta factor, etapa o fecha; exporta la hoja y el comité aprueba."}
+    {
+      "paso": "Lo que el asesor observa",
+      "detalle": "Ventas en meses buenos, regulares y malos, costos, gastos, carga familiar, transacciones y campañas."
+    },
+    {
+      "paso": "Ciclo del negocio",
+      "detalle": "Patrón del sector y la zona ajustado al cliente según su evidencia; utilidad neta por etapa con banda."
+    },
+    {
+      "paso": "Escenarios",
+      "detalle": "Caída de ventas, campaña retrasada y El Niño, definidos antes de calcular."
+    },
+    {
+      "paso": "Plan de pagos",
+      "detalle": "Monto y periodo por cuota, con holgura bajo el tope, cubierta en escenarios adversos y sin concentrar capital."
+    },
+    {
+      "paso": "Explicación y comparación",
+      "detalle": "Motivo de cada cuota y contraste con la cuota fija: tensión, costo, concentración y exposición."
+    },
+    {
+      "paso": "Decisión",
+      "detalle": "El asesor ajusta y queda registrado; hoja para el cliente, vista para Riesgos y hoja para comité."
+    }
   ],
   "pantallas": [
     {
@@ -70,8 +88,34 @@
         "titulo_evidencia": "Qué se observa",
         "grafico": {
           "titulo": "Utilidad mensual y cuota fija",
-          "serie": [0.191, 0.191, 0.191, 0.191, 0.191, 0.191, 0.191, 0.191, 0.191, 0.191, 0.191, 0.191],
-          "referencia": [0.107, 0.095, 0.119, 0.667, 1.0, 0.762, 0.214, 0.167, 0.155, 0.167, 0.143, 0.131],
+          "serie": [
+            0.191,
+            0.191,
+            0.191,
+            0.191,
+            0.191,
+            0.191,
+            0.191,
+            0.191,
+            0.191,
+            0.191,
+            0.191,
+            0.191
+          ],
+          "referencia": [
+            0.107,
+            0.095,
+            0.119,
+            0.667,
+            1.0,
+            0.762,
+            0.214,
+            0.167,
+            0.155,
+            0.167,
+            0.143,
+            0.131
+          ],
           "leyenda": "Roja: cuota fija · Punteada: utilidad del negocio"
         },
         "evidencia": [
@@ -91,36 +135,71 @@
       "tipo": "caso",
       "titular": "Con Ritmo: la cuota sigue al negocio",
       "titulo": "Plan adaptado con holgura (ficticio)",
-      "nota": "Maqueta ilustrativa. El plan con holgura cabe en S/ 6,887 a 12 meses, o S/ 8,000 a 17 meses.",
+      "nota": "Maqueta ilustrativa. Con las mismas reglas: S/ 5,895 a 12 meses, o S/ 8,000 a 17 meses.",
       "elementos": {
-        "encabezado": "S/ 6,887 a 12 meses · cuotas de S/ 260 a S/ 2,080",
+        "encabezado": "S/ 5,895 a 12 meses · cuotas de S/ 234 a S/ 1,629",
         "subencabezado": "Sin meses en déficit en los escenarios definidos (por construcción)",
         "titulo_evidencia": "Por qué cada cuota",
         "grafico": {
           "titulo": "Utilidad mensual y cuota propuesta",
-          "serie": [0.07, 0.062, 0.077, 0.155, 0.467, 0.495, 0.139, 0.108, 0.1, 0.108, 0.093, 0.085],
-          "referencia": [0.107, 0.095, 0.119, 0.667, 1.0, 0.762, 0.214, 0.167, 0.155, 0.167, 0.143, 0.131],
+          "serie": [
+            0.063,
+            0.056,
+            0.07,
+            0.155,
+            0.388,
+            0.376,
+            0.125,
+            0.098,
+            0.09,
+            0.098,
+            0.084,
+            0.077
+          ],
+          "referencia": [
+            0.107,
+            0.095,
+            0.119,
+            0.667,
+            1.0,
+            0.762,
+            0.214,
+            0.167,
+            0.155,
+            0.167,
+            0.143,
+            0.131
+          ],
           "leyenda": "Roja: cuota propuesta · Punteada: utilidad del negocio"
         },
         "evidencia": [
           "Valle: cuota baja, cubre intereses",
-          "Cima: amortiza el máximo capital",
-          "Abril: limita el escenario adverso",
-          "Con holgura bajo el tope del producto"
+          "Cima: amortiza más capital",
+          "Máximo 25 % del capital por cuota",
+          "Cuota/UN ≤ 90 % del tope"
         ],
         "incertidumbre": "S/ 8,000 pide 17 meses y más interés.",
         "accion": "Proponer al comité",
         "nota": "El asesor puede bajar el factor.",
         "pie": "Nada se aprueba solo.",
-        "limite": "Ejemplo al tope 0,65. Con holgura (0,60): S/ 8,000 a 17 meses, interés S/ 2,060 (cuota fija a 12: S/ 1,572)."
+        "limite": "A 17 meses: interés S/ 2,106 (cuota fija a 17: S/ 2,231; a 12: S/ 1,572)."
       }
     }
   ],
   "evidencia": {
     "cifras": [
-      {"valor": "8 de 12", "etiqueta": "meses en que la cuota fija supera la utilidad (ejemplo propio)"},
-      {"valor": "S/ 1,861", "etiqueta": "déficit acumulado del cliente con cuota fija en un año normal"},
-      {"valor": "17 meses", "etiqueta": "plazo que necesita S/ 8,000 para tener holgura en los escenarios definidos"}
+      {
+        "valor": "8 de 12",
+        "etiqueta": "meses en que la cuota fija supera la utilidad (ejemplo propio)"
+      },
+      {
+        "valor": "S/ 1,861",
+        "etiqueta": "déficit acumulado del cliente con cuota fija en un año normal"
+      },
+      {
+        "valor": "17 meses",
+        "etiqueta": "plazo que necesita S/ 8,000 con holgura y escenarios adversos (18 con la tasa publicada de 55,10 %)"
+      }
     ],
     "honestidad": "Cálculo propio con las reglas del owner y utilidades supuestas: no es una medición. El plan no muestra déficit en esos escenarios porque se diseña contra ellos; el banco de pruebas lo evaluará contra un ciclo verdadero que el modelo no ve. Alargar el plazo encarece."
   },
@@ -136,26 +215,76 @@
   "tecnologia": {
     "titular": "Modelo del ciclo, optimización y cálculo financiero verificable",
     "filas": [
-      ["Patrones públicos", "Estacionalidad y volatilidad por actividad y zona con series y calendarios públicos."],
-      ["Modelo del ciclo", "Ajuste al cliente según su evidencia; utilidad por etapa con banda y escenarios."],
-      ["Motor del plan", "Programa de optimización con las restricciones del producto; diagnóstico si no cabe."],
-      ["Cronograma", "Tasa diaria base 360, seguros, prelación y pendientes según el owner; TCEA."],
-      ["Explicación", "Motivo por restricción activa; el modelo de lenguaje solo redacta y se verifica."],
-      ["API e interfaz", "FastAPI y React: ciclo, plan, comparación y hoja para comité."]
+      [
+        "Patrones públicos",
+        "Estacionalidad y volatilidad por actividad y zona con series y calendarios públicos."
+      ],
+      [
+        "Modelo del ciclo",
+        "Ajuste al cliente según su evidencia; utilidad por etapa con banda y escenarios."
+      ],
+      [
+        "Motor del plan",
+        "Programa de optimización con las restricciones del producto; diagnóstico si no cabe."
+      ],
+      [
+        "Cronograma",
+        "Tasa diaria base 360, seguros, prelación y pendientes según el owner; TCEA."
+      ],
+      [
+        "Explicación",
+        "Motivo por restricción activa; el modelo de lenguaje solo redacta y se verifica."
+      ],
+      [
+        "API e interfaz",
+        "FastAPI y React: ciclo, plan, comparación y hoja para comité."
+      ]
     ],
     "preexistente": "Desarrollo desde cero. Solo librerías de código abierto y herramientas de planificación que no forman parte de la solución."
   },
   "plan": {
     "titular": "31 horas-persona de 32: núcleo de 26 y recortes ordenados",
     "bloques": [
-      {"bloque": "Perfiles y escenarios sintéticos", "horas": "2", "entregable": "Casos de prueba"},
-      {"bloque": "Patrones, ciclo con banda y proyección", "horas": "4", "entregable": "Utilidad por etapa"},
-      {"bloque": "Motor y cronograma", "horas": "5", "entregable": "Plan que cumple reglas"},
-      {"bloque": "Estrés y comparación con cuota fija", "horas": "3", "entregable": "Beneficios y riesgos"},
-      {"bloque": "Explicación y API", "horas": "4", "entregable": "Motivo por cuota"},
-      {"bloque": "Interfaz del asesor y hoja", "horas": "5", "entregable": "Flujo completo"},
-      {"bloque": "Pruebas, validación y flujo", "horas": "4", "entregable": "Reporte"},
-      {"bloque": "Reglas de negocio, pitch y demo", "horas": "4", "entregable": "Demo"}
+      {
+        "bloque": "Perfiles y escenarios sintéticos",
+        "horas": "2",
+        "entregable": "Casos de prueba"
+      },
+      {
+        "bloque": "Patrones, ciclo con banda y proyección",
+        "horas": "4",
+        "entregable": "Utilidad por etapa"
+      },
+      {
+        "bloque": "Motor y cronograma",
+        "horas": "5",
+        "entregable": "Plan que cumple reglas"
+      },
+      {
+        "bloque": "Estrés y comparación con cuota fija",
+        "horas": "3",
+        "entregable": "Beneficios y riesgos"
+      },
+      {
+        "bloque": "Explicación y API",
+        "horas": "4",
+        "entregable": "Motivo por cuota"
+      },
+      {
+        "bloque": "Interfaz del asesor y hoja",
+        "horas": "5",
+        "entregable": "Flujo completo"
+      },
+      {
+        "bloque": "Pruebas, validación y flujo",
+        "horas": "4",
+        "entregable": "Reporte"
+      },
+      {
+        "bloque": "Reglas de negocio, pitch y demo",
+        "horas": "4",
+        "entregable": "Demo"
+      }
     ],
     "nota": "Orden de recorte: notas de campo con IA, resumen con IA, efecto de El Niño estimado, escenarios extra."
   },
@@ -173,12 +302,36 @@
     "Diseñar un piloto para medir retención"
   ],
   "demo": [
-    {"min": 0.7, "accion": "Dos negocios piden el mismo monto", "mensaje": "Con cuota fija, cada uno sufre en meses distintos."},
-    {"min": 1.0, "accion": "Mostrar el ciclo de cada uno", "mensaje": "Patrón del sector y la zona, ajustado con lo observado, con su banda."},
-    {"min": 1.1, "accion": "Ver el plan y el motivo de cada cuota", "mensaje": "Cuota/UN bajo el factor en cada etapa."},
-    {"min": 0.7, "accion": "El asesor baja el factor", "mensaje": "El plan se recalcula; la decisión sigue siendo suya y del comité."},
-    {"min": 0.9, "accion": "Comparar en un año adverso", "mensaje": "Tensión, costo y TCEA frente a la cuota fija."},
-    {"min": 0.6, "accion": "Banco de pruebas y hoja para comité", "mensaje": "Resultados medidos sobre perfiles sintéticos."}
+    {
+      "min": 0.7,
+      "accion": "Dos negocios piden el mismo monto",
+      "mensaje": "Con cuota fija, cada uno sufre en meses distintos."
+    },
+    {
+      "min": 1.0,
+      "accion": "Mostrar el ciclo de cada uno",
+      "mensaje": "Patrón del sector y la zona, ajustado con lo observado, con su banda."
+    },
+    {
+      "min": 1.1,
+      "accion": "Ver el plan y el motivo de cada cuota",
+      "mensaje": "Cuota/UN bajo el factor en cada etapa."
+    },
+    {
+      "min": 0.7,
+      "accion": "El asesor baja el factor",
+      "mensaje": "El plan se recalcula; la decisión sigue siendo suya y del comité."
+    },
+    {
+      "min": 0.9,
+      "accion": "Comparar en un año adverso",
+      "mensaje": "Tensión, costo y TCEA frente a la cuota fija."
+    },
+    {
+      "min": 0.6,
+      "accion": "Banco de pruebas y hoja para comité",
+      "mensaje": "Resultados medidos sobre perfiles sintéticos."
+    }
   ],
   "plan_b": [
     "Si falla el modelo de lenguaje: resumen por plantilla, sin red.",
@@ -186,14 +339,42 @@
     "Si falla la interfaz: plan y comparación desde la API."
   ],
   "preguntas": [
-    {"p": "¿No es solo un cronograma flexible?", "r": "No. El plan se construye desde el ciclo estimado de cada negocio, con las reglas del producto y holgura frente a escenarios adversos, y explica cada cuota."},
-    {"p": "¿Cómo saben que el ciclo estimado es correcto?", "r": "En el prototipo se compara contra un ciclo verdadero conocido de perfiles sintéticos que el modelo no ve. En la Caja habría que validarlo en un piloto."},
-    {"p": "¿Y si el asesor sobrestima las ventas?", "r": "La holgura exige que la cuota quepa también en escenarios adversos y el asesor puede usar un factor menor. El riesgo no desaparece y se muestra en la banda."},
-    {"p": "¿El cliente paga más?", "r": "Puede. En el ejemplo, seguir el ciclo en 12 meses cuesta menos interés, pero dar holgura a S/ 8,000 exige 17 meses y cuesta más. La herramienta muestra ambos."},
-    {"p": "¿Qué pasa si la Caja gana menos interés?", "r": "Se muestra: ingreso y exposición se comparan con la cuota fija para que el comité decida con las dos caras."},
-    {"p": "¿Cabe en el evento?", "r": "31 de 32 horas-persona, sin holgura. Núcleo de 26 y un motor base más simple como respaldo."},
-    {"p": "¿Usan datos de la Caja?", "r": "No. Perfiles sintéticos y series públicas; sin historial de pagos para el ciclo, como indicó el owner."},
-    {"p": "¿Qué parte es IA?", "r": "El modelo del ciclo y la optimización del plan. El modelo de lenguaje es opcional y solo redacta con cifras verificadas."}
+    {
+      "p": "¿No es solo un cronograma flexible?",
+      "r": "No. El plan se construye desde el ciclo estimado de cada negocio, con las reglas del producto y holgura frente a escenarios adversos, y explica cada cuota."
+    },
+    {
+      "p": "¿Cómo saben que el ciclo estimado es correcto?",
+      "r": "En el prototipo se compara contra un ciclo verdadero conocido de perfiles sintéticos que el modelo no ve. En la Caja habría que validarlo en un piloto."
+    },
+    {
+      "p": "¿Y si el asesor sobrestima las ventas?",
+      "r": "La holgura exige que la cuota quepa también en escenarios adversos y el asesor puede usar un factor menor. El riesgo no desaparece y se muestra en la banda."
+    },
+    {
+      "p": "¿El cliente paga más?",
+      "r": "Frente a la cuota fija a 12 meses, sí si se alarga: a 17 meses el interés es S/ 2,106 contra S/ 1,572. Frente a una cuota fija al mismo plazo paga menos (S/ 2,231). La herramienta muestra ambos."
+    },
+    {
+      "p": "¿Qué pasa si la Caja gana menos interés?",
+      "r": "Se muestra: ingreso y exposición se comparan con la cuota fija para que el comité decida con las dos caras."
+    },
+    {
+      "p": "¿Cabe en el evento?",
+      "r": "31 de 32 horas-persona, sin holgura. Núcleo de 26 y un motor base más simple como respaldo."
+    },
+    {
+      "p": "¿Usan datos de la Caja?",
+      "r": "No. Perfiles sintéticos y series públicas; sin historial de pagos para el ciclo, como indicó el owner."
+    },
+    {
+      "p": "¿Qué parte es IA?",
+      "r": "El modelo del ciclo y la optimización del plan. El modelo de lenguaje es opcional y solo redacta con cifras verificadas."
+    },
+    {
+      "p": "El 40 % no es nuestra tasa.",
+      "r": "Es ilustrativa. Con el 55,10 % que la SBS publica para Caja Trujillo en microempresa a 181-360 días, S/ 8,000 necesita 18 meses; el problema y el enfoque no cambian."
+    }
   ],
   "no_prometemos": [
     "Reducción de mora: no se medirá mora de una cartera.",

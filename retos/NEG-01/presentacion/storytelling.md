@@ -37,9 +37,9 @@ Julia ve que su cliente califica con el promedio, pero que la cuota fija supera 
 1. **Lo que el asesor observa.** Ventas en meses buenos, regulares y malos, costos, gastos, carga familiar, transacciones y campañas.
 2. **Ciclo del negocio.** Patrón del sector y la zona ajustado al cliente según su evidencia; utilidad neta por etapa con banda.
 3. **Escenarios.** Caída de ventas, campaña retrasada y El Niño, definidos antes de calcular.
-4. **Plan de pagos.** Monto y periodo por cuota, Cuota/UN con holgura bajo el tope en cada etapa, escenarios adversos y prelación del owner.
+4. **Plan de pagos.** Monto y periodo por cuota, con holgura bajo el tope, cubierta en escenarios adversos y sin concentrar capital.
 5. **Explicación y comparación.** Motivo de cada cuota y contraste con la cuota fija: tensión, costo, concentración y exposición.
-6. **Decisión.** El asesor ajusta factor, etapa o fecha; exporta la hoja y el comité aprueba.
+6. **Decisión.** El asesor ajusta y queda registrado; hoja para el cliente, vista para Riesgos y hoja para comité.
 
 ## Lo que no prometemos
 

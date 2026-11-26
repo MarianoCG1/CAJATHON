@@ -87,9 +87,9 @@ git show origin/reto/neg-01-antonio:retos/NEG-01/concepto.md
 - Utilidad de enero a diciembre: 450, 400, 500, 2800, 4200, 3200, 900, 700, 650, 700, 600, 550. La cuota del 15 se paga con la utilidad del mes anterior.
 - El Niño: abril 650, mayo 1960, junio 2940, julio 2240. Caída general: −20 %.
 - Holgura en **todos** los meses: cuota = menor entre 0,65 × utilidad, utilidad con El Niño y utilidad con caída.
-- Repetir con factor 0,60 (holgura bajo el tope que pide el expediente): debe dar 17 meses con interés 2,060, o 6,533 a 12 meses.
+- **Reglas actualizadas (5 p. m.):** factor 0,585, máximo 25 % del capital por cuota y escenarios en todo el plazo: deben salir 5,895 a 12 meses, u 8,000 a 17 meses con interés 2,106. Con TEA 55,10 % y desgravamen 1,26 % anual: 18 meses.
 - A las 6:30 cruza tus resultados con Antonio.
-- Cifras a verificar: cuota fija 801; 8 de 12 meses en déficit; déficit 1,861; con holgura 6,887 a 12 meses o 8,000 a 17.
+- Cifras a verificar además: cuota fija 801; 8 de 12 meses en déficit; déficit 1,861. Casos completos: `git show origin/reto/neg-01-antonio:retos/NEG-01/casos-de-prueba.md`.
 
 ## Reglas generales
 

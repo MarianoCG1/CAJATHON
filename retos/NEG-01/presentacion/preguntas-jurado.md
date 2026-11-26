@@ -16,7 +16,7 @@ La holgura exige que la cuota quepa también en escenarios adversos y el asesor 
 
 ## 4. ¿El cliente paga más?
 
-Puede. En el ejemplo, seguir el ciclo en 12 meses cuesta menos interés, pero dar holgura a S/ 8,000 exige 17 meses y cuesta más. La herramienta muestra ambos.
+Frente a la cuota fija a 12 meses, sí si se alarga: a 17 meses el interés es S/ 2,106 contra S/ 1,572. Frente a una cuota fija al mismo plazo paga menos (S/ 2,231). La herramienta muestra ambos.
 
 ## 5. ¿Qué pasa si la Caja gana menos interés?
 
@@ -33,3 +33,7 @@ No. Perfiles sintéticos y series públicas; sin historial de pagos para el cicl
 ## 8. ¿Qué parte es IA?
 
 El modelo del ciclo y la optimización del plan. El modelo de lenguaje es opcional y solo redacta con cifras verificadas.
+
+## 9. El 40 % no es nuestra tasa.
+
+Es ilustrativa. Con el 55,10 % que la SBS publica para Caja Trujillo en microempresa a 181-360 días, S/ 8,000 necesita 18 meses; el problema y el enfoque no cambian.
