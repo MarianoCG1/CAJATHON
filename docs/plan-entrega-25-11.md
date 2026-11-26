@@ -75,8 +75,8 @@ Identidad en `identidad/` (guía, logos, patrón, tokens). Todo material usa esa
 - [x] I2 Decks y fichas de los cuatro retos con la identidad (portada oscura con patrón, láminas claras y oscuras, franja de tres colores, versión HTML animada).
 - [x] I3 Video de marca de Yupana Labs (sting de 8 s) con HyperFrames: la yupana se llena columna por columna, aparece el nombre y el lema. Proyecto en `video/marca/`; MP4 en `video/marca/out/yupana-labs-sting.mp4` (653 KB, renderizado en 46 s; no se versiona). Verificación `check` sin errores ni advertencias. HyperFrames ya no tiene el flujo `/motion-graphics`: se usa `/hyperframes` y sus referencias.
 - [x] I4 Explicativo animado de RIE-03 (30–45 s, sin narración, con subtítulos en pantalla) con HyperFrames (`/general-video` o `/faceless-explainer`), con la historia de Rosa, la cola priorizada, la evidencia y el cierre. Proyecto en `video/rie-03/`. Usar el guion de `retos/RIE-03/presentacion/storytelling.md`. Sin cifras que no estén en el deck.
-- [ ] I5 Explicativos de NEG-02, RIE-01 y RIE-02 con el mismo método y la misma identidad (uno por tarea).
-- [ ] I6 Revisar los videos fotograma a fotograma (capturas), verificar que no afirmen nada no medido y registrar en el plan la herramienta y el comando de render.
+- [x] I5 **Descartada**: la plataforma admite un solo concepto; hacer videos de los otros tres retos no aporta a la entrega. Se retoman si el equipo cambia de desafío.
+- [x] I6 Videos de marca y de RIE-03 revisados fotograma a fotograma; sin cifras fuera del deck. Render: ver `video/README.md`.
 
 Reglas: no subir los MP4 a servicios externos; si pesan mucho, no versionarlos (`video/**/out/` en `.gitignore`) y dejar el comando de render. Declarar `video/` como preexistente.
 
@@ -95,8 +95,8 @@ Reglas: no subir los MP4 a servicios externos; si pesan mucho, no versionarlos (
 - [x] F1 Leer el formulario en el navegador integrado (campos, límites, adjuntos, si admite varios conceptos y la hora límite) **sin enviar nada**. Anotarlo en `docs/investigacion/07-plataforma-24-11.md` §1.
 - [x] F2 Adaptar el paquete a esos campos: un archivo `retos/<ID>/entrega/pegar-en-formulario.md` por reto, ya recortado a los límites reales.
 - [x] F3 Si admite uno solo: dejar listo solo RIE-03 y marcar los demás como material de portafolio.
-- [ ] F5 (opcional, solo si el formulario admite enlace o adjunto de video) Preparar un explicativo de 45–60 s de RIE-03 con las skills de HyperFrames; si no lo admite, se deja para la fase presencial.
-- [ ] F4 Dejar a Mariano una nota con los 3 pasos exactos para enviar. **Enviar solo si Mariano lo autoriza explícitamente en el chat.**
+- [x] F5 **No aplica**: el formulario acepta PDF, PNG o JPG y un enlace, no un video adjunto. El explicativo de 44 s queda disponible; publicarlo en un enlace externo lo decide el equipo.
+- [x] F4 Pasos para enviar en `docs/pasos-para-enviar.md`. **Enviar solo si Mariano lo autoriza explícitamente en el chat.**
 
 ## Registro de decisiones tomadas sin consultar
 

@@ -1,3 +1,14 @@
+# Estado final (25.11, noche)
+
+- Formulario abierto; cierra el **jueves 26.11 a las 11:59 p. m.**; **un solo concepto por equipo**.
+- **RIE-03 listo para pegar:** `retos/RIE-03/entrega/formulario.md` + 3 adjuntos. Pasos: `docs/pasos-para-enviar.md`.
+- Pendiente de personas: decidir el desafío (`docs/decision-reto.md`), revisión del equipo y envío.
+- Sin enviar nada a la plataforma. Commits locales sin push desde el último autorizado.
+
+---
+
+## Mensaje anterior para el equipo (24.11, desactualizado)
+
 # Mensaje de estado para el equipo (24.11, noche) — listo para pegar
 
 > Texto plano para WhatsApp. No se ha enviado. Actualizar la hora y los puntos «pendiente» antes de enviar.
