@@ -27,35 +27,39 @@ No vemos los tickets de otros equipos, así que **no se puede saber cuántos equ
 | **NEG-03** Continuidad al cambiar el analista | Que el cliente no se pierda cuando cambia su analista | Horizonte de 2 a 3 meses; fuga por no renovación y compra de deuda; éxito = renovación, saldo retenido y contacto oportuno | Borrador inicial |
 | **RIE-01** Clima | Identificar zonas, sectores y clientes vulnerables y estimar exposición e impacto en la cartera y los estados financieros | Reescrito y ampliado: más segmentos de cartera y estados financieros; cuenta con medidas para El Niño | Concepto sobre el alcance anterior (habría que ampliarlo) |
 | **RIE-02** Redes de fraude | Detectar redes sospechosas entre solicitudes sin acusar a clientes legítimos | Solo el expediente | Concepto revisado, evidencia, deck y ficha |
-| **COM-01** Nuevos clientes | Encontrar dónde captar clientes con potencial de inclusión | KPI = nuevos clientes; fuentes públicas permitidas; evitar sesgos | Borrador inicial |
+| **COM-01** Nuevos clientes | Encontrar dónde captar clientes con potencial de inclusión | KPI = nuevos clientes; fuentes públicas permitidas; evitar sesgos | Concepto v1, evidencia, deck, ficha y formulario listos |
 | **COM-02** Incentivos | Esquemas de incentivos que equilibren colocación, mora y colaboración | No comparten nada del esquema actual | Borrador inicial |
 
-## 3. Comparación de los candidatos
+## 3. Comparación de los dos candidatos listos (actualizado 25.11, noche)
 
-| Criterio | RIE-03 | NEG-01 | NEG-03 |
-|---|---|---|---|
-| Claridad de lo que quiere el owner | Media (solo expediente) | **Alta** | Media-alta |
-| Lo ya construido para postular | **Alto** | Bajo | Bajo |
-| Encaje con el equipo | **Alto** (modelos y agentes) | Alto en negocio (Antonio) y datos (Glem) | Medio |
-| Evidencia que podemos mostrar hoy | **Sí, medida** | No | No |
-| Riesgo de construirlo en ~8 h por persona | Medio (31,5 h de 32) | Medio-alto: cálculo financiero exacto y modelo de ciclo sin datos de verdad | Medio |
-| Competencia probable (inferencia) | Sin señales | Probablemente alta | Sin señales |
+COM-01 ya está desarrollado y Glem trajo la respuesta de su owner. Esta tabla reemplaza a la anterior.
 
-## 4. Recomendación: RIE-03
+| Criterio del pase a finalistas | COM-01 | RIE-03 |
+|---|---|---|
+| Alineación (25 %) | **Más sustento:** el owner dijo KPI, fuentes y sesgos a evitar | Solo el expediente |
+| Impacto (30 %) | Captación de nuevos clientes, el indicador que recomienda el owner | Menos atraso; sin definición confirmada |
+| Viabilidad técnica (25 %) | Fuentes públicas; esquema simple que aprende | Necesita datos de cartera que no tendremos |
+| Factibilidad (20 %) | 31 de 32 h | 31,5 de 32 h |
+| Diferenciación | Decide dónde ir sabiendo poco y aprende | La «alerta temprana» es una idea previsible |
+| Evidencia | Robustez entre escenarios, incluido uno donde pierde | AUC sobre datos muy simples |
+| Principal debilidad | Depende de que el analista registre; sin revisión independiente | Datos simples; sin respuesta del owner |
 
-1. **Está listo y revisado.** Los otros candidatos habría que escribirlos desde cero en unas 24 horas.
-2. **Tiene evidencia propia.** Sobre datos sintéticos propios, entre clientes al día el modelo ordena con AUC 0,84 y el 10 % mejor puntuado concentra alrededor de 6 de cada 10 casos (unas 6 veces el azar). Con regresión logística, la opción más simple, el resultado es el mismo.
-3. **Encaja con nuestro perfil:** modelo predictivo, filtro de señal y agente con aprobación humana.
-4. **Cabe en el evento** con un mínimo viable definido.
-5. **Impacto fácil de explicar:** llegar antes del primer atraso. El umbral de más de 30 días coincide con la referencia de deterioro que Riesgos dio en otro desafío.
+## 4. Recomendación: COM-01
 
-**Debilidades que hay que aceptar:** no tenemos respuesta del owner; una «alerta temprana de mora» es una idea que otros equipos pueden proponer, así que la diferencia está en el filtro de falsos positivos y la evidencia; las horas del evento van sin holgura; y la precisión absoluta es baja porque el evento es raro.
+Cambia la recomendación anterior (RIE-03) por dos hechos nuevos: hay respuesta del owner de COM-01, y la observación de Glem quita a RIE-03 su principal ventaja, la evidencia medida (`docs/casos-reales.md`). La tabla es nuestro juicio, no una puntuación oficial.
 
-## 5. Cuándo elegir NEG-01 en lugar de RIE-03
+Lo que hay que aceptar si se elige COM-01:
 
-Solo si **Antonio y Glem se comprometen esta noche** a dominar el cálculo (TEA a tasa diaria, seguros, orden de pago, tope de cuota sobre utilidad por etapa) y el modelo de ciclo con fuentes públicas. A favor: el owner dijo con precisión qué quiere ver y que no medirá mora real. En contra: se parte de cero y probablemente haya más competencia.
+- Nadie fuera de Claude lo ha revisado todavía (RIE-03 sí tuvo una revisión con agente).
+- Sus cifras también salen de un generador propio; lo que muestran es robustez ante supuestos, no resultados.
+- El script de auditoría contiene una versión mínima de la estrategia de aprendizaje: está declarado como preexistente y no se reutiliza.
+- Haber preguntado no puntúa por sí mismo; lo que suma es usar bien la respuesta.
+
+## 5. Cuándo quedarse con RIE-03
+
+Si el equipo se siente más capaz de defender un modelo de riesgo que un planificador que aprende.
 
 ## 6. Lo que se necesita para enviar
 
-- Que los cuatro revisen el `retos/RIE-03/entrega/formulario.md` y sus tres adjuntos: la plataforma pide declarar que el equipo la acordó.
-- Marcar las tres declaraciones y enviar antes del jueves 11:59 p. m. (mejor no apurar hasta la última hora).
+- Que los cuatro lean el `formulario.md` del elegido y sus tres adjuntos: la plataforma pide declarar que el equipo lo acordó.
+- Marcar las tres declaraciones y enviar antes del jueves 26.11 a las 11:59 p. m.

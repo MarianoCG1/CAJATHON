@@ -1,0 +1,190 @@
+{
+  "titulo": "COM-01 · Brújula comercial que aprende de cada visita",
+  "lema": "Dónde prospectar esta semana, qué sabemos de cada zona y qué falta averiguar. El analista decide.",
+  "persona": {
+    "nombre": "Carmen",
+    "rol": "Analista de negocios (personaje ficticio)",
+    "contexto": "Carmen conoce bien su territorio y consigue clientes por referidos y por las zonas que ya recorre. Tiene pocas salidas por semana y no quiere gastarlas a ciegas. Es un personaje ficticio, creado para explicar la solución."
+  },
+  "historia": {
+    "antes": [
+      "Prospecta donde ya conoce y donde la refieren.",
+      "De las zonas que no visita no sabe nada, y nada le dice que vale la pena ir.",
+      "Si prueba una zona nueva y le va mal, no queda registro de por qué fue ni qué encontró.",
+      "No puede comparar si su ruta rinde más que otra."
+    ],
+    "despues": [
+      "Recibe su semana: parte de su ruta y parte de descubrimiento.",
+      "Cada zona trae evidencia, dudas y qué validar en campo.",
+      "Registra el resultado de cada visita con un toque.",
+      "La semana siguiente el plan cambia según lo que rindió."
+    ],
+    "momento_clave": "Carmen entra a una zona periurbana que no tenía en su radar: pocas señales digitales, mercado activo y casi sin puntos financieros. La ficha le dice qué sabe y qué debe confirmar ella."
+  },
+  "tres_frases": [
+    "La prospección aprende sobre todo de donde ya se va, y la falta de información se confunde con falta de potencial.",
+    "Cada semana proponemos una mezcla de ruta habitual y descubrimiento, con la evidencia y las dudas de cada zona.",
+    "El analista decide, registra lo que pasó y el plan aprende; se mide en clientes nuevos por cada 100 visitas."
+  ],
+  "problema": {
+    "titular": "Lo que no se visita, no se conoce",
+    "puntos": [
+      "La prospección se apoya en experiencia, referidos y conocimiento territorial: valioso, pero limitado a lo conocido.",
+      "Una zona sin visitas no genera información; sin información, no parece oportunidad.",
+      "El desafío pide encontrar oportunidades que pasan inadvertidas, con evidencia y sin excluir a nadie injustificadamente.",
+      "Una señal no es una necesidad confirmada, ni capacidad de pago, ni elegibilidad."
+    ],
+    "nota": "Resultado esperado del desafío: más captación en zonas poco exploradas, prospección más efectiva, mejores decisiones e inclusión financiera."
+  },
+  "solucion": {
+    "titular": "Un plan que combina lo que se sabe con lo que falta averiguar",
+    "flujo": [
+      "Señales públicas por zona",
+      "Potencial con incertidumbre",
+      "Plan: habitual y descubrir",
+      "Ficha de evidencia",
+      "El analista aprueba",
+      "Visita y registro",
+      "El plan aprende",
+      "KPI y equidad"
+    ],
+    "nota": "La unidad es la zona, no la persona. Nada contacta ni decide solo."
+  },
+  "como_funciona": [
+    {"paso": "Señales por zona", "detalle": "Negocios, actividad, cobertura financiera, distancia y presencia digital de negocios, con fuente y fecha (sintéticas en el prototipo)."},
+    {"paso": "Potencial con rango", "detalle": "Probabilidad de que una visita termine en cliente nuevo; donde faltan datos el rango se ensancha, el puntaje no se castiga."},
+    {"paso": "Plan de la semana", "detalle": "Reparte las salidas entre la ruta habitual y el descubrimiento, con una cuota mínima para lo menos conocido."},
+    {"paso": "Ficha de zona", "detalle": "Un agente acotado resume evidencia, dudas, qué validar y cómo abordar, citando las fuentes."},
+    {"paso": "Decisión y registro", "detalle": "El analista aprueba o cambia; en campo registra sin interés, interesado, solicitó o desembolsado."},
+    {"paso": "Aprendizaje y medición", "detalle": "Se actualizan las estimaciones y el reparto; se compara con la ruta habitual y con un puntaje fijo."}
+  ],
+  "pantallas": [
+    {
+      "tipo": "cola",
+      "titular": "La semana de Carmen: dónde ir y por qué",
+      "titulo": "Plan de la semana (propuesta, la analista decide)",
+      "subtitulo": "Zonas ficticias · barra = potencial estimado · mezcla de ruta habitual y descubrimiento",
+      "nota": "Maqueta ilustrativa con datos ficticios. La interfaz real se construye en el evento.",
+      "elementos": [
+        {"id": "Z-014 (habitual)", "nivel": 0.72, "porque": ["Referidos recientes en la zona", "Evidencia: alta"], "accion": "Visitar mercado"},
+        {"id": "Z-052 (descubrir)", "nivel": 0.68, "porque": ["Muchos negocios, pocos puntos", "Evidencia: media"], "accion": "Recorrido de calle"},
+        {"id": "Z-087 (explorar)", "nivel": 0.5, "porque": ["Casi sin datos digitales", "Rango amplio: averiguar"], "accion": "Visita de sondeo"},
+        {"id": "Z-031 (habitual)", "nivel": 0.46, "porque": ["Ruta que ya recorre", "Zona parcialmente agotada"], "accion": "Menos salidas"},
+        {"id": "Z-103 (descubrir)", "nivel": 0.42, "porque": ["Actividad comercial creciente", "Lejos de agencia"], "accion": "Agrupar con Z-087"}
+      ]
+    },
+    {
+      "tipo": "caso",
+      "titular": "La ficha: qué se sabe y qué falta confirmar",
+      "titulo": "Zona Z-087 · periurbana (ficticia)",
+      "nota": "Maqueta ilustrativa. Las cifras de la pantalla no son resultados.",
+      "elementos": {
+        "encabezado": "Z-087 · zona periurbana con mercado",
+        "titulo_evidencia": "Qué se sabe y qué falta",
+        "subencabezado": "Descubrimiento · potencial con rango amplio por falta de datos",
+        "grafico": {
+          "titulo": "Estimación de la zona al registrar visitas",
+          "serie": [0.34, 0.38, 0.5, 0.55, 0.62, 0.66, 0.67, 0.7],
+          "referencia": [0.34, 0.34, 0.34, 0.34, 0.34, 0.34, 0.34, 0.34],
+          "leyenda": "Roja: estimación que aprende · Punteada: puntaje fijo"
+        },
+        "evidencia": [
+          "Alta concentración de negocios",
+          "Pocos puntos financieros por negocio",
+          "Sin dato de presencia digital",
+          "A validar: horarios y campaña local"
+        ],
+        "incertidumbre": "No es necesidad confirmada ni elegibilidad.",
+        "accion": "Visita de sondeo: 10 negocios",
+        "nota": "Preguntas sugeridas citando la evidencia.",
+        "pie": "La analista aprueba o cambia.",
+        "limite": "La unidad es la zona: no hay listas de personas ni datos personales."
+      }
+    }
+  ],
+  "evidencia": {
+    "cifras": [
+      {"valor": "≥ 91 %", "etiqueta": "de la mejor estrategia: nuestra mezcla en los tres escenarios (mediana, datos sintéticos propios)"},
+      {"valor": "47 %", "etiqueta": "es el peor caso de visitar solo donde ya hay clientes"},
+      {"valor": "62 %", "etiqueta": "es el peor caso de un puntaje fijo por zona"}
+    ],
+    "honestidad": "Simulación propia: 200 repeticiones por escenario con supuestos nuestros. Cuando el potencial está donde ya hay clientes, visitar solo ahí gana (13,8 frente a 13,0 por 100 visitas): por eso complementamos. En 11 variaciones de los parámetros, nunca bajamos de 86 %. No son resultados de la Caja."
+  },
+  "impacto": {
+    "titular": "Más clientes nuevos con el mismo esfuerzo, sin apostar todo a un supuesto",
+    "kpi": [
+      "Clientes nuevos por cada 100 visitas",
+      "Conversión, desembolsos y costo por cliente nuevo",
+      "Primer acceso al sistema financiero",
+      "Visitas a zonas poco atendidas o poco digitales"
+    ]
+  },
+  "tecnologia": {
+    "titular": "Decidir dónde ir sabiendo poco: modelo, planificador y agente integrados",
+    "filas": [
+      ["Señales", "Por zona, con fuente, fecha y huecos visibles; sin datos personales."],
+      ["Potencial", "Modelo que sirve de punto de partida a un esquema bayesiano por zona."],
+      ["Planificador", "Muestreo de Thompson con capacidad, distancia, agotamiento y cuota de exploración."],
+      ["Agente", "Redacta la ficha citando evidencia; guardas en el código; proveedor intercambiable y modo sin red."],
+      ["API e interfaz", "FastAPI con bitácora; React con semana, mapa y registro de un toque."],
+      ["Backtest", "Frente a visitar solo donde ya hay clientes y a un puntaje fijo, en varios escenarios, con semilla fija."]
+    ],
+    "preexistente": "Preexistente (25.11.2026, del equipo): generador de territorio sintético con 7 pruebas y script de auditoría de estrategias, que no se reutiliza. Todo lo demás se construye en el evento."
+  },
+  "plan": {
+    "titular": "31 horas-persona de 32: mínimo viable y recortes ordenados",
+    "bloques": [
+      {"bloque": "Territorio sintético y carga", "horas": "2", "entregable": "Señales por zona"},
+      {"bloque": "Potencial con incertidumbre", "horas": "4", "entregable": "Estimación con rango"},
+      {"bloque": "Planificador adaptativo", "horas": "5", "entregable": "Plan semanal reproducible"},
+      {"bloque": "Ficha de zona y agente", "horas": "4", "entregable": "Ficha con evidencia citada"},
+      {"bloque": "API y bitácora", "horas": "3", "entregable": "Aprobaciones y resultados"},
+      {"bloque": "Interfaz: semana, mapa y registro", "horas": "5", "entregable": "Flujo completo"},
+      {"bloque": "Backtest, KPI y equidad", "horas": "4", "entregable": "Número antes y después"},
+      {"bloque": "Pruebas, validación, pitch y demo", "horas": "4", "entregable": "Reporte y demo"}
+    ],
+    "nota": "No se recorta: plan, ficha, aprobación, registro, backtest y pruebas."
+  },
+  "supuestos": [
+    "15 salidas por semana de 10 visitas y horizonte de 12 semanas",
+    "El analista puede registrar el resultado desde el móvil",
+    "Definición de cliente nuevo, por confirmar",
+    "Fuentes públicas sujetas a sus condiciones de uso",
+    "IA externa solo en demo y con datos sintéticos"
+  ],
+  "proximos_pasos": [
+    "Acordar con el owner la unidad de zona y la capacidad real de visitas",
+    "Cargar fuentes públicas oficiales para una provincia",
+    "Probar el plan y el registro con un analista",
+    "Piloto comparado: parte de las agencias con el plan y parte como hoy"
+  ],
+  "demo": [
+    {"min": 0.5, "accion": "Abrir la semana de Carmen", "mensaje": "Quince salidas: unas de su ruta y otras de descubrimiento, cada una con su porqué."},
+    {"min": 1.0, "accion": "Entrar a una zona con pocos datos", "mensaje": "Se ve lo que sabemos, lo que no y qué validar; no tener dato no le baja el puntaje."},
+    {"min": 0.5, "accion": "Quitar una zona y aprobar", "mensaje": "La decisión es suya y el motivo queda registrado."},
+    {"min": 1.0, "accion": "Registrar resultados", "mensaje": "Un toque por visita."},
+    {"min": 0.5, "accion": "Ver la semana siguiente", "mensaje": "El plan cambió y explica por qué."},
+    {"min": 1.5, "accion": "Backtest y reparto de visitas", "mensaje": "Clientes nuevos por 100 visitas frente a visitar solo la cartera actual y al puntaje fijo, en tres escenarios, incluido el que no ganamos."}
+  ],
+  "plan_b": [
+    "Si falla el modelo de lenguaje externo: fichas por plantilla, sin red.",
+    "Si falla el mapa: la semana como lista.",
+    "Si falla el backtest en vivo: resultados guardados con semilla fija."
+  ],
+  "preguntas": [
+    {"p": "¿En qué se diferencia de un mapa de calor?", "r": "El mapa de calor muestra una foto fija. Aquí se decide cuántas salidas van a cada sitio, se reserva una parte para averiguar lo que no se sabe y el reparto cambia con los resultados."},
+    {"p": "¿Ya tienen herramientas de prospección. Qué suma esto?", "r": "Complementa: la ruta del analista y esas herramientas son una de las fuentes del plan. Sumamos descubrimiento medido y aprendizaje con los resultados."},
+    {"p": "Sus números salen de datos inventados, ¿por qué creerles?", "r": "No prometemos esos números para la Caja. Muestran cómo se comporta el mecanismo en tres supuestos distintos, incluido uno donde perdemos. La validación real es un piloto comparado con la misma capacidad."},
+    {"p": "¿Cómo evitan excluir o discriminar?", "r": "La unidad es la zona; no usamos datos de personas ni características sensibles. La falta de dato ensancha el rango sin bajar el puntaje, hay cuota de exploración y se audita el reparto por tipo de zona y presencia digital."},
+    {"p": "¿Y si el analista no registra?", "r": "No hay aprendizaje y el sistema lo muestra. Por eso el registro es un toque con cuatro opciones; en el piloto se mide cuánto se registra."},
+    {"p": "¿Qué parte es IA?", "r": "El modelo de potencial, el esquema bayesiano que aprende y decide cómo repartir las salidas, y el agente que redacta la ficha. El modelo de lenguaje es opcional en el mínimo viable."},
+    {"p": "¿Cabe en el evento?", "r": "Estimamos 31 horas-persona de 32, sin holgura, con recortes ordenados: primero la redacción con modelo de lenguaje, luego el mapa."},
+    {"p": "¿Esto aprueba o preaprueba créditos?", "r": "No. Solo sugiere dónde prospectar. No evalúa personas ni capacidad de pago."}
+  ],
+  "no_prometemos": [
+    "Una cifra de clientes nuevos para la Caja: no hay línea base.",
+    "Que la herramienta gane siempre: si el potencial está donde ya hay clientes, quedarse ahí rinde más.",
+    "Listas de personas, contactos o preaprobaciones.",
+    "Integración con sistemas de la Caja en el prototipo."
+  ]
+}

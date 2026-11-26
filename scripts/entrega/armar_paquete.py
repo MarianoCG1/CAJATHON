@@ -113,10 +113,11 @@ def ficha_md(id_: str, cortos: dict) -> str:
 
 
 def supuestos_md(id_: str, cortos: dict) -> str:
-    L = [f"# {id_} — supuestos que seguimos sin confirmar", "",
-         "No hubo respuesta del owner para este desafío (el envío de tickets cerró el 24.11 a las 18:00 y no alcanzamos a enviar las "
-         "preguntas de este reto). Mientras tanto el concepto trabaja con estos supuestos, marcados en el texto como **(supuesto)** o "
-         "**[POR CONFIRMAR]**:", "", "| Tema | Qué asumimos |", "|---|---|"]
+    nota = cortos.get("nota_supuestos", (
+        "No hubo respuesta del owner para este desafío (el envío de tickets cerró el 24.11 a las 18:00 y no alcanzamos a enviar las "
+        "preguntas de este reto). Mientras tanto el concepto trabaja con estos supuestos, marcados en el texto como **(supuesto)** o "
+        "**[POR CONFIRMAR]**:"))
+    L = [f"# {id_} — supuestos que seguimos sin confirmar", "", nota, "", "| Tema | Qué asumimos |", "|---|---|"]
     L += [f"| {a['tema']} | {a['supuesto']} |" for a in cortos["asumimos"]]
     L += ["", "Si la organización responde o entrega datos, se actualiza el concepto; ninguna cifra de impacto se afirma sin línea base.", ""]
     return "\n".join(L)
@@ -125,7 +126,7 @@ def supuestos_md(id_: str, cortos: dict) -> str:
 def checklist_md(id_: str) -> str:
     return f"""# {id_} — checklist de envío
 
-El formulario de «Concepto de solución» abre el mié 25.11 y cierra el jue 26.11 (hora límite por confirmar). **No enviar sin revisar este checklist.**
+El formulario de «Concepto de solución» cierra el jueves 26.11 a las 11:59 p. m. (hora de Perú). **No enviar sin revisar este checklist.**
 
 ## Antes de abrir el formulario
 - [ ] Leer `campos.md` y `resumen-corto.md`; confirmar que el reto y los números siguen vigentes.
@@ -133,7 +134,7 @@ El formulario de «Concepto de solución» abre el mié 25.11 y cierra el jue 26
 - [ ] Tener a mano la ficha de una página (`ficha-1-pagina.pdf`) por si el formulario admite adjunto.
 
 ## En el formulario
-- [ ] Elegir el desafío **{id_}**. Si el formulario solo admite un concepto, **el reto elegido debe ser RIE-03**.
+- [ ] Elegir el desafío **{id_}**. Se envía **un solo concepto por equipo**: confirmar antes que el equipo eligió este.
 - [ ] Pegar cada componente en su campo: versión completa si cabe; si no, la versión corta (≤ 1,000 caracteres).
 - [ ] Si hay un solo cuadro de texto, pegar `postulacion.md` completo; si hay límite, usar los cortos en el mismo orden.
 - [ ] Adjuntar la ficha PDF solo si el formulario lo permite.

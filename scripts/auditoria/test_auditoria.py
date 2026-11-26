@@ -11,6 +11,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import auditar_com01 as com01
 import auditar_neg02 as neg02
 import auditar_rie01 as rie01
 import auditar_rie02 as rie02
@@ -62,3 +63,20 @@ def test_rie02_ninguna_regla_simple_logra_recall_y_precision_altos():
     # exigir dos tipos de vínculo reduce señuelos pero pierde fraude
     r4 = r["R4 comparte dos o más tipos de recurso"]
     assert r4["senuelos_marcados"] < r1["senuelos_marcados"] and r4["recall_fraude"] < r1["recall_fraude"]
+
+
+def test_com01_la_mezcla_tiene_mejor_peor_caso():
+    """Con pocas semillas basta para avisar si un cambio rompe la afirmación publicada."""
+    estrategias = ["habitual", "ranking", "aprende", "mixto"]
+    peor = dict.fromkeys(estrategias, 1.0)
+    for escenario in com01.gen.ESCENARIOS:
+        med = com01.auditar(escenario, 25).groupby("politica")["clientes_x100_visitas"].median()
+        for e in estrategias:
+            peor[e] = min(peor[e], med[e] / med[estrategias].max())
+    assert max(peor, key=peor.get) == "mixto"
+    assert peor["mixto"] > 0.84
+
+
+def test_com01_la_costumbre_gana_cuando_ya_acierta():
+    med = com01.auditar("conocido", 25).groupby("politica")["clientes_x100_visitas"].median()
+    assert med["habitual"] > med["mixto"]

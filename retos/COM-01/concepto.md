@@ -1,110 +1,99 @@
 # Concepto de solución — COM-01 · Encontrar oportunidades donde otros no ven clientes
 
-> **BORRADOR v0 (generado).** Prioridad **#7** · Pareja líder **Antonio + Glem** · Eje: 2 Experiencia, retención y crecimiento · Owners (plataforma): (ver plataforma).
-> Lo marcado **(supuesto)** o **[POR CONFIRMAR]** no viene de la Caja. No presentarlo como hecho. Material confidencial: repo privado.
+> **Versión 1** (25.11, noche). Lo marcado **(supuesto)** no viene de la Caja. Las cifras «medidas» son **sobre datos sintéticos propios**. Material confidencial: no publicar.
+
+**Nombre:** Brújula comercial que aprende de cada visita.
+
+**En una frase:** cada semana propone a cada analista dónde prospectar —combinando su ruta habitual con zonas poco exploradas—, explica qué sabe y qué no sabe de cada zona, y aprende del resultado de las visitas.
 
 ## 1. Problema abordado
 
-La prospección comercial depende de la experiencia del analista y de referencias. Pueden existir zonas o segmentos con potencial de inclusión financiera que no resultan evidentes con los métodos tradicionales.
+La prospección se apoya en experiencia, referidos y conocimiento territorial. Eso es valioso, pero **se aprende sobre todo de donde ya se va**: una zona que no se visita no genera información, y la falta de información puede confundirse con falta de potencial. El reto pide identificar y priorizar oportunidades que hoy pueden pasar inadvertidas, con evidencia y sin exclusiones injustificadas.
 
-Riesgos y restricciones que el expediente pide respetar: Sesgos y exclusión injustificada; Uso responsable de fuentes públicas; Potencial no es elegibilidad.
+Contexto público (cita indirecta, **confirmar en la SBS antes de usarlo en el pitch**): una nota de prensa de nov. 2025 que atribuye las cifras a la SBS indica que el 27 % de los adultos de La Libertad tiene un crédito en el sistema financiero, frente a 33 % nacional.
 
 ## 2. Concepto de solución
 
-Mapa de potencial comercial por zona/segmento con un modelo de priorización y un agente que genera el brief de prospección para el analista. **(supuesto)**
+1. **Mapa de evidencia por zona comercial:** concentración de negocios, actividad económica, cobertura financiera, distancia y señales digitales públicas de negocios; cada dato con fuente y fecha, y marcando lo que falta.
+2. **Potencial con incertidumbre:** probabilidad de que una visita termine en un cliente nuevo, con su rango. La falta de datos **ensancha el rango; no baja el puntaje**.
+3. **Plan semanal que se adapta:** reparte las salidas entre la ruta que el analista ya haría y zonas de descubrimiento, con una cuota mínima para las menos conocidas. El reparto cambia según lo que va rindiendo cada fuente.
+4. **Ficha de zona redactada por un agente acotado:** qué se sabe, qué no, qué validar en campo y cómo abordarla, citando las fuentes. No habla de personas ni de capacidad de pago.
+5. **Registro de resultado en segundos** (sin interés, interesado, solicitó, desembolsado): la herramienta aprende de ello.
+6. **Seguimiento de KPI y equidad:** captación por visita y reparto de visitas por tipo de zona y presencia digital.
 
-**Diferenciación:** Brief accionable por zona, con evidencia y sin discriminación ni inferencias sensibles.
+El analista decide: puede quitar o cambiar zonas, y su motivo queda registrado.
 
-**Principio de diseño:** la solución propone y explica; la decisión final es siempre humana y no se ejecutan acciones crediticias automáticas.
+**Diferenciación:** no es un mapa de calor ni un puntaje fijo. Sabe lo que no sabe, va a averiguarlo con una cuota acotada y comprueba si le está sirviendo frente a la forma habitual de prospectar.
 
 ## 3. Impacto esperado en el KPI
 
-KPI candidatos **(supuesto, a validar con el owner)**:
+El owner recomienda priorizar la **captación de nuevos clientes**, con conversión, desembolsos, costo de adquisición y primer acceso como complementos; el horizonte lo define el equipo.
 
-- Tasa de conversión de prospectos de zonas priorizadas vs. prospección tradicional (backtest sintético)
-- Número de zonas o segmentos nuevos identificados con potencial
-- Productividad de la prospección (prospectos efectivos por jornada)
+- **KPI principal:** clientes nuevos **por cada 100 visitas** (mismo esfuerzo comercial).
+- **Complementarios:** conversión, desembolsos, costo por cliente nuevo, porcentaje que accede por primera vez (declarado al solicitar, agregado) y visitas a zonas poco atendidas.
+- **Horizonte:** 12 semanas **(supuesto)**: doce ciclos de aprendizaje y tiempo para que una visita llegue a desembolso.
+- **Validación en la Caja (después del hackathon):** con la misma capacidad, parte de las agencias usa el plan y parte trabaja como hoy.
 
-- **Línea base:** [POR CONFIRMAR con el owner]
-- **Cifra de impacto esperada:** [POR COMPLETAR cuando exista la línea base; no inventar]
-- **Método de medición:** backtest sobre datos sintéticos, con y sin la solución, reproducible con semilla fija.
+### Evidencia preliminar (medida sobre datos sintéticos propios)
+
+Mediana de 200 simulaciones por escenario; clientes nuevos por cada 100 visitas en 12 semanas.
+
+| Escenario (supuesto sobre la realidad) | Solo cartera | Puntaje fijo | Solo descubrimiento | **Mezcla adaptativa** |
+|---|---|---|---|---|
+| Hay oportunidades ocultas | 7,3 | 11,0 | 12,4 | **11,6** |
+| El potencial está donde ya hay clientes | 13,8 | 10,7 | 11,1 | **13,0** |
+| Los datos públicos dicen poco | 7,2 | 9,5 | 15,4 | **14,1** |
+| Peor caso frente a la mejor de las cuatro | 47 % | 62 % | 80 % | **91 %** |
+
+**Lectura:** nadie sabe de antemano en qué escenario está la Caja. La mezcla no gana siempre, pero **nunca queda lejos**. Cuando el potencial está donde ya hay clientes, gana «solo cartera»: por eso la herramienta **complementa y no reemplaza**. «Solo cartera» es una simplificación nuestra (visitar únicamente donde ya hay clientes); no representa cómo prospecta hoy la Caja. Los números salen de un generador nuestro: muestran cómo se comporta el mecanismo, no cuánto ganaría la Caja.
+
+**Sensibilidad:** en 11 variaciones de un parámetro a la vez (capacidad, semanas, cuota de exploración, peso del punto de partida, historial), el peor caso de la mezcla se mantuvo entre 86 % y 94 % y fue siempre el mejor; los demás quedaron entre 45 % y 64 % (solo cartera), 53 % y 75 % (puntaje fijo) y 70 % y 83 % (solo descubrimiento). Se reproduce con `--sensibilidad`.
+
+En el primer escenario, «solo cartera» visitó el 18 % de las zonas ocultas de alto potencial y la mezcla el 82 %.
 
 ## 4. Enfoque tecnológico
 
-Pila base: Python 3.11+, FastAPI, Pydantic v2, pandas, scikit-learn, SQLite, React + Vite + Tailwind, pytest.
+Python, FastAPI, Pydantic, pandas, scikit-learn, SQLite, Pydantic AI, React + Vite + Tailwind con mapa sobre OpenStreetMap, pytest.
 
-Componentes que requiere este desafío (según las tareas):
+- Modelo de potencial (regresión logística como base) que actúa como creencia previa de un esquema bayesiano Beta-Binomial por zona.
+- Planificador con muestreo de Thompson, agotamiento de la zona, capacidad del analista, distancia y cuota de exploración.
+- Agente acotado para la ficha, con proveedor intercambiable (Claude, OpenAI o local) y modo sin red con plantillas.
+- Guardas: la unidad es la zona; no se recopilan datos personales ni se infieren características sensibles; no se extraen datos contra las condiciones de la fuente.
 
-- **Data Science, estadística, grafos, optimización:** Análisis estadístico, explicabilidad y optimización con pandas, scikit-learn y SciPy
-- **Desarrollo web / front-end:** Interfaz React + Vite + Tailwind CSS con componentes ya hechos
-- **Análisis de negocio, KPI y backtest:** Backtest del KPI con y sin la solución (scripts/evaluar_kpi.py)
-- **Backend, APIs e integración:** API REST con FastAPI y Pydantic v2; persistencia en SQLite
-- **Ingeniería de datos / datos sintéticos / ETL:** Generador de datos sintéticos reproducible (semilla fija) y ETL con pandas
-- **Agentes de IA:** Agente con Pydantic AI y proveedor de LLM intercambiable (Claude, OpenAI o modelo local); herramientas acotadas y aprobación humana
-- **Dominio financiero / microfinanzas:** Reglas y criterios de dominio validados con Caja Experts
-- **Pitch y storytelling:** Guion de demo y presentación
-- **IA generativa (LLM, prompts, RAG):** LLM para redactar resúmenes y mensajes, con salidas estructuradas y verificación contra los datos
-- **Pruebas y QA:** Pruebas automáticas con pytest y reporte de validación (docs/validacion.md)
-- **UX/UI e investigación de usuarios:** Flujo del usuario validado con prototipo navegable
-
-El expediente exige capacidades avanzadas con valor real y desarrollo funcional; no basta un chatbot genérico, un dashboard, un formulario o una automatización básica. El valor diferencial está en el modelo y el agente descritos arriba.
+Fuentes públicas previstas (revisar las condiciones de cada una): INEI (censo de establecimientos y de población), SBS (puntos de atención e inclusión financiera), OpenStreetMap (licencia ODbL), registros municipales de mercados. En el prototipo, datos sintéticos con la misma estructura.
 
 ## 5. Tecnología preexistente
 
-- Librerías de código abierto (FastAPI, pandas, scikit-learn, React, etc.) bajo sus licencias.
-- Generador de datos sintéticos y herramientas de planificación del equipo (titularidad: equipo; ver `docs/preexistente.md`).
-- **No se reutiliza código de empleadores ni de otros clientes.** No se usan datos reales.
+Creada el 25.11.2026 por el equipo: (1) generador de territorio sintético con 7 pruebas; (2) script de auditoría que compara estrategias en una simulación, de donde salen las cifras. El script contiene una versión mínima de la estrategia de aprendizaje: **no se reutiliza**; el planificador se escribe desde cero en el evento.
 
 ## 6. Funcionalidad crítica
 
-Mapa de potencial comercial que prioriza zonas y segmentos con datos territoriales y económicos, y genera para cada oportunidad un brief de prospección que el analista puede usar, sin inferir elegibilidad ni capacidad de pago. **(supuesto)**
+Plan semanal de prospección que combina la ruta habitual y el descubrimiento, con ficha de evidencia por zona, que el analista ajusta y aprueba, y que **cambia cuando se registran los resultados**.
 
-Esta funcionalidad se construye **durante la fase presencial**, con commits frecuentes como evidencia.
+Criterios de aceptación: misma semilla y datos, mismo plan; la cuota de exploración se cumple; una zona sin dato digital no baja de puntaje por eso; al registrar resultados, el plan siguiente cambia en la dirección esperada; la ficha nunca menciona personas, elegibilidad ni capacidad de pago.
 
 ## 7. Nivel de desarrollo esperado
 
-Prototipo funcional de punta a punta con caso de uso: Se selecciona una provincia, el mapa prioriza distritos, y el agente entrega el brief con la actividad económica, la cobertura financiera y el abordaje sugerido.
-
-Incluye pruebas automáticas, reporte de validación y un número antes/después del KPI.
+Prototipo de punta a punta sobre territorio sintético: la analista abre su semana, revisa una zona de descubrimiento, aprueba el plan, registra resultados, ve cómo cambia la semana siguiente y compara en el backtest contra la costumbre y contra un puntaje fijo.
 
 ## 8. Factibilidad y dependencias
 
-- **Esfuerzo estimado del MVP:** 31 horas-persona **(supuesto)**. En el evento hay ~8 h por persona (32 h con 4 personas).
-- **Cobertura de habilidades del equipo:** 81%. Sin brechas relevantes.
-- **Brechas de la pareja líder** (cubre el resto del equipo): Diseño del flujo del analista (2 h).
-- **Dependencias:** datos sintéticos de la Caja (si no llegan, usamos nuestro generador); política de IA externa **[POR CONFIRMAR]**; KPI y línea base **[POR CONFIRMAR]**.
-- **Recorte si falta tiempo:** se mantiene el núcleo (modelo + recomendación + backtest) y se simplifica la interfaz.
+| Tarea | Horas-persona (supuesto) |
+|---|---|
+| Territorio sintético y carga | 2 |
+| Potencial con incertidumbre | 4 |
+| Planificador (mezcla, exploración, capacidad) | 5 |
+| Ficha de zona y agente | 4 |
+| API y bitácora | 3 |
+| Interfaz: mapa, plan y registro | 5 |
+| Backtest, KPI y equidad | 4 |
+| Pruebas, validación, pitch y demo | 4 |
+| **Total** | **31 de 32** |
 
----
+Mínimo viable: planificador, ficha por plantilla, aprobación y registro, backtest y pruebas. Si falta tiempo se recorta, en orden: redacción con modelo de lenguaje, mapa (queda la lista), cuadro de equidad detallado.
 
-## Anexo A. Tareas y horas (supuesto)
+Dependencias **(supuestos)**: no se requieren datos de la Caja; con conteos agregados de clientes y resultados de visita por zona, el plan mejora. Capacidad de visitas, definición de «cliente nuevo» y política de IA externa: por confirmar.
 
-| Tarea | Habilidad | Horas |
-|---|---|---|
-| Datos territoriales y de negocios sintéticos | data_eng | 3 |
-| Modelo de potencial y priorización de zonas | data_sci | 5 |
-| Mapa interactivo y fichas de zona | web | 4 |
-| Diseño del flujo del analista | ux | 2 |
-| Agente que explica la zona y propone el abordaje | agentes | 3 |
-| Redacción de briefs con IA generativa | ia_gen | 2 |
-| API y persistencia | backend | 3 |
-| KPI de captación y backtest | biz | 3 |
-| Criterios de inclusión financiera y sesgos | fin | 2 |
-| Pruebas y validación | qa | 2 |
-| Pitch y demo | pitch | 2 |
+## Preguntas abiertas para el owner
 
-## Anexo B. Preguntas para el owner
-
-- [ ] ¿Qué datos territoriales y de cobertura financiera podemos usar?
-- [ ] ¿Cuál es la línea base de conversión de prospectos y cómo se mide?
-- [ ] ¿Qué fuentes digitales públicas están permitidas?
-
-## Anexo C. Lista de revisión (criterios del pase a finalistas)
-
-- [ ] **Alineación (25%)**: ¿ataca el problema central del expediente, con sus palabras?
-- [ ] **Impacto (30%)**: ¿hay KPI, línea base y método de medición, sin cifras inventadas?
-- [ ] **Viabilidad técnica (25%)**: ¿hay un enfoque coherente, con IA/analítica de valor real?
-- [ ] **Factibilidad (20%)**: ¿la funcionalidad crítica cabe en ~8 h por persona? ¿Qué se recorta?
-- [ ] Preexistente identificado y sin datos ni código de terceros indebidos.
-- [ ] Todo lo no oficial está marcado como (supuesto) o [POR CONFIRMAR].
-- [ ] Revisado por alguien que no lo escribió.
+Unidad de zona que usan los analistas; salidas por semana y visitas por salida; cómo se registra hoy el resultado de una prospección; definición de cliente nuevo; política de IA externa.

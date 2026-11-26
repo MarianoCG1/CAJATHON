@@ -1,0 +1,43 @@
+{
+  "titulo": "COM-01 · Brújula comercial que aprende de cada visita",
+  "resumen": "Plan semanal de prospección que combina la ruta habitual del analista con zonas poco exploradas, explica qué se sabe y qué no de cada una y aprende del resultado de las visitas. Complementa los mecanismos actuales. Unidad: la zona, sin datos personales. Se mide en clientes nuevos por cada 100 visitas.",
+  "cortos": {
+    "1": "La prospección se apoya en experiencia, referidos y conocimiento del territorio. Es valioso, pero se aprende sobre todo de donde ya se va: una zona que no se visita no genera información, y la falta de información puede confundirse con falta de potencial. El desafío pide encontrar y priorizar oportunidades que pueden pasar inadvertidas, con evidencia y sin exclusiones injustificadas.",
+    "2": "Cada semana propone dónde prospectar: parte de la ruta habitual, parte de descubrimiento y una cuota mínima para las zonas menos conocidas. Cada zona trae su ficha con evidencia, fuentes, dudas y qué validar. El analista aprueba, registra el resultado en segundos y el reparto aprende. Complementa lo que la Caja ya hace.",
+    "3": "KPI: clientes nuevos por cada 100 visitas; además conversión, desembolsos, costo por cliente nuevo y primer acceso. Medido sobre datos sintéticos propios, en tres supuestos sobre la realidad: la mezcla quedó siempre en 91 % o más de la mejor estrategia; visitar solo donde ya hay clientes cayó hasta 47 % y un puntaje fijo hasta 62 %; cuando el potencial está ahí, esa opción gana. Sin línea base oficial no se promete una cifra.",
+    "4": "Python, FastAPI, scikit-learn, SQLite, Pydantic AI y React con mapa. Modelo de potencial como punto de partida de un esquema bayesiano por zona; planificador con muestreo de Thompson, capacidad y cuota de exploración; agente acotado que redacta la ficha citando fuentes, con modo sin red. Sin datos personales.",
+    "5": "Del equipo, creado el 25.11.2026: generador de territorio sintético con 7 pruebas y script de auditoría que compara estrategias (contiene una versión mínima y no se reutiliza). Librerías abiertas bajo sus licencias.",
+    "6": "Plan semanal que combina ruta habitual y descubrimiento, con ficha de evidencia por zona, aprobación del analista y actualización al registrar resultados. Con los mismos datos, mismo plan; la falta de dato no castiga a una zona; la ficha no habla de personas ni de elegibilidad.",
+    "7": "Prototipo de punta a punta sobre 120 zonas sintéticas: abrir la semana, revisar una zona de descubrimiento, aprobar, registrar resultados, ver cómo cambia la siguiente semana y comparar en el backtest contra la ruta habitual y un puntaje fijo. Con pruebas y cuadro de reparto por tipo de zona.",
+    "8": "31 de 32 horas-persona (supuesto), con mínimo viable definido. No requiere datos de la Caja; conteos agregados por zona mejorarían el plan. Por confirmar: capacidad de visitas, definición de cliente nuevo y política de IA externa."
+  },
+  "ficha": {
+    "problema": "Se aprende sobre todo de donde ya se va: la falta de información sobre una zona puede confundirse con falta de potencial.",
+    "solucion": "Plan semanal que combina la ruta habitual con zonas poco exploradas, con ficha de evidencia por zona, y aprende del resultado de las visitas. El analista decide.",
+    "impacto": "KPI: clientes nuevos por 100 visitas; conversión, desembolsos, costo por cliente nuevo y primer acceso. En simulación propia, la mezcla quedó siempre en 91 % o más de la mejor estrategia (solo donde ya hay clientes: hasta 47 %; puntaje fijo: hasta 62 %).",
+    "tecnologia": "Python, FastAPI, scikit-learn, SQLite, React; esquema bayesiano con muestreo de Thompson y agente acotado con proveedor intercambiable.",
+    "preexistente": "Generador de territorio sintético (7 pruebas) y script de auditoría de estrategias, creados el 25.11.2026. Todo lo demás se construye en el evento.",
+    "critica": "Plan semanal con ficha por zona, aprobación del analista y actualización al registrar resultados.",
+    "factibilidad": "31 de 32 horas-persona (supuesto), con mínimo viable. Cifras medidas sobre datos sintéticos propios.",
+    "flujo": [
+      "Señales públicas por zona",
+      "Potencial con incertidumbre",
+      "Plan: habitual y descubrir",
+      "Ficha de evidencia",
+      "El analista aprueba",
+      "Visita y registro",
+      "El plan aprende",
+      "KPI y equidad"
+    ]
+  },
+  "asumimos": [
+    {"tema": "Capacidad de visitas", "supuesto": "15 salidas por semana de 10 visitas cada una en la simulación; valores configurables."},
+    {"tema": "Horizonte de medición", "supuesto": "12 semanas."},
+    {"tema": "Cliente nuevo", "supuesto": "Persona o negocio que no tenía producto con la Caja y desembolsa dentro del horizonte; por confirmar."},
+    {"tema": "Registro de resultados", "supuesto": "El analista puede registrar cuatro estados desde el móvil."},
+    {"tema": "Datos de la Caja", "supuesto": "No se entregan: datos sintéticos; conteos agregados por zona serían útiles."},
+    {"tema": "IA externa", "supuesto": "No respondida para este desafío: solo demo, datos sintéticos, sin conexión a sistemas, con modo sin red."},
+    {"tema": "Fuentes públicas", "supuesto": "INEI, SBS, OpenStreetMap y registros municipales; revisar condiciones de cada una."}
+  ],
+  "nota_supuestos": "El owner respondió el 25.11 (captación como KPI, fuentes permitidas, sesgos; nivel geográfico y segmento libres), pero la respuesta llegó cortada y no trata la IA externa. El concepto trabaja con estos supuestos:"
+}

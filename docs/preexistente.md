@@ -2,7 +2,7 @@
 
 Todo lo que exista **antes del 03.12** y se reutilice en la solución se declara aquí. La funcionalidad crítica se construye en el evento y no figura en esta lista.
 
-Actualizado el 21.11.2026. Los generadores de datos son preexistentes para **los cuatro desafíos preparados**; si el equipo avanza con uno solo, en la entrega final solo se declara el de ese desafío.
+Actualizado el 25.11.2026. Los generadores de datos son preexistentes para **los cuatro desafíos preparados**; si el equipo avanza con uno solo, en la entrega final solo se declara el de ese desafío.
 
 | Componente | Descripción | Titular | Fecha de creación | Se cede si ganamos |
 |---|---|---|---|---|
@@ -23,6 +23,8 @@ Actualizado el 21.11.2026. Los generadores de datos son preexistentes para **los
 | `retos/RIE-01/datos/sintetico/` | CSV del generador (semilla 20261203, 12.000 clientes); incluye `backtest/` con la verdad de los eventos simulados | Equipo | 21.11.2026 | No (preexistente) |
 | `retos/RIE-02/datos/` (`generar.py`, `test_generar.py`) | Generador de solicitudes y su grafo para RIE-02: personas, negocios, teléfonos, dispositivos, direcciones y referencias ficticios, con redes de fraude inyectadas y relaciones legítimas «señuelo». No contiene detector, priorización, agente ni interfaz como solución (sus pruebas incluyen reglas de control, de coincidencia simple y de criterio de dominio, solo para comprobar que los datos no son triviales; se reescriben en el evento como línea comparativa) | Equipo | 21.11.2026 | No (preexistente) |
 | `retos/RIE-02/datos/sintetico/` | Salida del generador (semilla 2026): documentos y teléfonos con prefijo `FIC-`. Regenerable con el script | Equipo | 21.11.2026 | No (preexistente) |
+| `retos/COM-01/datos/` (`generar.py`, `test_generar.py`) | Territorio sintético para COM-01: zonas comerciales ficticias, señales públicas simuladas, historial de visitas y verdad oculta. No contiene planificador, agente, API ni interfaz | Equipo | 25.11.2026 | No (preexistente) |
+| `scripts/auditoria/auditar_com01.py` | Simulación que compara estrategias de visita. **Contiene una versión mínima de la estrategia de aprendizaje; no se reutiliza:** el planificador se escribe desde cero en el evento | Equipo | 25.11.2026 | No (preexistente) |
 
 ## Experiencia previa (no se reutiliza código)
 

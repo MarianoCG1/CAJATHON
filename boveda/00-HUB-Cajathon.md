@@ -31,7 +31,7 @@ Ver el [[boveda/Tablero|Tablero]] para el avance de cada uno.
 | 4 | [[boveda/Retos/RIE-01|RIE-01]] Microfinanzas resilientes al clima | Listo para revisión cruzada | `██████ 6/6` |
 | 5 | [[boveda/Retos/RIE-02|RIE-02]] Descubrir redes de riesgo ocultas | Listo para revisión cruzada | `██████ 6/6` |
 | 6 | [[boveda/Retos/NEG-03|NEG-03]] Continuidad del vínculo cuando cambia el analista | Borrador v0 | `█░░░░░ 1/6` |
-| 7 | [[boveda/Retos/COM-01|COM-01]] Encontrar oportunidades donde otros no ven clientes | Borrador v0 | `█░░░░░ 1/6` |
+| 7 | [[boveda/Retos/COM-01|COM-01]] Encontrar oportunidades donde otros no ven clientes | Listo para revisión cruzada | `██████ 6/6` |
 | 8 | [[boveda/Retos/COM-02|COM-02]] Incentivos que impulsan un desempeño integral | Borrador v0 | `█░░░░░ 1/6` |
 
 ## 3. Equipo y método

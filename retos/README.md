@@ -14,7 +14,7 @@ El orden sale de `scripts/sinergia/` (cobertura de habilidades de la pareja, sin
 | 4 | [RIE-01](RIE-01/README.md) Microfinanzas resilientes al clima | 4 Inclusión financiera y resiliencia | Antonio + Mariano | Glem | Concepto v1 + panorama + postulación + datos: **falta revisión cruzada** |
 | 5 | [RIE-02](RIE-02/README.md) Descubrir redes de riesgo ocultas | 3 Riesgo, fraude y recuperaciones inteligentes | David + Mariano | Antonio | Concepto v1 + panorama + postulación + datos: **falta revisión cruzada** |
 | 6 | [NEG-03](NEG-03/README.md) Continuidad del vínculo cuando cambia el analista | 2 Experiencia, retención y crecimiento | David + Glem | Antonio | Solo borrador v0: **falta desarrollarlo** |
-| 7 | [COM-01](COM-01/README.md) Encontrar oportunidades donde otros no ven clientes | 2 Experiencia, retención y crecimiento | Antonio + Glem | David | Solo borrador v0: **falta desarrollarlo** |
+| 7 | [COM-01](COM-01/README.md) Encontrar oportunidades donde otros no ven clientes | 2 Experiencia, retención y crecimiento | Antonio + Glem | David | Concepto v1 y paquete de entrega listos; **falta revisión del equipo** |
 | 8 | [COM-02](COM-02/README.md) Incentivos que impulsan un desempeño integral | 1 Productividad y transformación comercial | David + Glem | Mariano | Solo borrador v0: **falta desarrollarlo** |
 
 ## Reparto por persona
@@ -30,7 +30,7 @@ El orden sale de `scripts/sinergia/` (cobertura de habilidades de la pareja, sin
 
 1. **Todos:** copiar de la plataforma los expedientes de sus retos a `retos/<ID>/expediente.md` (archivo local, no se sube).
 2. **Revisión cruzada de los 4 ya desarrollados** (RIE-03, NEG-02, RIE-01, RIE-02): la hace el revisor con el Anexo C de `concepto.md`; objeciones en `retos/<ID>/revision.md`.
-3. **Desarrollar los 4 que faltan** (NEG-01, NEG-03, COM-01, COM-02): concepto v1, panorama con cotejo, postulación. Modelo: `retos/RIE-03/`. NEG-01 primero (prioridad #2).
+3. **Desarrollar los 3 que faltan** (NEG-01, NEG-03, COM-02): concepto v1, panorama con cotejo, postulación. Modelo: `retos/RIE-03/`. NEG-01 primero (prioridad #2).
 4. **24.11:** v2 de todo con las objeciones resueltas y verificación de consistencia.
 5. **25.11:** el coordinador carga las postulaciones en la plataforma, en orden de prioridad (confirmar hora límite).
 

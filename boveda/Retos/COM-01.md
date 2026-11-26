@@ -2,8 +2,8 @@
 tipo: reto
 id: COM-01
 prioridad: 7
-estado: Borrador v0
-avance: 1/6
+estado: Listo para revisión cruzada
+avance: 6/6
 pareja: Antonio + Glem
 revisor: David
 actualizado: 2026-11-21
@@ -15,28 +15,28 @@ actualizado: 2026-11-21
 
 Volver al [[boveda/00-HUB-Cajathon|HUB]] · [[boveda/Tablero|Tablero]]
 
-**Estado:** Borrador v0 · **Prioridad:** #7 · **Eje:** 2 Experiencia, retención y crecimiento
+**Estado:** Listo para revisión cruzada · **Prioridad:** #7 · **Eje:** 2 Experiencia, retención y crecimiento
 **Pareja líder:** Antonio + Glem · **Revisor:** David · **Owners (plataforma):** (ver plataforma)
 
 ## Avance (automático)
 
 - [x] Borrador v0 del concepto
-- [ ] Concepto v1 (editado por la pareja)
-- [ ] Panorama de abastecimiento
-- [ ] Cotejo con el expediente literal
-- [ ] Generador de datos sintéticos con pruebas
-- [ ] Texto de postulación
+- [x] Concepto v1 (editado por la pareja)
+- [x] Panorama de abastecimiento
+- [x] Cotejo con el expediente literal
+- [x] Generador de datos sintéticos con pruebas
+- [x] Texto de postulación
 
-`█░░░░░ 1/6` · [POR CONFIRMAR]: 5 · (supuesto): 7
+`██████ 6/6` · [POR CONFIRMAR]: 0 · (supuesto): 6 · postulación: 542 palabras
 
 ## Documentos
 
 - Ficha del reto: [[retos/COM-01/README|Ficha del reto]]
 - Concepto: [[retos/COM-01/concepto|Concepto]]
-- Panorama de abastecimiento: _pendiente_
-- Texto de postulación: _pendiente_
-- Generador de datos: _pendiente_
-- Expediente literal (confidencial, solo local; no se sube al repo): `retos/COM-01/expediente.md` — no está en este equipo; copiarlo de la plataforma
+- Panorama de abastecimiento: [[retos/COM-01/panorama|Panorama de abastecimiento]]
+- Texto de postulación: [[retos/COM-01/postulacion|Texto de postulación]]
+- Generador de datos: `retos/COM-01/datos/generar.py`
+- Expediente literal (confidencial, solo local; no se sube al repo): `retos/COM-01/expediente.md` — presente en este equipo
 
 ## Hipótesis de solución (supuesto)
 

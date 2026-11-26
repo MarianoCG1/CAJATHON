@@ -101,7 +101,7 @@ def pantalla_caso(p: dict) -> str:
     # panel derecho
     px = 420
     c += f'<rect x="{px}" y="92" width="320" height="190" rx="6" fill="#fff" stroke="#e4ebf1"/>'
-    c += _texto(px + 12, 110, "Por qué se alertó", 10.5, TEAL, "700")
+    c += _texto(px + 12, 110, e.get("titulo_evidencia", "Por qué se alertó"), 10.5, TEAL, "700")
     for i, t in enumerate(e["evidencia"][:4]):
         c += _texto(px + 12, 130 + i * 20, "• " + t, 10.5)
     c += _texto(px + 12, 218, e["incertidumbre"], 10, GRIS)

@@ -57,7 +57,7 @@ No es un puntaje de mora ni una regla de días de atraso. (1) Anticipa en client
 
 ## Paso 3 · Impacto esperado
 
-**¿Qué impacto generaría su solución y cómo contribuiría al resultado esperado del desafío?** (obligatoria) — 1379/2000
+**¿Qué impacto generaría su solución y cómo contribuiría al resultado esperado del desafío?** (obligatoria) — 1876/2000
 
 ```text
 Contribución al resultado esperado: detectar antes para reducir incumplimientos, mejorar la calidad de la cartera y proteger la salud financiera del microempresario.
@@ -65,6 +65,8 @@ Contribución al resultado esperado: detectar antes para reducir incumplimientos
 KPI propuesto (a validar con el owner): tasa de paso a atraso de más de 30 días en la cartera alertada, con y sin intervención (el umbral coincide con la referencia de deterioro que Riesgos indicó en la inmersión). Secundarios: precisión en el top-k, falsos positivos y días de anticipación. No tenemos línea base oficial y no prometemos una cifra sobre la cartera de la Caja.
 
 Evidencia preliminar, medida sobre datos sintéticos propios: entre clientes al día solo el 0,7 % pasa a atraso de más de 30 días en 60 días; un modelo de árboles los ordena con un AUC de 0,84 y el 10 % mejor puntuado concentra alrededor de 6 de cada 10 de esos casos, unas 6 veces lo que lograría el azar. La precisión absoluta es baja (4,7 %) porque el evento es raro; por eso la acción propuesta es de bajo costo y el filtro se medirá como reducción de falsos positivos.
+
+Contraste con datos reales: un estudio publicado con unos 50 000 microcréditos de Huancayo (Arriola León y Ghodrat, 2026) obtuvo un AUC de 0,73 con datos del otorgamiento, sin comportamiento mensual. Nuestro 0,84 sale de datos sintéticos más simples que la realidad y es probablemente optimista. Además, un ensayo en Uganda (Cadena y Schoar, 2011) halló que recordar antes del vencimiento mejora el pago puntual: una acción preventiva barata tiene respaldo, aunque su efecto aquí está por medir.
 
 Ilustración aritmética (escenario, no estimación): si la gestión temprana evitara el 10, 20 o 30 % de los pasos a atraso de los casos capturados, de cada 100 créditos que pasarían a atraso se evitarían unos 6, 12 o 18.
 
