@@ -1,0 +1,25 @@
+{
+  "titulo": "NEG-01 · Ritmo: plan de pagos al ciclo del negocio",
+  "resumen": "Ritmo ayuda al Asesor de Negocios a estimar el ciclo económico de cada cliente y a construir el plan de pagos de menor costo que respeta Cuota/Utilidad Neta ≤ factor en cada etapa. Explica por qué cada cuota es alta o baja y lo compara con la cuota fija en escenarios base y adversos. El asesor ajusta; el comité decide.",
+  "cortos": {},
+  "ficha": {
+    "problema": "La evaluación usa un ingreso promedio y solo se generan cuotas fijas: los negocios estacionales pueden quedarse sin liquidez en sus meses bajos aunque sean viables.",
+    "solucion": "Modelo del ciclo (sector, zona y cliente), motor que arma el plan con monto y periodo por cuota bajo las reglas del producto, y el porqué de cada cuota frente a la cuota fija.",
+    "impacto": "KPI: periodos en que la cuota supera la capacidad, frente a la cuota fija; además costo, ajuste al ciclo y concentración. Ejemplo propio: con cuota fija, la cuota supera la utilidad en 8 de 12 meses. La retención se mediría en un piloto.",
+    "tecnologia": "Python, FastAPI, statsmodels, SciPy, SQLite y React; optimización con restricciones; modelo de lenguaje opcional y reemplazable, solo para redactar.",
+    "preexistente": "Desarrollo desde cero: solo librerías de código abierto y herramientas de planificación que no forman parte de la solución.",
+    "critica": "Del negocio al plan de pagos explicado: ciclo, plan, motivo de cada cuota y comparación con la cuota fija; el asesor ajusta.",
+    "factibilidad": "31 de 32 horas-persona (supuesto), con núcleo de 26 que no se recorta y orden de recorte definido.",
+    "flujo": [
+      "Datos del negocio, sector y zona",
+      "Ciclo con banda",
+      "Escenarios adversos",
+      "Motor del plan",
+      "Porqué de cada cuota",
+      "Compara con cuota fija",
+      "El asesor ajusta",
+      "El comité decide"
+    ]
+  },
+  "asumimos": []
+}

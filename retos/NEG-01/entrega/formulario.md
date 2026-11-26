@@ -45,8 +45,11 @@ Permite presentar al comité el ciclo estimado, las cuotas, la relación Cuota/U
 Frente a simuladores de cuota fija y cronogramas estacionales con cuotas iguales: (1) estima y explica el ciclo de cada negocio, no solo de su rubro; (2) construye el plan desde ese ciclo con restricciones verificables, no redistribuye un cronograma fijo; (3) exige holgura frente a escenarios adversos y, si el monto no cabe, lo dice en vez de forzarlo; (4) cuantifica beneficios y riesgos frente a la cuota fija, incluido el costo; (5) el motivo de cada cuota sale de las reglas del cálculo, no de un modelo de lenguaje. No es un tablero ni un chatbot: el valor está en el modelo del ciclo y el motor.
 ```
 
-**Material visual complementario** (opcional, PDF/PNG/JPG, hasta 3 de 10 MB): todavía no preparado.
+**Material visual complementario** (opcional, PDF/PNG/JPG, hasta 3 de 10 MB): subir los archivos de `adjuntos/`:
 
+- `Yupana-Labs_NEG-01_presentacion.pdf`
+- `Yupana-Labs_NEG-01_ficha.pdf`
+- `Yupana-Labs_NEG-01_flujo.png`
 
 **Enlace complementario** (opcional): dejar vacío
 

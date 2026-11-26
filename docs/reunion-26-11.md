@@ -23,7 +23,7 @@ El formulario cierra **hoy a las 11:59 p. m.** Cuatro horas desde las 8 p. m. ll
 | Quién lo trabajó | Antonio | Mariano con Claude | Mariano con Claude |
 | Lo que dijo el owner | Mucho: expediente reescrito, 10 preguntas frecuentes y ticket | Ticket respondido | Nada |
 | Textos del formulario | Listos (`retos/NEG-01/entrega/formulario.md`) | Listos | Listos |
-| Adjuntos | **Faltan** | Listos | Listos |
+| Adjuntos | Listos (`retos/NEG-01/entrega/adjuntos/`) | Listos | Listos |
 | Riesgo de construirlo | **Alto**, bajable (ver abajo) | Medio | Medio |
 | Competencia probable (inferencia) | Alta | Sin señales | Sin señales |
 
@@ -54,6 +54,8 @@ No verifiqué los datos de fuentes externas que cita el panorama (series del BCR
 **NEG-01, con tres condiciones:** aceptar el recorte, corregir el plazo a 17 y que Antonio pueda explicar el cálculo sin ayuda. Tiene el mayor sustento del owner y hay alguien del equipo que lo domina. Si alguna condición no se cumple, **COM-01**, que es más fácil de construir y ya tiene adjuntos.
 
 Es un cambio respecto de anoche: esa comparación no incluía el trabajo de Antonio.
+
+Tareas de Glem hasta las 8: `docs/glem-hasta-las-8.md`.
 
 ## Preguntas para decidir en la reunión
 

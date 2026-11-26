@@ -35,3 +35,6 @@ Thumbs.db
 video/**/out/
 video/**/node_modules/
 video/**/.hyperframes/
+
+# paquetes para compartir por chat
+paquete-*.zip
