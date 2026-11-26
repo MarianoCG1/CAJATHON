@@ -24,7 +24,7 @@ Librerías abiertas bajo sus licencias y herramientas de planificación del equi
 
 ## 6. Funcionalidad crítica
 
-Dado un cliente y una operación, el sistema estima su ciclo, construye el plan óptimo con monto y periodo por cuota, explica por qué cada cuota es alta o baja, muestra Cuota/UN por etapa y lo compara con la cuota fija en escenarios base y adversos; el asesor ajusta y exporta la hoja para comité. Verificaremos con pruebas que el cronograma reproduce las reglas del owner, que ninguna cuota supera el factor en su etapa ni la utilidad de los escenarios adversos, que con un ciclo plano todas las cuotas salen iguales, que el ejemplo del arrocero se reproduce y que, si no hay plan posible, el sistema dice qué restricción lo impide.
+Dado un cliente y una operación, el sistema estima su ciclo, construye el plan óptimo con monto y periodo por cuota, explica por qué cada cuota es alta o baja, muestra Cuota/UN por etapa y lo compara con la cuota fija en escenarios base y adversos; el asesor ajusta (cada cambio queda registrado con su motivo) y exporta la hoja para el cliente, la vista para el Asesor de Riesgos y la hoja para comité. Verificaremos con pruebas que el cronograma reproduce las reglas del owner, que ninguna cuota supera el factor en su etapa ni la utilidad de los escenarios adversos, que con un ciclo plano todas las cuotas salen iguales, que el ejemplo del arrocero se reproduce y que, si no hay plan posible, el sistema dice qué restricción lo impide.
 
 ## 7. Nivel de desarrollo esperado
 

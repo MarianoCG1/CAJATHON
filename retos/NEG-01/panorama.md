@@ -12,10 +12,10 @@
 1. Perfiles sintéticos de negocios con ciclo «verdadero» conocido y lo que el asesor observaría de ellos.
 2. Patrones sector × zona e índice de volatilidad; modelo del ciclo con ajuste al cliente y banda de incertidumbre.
 3. Cronograma con las reglas del owner (TED base 360 por días exactos, seguros por interés simple, prelación y pendientes).
-4. Motor de optimización: menor costo total sujeto a Cuota/UN ≤ factor por etapa y a los topes del producto; diagnóstico si no hay solución.
+4. Motor de optimización: máximo capital en cimas y menor costo total, sujeto a Cuota/UN ≤ factor efectivo (90 % del tope) por etapa, cuota cubierta por la UN de los escenarios adversos y topes del producto; validaciones de entrada (TEA ≤ tasa máxima del BCRP, seguros excluyentes u obligatorios, UN según tipo de cliente); diagnóstico si no hay solución.
 5. Explicación por cuota a partir de la etapa, la UN y la restricción activa.
 6. Comparación con la cuota fija equivalente en escenario base y al menos uno adverso.
-7. API e interfaz mínima: ciclo → plan → comparación → hoja para comité.
+7. API e interfaz mínima: ciclo → plan → comparación; hoja para el cliente, vista para el Asesor de Riesgos (supuestos, evidencia, registro de ajustes del asesor) y hoja para comité. Las tres salen del mismo cálculo.
 8. Banco de pruebas sobre la cartera sintética y pruebas automáticas; `docs/validacion.md`.
 
 **Entra si hay tiempo (en orden de recorte):** asistente que estructura notas de campo con LLM; resumen para comité redactado por LLM (si no, plantilla); varios escenarios adversos; plan «oráculo» (con el ciclo verdadero) como cota; pulido visual.
@@ -169,7 +169,7 @@ Plan adaptado y cuota fija equivalente (mismo monto, TEA, seguros y plazo; cuota
 
 ### c.7 Endpoints (diseño)
 
-`POST /ciclo` (cliente → UN por etapa y banda) · `POST /plan` (ciclo + operación + producto → plan, motivos, restricciones activas o diagnóstico) · `POST /comparar` (plan → métricas base y adversos frente a cuota fija) · `GET /hoja/{id}` (hoja para comité).
+`POST /ciclo` (cliente → UN por etapa y banda) · `POST /plan` (ciclo + operación + producto → plan, motivos, restricciones activas o diagnóstico) · `POST /comparar` (plan → métricas base y adversos frente a cuota fija) · `GET /hoja/{id}?para=cliente|riesgos|comite` (las tres vistas del mismo plan) · `POST /ajuste` (cambio del asesor con su motivo; queda en el registro).
 
 ## (d) Plan hora a hora del evento (4 personas, ~8 h netas por persona)
 
@@ -178,7 +178,7 @@ Plan adaptado y cuota fija equivalente (mismo monto, TEA, seguros y plazo; cuota
 | Día 1, 10:30–13:00 | Reglas de producto y casos de cálculo hechos a mano (pruebas del cronograma) | Perfiles sintéticos y patrones sector × zona | Cronograma con reglas del owner | Flujo del asesor y del comité; maqueta de pantallas |
 | Día 1, 14:00–16:30 | Prueba de estrés y métricas | Ajuste al cliente y banda | Motor de optimización y diagnóstico | Interfaz: ciclo y plan |
 | Día 1, 16:30–17:30 | Pruebas | Pruebas | Pruebas e integración | Pruebas de interfaz |
-| Día 2, 09:30–12:00 | Banco de pruebas y `docs/validacion.md` | Calibración de `κ` y escenarios | API, explicación y LLM opcional | Comparación y hoja para comité |
+| Día 2, 09:30–12:00 | Banco de pruebas y `docs/validacion.md` | Calibración de `κ` y escenarios | API, explicación y LLM opcional | Comparación, hoja para el cliente y hoja para comité |
 | Día 2, 12:00–12:45 | Validación final y números del pitch | Validación final | Validación final | Ensayo de demo |
 
 Horas por tarea: ver Anexo A de `concepto.md` (31 h, núcleo 26 h). **Escenario pesimista (supuesto):** si el motor y la integración se desvían un 50 %, se recorta en el orden de `concepto.md` §8 y se mantiene el núcleo.
@@ -241,7 +241,7 @@ Los planes se construyen con lo que el asesor observaría, pero se evalúan cont
 ## (i) Plan de pruebas (en el evento)
 
 - Cronograma: casos hechos a mano por Antonio (TED, días exactos, seguros, prelación, pendientes) con tolerancia de céntimos.
-- Motor: con ciclo plano da cuotas iguales al límite de capacidad (caso 4 de `casos-de-prueba.md`); con ciclo estacional, las cuotas altas caen en las cimas; nunca viola Cuota/UN ≤ factor ni la holgura frente a los escenarios adversos; respeta concentración y gracia; en un valle sin capacidad deja pendientes sin interés y no amortiza capital hasta saldarlos; caso infactible devuelve diagnóstico con monto máximo y plazo mínimo.
+- Motor: con ciclo plano da cuotas iguales al límite de capacidad (caso 4 de `casos-de-prueba.md`); con ciclo estacional, las cuotas altas caen en las cimas; nunca viola Cuota/UN ≤ factor efectivo ni la holgura frente a los escenarios adversos; respeta concentración y gracia; en un valle sin capacidad deja pendientes sin interés y no amortiza capital hasta saldarlos; caso infactible devuelve diagnóstico con monto máximo y plazo mínimo.
 - Ejemplo de §j como prueba de regresión: cuota fija S/ 801; S/ 8,000 a 12 meses inviable con holgura; salidas S/ 5,895 a 12 meses y 17 meses de plazo (con tolerancia de céntimos).
 - Ciclo: sin evidencia propia devuelve el patrón del sector; con evidencia fuerte se acerca al dato del cliente.
 - Explicación: toda cifra del resumen coincide con el motor.

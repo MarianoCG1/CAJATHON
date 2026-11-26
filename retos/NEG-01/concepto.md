@@ -35,11 +35,25 @@ Tres piezas, que son las tres que el expediente pide como mínimo:
    - **Regla robusta:** la cuota también debe quedar cubierta por la UN de cada escenario adverso relevante, en **todos** los meses del crédito. Esta regla es nuestra respuesta al riesgo de «estimación optimista», y el ejemplo de §3 muestra por qué hace falta.
 
    Además respeta cuota mínima, plazo máximo, TEA única y topes de concentración de capital y de periodos sin amortización. Dentro de esos límites amortiza el **máximo capital en las cimas**, como pide el owner, y entre los planes posibles elige **el de menor costo total para el cliente**. En un valle profundo, donde la capacidad no alcanza ni para seguros e intereses, la cuota los paga en parte y **lo no cubierto queda pendiente en su concepto**, sin generar interés y sin poder pagarse capital mientras haya pendientes (prelación seguros → interés → capital). El cronograma usa las reglas del owner: TEA → TED base 360 por días exactos y seguros por interés simple. Si el monto no cabe en el plazo pedido, el motor no fuerza el plan: dice qué restricción lo impide y propone las salidas, por ejemplo el **monto máximo** que cabe en ese plazo o el **plazo** que necesita ese monto.
-3. **(C) Explicación y prueba de estrés para el comité.** Cada cuota trae su motivo, calculado por el motor y no inventado por un modelo de lenguaje: en qué etapa cae, qué UN espera, qué Cuota/UN resulta y qué restricción la limita (por ejemplo, «alta: cosecha de arroz, UN esperada alta, Cuota/UN 0,61 ≤ 0,65» o «baja: valle entre campañas; cubre seguros e intereses»). El plan se compara con **la cuota fija equivalente** (mismo monto, TEA, seguros y plazo) en escenario base y adversos. Un modelo de lenguaje intercambiable solo redacta el resumen para el comité a partir de esos números, y una verificación en código rechaza cualquier cifra que no coincida.
+3. **(C) Explicación y prueba de estrés para el comité.** Cada cuota trae su motivo, calculado por el motor y no inventado por un modelo de lenguaje: en qué etapa cae, qué UN espera, qué Cuota/UN resulta y qué restricción la limita (por ejemplo, «alta: cosecha de arroz, UN esperada S/ 4,200, Cuota/UN 0,39; la limita el tope de 25 % de capital por cuota» o «baja: valle entre campañas; cubre seguros e intereses»). El plan se compara con **la cuota fija equivalente** (mismo monto, TEA, seguros y plazo) en escenario base y adversos. Un modelo de lenguaje intercambiable solo redacta el resumen para el comité a partir de esos números, y una verificación en código rechaza cualquier cifra que no coincida.
 
 **Diferenciación:** hoy existen simuladores de cuota fija y cronogramas estacionales homogéneos. Nosotros entregamos **un ciclo estimado y explicado**, **un plan óptimo con restricciones verificables** y **la cuantificación de beneficios y riesgos frente a la cuota fija**, en una sola herramienta para el asesor. No es un dashboard ni un chatbot: el valor está en el modelo del ciclo y en el motor de optimización.
 
 **Principio de diseño:** la herramienta propone y explica; el asesor ajusta (puede bajar el factor, corregir una etapa o fijar una fecha de pago) y el comité aprueba. El prototipo no se conecta a los sistemas de la Caja.
+
+### Casos del expediente que el diseño cubre (mapeo de la auditoría del 26.11)
+
+| Lo que dice el expediente | Cómo lo cubre Ritmo |
+|---|---|
+| Flujo: el asesor **negocia y explica las condiciones al cliente** antes de ingresar la solicitud; el **Asesor de Riesgos valida**; el comité revisa, pide ajustes o aprueba | Tres salidas del mismo cálculo: **hoja para el cliente** (cronograma con fechas y montos, en lenguaje simple: «en mayo paga más porque cosecha»), **vista de validación para Riesgos** (supuestos, evidencia que pesa en el ajuste, cambios del asesor, restricciones activas, prueba de estrés) y **hoja para comité** (ciclo en gráfico, cuotas, Cuota/UN por etapa, comparación con cuota fija) |
+| Periodicidad **no necesariamente mensual** (mensual, bimestral, semestral) | Las fechas de pago siguen las etapas del ciclo: un periodo puede durar 30, 60 o 120 días, porque el interés y los seguros se calculan por días exactos. La demo incluye un caso con un solo pago por campaña |
+| UN según el tipo de cliente: descuenta otras deudas; carga familiar en persona natural o jurídica parcialmente formal; **EEFF auditados** en jurídica 100 % formal | El formulario de entrada pide el tipo de cliente y aplica la regla correspondiente. En **ampliación**, la cuota del crédito vigente se descuenta de la UN de cada etapa, para no sobreendeudar |
+| Seguros: desgravamen opcional sobre saldo; **multirriesgo o vivienda, opcionales y excluyentes**, sobre el valor asegurable; **vivienda obligatorio en hipotecario** | El motor modela los tres con interés simple base 360 y valida la exclusión y la obligatoriedad antes de calcular |
+| TEA editable, única y **sin superar la tasa máxima del BCRP** | Validación de entrada; el tope vigente es un parámetro con su fecha |
+| Gracia **con sustento** (proximidad de campaña, abastecimiento) y con cautela | Un periodo sin amortizar exige un motivo en el ciclo (valle o campaña próxima); hay tope de periodos sin amortizar y su costo se muestra |
+| Factores externos **cualitativos**: competencia, factores políticos, comunitarios y socioeconómicos | El asesor los registra como ajustes con motivo (por ejemplo, «paro agrario previsto en marzo: −30 %»); cada ajuste queda en un **registro de cambios** visible para Riesgos y comité |
+| Fuentes sugeridas SUNAT, SBS y Cámara de Comercio | SBS para tasas y referencias de la demo; SUNAT y Cámara de Comercio como calendarios tributarios y comerciales (vencimientos, campañas) **(supuesto: uso a validar en el evento)** |
+| Cliente **sin historial** | Hereda el patrón del sector y la zona; la banda de incertidumbre es más ancha y la holgura actúa más |
 
 ## 3. Impacto esperado en el KPI
 
@@ -82,7 +96,7 @@ Lo que enseña el ejemplo:
 
 ## 4. Enfoque tecnológico
 
-Pila: Python 3.11+, FastAPI, Pydantic v2, pandas, statsmodels y scikit-learn, SciPy (`linprog` con HiGHS) para la optimización, SQLite, Pydantic AI con proveedor de LLM intercambiable, React + Vite + Tailwind, pytest.
+Pila: Python 3.11+, FastAPI, Pydantic v2, pandas, statsmodels y scikit-learn, SciPy (`milp` con HiGHS) para la optimización, SQLite, Pydantic AI con proveedor de LLM intercambiable, React + Vite + Tailwind, pytest.
 
 | Capa | Qué hace | Aporta valor real porque… |
 |---|---|---|
@@ -90,7 +104,7 @@ Pila: Python 3.11+, FastAPI, Pydantic v2, pandas, statsmodels y scikit-learn, Sc
 | Proyección | Sensibilidad de cada sector a El Niño estimada con la historia (series del BCRP frente a ONI/ICEN con rezagos); ajuste de los meses del crédito con el estado previsto (ENFEN, pronóstico del SENAMHI, intenciones de siembra) | Predice el año del crédito, no un año promedio; los escenarios adversos tienen fundamento |
 | Modelo del ciclo | Ajuste al cliente por agregación parcial; UN por etapa con banda de incertidumbre y escenarios adversos | Responde a que dos negocios del mismo rubro difieren; la incertidumbre es explícita y alimenta la holgura |
 | Asistente de campo (opcional) | Un LLM convierte las notas del asesor («vende más en campaña escolar y Navidad; febrero flojo») en parámetros del ciclo, que el asesor confirma | Usa IA donde aporta: estructurar información cualitativa de campo; nunca decide |
-| Motor del plan | Programa lineal con una binaria por periodo (prelación): máximo capital en cimas y menor costo, sujeto a Cuota/UN ≤ factor por etapa, holgura frente a escenarios adversos, cuota mínima, plazo, concentración y gracia; pendientes sin interés en valles profundos; si no cabe, propone monto o plazo | Cumple las reglas del producto **por construcción** y es auditable: cada restricción activa se puede mostrar |
+| Motor del plan | Programa lineal con una binaria por periodo (prelación): máximo capital en cimas y menor costo, sujeto a Cuota/UN ≤ factor efectivo (bajo el tope) por etapa, cuota cubierta por la UN de los escenarios adversos, cuota mínima, plazo, concentración y gracia; pendientes sin interés en valles profundos; si no cabe, propone monto o plazo | Cumple las reglas del producto **por construcción** y es auditable: cada restricción activa se puede mostrar |
 | Prueba de estrés | Recalcula el plan adaptado y la cuota fija en escenarios adversos, con la prelación y los pendientes | Cuantifica beneficios y riesgos para el cliente y la Caja, como pide el resultado esperado 4 |
 | Explicación | Motivo de cada cuota a partir de la etapa, la UN y la restricción activa; resumen para comité redactado por LLM y verificado en código | Explicable por diseño; el LLM no puede introducir cifras |
 | API e interfaz | FastAPI; interfaz del asesor: ciclo → plan → comparación → hoja para comité | El asesor y el comité ven lo mismo, con los supuestos a la vista |
@@ -119,7 +133,7 @@ Cómo se mitiga cada riesgo del expediente:
 2. construye el **plan de pagos óptimo**, con monto y periodo por cuota, que cumple las reglas del producto en **todas** las etapas;
 3. explica **por qué cada cuota es alta o baja** y muestra la relación Cuota/UN por etapa y los supuestos usados;
 4. compara el plan con la **cuota fija equivalente** en escenario base y adversos (periodos en tensión, costo total y TCEA, concentración, déficit del cliente, ingreso y exposición de la Caja);
-5. permite al asesor **ajustar** (factor menor, corrección de una etapa, fecha de pago) y recalcular, y exporta la **hoja para comité**.
+5. permite al asesor **ajustar** (factor menor, corrección de una etapa, fecha de pago, factor cualitativo con su motivo) y recalcular, deja cada ajuste en un registro, y exporta la **hoja para el cliente**, la **vista de Riesgos** y la **hoja para comité**.
 
 **Criterios de aceptación** (verificables con pruebas, base del mínimo 3/5):
 
@@ -130,6 +144,8 @@ Cómo se mitiga cada riesgo del expediente:
 - Con un ciclo plano, todas las cuotas salen iguales (control de cordura) y, si la capacidad no alcanza para pagar en el plazo pedido, el motor lo dice; con un ciclo estacional, las cuotas altas caen en las cimas.
 - Ninguna cuota concentra más capital que el tope configurado y no hay más periodos sin amortizar que los permitidos.
 - Si no existe plan posible, el sistema lo dice y nombra la restricción que lo impide; no entrega un plan que incumple.
+- Un plan con periodos de distinta duración (por ejemplo 60 y 120 días) se calcula por días exactos igual que uno mensual.
+- Las validaciones de producto rechazan la entrada inválida: TEA sobre el tope del BCRP, multirriesgo y vivienda a la vez, hipotecario sin seguro de vivienda.
 - Toda cifra del resumen para comité coincide con el cálculo del motor (verificación en código).
 - Misma entrada, mismo resultado (semilla fija).
 
@@ -186,6 +202,8 @@ Siguen abiertas (los tickets cerraron el 24.11; se asumen y se marcan):
 - [ ] ¿Existe una regla de holgura frente a escenarios adversos o queda a criterio del asesor? (supuesto: cuota cubierta por la UN en el escenario adverso)
 - [ ] ¿Hay un tope de concentración de capital o de periodos de gracia por producto? (supuesto: configurable)
 - [ ] ¿Cómo se mediría la retención en un piloto y cuál es su línea base?
+- [ ] ¿Cuánta holgura bajo el tope espera la Caja? (supuesto: 90 % del tope)
+- [ ] ¿La tasa de desgravamen publicada (0,105 %) es mensual? (supuesto en los casos: mensual)
 
 ## Anexo C. Lista de revisión (criterios del pase a finalistas)
 
