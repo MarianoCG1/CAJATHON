@@ -35,7 +35,7 @@ Cómo impactamos, en una línea: **le damos al gestor la lista correcta antes de
 
 **Cómo impactamos y cómo lo medimos.** Menos alertas inútiles y más anticipación. En backtest: casos detectados, **días de anticipación** frente al primer atraso, falsos positivos frente a reglas simples, y el efecto de intervenir como **tabla de sensibilidad** (los datos no traen intervenciones, así que no se afirma como hecho).
 
-**Lo que dice la auditoría de datos.** No es trivial. Quien está al día es el caso difícil: la regla «ya tiene atraso» no sirve y las señales de alerta temprana suben el AUC de 0.81 a 0.92 sobre la cartera completa. Entre clientes al día, el 10 % mejor puntuado concentra ≈ 2/3 de los casos (≈ 6.7× de lift). Se presenta en lift y captura, no en precisión absoluta (evento raro: 0.7 %).
+**Lo que dice la auditoría de datos.** No es trivial. Quien está al día es el caso difícil: la regla «ya tiene atraso» no sirve y las señales de alerta temprana suben el AUC de 0.81 a 0.92 sobre la cartera completa. Entre clientes al día, el 10 % mejor puntuado concentra ≈ 6 de cada 10 casos (≈ 6.4× de lift). Se presenta en lift y captura, no en precisión absoluta (evento raro: 0.7 %).
 
 **Qué debes poder defender.**
 - Por qué no es «un puntaje de mora»: entrega acción explicada y mide falsos positivos.

@@ -4,11 +4,11 @@ Las respuestas separan lo que está medido sobre datos sintéticos propios, lo q
 
 ## 1. ¿Cuál es el impacto en el KPI?
 
-No hay línea base oficial, así que no afirmamos una cifra sobre la cartera de la Caja. Medimos sobre datos sintéticos propios cuántos casos detecta la cola, con cuánta anticipación y con qué falsos positivos frente a reglas simples. El efecto de intervenir es un escenario: si evitara 10, 20 o 30 % de los pasos a atraso de los casos capturados, de cada 100 que pasarían a atraso se evitarían unos 7, 13 o 20. Es una ilustración aritmética, no una estimación.
+No hay línea base oficial, así que no afirmamos una cifra sobre la cartera de la Caja. Medimos sobre datos sintéticos propios cuántos casos detecta la cola, con cuánta anticipación y con qué falsos positivos frente a reglas simples. El efecto de intervenir es un escenario: si evitara 10, 20 o 30 % de los pasos a atraso de los casos capturados, de cada 100 que pasarían a atraso se evitarían unos 6, 12 o 18. Es una ilustración aritmética, no una estimación.
 
 ## 2. ¿Por qué no basta con mirar los días de atraso?
 
-Porque la regla «ya tiene atraso» no distingue entre clientes que hoy están al día, que son los que queremos anticipar. Sobre datos sintéticos propios, las señales tempranas ordenan a esos clientes con un AUC de 0,84, y el 10 % mejor puntuado concentra cerca de dos tercios de los casos.
+Porque la regla «ya tiene atraso» no distingue entre clientes que hoy están al día, que son los que queremos anticipar. Sobre datos sintéticos propios, las señales tempranas ordenan a esos clientes con un AUC de 0,84, y el 10 % mejor puntuado concentra alrededor de 6 de cada 10 casos.
 
 ## 3. ¿Cómo evitan los falsos positivos?
 

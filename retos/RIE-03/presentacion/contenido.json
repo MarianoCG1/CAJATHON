@@ -184,11 +184,11 @@
         "etiqueta": "AUC del modelo entre clientes al día (datos sintéticos propios)"
       },
       {
-        "valor": "≈ 2/3",
+        "valor": "≈ 6/10",
         "etiqueta": "de los casos que pasan a atraso están en el 10 % mejor puntuado"
       },
       {
-        "valor": "≈ 7×",
+        "valor": "≈ 6×",
         "etiqueta": "lo que lograría el azar con la misma cola"
       }
     ],
@@ -332,11 +332,11 @@
   "preguntas": [
     {
       "p": "¿Cuál es el impacto en el KPI?",
-      "r": "No hay línea base oficial, así que no afirmamos una cifra sobre la cartera de la Caja. Medimos sobre datos sintéticos propios cuántos casos detecta la cola, con cuánta anticipación y con qué falsos positivos frente a reglas simples. El efecto de intervenir es un escenario: si evitara 10, 20 o 30 % de los pasos a atraso de los casos capturados, de cada 100 que pasarían a atraso se evitarían unos 7, 13 o 20. Es una ilustración aritmética, no una estimación."
+      "r": "No hay línea base oficial, así que no afirmamos una cifra sobre la cartera de la Caja. Medimos sobre datos sintéticos propios cuántos casos detecta la cola, con cuánta anticipación y con qué falsos positivos frente a reglas simples. El efecto de intervenir es un escenario: si evitara 10, 20 o 30 % de los pasos a atraso de los casos capturados, de cada 100 que pasarían a atraso se evitarían unos 6, 12 o 18. Es una ilustración aritmética, no una estimación."
     },
     {
       "p": "¿Por qué no basta con mirar los días de atraso?",
-      "r": "Porque la regla «ya tiene atraso» no distingue entre clientes que hoy están al día, que son los que queremos anticipar. Sobre datos sintéticos propios, las señales tempranas ordenan a esos clientes con un AUC de 0,84, y el 10 % mejor puntuado concentra cerca de dos tercios de los casos."
+      "r": "Porque la regla «ya tiene atraso» no distingue entre clientes que hoy están al día, que son los que queremos anticipar. Sobre datos sintéticos propios, las señales tempranas ordenan a esos clientes con un AUC de 0,84, y el 10 % mejor puntuado concentra alrededor de 6 de cada 10 casos."
     },
     {
       "p": "¿Cómo evitan los falsos positivos?",

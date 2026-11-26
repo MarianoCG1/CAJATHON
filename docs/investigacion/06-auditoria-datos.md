@@ -26,7 +26,9 @@ Etiqueta (definida solo para la auditoría): primer atraso > 30 días dentro de 
 | Logística con 14 variables | AUC 0.934 |
 | Árboles con 14 variables | AUC 0.930 |
 | Árboles **sin** variables de atraso | AUC 0.916 |
-| **Solo clientes al día** (14,086; prevalencia 0.7 %) | árboles AUC 0.838; solo señales 0.858; precisión en el 10 % mejor puntuado 4.7 % frente a 0.7 % de base (≈ 6.7× de lift; ≈ 2/3 de los casos concentrados en ese 10 %) |
+| **Solo clientes al día** (14,086; prevalencia 0.7 %) | árboles AUC 0.838; solo señales 0.858; precisión en el 10 % mejor puntuado 4.7 % frente a 0.7 % de base (≈ 6.4× de lift; ≈ 6 de cada 10 casos en ese 10 %) |
+
+**Robustez entre clientes al día (comprobada el 25.11):** solo hay 104 casos positivos en la partición de prueba. La regresión logística da AUC 0.838 y captura el 64 % en el 10 % mejor puntuado (lift 6.4); los árboles con cinco semillas dan AUC 0.830–0.840 y captura 55–64 %. Con remuestreo por crédito (200 réplicas) el intervalo del 95 % es AUC 0.79–0.89 y captura 55–73 %. Por eso se dice «alrededor de 6 de cada 10» y «unas 6 veces el azar», no «dos tercios» ni «7×».
 
 **Lectura:** no es trivial (ninguna variable sola llega a 0.90) y tampoco imposible. El caso que importa —anticipar a quien hoy está al día— tiene señal razonable. La precisión absoluta es baja porque el evento es raro: la presentación debe usar *lift*, captura en el top-k según la capacidad del analista y días de anticipación.
 

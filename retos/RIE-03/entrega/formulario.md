@@ -57,16 +57,16 @@ No es un puntaje de mora ni una regla de días de atraso. (1) Anticipa en client
 
 ## Paso 3 · Impacto esperado
 
-**¿Qué impacto generaría su solución y cómo contribuiría al resultado esperado del desafío?** (obligatoria) — 1287/2000
+**¿Qué impacto generaría su solución y cómo contribuiría al resultado esperado del desafío?** (obligatoria) — 1379/2000
 
 ```text
 Contribución al resultado esperado: detectar antes para reducir incumplimientos, mejorar la calidad de la cartera y proteger la salud financiera del microempresario.
 
-KPI propuesto (a validar con el owner): tasa de paso a atraso de más de 30 días en la cartera alertada, con y sin intervención. Secundarios: precisión en el top-k, falsos positivos y días de anticipación. No tenemos línea base oficial y no prometemos una cifra sobre la cartera de la Caja.
+KPI propuesto (a validar con el owner): tasa de paso a atraso de más de 30 días en la cartera alertada, con y sin intervención (el umbral coincide con la referencia de deterioro que Riesgos indicó en la inmersión). Secundarios: precisión en el top-k, falsos positivos y días de anticipación. No tenemos línea base oficial y no prometemos una cifra sobre la cartera de la Caja.
 
-Evidencia preliminar, medida sobre datos sintéticos propios: entre clientes al día solo el 0,7 % pasa a atraso de más de 30 días en 60 días; un modelo de árboles los ordena con un AUC de 0,84 y el 10 % mejor puntuado concentra cerca de dos tercios de esos casos, unas 7 veces lo que lograría el azar. La precisión absoluta es baja (4,7 %) porque el evento es raro; por eso la acción propuesta es de bajo costo y el filtro se medirá como reducción de falsos positivos.
+Evidencia preliminar, medida sobre datos sintéticos propios: entre clientes al día solo el 0,7 % pasa a atraso de más de 30 días en 60 días; un modelo de árboles los ordena con un AUC de 0,84 y el 10 % mejor puntuado concentra alrededor de 6 de cada 10 de esos casos, unas 6 veces lo que lograría el azar. La precisión absoluta es baja (4,7 %) porque el evento es raro; por eso la acción propuesta es de bajo costo y el filtro se medirá como reducción de falsos positivos.
 
-Ilustración aritmética (escenario, no estimación): si la gestión temprana evitara el 10, 20 o 30 % de los pasos a atraso de los casos capturados, de cada 100 créditos que pasarían a atraso se evitarían unos 7, 13 o 20.
+Ilustración aritmética (escenario, no estimación): si la gestión temprana evitara el 10, 20 o 30 % de los pasos a atraso de los casos capturados, de cada 100 créditos que pasarían a atraso se evitarían unos 6, 12 o 18.
 
 Para el gestor: dedica su tiempo a una lista corta con el motivo claro, en lugar de revisar toda la cartera o reaccionar cuando ya hay mora.
 ```

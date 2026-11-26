@@ -100,6 +100,9 @@ Reglas: no subir los MP4 a servicios externos; si pesan mucho, no versionarlos (
 
 ## Registro de decisiones tomadas sin consultar
 
+- 25.11, 21:40 — Corregidas dos cifras de RIE-03 que estaban infladas: «dos tercios» y «7×» pasan a «alrededor de 6 de cada 10» y «6×» (logística 64 %, lift 6.4; árboles 55–64 % según semilla; IC95 55–73 %). Documentado en `06-auditoria-datos.md` y propagado a formulario, deck, ficha, Word y video.
+- 25.11 — Plataforma: NEG-01 y RIE-01 publicaron expediente nuevo a las 19:02; RIE-01 tiene 4 preguntas frecuentes y NEG-01 10. Análisis para decidir en `docs/decision-reto.md`. Los videos I5 pierden prioridad: solo se envía un concepto.
+
 - 25.11, 21:05 — Formulario leído desde la página y su código, sin escribir ni guardar nada. Solo admite **un** desafío: se preparó RIE-03 completo (`retos/RIE-03/entrega/formulario.md` y `adjuntos/`). Punto de partida declarado: preexistentes (generador y auditoría, módulo de software, funcional en entorno de prueba, propio). Datos: «no requerimos». Enlace de video vacío (subirlo a un sitio externo es publicarlo; decide el equipo).
 - 25.11 — Los «próximos pasos» de los decks pasaron a estar dirigidos al jurado (antes tenían tareas internas).
 

@@ -10,7 +10,7 @@
 - **Tecnología:** Python, FastAPI, scikit-learn, SQLite y React; agente con proveedor de IA intercambiable (nube, local o sin red).
 - **Preexistente:** Generador de datos sintéticos (24 pruebas), sus datos (5,000 clientes, 34 meses) y un script de auditoría de dificultad, creados el 21.11.2026. Todo lo demás se construye en el evento.
 - **Funcionalidad crítica (se construye en el evento):** Cola priorizada con explicación y acción propuesta, con aprobación humana y bitácora; sin fuga del futuro; una fluctuación estacional no alerta y un deterioro gradual sí.
-- **Factibilidad:** 31,5 horas-persona de 32, plan base mínimo viable. Medido sobre datos sintéticos propios: entre clientes al día, AUC 0,84; el 10 % mejor puntuado concentra cerca de dos tercios de los casos (≈ 7× el azar); la precisión absoluta es baja (4,7 %).
+- **Factibilidad:** 31,5 horas-persona de 32, plan base mínimo viable. Medido sobre datos sintéticos propios: entre clientes al día, AUC 0,84; el 10 % mejor puntuado concentra alrededor de 6 de cada 10 casos (≈ 6× el azar); la precisión absoluta es baja (4,7 %).
 
 **Flujo:**
 

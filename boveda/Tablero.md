@@ -9,7 +9,7 @@ Calculado leyendo los archivos del proyecto el 2026-11-21. Volver al [[boveda/00
 
 | # | Reto | Estado | Avance | Pareja | Revisor | [POR CONFIRMAR] | Postulación |
 |---|---|---|---|---|---|---|---|
-| 1 | [[boveda/Retos/RIE-03|RIE-03]] Anticipar el deterioro de pago antes del atraso | Listo para revisión cruzada | `██████ 6/6` | David + Mariano | Glem | 15 | 1161 |
+| 1 | [[boveda/Retos/RIE-03|RIE-03]] Anticipar el deterioro de pago antes del atraso | Listo para revisión cruzada | `██████ 6/6` | David + Mariano | Glem | 15 | 1163 |
 | 2 | [[boveda/Retos/NEG-01|NEG-01]] Cuotas que se adaptan al flujo del negocio | Borrador v0 | `█░░░░░ 1/6` | Antonio + Glem | David | 5 | — |
 | 3 | [[boveda/Retos/NEG-02|NEG-02]] Open Finance: competir en un ecosistema abierto | Listo para revisión cruzada | `██████ 6/6` | Antonio + Mariano | David | 16 | 1138 |
 | 4 | [[boveda/Retos/RIE-01|RIE-01]] Microfinanzas resilientes al clima | Listo para revisión cruzada | `██████ 6/6` | Antonio + Mariano | Glem | 44 | 1034 |
