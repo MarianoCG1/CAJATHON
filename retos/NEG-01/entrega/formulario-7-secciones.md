@@ -29,7 +29,7 @@ Ritmo es una herramienta para el Asesor de Negocios con las tres piezas que pide
 
 (A) **Modelo del ciclo en dos capas.** El patrón estacional del sector y la zona, construido con series y calendarios públicos, se ajusta a cada cliente con lo que el asesor recoge en campo (ventas en meses buenos, regulares y malos, costos, gastos, carga familiar, evidencias de transacciones, fechas de campaña). Cuanta más evidencia, más pesa el dato propio; sin evidencia, el cliente hereda el patrón de su sector y zona. Luego proyecta los meses concretos del crédito con el estado previsto de los factores externos: la sensibilidad de cada sector a El Niño se estima con la historia (producción mensual del BCRP frente a los índices ONI e ICEN, incluidos 2017 y 2023) y se aplica al estado que anuncian el ENFEN y el SENAMHI. Entrega la utilidad neta esperada por etapa durante la vida del crédito, con banda de incertidumbre y escenarios adversos.
 
-(B) **Motor del plan de pagos.** Con monto, TEA, seguros y plazo, un programa de optimización elige cuánto capital amortiza cada cuota. Respeta en cada etapa Cuota/UN ≤ factor del asesor ≤ factor del producto y, como holgura, que la cuota quede cubierta por la utilidad de los escenarios adversos. También respeta cuota mínima, plazo máximo, TEA única y topes de concentración de capital y de periodos sin amortizar. Amortiza el máximo capital en las cimas y, entre los planes posibles, elige el de menor costo total para el cliente. Aplica las reglas del owner: TED base 360 por días exactos, seguros por interés simple, prelación seguros → interés → capital, y pendientes sin interés cuando un valle no cubre ni los intereses. Si el monto no cabe, indica qué restricción lo impide y propone el monto máximo para ese plazo o el plazo que necesita ese monto.
+(B) **Motor del plan de pagos.** Con monto, TEA, seguros y plazo, un programa de optimización elige cuánto capital amortiza cada cuota. Respeta en cada etapa Cuota/UN ≤ factor efectivo, por debajo del tope del producto para dejar la holgura que pide el desafío, y además que la cuota quede cubierta por la utilidad de los escenarios adversos. También respeta cuota mínima, plazo máximo, TEA única y topes de concentración de capital y de periodos sin amortizar. Amortiza el máximo capital en las cimas y, entre los planes posibles, elige el de menor costo total para el cliente. Aplica las reglas del owner: TED base 360 por días exactos, seguros por interés simple, prelación seguros → interés → capital, y pendientes sin interés cuando un valle no cubre ni los intereses. Si el monto no cabe, indica qué restricción lo impide y propone el monto máximo para ese plazo o el plazo que necesita ese monto.
 
 (C) **Explicación y prueba de estrés.** Cada cuota trae su motivo (etapa, utilidad esperada, Cuota/UN y restricción que la limita) y el plan se compara con la cuota fija equivalente en escenario base y adversos.
 
@@ -39,7 +39,7 @@ El asesor conserva su criterio (factor menor, corrección de una etapa, fecha de
 
 **Versión corta**
 
-KPI del prototipo: meses en que la cuota supera la capacidad (Cuota/UN > factor, y cuota > utilidad), plan adaptado frente a cuota fija, en escenario base y adversos. Secundarios: costo y TCEA, ajuste al ciclo, concentración e ingreso de la Caja. No medimos mora, como indicó el owner; la retención se mediría en un piloto. Ejemplo ilustrativo calculado con las reglas del owner (no es una medición): un arrocero de Jequetepeque pide S/ 8,000 a 12 meses. Con su utilidad promedio califica para cuota fija (S/ 801), pero esa cuota supera su utilidad en 8 de 12 meses. Con holgura frente a El Niño, el motor propone S/ 6,888 a 12 meses o S/ 8,000 a 16 meses, sin ningún mes de déficit en año normal, con El Niño ni con caída de ventas de 20 %. Las cifras de impacto saldrán del banco de pruebas con perfiles sintéticos.
+KPI del prototipo: meses en que la cuota supera la capacidad (Cuota/UN > factor, y cuota > utilidad), plan adaptado frente a cuota fija, en escenario base y adversos. Secundarios: costo y TCEA, ajuste al ciclo, concentración e ingreso de la Caja. No medimos mora, como indicó el owner; la retención se mediría en un piloto. Ejemplo ilustrativo calculado con las reglas del owner (no es una medición): un arrocero de Jequetepeque pide S/ 8,000 a 12 meses. Con su utilidad promedio califica para cuota fija (S/ 801), pero esa cuota supera su utilidad en 8 de 12 meses. Con holgura bajo el tope y frente a El Niño, el motor propone S/ 5,895 a 12 meses o S/ 8,000 a 17 meses, sin ningún mes de déficit en año normal, con El Niño ni con caída de ventas de 20 %. Las cifras de impacto saldrán del banco de pruebas con perfiles sintéticos.
 
 **Versión completa**
 
@@ -59,10 +59,11 @@ Para el cliente: cuotas que caben en su utilidad en cada etapa, menos meses de a
 | Plan | Meses con cuota > utilidad (año normal / El Niño / caída de 20 %) | Déficit acumulado del cliente |
 |---|---|---|
 | Cuota fija, S/ 801 × 12 | 8 / 9 / 9 de 12 | S/ 1,861 / 2,012 / 2,852 |
-| Siguiendo el ciclo sin holgura | 0 / 2 / 0 | S/ 0 / 1,940 / 0 |
-| Ritmo con holgura: S/ 6,888 a 12 meses, o S/ 8,000 a 16 meses | 0 / 0 / 0 | S/ 0 |
+| Siguiendo el ciclo al tope, sin holgura | 0 / 2 / 0 | S/ 0 / 1,940 / 0 |
+| Ritmo con holgura: S/ 5,895 a 12 meses, o S/ 8,000 a 17 meses | 0 / 0 / 0 | S/ 0 |
+| Cuota fija a 17 meses, S/ 606 | 8 / 8 / 11 de 17 | S/ 994 / 994 / 1,941 |
 
-Con la utilidad promedio el cliente «califica» para la cuota fija, pero esa cuota supera su utilidad en 8 de 12 meses. Seguir el ciclo sin holgura es frágil ante un mes de retraso en la cosecha. Con holgura, Ritmo no fuerza el monto pedido: propone el monto o el plazo que sí caben.
+Con la utilidad promedio el cliente «califica» para la cuota fija, pero esa cuota supera su utilidad en 8 de 12 meses. Seguir el ciclo al tope, sin holgura, es frágil ante un mes de retraso en la cosecha. Ritmo deja holgura bajo el tope (factor efectivo de 0,585 frente a 0,65), cubre los escenarios adversos en toda la vida del crédito y limita la concentración de capital; por eso no fuerza el monto pedido y propone el monto o el plazo que sí caben.
 
 Línea base del prototipo: la cuota fija equivalente que genera hoy el core (mismas condiciones). No medimos mora de cartera, como indicó el owner. Los planes se construyen con lo que observaría el asesor y se evalúan contra el ciclo verdadero de cada perfil y contra escenarios adversos fijados de antemano. Las cifras saldrán de esa medición; no las inventamos.
 
@@ -91,7 +92,7 @@ Tecnología preexistente: librerías de código abierto bajo sus licencias y her
 
 **Versión corta**
 
-Qué construiremos en las jornadas presenciales: dado un cliente y una operación, el sistema estima su ciclo, construye el plan óptimo con monto y periodo por cuota, explica por qué cada cuota es alta o baja, muestra Cuota/UN por etapa y lo compara con la cuota fija en escenarios base y adversos; el asesor ajusta y exporta la hoja para comité. Demo: un arrocero y un taller de calzado de La Libertad con el mismo monto reciben planes distintos y explicados, en un año normal y con El Niño. Pruebas automáticas: el cronograma reproduce las reglas del owner, ninguna cuota supera el factor y con un ciclo plano el plan coincide con la cuota fija. Esfuerzo: 31 de 32 horas-persona (supuesto). Fuera de alcance: integración con el core y reprogramaciones.
+Qué construiremos en las jornadas presenciales: dado un cliente y una operación, el sistema estima su ciclo, construye el plan óptimo con monto y periodo por cuota, explica por qué cada cuota es alta o baja, muestra Cuota/UN por etapa y lo compara con la cuota fija en escenarios base y adversos; el asesor ajusta y exporta la hoja para comité. Demo: un arrocero y un taller de calzado de La Libertad con el mismo monto reciben planes distintos y explicados, en un año normal y con El Niño. Pruebas automáticas: el cronograma reproduce las reglas del owner, ninguna cuota supera el factor y con un ciclo plano todas las cuotas salen iguales. Esfuerzo: 31 de 32 horas-persona (supuesto). Fuera de alcance: integración con el core y reprogramaciones.
 
 **Versión completa**
 
@@ -103,7 +104,7 @@ Se construye íntegramente en las jornadas presenciales, con commits frecuentes 
 4. Comparación con la cuota fija equivalente en escenario base y adversos (periodos en tensión, costo y TCEA, concentración, déficit del cliente, ingreso de la Caja).
 5. Ajuste por el asesor (factor menor, corrección de una etapa, fecha de pago) y hoja para comité.
 
-Criterios de aceptación, verificados con pruebas automáticas: el cronograma reproduce las reglas del owner; ninguna cuota supera factor × utilidad de su etapa; con un ciclo plano el plan coincide con la cuota fija y con uno estacional las cuotas altas caen en las cimas; si no hay plan posible, el sistema nombra la restricción que lo impide; toda cifra del resumen coincide con el cálculo.
+Criterios de aceptación, verificados con pruebas automáticas: el cronograma reproduce las reglas del owner; ninguna cuota supera factor × utilidad de su etapa; con un ciclo plano todas las cuotas salen iguales y con uno estacional las cuotas altas caen en las cimas; si no hay plan posible, el sistema nombra la restricción que lo impide; toda cifra del resumen coincide con el cálculo.
 
 Factibilidad: 31 horas-persona de 32 disponibles (supuesto), con un núcleo de 26 que no se recorta. Si falta tiempo se recortan, en este orden, el asistente de notas, el resumen con modelo de lenguaje y los escenarios adicionales. El cálculo es determinista y verificable contra casos hechos a mano, y el programa lineal se resuelve en milisegundos. El equipo cubre economía y sector financiero, ciencia de datos, desarrollo y experiencia de usuario.
 

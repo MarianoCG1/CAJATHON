@@ -152,11 +152,11 @@ Variables por periodo `t`: `k_t ≥ 0` (capital amortizado), `q_t ≥ 0` (pago d
 - Pendientes: `P_t = P_{t−1} + I_t + D_t + M_t − q_t`. Lo pendiente **no genera interés** y **no suma al saldo de capital** (regla del owner).
 - Prelación: solo se amortiza capital si no quedan pendientes: `k_t ≤ Monto · z_t` y `P_t ≤ Grande · (1 − z_t)`.
 - Cuota: `C_t = q_t + k_t`.
-- **Capacidad (regla del producto):** `C_t ≤ f · UN_t^esperada`, con `f = factor del asesor ≤ factor del producto`.
-- **Holgura (regla robusta, supuesto configurable):** `C_t ≤ UN_t^s` para cada escenario adverso `s` configurado. El ejemplo de §j muestra por qué: sin ella, un mes de retraso en la cosecha devuelve el déficit.
-- Producto: `Σ_t k_t = Monto`, `P_n = 0`, `C_t ≥ cuota mínima` **[POR CONFIRMAR]**, `k_t ≤ c · Monto` (concentración, `c` = 35 % **(supuesto)**), y como máximo `g` periodos consecutivos y `G` en total con `z_t = 0` **(supuesto)**.
+- **Capacidad (regla del producto, con holgura):** `C_t ≤ f · UN_t^esperada`, con `f` = factor efectivo < factor del producto. Por defecto `f` es el 90 % del tope **(supuesto)**, porque el expediente pide dejar holgura respecto al tope; el asesor puede bajarlo más.
+- **Regla robusta (supuesto configurable):** `C_t ≤ UN_t^s` para cada escenario adverso `s` configurado, en **todos** los periodos del crédito (si el plazo cruza dos campañas, las dos pueden venir malas). El ejemplo de §j muestra por qué: sin ella, un mes de retraso en la cosecha devuelve el déficit.
+- Producto: `Σ_t k_t = Monto`, `P_n = 0`, `C_t ≥ cuota mínima` **[POR CONFIRMAR]**, `k_t ≤ c · Monto` (concentración, `c` = 25 %, así dos cuotas no superan la mitad del capital **(supuesto)**), y como máximo `g` periodos consecutivos y `G` en total con `z_t = 0` **(supuesto)**.
 - **Objetivo:** menor costo total `Σ (I_t + D_t + M_t)`. Como el interés corre sobre el saldo, minimizar el costo equivale a amortizar lo antes posible dentro de la capacidad, que lleva el capital a las cimas como pide el owner.
-- **Sin solución:** el motor relaja una restricción a la vez para identificar cuál impide el plan, y calcula dos salidas: el **monto máximo** que cabe en el plazo pedido (búsqueda sobre el monto) y el **plazo mínimo** que necesita el monto pedido (búsqueda sobre el plazo). En el ejemplo de §j: S/ 6,888 a 12 meses o S/ 8,000 a 16 meses.
+- **Sin solución:** el motor relaja una restricción a la vez para identificar cuál impide el plan, y calcula dos salidas: el **monto máximo** que cabe en el plazo pedido (búsqueda sobre el monto) y el **plazo mínimo** que necesita el monto pedido (búsqueda sobre el plazo). En el ejemplo de §j: S/ 5,895 a 12 meses o S/ 8,000 a 17 meses.
 - Tamaño: decenas de variables continuas y una binaria por periodo (12 a 36); HiGHS (`scipy.optimize.milp`) lo resuelve en milisegundos.
 
 ### c.5 Explicación por cuota
@@ -241,17 +241,19 @@ Los planes se construyen con lo que el asesor observaría, pero se evalúan cont
 ## (i) Plan de pruebas (en el evento)
 
 - Cronograma: casos hechos a mano por Antonio (TED, días exactos, seguros, prelación, pendientes) con tolerancia de céntimos.
-- Motor: con ciclo plano reproduce la cuota fija; con ciclo estacional, las cuotas altas caen en las cimas; nunca viola Cuota/UN ≤ factor ni la holgura frente a los escenarios adversos; respeta concentración y gracia; en un valle sin capacidad deja pendientes sin interés y no amortiza capital hasta saldarlos; caso infactible devuelve diagnóstico con monto máximo y plazo mínimo.
-- Ejemplo de §j como prueba de regresión: cuota fija S/ 801; S/ 8,000 a 12 meses inviable con holgura; salidas S/ 6,888 a 12 meses y 16 meses de plazo (con tolerancia de céntimos).
+- Motor: con ciclo plano da cuotas iguales al límite de capacidad (caso 4 de `casos-de-prueba.md`); con ciclo estacional, las cuotas altas caen en las cimas; nunca viola Cuota/UN ≤ factor ni la holgura frente a los escenarios adversos; respeta concentración y gracia; en un valle sin capacidad deja pendientes sin interés y no amortiza capital hasta saldarlos; caso infactible devuelve diagnóstico con monto máximo y plazo mínimo.
+- Ejemplo de §j como prueba de regresión: cuota fija S/ 801; S/ 8,000 a 12 meses inviable con holgura; salidas S/ 5,895 a 12 meses y 17 meses de plazo (con tolerancia de céntimos).
 - Ciclo: sin evidencia propia devuelve el patrón del sector; con evidencia fuerte se acerca al dato del cliente.
 - Explicación: toda cifra del resumen coincide con el motor.
 - Banco de pruebas: misma semilla, mismas cifras.
 
-## (j) Ejemplo ilustrativo calculado (25.11.2026)
+## (j) Ejemplo ilustrativo calculado (25–26.11.2026)
 
-Cálculo hecho a mano con las reglas del owner, apoyado en un script de un solo uso que no forma parte del producto ni del repo. **No es una medición ni la salida del motor**: sirve para mostrar el problema y validar el diseño. Se reproducirá como prueba automática en el evento.
+Cálculo hecho a mano con las reglas del owner, apoyado en un script de un solo uso que no forma parte del producto ni del repo. **No es una medición ni la salida del motor**: sirve para mostrar el problema y validar el diseño. Se reproducirá como prueba automática en el evento. Corregido el 26.11 tras la revisión de Mariano: la holgura bajo el tope y los escenarios adversos en **toda** la vida del crédito llevan el plazo necesario de 16 a **17 meses**.
 
-**Caso:** pequeño productor de arroz del valle de Jequetepeque; S/ 8,000 a 12 meses; TEA 40 %; desgravamen 0,96 % anual sobre saldo; desembolso 15.01.2027; cuotas el día 15; factor 0,65. Todo **(supuesto)**.
+**Caso:** pequeño productor de arroz del valle de Jequetepeque; S/ 8,000 a 12 meses; TEA 40 %; desgravamen 0,96 % anual sobre saldo; desembolso 15.01.2027; cuotas el día 15; tope del producto 0,65. Todo **(supuesto)**.
+
+**Reglas de Ritmo en el ejemplo (supuestos configurables):** factor efectivo 0,585 (90 % del tope); cuota ≤ UN de cada escenario adverso en todos los meses; capital por cuota ≤ 25 % del monto.
 
 **UN mensual (S/; ilustrativa, calendario por verificar con INIA):**
 
@@ -259,20 +261,22 @@ Cálculo hecho a mano con las reglas del owner, apoyado en un script de un solo 
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 450 | 400 | 500 | 2,800 | 4,200 | 3,200 | 900 | 700 | 650 | 700 | 600 | 550 |
 
-Escenarios: **El Niño** (abril cae a S/ 650 y la cosecha llega un mes tarde con −30 %: may 1,960, jun 2,940, jul 2,240) y **caída general** (−20 % en todos los meses).
+Escenarios, aplicados a todos los años del crédito: **El Niño** (abril cae a S/ 650 y la cosecha llega un mes tarde con −30 %: may 1,960, jun 2,940, jul 2,240) y **caída general** (−20 % en todos los meses).
 
-| Plan | Cuotas (S/) | Cuota > UN (base / El Niño / caída) | Déficit acumulado S/ (base / El Niño / caída) | Interés S/ | Capital en las 2 cuotas mayores |
-|---|---|---|---|---|---|
-| Cuota fija, 12 m | 801 × 12 | 8 / 9 / 9 | 1,861 / 2,012 / 2,852 | 1,572 | 19 % |
-| Adaptado literal, 12 m | 292, 260, 325, 1,820, 2,730, 2,080, 585, 455, 422, 373, 0, 0 | 0 / 2 / 0 | 0 / 1,940 / 0 | 1,306 | 56 % |
-| Adaptado robusto, S/ 8,000 a 12 m | no cabe: queda un saldo de S/ 1,937 al final | — | — | — | — |
-| Adaptado robusto, **S/ 6,888 a 12 m** | 292, 260, 325, 650, 1,960, 2,080, 585, 455, 422, 455, 390, 358 | 0 / 0 / 0 | 0 / 0 / 0 | — | — |
-| Adaptado robusto, **S/ 8,000 a 16 m** | 292, 260, 325, 650, 1,960, 2,080, 585, 455, 422, 455, 390, 357, 292, 260, 325, 845 | 0 / 0 / 0 | 0 / 0 / 0 | — | — |
-| Cuota fija, S/ 8,000 a 16 m | 635 × 16 | 8 de 16 en base | 1,228 en base | — | — |
+| Plan | Cuotas (S/) | Cuota > UN (base / El Niño / caída) | Déficit acumulado S/ (base / El Niño / caída) | Interés S/ | Capital en las 2 cuotas mayores | Cuota/UN máx. (base) |
+|---|---|---|---|---|---|---|
+| Cuota fija, 12 m | 801 × 12 | 8 / 9 / 9 | 1,861 / 2,012 / 2,852 | 1,572 | 19 % | 2,00 |
+| Sin holgura (tope 0,65, solo base), 12 m | 292, 260, 325, 1,820, 2,730, 2,080, 585, 455, 422, 373, 0, 0 | 0 / 2 / 0 | 0 / 1,940 / 0 | 1,306 | 56 % | 0,65 |
+| Ritmo, S/ 8,000 a 12 m | no cabe: quedan S/ 2,235 sin pagar | — | — | — | — | — |
+| Ritmo, **S/ 5,895 a 12 m** | 263, 234, 292, 650, 1,629, 1,581, 526, 410, 380, 410, 351, 322 | 0 / 0 / 0 | 0 / 0 / 0 | 1,121 | 50 % | 0,585 |
+| Ritmo, **S/ 8,000 a 17 m** | 263, 234, 292, 650, 1,960, 1,872, 526, 410, 380, 410, 351, 322, 263, 234, 292, 650, 1,055 | 0 / 0 / 0 | 0 / 0 / 0 | 2,106 | 43 % | 0,585 |
+| Cuota fija, S/ 8,000 a 17 m | 606 × 17 | 8 / 8 / 11 | 994 / 994 / 1,941 | 2,231 | 14 % | 1,51 |
 
-TCEA de la cuota fija y del plan literal: 41,3 % en ambos (misma TEA). En el plan de 16 meses, el segundo año se evaluó con la UN base.
+TCEA: 41,3 % en todos los planes (misma TEA; los seguros pesan poco).
 
-**Conclusiones para el diseño:** (1) con la UN promedio, el cliente «califica» con cuota fija (801 ≤ 0,65 × 1,304 = 848), pero la cuota supera la utilidad en 8 de 12 meses; (2) la regla literal sin holgura es frágil ante un retraso de campaña y concentra capital; (3) la regla robusta elimina el déficit en los tres escenarios, pero exige ajustar monto o plazo, y el motor debe proponer ambas salidas; (4) menos interés para el cliente es menos ingreso para la Caja, y la herramienta lo muestra.
+**Conclusiones para el diseño:** (1) con la UN promedio, el cliente «califica» con cuota fija (801 ≤ 0,65 × 1,304 = 848), pero la cuota supera la utilidad en 8 de 12 meses; (2) llevar cada cuota al tope sin holgura es frágil ante un retraso de campaña y concentra capital; (3) la holgura bajo el tope, los escenarios adversos en toda la vida del crédito y el tope de concentración eliminan el déficit en los tres escenarios, pero exigen ajustar monto o plazo, y el motor propone ambas salidas; (4) más plazo significa más interés, y la herramienta muestra ese intercambio.
+
+**Corrección registrada:** la versión del 25.11 daba «S/ 6,888 a 12 meses o S/ 8,000 a 16 meses». Llevaba cuotas al tope de 0,65 sin holgura, aplicaba El Niño solo al primer año y usaba un tope de concentración de 35 %. Las cifras de esta sección la reemplazan.
 
 ## (k) Entrada para `docs/preexistente.md`
 
@@ -301,7 +305,7 @@ Usuario principal (Asesor de Negocios; valida Riesgos; aprueba el comité), prin
 
 ### Lo que decimos y el expediente no dice (todo marcado como supuesto)
 
-Nombre «Ritmo»; agregación parcial como método de ajuste; proyección con la sensibilidad a El Niño; programa de optimización con objetivo de menor costo y binarias de prelación; tope de concentración del 35 %; regla de holgura robusta frente a escenarios adversos; los datos del ejemplo de §j; topes de gracia; rubros, zonas y distribuciones de la cartera sintética; −20 % como caída de ventas; asistente de notas de campo.
+Nombre «Ritmo»; agregación parcial como método de ajuste; proyección con la sensibilidad a El Niño; programa de optimización con objetivo de menor costo y binarias de prelación; tope de concentración del 25 %; factor efectivo del 90 % del tope; regla de holgura robusta frente a escenarios adversos; los datos del ejemplo de §j; topes de gracia; rubros, zonas y distribuciones de la cartera sintética; −20 % como caída de ventas; asistente de notas de campo.
 
 ### Observación
 
