@@ -38,16 +38,43 @@
   },
   "solucion": {
     "titular": "De un lote de solicitudes a un expediente que el especialista puede verificar",
-    "flujo": ["Lote de solicitudes", "Grafo ponderado por rareza", "Comunidades e indicadores de red", "Corroboración de comportamiento", "Priorización con razones", "Agente redacta el expediente", "Especialista decide", "Evaluación ciega contra reglas"],
+    "flujo": [
+      "Lote de solicitudes",
+      "Grafo ponderado por rareza",
+      "Comunidades e indicadores de red",
+      "Corroboración de comportamiento",
+      "Priorización con razones",
+      "Agente redacta el expediente",
+      "Especialista decide",
+      "Evaluación ciega contra reglas"
+    ],
     "nota": "Ninguna acción que afecte a un cliente se ejecuta sin revisión humana. El sistema no cambia el estado de una solicitud ni bloquea nada."
   },
   "como_funciona": [
-    {"paso": "Lote de solicitudes", "detalle": "Personas, negocios, teléfonos, dispositivos, direcciones y referencias de cada solicitud, antes del desembolso."},
-    {"paso": "Grafo ponderado por rareza", "detalle": "Un dispositivo personal compartido por cinco identidades pesa mucho; una tableta de agencia o un puesto de mercado, casi nada."},
-    {"paso": "Comunidades e indicadores", "detalle": "Encuentra grupos de solicitudes conectados de forma inusual."},
-    {"paso": "Corroboración de comportamiento", "detalle": "Solo sube la red que, además de vínculos, muestra ráfagas de solicitudes o negocios y líneas recientes."},
-    {"paso": "Expediente verificable", "detalle": "El agente redacta con evidencia citada y las explicaciones legítimas posibles; un verificador rechaza citas que no existan."},
-    {"paso": "Decisión humana", "detalle": "Escalar, pedir verificación o descartar, con un motivo registrado."}
+    {
+      "paso": "Lote de solicitudes",
+      "detalle": "Personas, negocios, teléfonos, dispositivos, direcciones y referencias de cada solicitud, antes del desembolso."
+    },
+    {
+      "paso": "Grafo ponderado por rareza",
+      "detalle": "Un dispositivo personal compartido por cinco identidades pesa mucho; una tableta de agencia o un puesto de mercado, casi nada."
+    },
+    {
+      "paso": "Comunidades e indicadores",
+      "detalle": "Encuentra grupos de solicitudes conectados de forma inusual."
+    },
+    {
+      "paso": "Corroboración de comportamiento",
+      "detalle": "Solo sube la red que, además de vínculos, muestra ráfagas de solicitudes o negocios y líneas recientes."
+    },
+    {
+      "paso": "Expediente verificable",
+      "detalle": "El agente redacta con evidencia citada y las explicaciones legítimas posibles; un verificador rechaza citas que no existan."
+    },
+    {
+      "paso": "Decisión humana",
+      "detalle": "Escalar, pedir verificación o descartar, con un motivo registrado."
+    }
   ],
   "pantallas": [
     {
@@ -58,15 +85,131 @@
       "elementos": {
         "encabezado": "Red ilustrativa: 6 solicitudes en 21 días",
         "nodos": [
-          {"id": "P-01", "tipo": "persona", "x": 70, "y": 130}, {"id": "P-02", "tipo": "persona", "x": 170, "y": 100},
-          {"id": "P-03", "tipo": "persona", "x": 290, "y": 130}, {"id": "P-04", "tipo": "persona", "x": 380, "y": 100},
-          {"id": "P-05", "tipo": "persona", "x": 250, "y": 240}, {"id": "P-06", "tipo": "persona", "x": 110, "y": 260},
-          {"id": "T-11", "tipo": "telefono", "x": 120, "y": 185}, {"id": "D-07", "tipo": "dispositivo", "x": 230, "y": 170},
-          {"id": "A-03", "tipo": "direccion", "x": 340, "y": 195}, {"id": "N-21", "tipo": "negocio", "x": 180, "y": 300}
+          {
+            "id": "P-01",
+            "tipo": "persona",
+            "x": 70,
+            "y": 130
+          },
+          {
+            "id": "P-02",
+            "tipo": "persona",
+            "x": 170,
+            "y": 100
+          },
+          {
+            "id": "P-03",
+            "tipo": "persona",
+            "x": 290,
+            "y": 130
+          },
+          {
+            "id": "P-04",
+            "tipo": "persona",
+            "x": 380,
+            "y": 100
+          },
+          {
+            "id": "P-05",
+            "tipo": "persona",
+            "x": 250,
+            "y": 240
+          },
+          {
+            "id": "P-06",
+            "tipo": "persona",
+            "x": 110,
+            "y": 260
+          },
+          {
+            "id": "T-11",
+            "tipo": "telefono",
+            "x": 120,
+            "y": 185
+          },
+          {
+            "id": "D-07",
+            "tipo": "dispositivo",
+            "x": 230,
+            "y": 170
+          },
+          {
+            "id": "A-03",
+            "tipo": "direccion",
+            "x": 340,
+            "y": 195
+          },
+          {
+            "id": "N-21",
+            "tipo": "negocio",
+            "x": 180,
+            "y": 300
+          }
         ],
-        "enlaces": [["P-01", "T-11", true], ["P-02", "T-11", true], ["P-02", "D-07", true], ["P-03", "D-07", true], ["P-03", "A-03", true], ["P-04", "A-03", true], ["P-05", "D-07", false], ["P-05", "N-21", false], ["P-06", "N-21", false], ["P-06", "T-11", false]],
-        "expediente": ["6 solicitudes en 21 días", "Dispositivo compartido por 3 identidades (raro)", "Teléfonos con menos de 3 meses", "Negocios sin antigüedad", "Referencias circulares entre solicitantes", "Monto sobre el umbral de revisión (supuesto)"],
-        "legitima": ["Familia o mercado: no coincide con el patrón", "Tableta de agencia: descartada"]
+        "enlaces": [
+          [
+            "P-01",
+            "T-11",
+            true
+          ],
+          [
+            "P-02",
+            "T-11",
+            true
+          ],
+          [
+            "P-02",
+            "D-07",
+            true
+          ],
+          [
+            "P-03",
+            "D-07",
+            true
+          ],
+          [
+            "P-03",
+            "A-03",
+            true
+          ],
+          [
+            "P-04",
+            "A-03",
+            true
+          ],
+          [
+            "P-05",
+            "D-07",
+            false
+          ],
+          [
+            "P-05",
+            "N-21",
+            false
+          ],
+          [
+            "P-06",
+            "N-21",
+            false
+          ],
+          [
+            "P-06",
+            "T-11",
+            false
+          ]
+        ],
+        "expediente": [
+          "6 solicitudes en 21 días",
+          "Dispositivo compartido por 3 identidades (raro)",
+          "Teléfonos con menos de 3 meses",
+          "Negocios sin antigüedad",
+          "Referencias circulares entre solicitantes",
+          "Monto sobre el umbral de revisión (supuesto)"
+        ],
+        "legitima": [
+          "Familia o mercado: no coincide con el patrón",
+          "Tableta de agencia: descartada"
+        ]
       }
     },
     {
@@ -76,19 +219,68 @@
       "subtitulo": "Lote ilustrativo · una red solo sube si combina vínculos y comportamiento",
       "nota": "Maqueta ilustrativa con datos ficticios. Las dos últimas filas son relaciones legítimas que el sistema baja de prioridad y explica.",
       "elementos": [
-        {"id": "RED-A", "nivel": 0.88, "porque": ["Dispositivo raro y teléfonos nuevos", "Ráfaga de 6 solicitudes en 21 días"], "accion": "Escalar a investigación"},
-        {"id": "RED-B", "nivel": 0.72, "porque": ["Referencias circulares entre solicitantes", "Negocios recientes en el mismo local"], "accion": "Pedir verificación antes del desembolso"},
-        {"id": "RED-C", "nivel": 0.55, "porque": ["Teléfono compartido y líneas recientes", "Montos similares y cercanos al umbral"], "accion": "Pedir verificación"},
-        {"id": "FAM-1", "nivel": 0.12, "porque": ["Hogar de 4 miembros comparte teléfono", "Sin comportamiento anómalo"], "accion": "Baja prioridad: explicación legítima"},
-        {"id": "MER-3", "nivel": 0.15, "porque": ["Puestos del mismo mercado, misma dirección", "Antigüedad alta, sin ráfaga"], "accion": "Baja prioridad: explicación legítima"}
+        {
+          "id": "RED-A",
+          "nivel": 0.88,
+          "porque": [
+            "Dispositivo raro y teléfonos nuevos",
+            "Ráfaga de 6 solicitudes en 21 días"
+          ],
+          "accion": "Escalar a investigación"
+        },
+        {
+          "id": "RED-B",
+          "nivel": 0.72,
+          "porque": [
+            "Referencias circulares entre solicitantes",
+            "Negocios recientes en el mismo local"
+          ],
+          "accion": "Pedir verificación antes del desembolso"
+        },
+        {
+          "id": "RED-C",
+          "nivel": 0.55,
+          "porque": [
+            "Teléfono compartido y líneas recientes",
+            "Montos similares y cercanos al umbral"
+          ],
+          "accion": "Pedir verificación"
+        },
+        {
+          "id": "FAM-1",
+          "nivel": 0.12,
+          "porque": [
+            "Hogar de 4 miembros comparte teléfono",
+            "Sin comportamiento anómalo"
+          ],
+          "accion": "Baja prioridad: explicación legítima"
+        },
+        {
+          "id": "MER-3",
+          "nivel": 0.15,
+          "porque": [
+            "Puestos del mismo mercado, misma dirección",
+            "Antigüedad alta, sin ráfaga"
+          ],
+          "accion": "Baja prioridad: explicación legítima"
+        }
       ]
     }
   ],
   "evidencia": {
     "cifras": [
-      {"valor": "90 %", "etiqueta": "del fraude detecta una regla de «cualquier coincidencia»..."},
-      {"valor": "100 %", "etiqueta": "...pero marca todos los señuelos legítimos (precisión 12 %)"},
-      {"valor": "43 %", "etiqueta": "detecta exigir dos tipos de vínculo, y solo 12 % en las redes más difíciles"}
+      {
+        "valor": "90 %",
+        "etiqueta": "del fraude detecta una regla de «cualquier coincidencia»..."
+      },
+      {
+        "valor": "100 %",
+        "etiqueta": "...pero marca todos los señuelos legítimos (precisión 12 %)"
+      },
+      {
+        "valor": "43 %",
+        "etiqueta": "detecta exigir dos tipos de vínculo, y solo 12 % en las redes más difíciles"
+      }
     ],
     "honestidad": "Medido solo sobre datos sintéticos propios (partición de evaluación: 1.884 solicitudes, 114 de fraude, 397 señuelos; la proporción la fijamos nosotros). Una regla con criterio de dominio, ajustada a mano viendo estos mismos datos, rinde bien (F1 cercano a 0,9): frente a ella el aporte esperado es moderado y lo reportaremos así. El valor está en la explicación por red, el expediente verificable y la corroboración que evita acusar por relaciones."
   },
@@ -104,28 +296,86 @@
   "tecnologia": {
     "titular": "Grafo ponderado, corroboración y un expediente que se puede verificar",
     "filas": [
-      ["Grafo ponderado", "Personas, negocios, teléfonos, dispositivos, direcciones y referencias; el peso de cada vínculo depende de lo raro que es."],
-      ["Comunidades y corroboración", "Grupos conectados de forma inusual; solo suben los que muestran además comportamiento anómalo."],
-      ["Priorización", "Cola con razones por factor y exoneración de relaciones legítimas; ablación para medir el efecto de la corroboración."],
-      ["Agente y verificador", "Redacta el expediente; un verificador determinista rechaza citas inexistentes y frases que concluyan fraude; plantilla sin red por defecto."],
-      ["API e interfaz", "FastAPI, SQLite, React y Cytoscape.js; cada decisión queda registrada con su motivo."],
-      ["Evaluación", "Partición de desarrollo y de evaluación, semillas nuevas, intervalos de confianza y comparación con reglas simples y con una regla de dominio."]
+      [
+        "Grafo ponderado",
+        "Personas, negocios, teléfonos, dispositivos, direcciones y referencias; el peso de cada vínculo depende de lo raro que es."
+      ],
+      [
+        "Comunidades y corroboración",
+        "Grupos conectados de forma inusual; solo suben los que muestran además comportamiento anómalo."
+      ],
+      [
+        "Priorización",
+        "Cola con razones por factor y exoneración de relaciones legítimas; ablación para medir el efecto de la corroboración."
+      ],
+      [
+        "Agente y verificador",
+        "Redacta el expediente; un verificador determinista rechaza citas inexistentes y frases que concluyan fraude; plantilla sin red por defecto."
+      ],
+      [
+        "API e interfaz",
+        "FastAPI, SQLite, React y Cytoscape.js; cada decisión queda registrada con su motivo."
+      ],
+      [
+        "Evaluación",
+        "Partición de desarrollo y de evaluación, semillas nuevas, intervalos de confianza y comparación con reglas simples y con una regla de dominio."
+      ]
     ],
     "preexistente": "Preexistente (21.11.2026, del equipo): generador de datos sintéticos con 37 pruebas (con reglas de control solo para verificar la dificultad) y un script de auditoría. Todo lo demás se construye en el evento."
   },
   "plan": {
     "titular": "29 horas-persona de plan; mínimo de unas 31 si todo se atrasa",
     "bloques": [
-      {"bloque": "Carga del lote y grafo tipado", "horas": "3", "entregable": "Grafo del lote"},
-      {"bloque": "Comunidades e indicadores de red", "horas": "3", "entregable": "Redes candidatas"},
-      {"bloque": "Priorización con razones y corroboración", "horas": "2,5", "entregable": "Cola con razones"},
-      {"bloque": "API y persistencia", "horas": "2", "entregable": "Registro de decisiones"},
-      {"bloque": "Agente de expediente y verificador", "horas": "4", "entregable": "Expediente verificable"},
-      {"bloque": "Vista del especialista y grafo", "horas": "5,5", "entregable": "Grafo, cola y decisión"},
-      {"bloque": "Reglas de fraude y criterios de revisión", "horas": "1", "entregable": "Criterio de dominio"},
-      {"bloque": "Backtest, KPI y falsos positivos", "horas": "3,5", "entregable": "Número antes y después"},
-      {"bloque": "Pruebas y validación", "horas": "2,5", "entregable": "Reporte de validación"},
-      {"bloque": "Pitch y demo", "horas": "2", "entregable": "Demo ensayada"}
+      {
+        "bloque": "Carga del lote y grafo tipado",
+        "horas": "3",
+        "entregable": "Grafo del lote"
+      },
+      {
+        "bloque": "Comunidades e indicadores de red",
+        "horas": "3",
+        "entregable": "Redes candidatas"
+      },
+      {
+        "bloque": "Priorización con razones y corroboración",
+        "horas": "2,5",
+        "entregable": "Cola con razones"
+      },
+      {
+        "bloque": "API y persistencia",
+        "horas": "2",
+        "entregable": "Registro de decisiones"
+      },
+      {
+        "bloque": "Agente de expediente y verificador",
+        "horas": "4",
+        "entregable": "Expediente verificable"
+      },
+      {
+        "bloque": "Vista del especialista y grafo",
+        "horas": "5,5",
+        "entregable": "Grafo, cola y decisión"
+      },
+      {
+        "bloque": "Reglas de fraude y criterios de revisión",
+        "horas": "1",
+        "entregable": "Criterio de dominio"
+      },
+      {
+        "bloque": "Backtest, KPI y falsos positivos",
+        "horas": "3,5",
+        "entregable": "Número antes y después"
+      },
+      {
+        "bloque": "Pruebas y validación",
+        "horas": "2,5",
+        "entregable": "Reporte de validación"
+      },
+      {
+        "bloque": "Pitch y demo",
+        "horas": "2",
+        "entregable": "Demo ensayada"
+      }
     ],
     "nota": "Si todo tarda de 1,4 a 1,6 veces más, el plan completo (≈ 42 h) no cabe: con cinco recortes queda un mínimo de ≈ 31 h con núcleo intocable (grafo, corroboración, expediente verificado, decisión humana y comparación con reglas). El mayor riesgo es la interfaz con grafo interactivo; el respaldo es un grafo estático servido por la API."
   },
@@ -137,18 +387,42 @@
     "IA externa solo para redactar el expediente, con datos sintéticos y plantilla sin red"
   ],
   "proximos_pasos": [
-    "Revisión cruzada humana del concepto y de los señuelos",
-    "Comprobar que los señuelos siguen siendo difíciles tras cualquier cambio del generador",
-    "Registrar la meta numérica antes de evaluar, con la partición de desarrollo",
-    "Preparar el entorno del evento sin construir la funcionalidad crítica"
+    "Acordar con el owner las reglas actuales, que serán la línea base",
+    "Validar con el especialista las relaciones legítimas frecuentes",
+    "Fijar la meta numérica con la partición de desarrollo antes de evaluar",
+    "Mapear los datos de solicitudes de la Caja al mismo esquema"
   ],
   "demo": [
-    {"min": 0.5, "accion": "Cargar el lote de solicitudes sintéticas", "mensaje": "Son unas 3.700 solicitudes con redes de fraude simuladas y relaciones legítimas mezcladas."},
-    {"min": 1.0, "accion": "Mostrar la cola de redes priorizadas", "mensaje": "El especialista ve redes, no coincidencias sueltas, ordenadas con sus razones."},
-    {"min": 1.0, "accion": "Abrir una red encadenada que las reglas simples no verían", "mensaje": "El grafo resalta los vínculos raros y el comportamiento que corrobora."},
-    {"min": 1.0, "accion": "Leer el expediente con evidencia y explicación legítima", "mensaje": "Cada cita existe en los datos; el sistema dice «merece revisión», nunca «fraude»."},
-    {"min": 0.5, "accion": "Contrastar con un señuelo: una familia que comparte el mismo teléfono", "mensaje": "El mismo dato compartido, pero sin comportamiento anómalo: baja de prioridad y se explica."},
-    {"min": 1.0, "accion": "El especialista decide y se muestra el antes y después", "mensaje": "Decisión con motivo registrado; el cliente no recibe nada; comparación con reglas simples y con la regla de dominio en la evaluación ciega."}
+    {
+      "min": 0.5,
+      "accion": "Cargar el lote de solicitudes sintéticas",
+      "mensaje": "Son unas 3.700 solicitudes con redes de fraude simuladas y relaciones legítimas mezcladas."
+    },
+    {
+      "min": 1.0,
+      "accion": "Mostrar la cola de redes priorizadas",
+      "mensaje": "El especialista ve redes, no coincidencias sueltas, ordenadas con sus razones."
+    },
+    {
+      "min": 1.0,
+      "accion": "Abrir una red encadenada que las reglas simples no verían",
+      "mensaje": "El grafo resalta los vínculos raros y el comportamiento que corrobora."
+    },
+    {
+      "min": 1.0,
+      "accion": "Leer el expediente con evidencia y explicación legítima",
+      "mensaje": "Cada cita existe en los datos; el sistema dice «merece revisión», nunca «fraude»."
+    },
+    {
+      "min": 0.5,
+      "accion": "Contrastar con un señuelo: una familia que comparte el mismo teléfono",
+      "mensaje": "El mismo dato compartido, pero sin comportamiento anómalo: baja de prioridad y se explica."
+    },
+    {
+      "min": 1.0,
+      "accion": "El especialista decide y se muestra el antes y después",
+      "mensaje": "Decisión con motivo registrado; el cliente no recibe nada; comparación con reglas simples y con la regla de dominio en la evaluación ciega."
+    }
   ],
   "plan_b": [
     "Si falla el modelo de lenguaje externo: usar la plantilla sin red.",
@@ -156,16 +430,46 @@
     "Si falla la evaluación en vivo: mostrar los resultados guardados con semilla fija."
   ],
   "preguntas": [
-    {"p": "¿Cuál es el impacto en el KPI?", "r": "No hay línea base oficial, así que no afirmamos una cifra sobre la Caja. Medimos sobre datos sintéticos propios precisión y recall por red, carga de revisión a igual recall y señuelos legítimos marcados. Como referencia, marcar cualquier coincidencia obliga a revisar el 46 % de las solicitudes de la partición de evaluación y solo cerca del 12 % de ellas es fraude; la meta es reducir esa carga sin perder recall, y se registra antes de evaluar."},
-    {"p": "¿Por qué no alertar por cada coincidencia?", "r": "Porque compartir un dato no implica necesariamente fraude: familias, mercados y gremios comparten teléfonos y direcciones. En nuestros datos, la regla de «cualquier coincidencia» detecta el 90 % del fraude pero marca todos los señuelos legítimos. Por eso exigimos corroboración de comportamiento anómalo."},
-    {"p": "Una regla de dominio ya rinde bien. ¿Qué aporta su solución?", "r": "Es cierto: una regla con criterio de dominio, que ajustamos a mano viendo estos mismos datos, alcanza un F1 cercano a 0,9. Frente a ella el aporte esperado es moderado y lo reportaremos así. Lo que aporta es la explicación por red, el expediente verificable, la corroboración que evita acusar por relaciones y la robustez en redes difíciles, que las reglas de coincidencia casi no ven."},
-    {"p": "¿Cómo evitan acusar a clientes legítimos?", "r": "Con tres mecanismos: el peso del vínculo depende de lo raro que es, una red solo sube si además muestra comportamiento anómalo y cada alerta muestra su contrapartida legítima. Además la alerta nunca dice «fraude»: dice que merece revisión, y ninguna acción sobre el cliente se ejecuta sin decisión humana."},
-    {"p": "¿Qué pasa con los datos personales?", "r": "Trabajamos solo con datos sintéticos. Al modelo de lenguaje solo irían identificadores y atributos seudonimizados, la plantilla sin red es la opción por defecto y cada decisión queda registrada con su motivo."},
-    {"p": "¿Qué parte es inteligencia artificial?", "r": "La ponderación por rareza, la detección de comunidades, la corroboración y un agente que redacta el expediente, con un verificador determinista que comprueba cada cita. El mínimo usa el grafo ponderado con comunidades y la regla de corroboración; el modelo de lenguaje redacta y el aprendizaje automático es una mejora si hay tiempo."},
-    {"p": "¿Cabe en 8 horas por persona?", "r": "El plan es de unas 29 horas-persona frente a unas 34 disponibles. Si las tareas tardan de 1,4 a 1,6 veces más, el plan completo no cabe y queda un mínimo de unas 31 horas, con un colchón de apenas el 8 %. El mayor riesgo es la interfaz con grafo interactivo; el respaldo es un grafo estático."},
-    {"p": "¿Y si la Caja no entrega datos?", "r": "No los necesitamos: el generador propio produce solicitudes ficticias con redes y relaciones legítimas. Si la Caja aporta datos, se mapean al mismo esquema."},
-    {"p": "¿Quién decide y qué ve el cliente?", "r": "Decide el especialista, con un motivo registrado. El sistema no cambia el estado de una solicitud ni bloquea ni notifica al cliente."},
-    {"p": "¿Qué es preexistente?", "r": "El generador de datos sintéticos con 37 pruebas y un script de auditoría, del equipo y creados el 21.11.2026. Las pruebas incluyen reglas de control solo para comprobar que los datos no son triviales. Grafo, puntaje, agente, verificador, API e interfaz se construyen en el evento."}
+    {
+      "p": "¿Cuál es el impacto en el KPI?",
+      "r": "No hay línea base oficial, así que no afirmamos una cifra sobre la Caja. Medimos sobre datos sintéticos propios precisión y recall por red, carga de revisión a igual recall y señuelos legítimos marcados. Como referencia, marcar cualquier coincidencia obliga a revisar el 46 % de las solicitudes de la partición de evaluación y solo cerca del 12 % de ellas es fraude; la meta es reducir esa carga sin perder recall, y se registra antes de evaluar."
+    },
+    {
+      "p": "¿Por qué no alertar por cada coincidencia?",
+      "r": "Porque compartir un dato no implica necesariamente fraude: familias, mercados y gremios comparten teléfonos y direcciones. En nuestros datos, la regla de «cualquier coincidencia» detecta el 90 % del fraude pero marca todos los señuelos legítimos. Por eso exigimos corroboración de comportamiento anómalo."
+    },
+    {
+      "p": "Una regla de dominio ya rinde bien. ¿Qué aporta su solución?",
+      "r": "Es cierto: una regla con criterio de dominio, que ajustamos a mano viendo estos mismos datos, alcanza un F1 cercano a 0,9. Frente a ella el aporte esperado es moderado y lo reportaremos así. Lo que aporta es la explicación por red, el expediente verificable, la corroboración que evita acusar por relaciones y la robustez en redes difíciles, que las reglas de coincidencia casi no ven."
+    },
+    {
+      "p": "¿Cómo evitan acusar a clientes legítimos?",
+      "r": "Con tres mecanismos: el peso del vínculo depende de lo raro que es, una red solo sube si además muestra comportamiento anómalo y cada alerta muestra su contrapartida legítima. Además la alerta nunca dice «fraude»: dice que merece revisión, y ninguna acción sobre el cliente se ejecuta sin decisión humana."
+    },
+    {
+      "p": "¿Qué pasa con los datos personales?",
+      "r": "Trabajamos solo con datos sintéticos. Al modelo de lenguaje solo irían identificadores y atributos seudonimizados, la plantilla sin red es la opción por defecto y cada decisión queda registrada con su motivo."
+    },
+    {
+      "p": "¿Qué parte es inteligencia artificial?",
+      "r": "La ponderación por rareza, la detección de comunidades, la corroboración y un agente que redacta el expediente, con un verificador determinista que comprueba cada cita. El mínimo usa el grafo ponderado con comunidades y la regla de corroboración; el modelo de lenguaje redacta y el aprendizaje automático es una mejora si hay tiempo."
+    },
+    {
+      "p": "¿Cabe en 8 horas por persona?",
+      "r": "El plan es de unas 29 horas-persona frente a unas 34 disponibles. Si las tareas tardan de 1,4 a 1,6 veces más, el plan completo no cabe y queda un mínimo de unas 31 horas, con un colchón de apenas el 8 %. El mayor riesgo es la interfaz con grafo interactivo; el respaldo es un grafo estático."
+    },
+    {
+      "p": "¿Y si la Caja no entrega datos?",
+      "r": "No los necesitamos: el generador propio produce solicitudes ficticias con redes y relaciones legítimas. Si la Caja aporta datos, se mapean al mismo esquema."
+    },
+    {
+      "p": "¿Quién decide y qué ve el cliente?",
+      "r": "Decide el especialista, con un motivo registrado. El sistema no cambia el estado de una solicitud ni bloquea ni notifica al cliente."
+    },
+    {
+      "p": "¿Qué es preexistente?",
+      "r": "El generador de datos sintéticos con 37 pruebas y un script de auditoría, del equipo y creados el 21.11.2026. Las pruebas incluyen reglas de control solo para comprobar que los datos no son triviales. Grafo, puntaje, agente, verificador, API e interfaz se construyen en el evento."
+    }
   ],
   "no_prometemos": [
     "Una cifra de impacto sobre la Caja: no hay línea base.",

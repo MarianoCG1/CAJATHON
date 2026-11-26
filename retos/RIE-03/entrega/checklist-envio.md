@@ -1,3 +1,5 @@
+> **El formulario real está en `formulario.md`** (campos exactos y adjuntos en `adjuntos/`). Este checklist es el de revisión general.
+
 # RIE-03 — checklist de envío
 
 El formulario de «Concepto de solución» abre el mié 25.11 y cierra el jue 26.11 (hora límite por confirmar). **No enviar sin revisar este checklist.**

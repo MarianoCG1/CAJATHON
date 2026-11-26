@@ -38,16 +38,43 @@
   },
   "solucion": {
     "titular": "De los datos de la cartera a una decisión humana con evidencia",
-    "flujo": ["Cartera sintética", "Variables hasta la fecha de corte", "Modelo calibrado e incertidumbre", "Filtro señal frente a fluctuación", "Cola priorizada con el porqué", "Agente propone la acción", "Gestor aprueba, edita o descarta", "Bitácora y backtest"],
+    "flujo": [
+      "Cartera sintética",
+      "Variables hasta la fecha de corte",
+      "Modelo calibrado e incertidumbre",
+      "Filtro señal frente a fluctuación",
+      "Cola priorizada con el porqué",
+      "Agente propone la acción",
+      "Gestor aprueba, edita o descarta",
+      "Bitácora y backtest"
+    ],
     "nota": "Nada se ejecuta solo y la alerta no cambia calificación, límite ni tasa del cliente."
   },
   "como_funciona": [
-    {"paso": "Datos de la cartera (sintéticos)", "detalle": "Historial de pagos, saldos y señales de actividad hasta la fecha de corte; nada posterior."},
-    {"paso": "Variables de cada cliente", "detalle": "Comparan al cliente con su propio pasado y con su sector."},
-    {"paso": "Modelo de deterioro", "detalle": "Probabilidad calibrada de pasar a atraso, con rango; sin historial suficiente, no alerta."},
-    {"paso": "Filtro de señal frente a fluctuación", "detalle": "Solo pasa lo persistente, no estacional y visto en al menos dos familias de señales."},
-    {"paso": "Cola y agente", "detalle": "Ordena por prioridad y propone canal, momento y mensaje con la evidencia citada."},
-    {"paso": "Decisión humana y medición", "detalle": "El gestor aprueba, edita o descarta; todo queda en bitácora; el backtest compara con reglas simples."}
+    {
+      "paso": "Datos de la cartera (sintéticos)",
+      "detalle": "Historial de pagos, saldos y señales de actividad hasta la fecha de corte; nada posterior."
+    },
+    {
+      "paso": "Variables de cada cliente",
+      "detalle": "Comparan al cliente con su propio pasado y con su sector."
+    },
+    {
+      "paso": "Modelo de deterioro",
+      "detalle": "Probabilidad calibrada de pasar a atraso, con rango; sin historial suficiente, no alerta."
+    },
+    {
+      "paso": "Filtro de señal frente a fluctuación",
+      "detalle": "Solo pasa lo persistente, no estacional y visto en al menos dos familias de señales."
+    },
+    {
+      "paso": "Cola y agente",
+      "detalle": "Ordena por prioridad y propone canal, momento y mensaje con la evidencia citada."
+    },
+    {
+      "paso": "Decisión humana y medición",
+      "detalle": "El gestor aprueba, edita o descarta; todo queda en bitácora; el backtest compara con reglas simples."
+    }
   ],
   "pantallas": [
     {
@@ -57,11 +84,51 @@
       "subtitulo": "Corte de fin de mes · clientes al día · ordenados por prioridad",
       "nota": "Maqueta ilustrativa con datos ficticios. La interfaz real se construye en el evento.",
       "elementos": [
-        {"id": "CRE-01274", "nivel": 0.82, "porque": ["Abonos −41 % frente a su promedio, 3 meses", "Consultas en otras entidades ×3"], "accion": "Llamada de acompañamiento"},
-        {"id": "CRE-03380", "nivel": 0.71, "porque": ["Cobros digitales a la baja", "Pagó 4 días tarde, 2 veces"], "accion": "WhatsApp: recordatorio amable"},
-        {"id": "CRE-00912", "nivel": 0.64, "porque": ["Abonos −28 %, no es estacional", "Su deuda en otras entidades sube"], "accion": "Visita de asesoría"},
-        {"id": "CRE-02117", "nivel": 0.5, "porque": ["Saldo promedio en cuenta cae", "Señal en 2 familias de señales"], "accion": "Llamada de acompañamiento"},
-        {"id": "CRE-04408", "nivel": 0.44, "porque": ["Menos operaciones en cuenta", "Persistente 3 meses"], "accion": "WhatsApp: ofrecer asesoría"}
+        {
+          "id": "CRE-01274",
+          "nivel": 0.82,
+          "porque": [
+            "Abonos −41 % frente a su promedio, 3 meses",
+            "Consultas en otras entidades ×3"
+          ],
+          "accion": "Llamada de acompañamiento"
+        },
+        {
+          "id": "CRE-03380",
+          "nivel": 0.71,
+          "porque": [
+            "Cobros digitales a la baja",
+            "Pagó 4 días tarde, 2 veces"
+          ],
+          "accion": "WhatsApp: recordatorio amable"
+        },
+        {
+          "id": "CRE-00912",
+          "nivel": 0.64,
+          "porque": [
+            "Abonos −28 %, no es estacional",
+            "Su deuda en otras entidades sube"
+          ],
+          "accion": "Visita de asesoría"
+        },
+        {
+          "id": "CRE-02117",
+          "nivel": 0.5,
+          "porque": [
+            "Saldo promedio en cuenta cae",
+            "Señal en 2 familias de señales"
+          ],
+          "accion": "Llamada de acompañamiento"
+        },
+        {
+          "id": "CRE-04408",
+          "nivel": 0.44,
+          "porque": [
+            "Menos operaciones en cuenta",
+            "Persistente 3 meses"
+          ],
+          "accion": "WhatsApp: ofrecer asesoría"
+        }
       ]
     },
     {
@@ -74,11 +141,34 @@
         "subencabezado": "Cliente al día · riesgo alto, con rango de incertidumbre",
         "grafico": {
           "titulo": "Abonos mensuales en cuenta (relativos a su promedio)",
-          "serie": [0.78, 0.8, 0.76, 0.74, 0.6, 0.5, 0.38, 0.3],
-          "referencia": [0.75, 0.78, 0.74, 0.76, 0.77, 0.75, 0.74, 0.76],
+          "serie": [
+            0.78,
+            0.8,
+            0.76,
+            0.74,
+            0.6,
+            0.5,
+            0.38,
+            0.3
+          ],
+          "referencia": [
+            0.75,
+            0.78,
+            0.74,
+            0.76,
+            0.77,
+            0.75,
+            0.74,
+            0.76
+          ],
           "leyenda": "Roja: el cliente · Punteada: su sector"
         },
-        "evidencia": ["Abonos caen 3 meses seguidos", "No es estacional: su sector no cae", "Más consultas en otras entidades", "Dos familias de señales coinciden"],
+        "evidencia": [
+          "Abonos caen 3 meses seguidos",
+          "No es estacional: su sector no cae",
+          "Más consultas en otras entidades",
+          "Dos familias de señales coinciden"
+        ],
         "incertidumbre": "Incertidumbre mostrada: probabilidad con rango.",
         "accion": "Llamada de acompañamiento esta semana",
         "nota": "Borrador de mensaje con evidencia; no promete condiciones.",
@@ -89,9 +179,18 @@
   ],
   "evidencia": {
     "cifras": [
-      {"valor": "0,84", "etiqueta": "AUC del modelo entre clientes al día (datos sintéticos propios)"},
-      {"valor": "≈ 2/3", "etiqueta": "de los casos que pasan a atraso están en el 10 % mejor puntuado"},
-      {"valor": "≈ 7×", "etiqueta": "lo que lograría el azar con la misma cola"}
+      {
+        "valor": "0,84",
+        "etiqueta": "AUC del modelo entre clientes al día (datos sintéticos propios)"
+      },
+      {
+        "valor": "≈ 2/3",
+        "etiqueta": "de los casos que pasan a atraso están en el 10 % mejor puntuado"
+      },
+      {
+        "valor": "≈ 7×",
+        "etiqueta": "lo que lograría el azar con la misma cola"
+      }
     ],
     "honestidad": "Medido solo sobre datos sintéticos propios, no sobre la cartera de la Caja. La precisión absoluta es baja (4,7 %) porque el evento es raro (0,7 % entre clientes al día): el valor está en priorizar y en una acción de bajo costo. El efecto de intervenir no se mide: se muestra como escenario."
   },
@@ -107,26 +206,76 @@
   "tecnologia": {
     "titular": "Analítica predictiva con un agente acotado, integrados de punta a punta",
     "filas": [
-      ["Datos", "Variables calculadas solo con información hasta la fecha de corte: evita fugas del futuro."],
-      ["Modelo", "Clasificador calibrado, validación temporal y rango de incertidumbre por alerta."],
-      ["Filtro", "Persistencia, estacionalidad y convergencia de señales: control de falsos positivos (a medir en el backtest)."],
-      ["Agente", "Propone canal, momento y mensaje con evidencia; proveedor de IA intercambiable y modo sin red."],
-      ["API e interfaz", "FastAPI con bitácora de cada decisión; React con cola, caso y aprobar, editar o descartar."],
-      ["Backtest", "Con y sin la solución, frente a reglas simples; reproducible con semilla fija."]
+      [
+        "Datos",
+        "Variables calculadas solo con información hasta la fecha de corte: evita fugas del futuro."
+      ],
+      [
+        "Modelo",
+        "Clasificador calibrado, validación temporal y rango de incertidumbre por alerta."
+      ],
+      [
+        "Filtro",
+        "Persistencia, estacionalidad y convergencia de señales: control de falsos positivos (a medir en el backtest)."
+      ],
+      [
+        "Agente",
+        "Propone canal, momento y mensaje con evidencia; proveedor de IA intercambiable y modo sin red."
+      ],
+      [
+        "API e interfaz",
+        "FastAPI con bitácora de cada decisión; React con cola, caso y aprobar, editar o descartar."
+      ],
+      [
+        "Backtest",
+        "Con y sin la solución, frente a reglas simples; reproducible con semilla fija."
+      ]
     ],
     "preexistente": "Preexistente (21.11.2026, del equipo): generador de datos sintéticos con 24 pruebas, sus datos (5,000 clientes, 34 meses) y un script de auditoría de dificultad. Todo lo demás se construye en el evento."
   },
   "plan": {
     "titular": "31,5 horas-persona de 32: mínimo viable definido y recortes ordenados",
     "bloques": [
-      {"bloque": "Datos y variables hasta la fecha de corte", "horas": "2", "entregable": "Variables sin fuga del futuro"},
-      {"bloque": "Modelo de deterioro y calibración", "horas": "4", "entregable": "Probabilidad con incertidumbre"},
-      {"bloque": "Filtro de señal y explicación; reglas de dominio", "horas": "5", "entregable": "Cola con el porqué"},
-      {"bloque": "Agente de intervención (con plantillas de respaldo)", "horas": "3", "entregable": "Acción y mensaje con evidencia"},
-      {"bloque": "API y persistencia", "horas": "3", "entregable": "Bitácora de decisiones"},
-      {"bloque": "Interfaz de cola y caso; diseño del flujo", "horas": "5,5", "entregable": "Aprobar, editar o descartar"},
-      {"bloque": "Backtest y comparación con reglas simples", "horas": "4", "entregable": "Número antes y después"},
-      {"bloque": "Pruebas, validación, pitch y demo", "horas": "5", "entregable": "Reporte de validación y demo"}
+      {
+        "bloque": "Datos y variables hasta la fecha de corte",
+        "horas": "2",
+        "entregable": "Variables sin fuga del futuro"
+      },
+      {
+        "bloque": "Modelo de deterioro y calibración",
+        "horas": "4",
+        "entregable": "Probabilidad con incertidumbre"
+      },
+      {
+        "bloque": "Filtro de señal y explicación; reglas de dominio",
+        "horas": "5",
+        "entregable": "Cola con el porqué"
+      },
+      {
+        "bloque": "Agente de intervención (con plantillas de respaldo)",
+        "horas": "3",
+        "entregable": "Acción y mensaje con evidencia"
+      },
+      {
+        "bloque": "API y persistencia",
+        "horas": "3",
+        "entregable": "Bitácora de decisiones"
+      },
+      {
+        "bloque": "Interfaz de cola y caso; diseño del flujo",
+        "horas": "5,5",
+        "entregable": "Aprobar, editar o descartar"
+      },
+      {
+        "bloque": "Backtest y comparación con reglas simples",
+        "horas": "4",
+        "entregable": "Número antes y después"
+      },
+      {
+        "bloque": "Pruebas, validación, pitch y demo",
+        "horas": "5",
+        "entregable": "Reporte de validación y demo"
+      }
     ],
     "nota": "En el escenario pesimista el plan sube a unas 45 horas y solo cabe con recortes. No se recorta: cola, explicación, aprobación humana con bitácora, backtest y pruebas."
   },
@@ -138,18 +287,42 @@
     "Política de IA externa: solo para borradores, con datos sintéticos"
   ],
   "proximos_pasos": [
-    "Revisión cruzada humana del concepto",
-    "Responder con el owner la definición de deterioro y la línea base, si hay canal",
-    "Repetir la evidencia con varias semillas e intervalos",
-    "Preparar el entorno del evento sin construir la funcionalidad crítica"
+    "Acordar con el owner la definición de deterioro, el horizonte y la línea base",
+    "Probar la cola con un gestor y ajustar su tamaño a la capacidad real",
+    "Medir en el backtest cuánto reduce el filtro los falsos positivos",
+    "Mapear las señales que la Caja pueda aportar al esquema de la solución"
   ],
   "demo": [
-    {"min": 0.5, "accion": "Abrir la cola del día (corte de fin de mes en los datos sintéticos)", "mensaje": "Estos clientes están al día y son los que más riesgo tienen de deteriorarse; ninguno tiene atraso hoy."},
-    {"min": 1.0, "accion": "Abrir un caso con deterioro gradual", "mensaje": "Sus abonos caen tres meses seguidos mientras su sector no cae: no es estacional."},
-    {"min": 0.5, "accion": "Mostrar evidencia e incertidumbre", "mensaje": "Cada alerta trae su rango; sin historial suficiente, el sistema no alerta."},
-    {"min": 1.0, "accion": "Aprobar la acción propuesta", "mensaje": "El agente propone canal y mensaje citando la evidencia; el gestor aprueba y queda en la bitácora; no se envía nada solo."},
-    {"min": 0.5, "accion": "Mostrar un cliente con fluctuación normal que no alertó", "mensaje": "Una caída de un mes, propia de su temporada, no entra a la cola."},
-    {"min": 1.5, "accion": "Backtest con y sin la solución", "mensaje": "Casos detectados, días de anticipación y falsos positivos frente a reglas de atraso; el efecto de intervenir se muestra como escenario."}
+    {
+      "min": 0.5,
+      "accion": "Abrir la cola del día (corte de fin de mes en los datos sintéticos)",
+      "mensaje": "Estos clientes están al día y son los que más riesgo tienen de deteriorarse; ninguno tiene atraso hoy."
+    },
+    {
+      "min": 1.0,
+      "accion": "Abrir un caso con deterioro gradual",
+      "mensaje": "Sus abonos caen tres meses seguidos mientras su sector no cae: no es estacional."
+    },
+    {
+      "min": 0.5,
+      "accion": "Mostrar evidencia e incertidumbre",
+      "mensaje": "Cada alerta trae su rango; sin historial suficiente, el sistema no alerta."
+    },
+    {
+      "min": 1.0,
+      "accion": "Aprobar la acción propuesta",
+      "mensaje": "El agente propone canal y mensaje citando la evidencia; el gestor aprueba y queda en la bitácora; no se envía nada solo."
+    },
+    {
+      "min": 0.5,
+      "accion": "Mostrar un cliente con fluctuación normal que no alertó",
+      "mensaje": "Una caída de un mes, propia de su temporada, no entra a la cola."
+    },
+    {
+      "min": 1.5,
+      "accion": "Backtest con y sin la solución",
+      "mensaje": "Casos detectados, días de anticipación y falsos positivos frente a reglas de atraso; el efecto de intervenir se muestra como escenario."
+    }
   ],
   "plan_b": [
     "Si falla el modelo de lenguaje externo: usar el modo con plantillas, sin red.",
@@ -157,16 +330,46 @@
     "Si falla el backtest en vivo: mostrar los resultados guardados con semilla fija."
   ],
   "preguntas": [
-    {"p": "¿Cuál es el impacto en el KPI?", "r": "No hay línea base oficial, así que no afirmamos una cifra sobre la cartera de la Caja. Medimos sobre datos sintéticos propios cuántos casos detecta la cola, con cuánta anticipación y con qué falsos positivos frente a reglas simples. El efecto de intervenir es un escenario: si evitara 10, 20 o 30 % de los pasos a atraso de los casos capturados, de cada 100 que pasarían a atraso se evitarían unos 7, 13 o 20. Es una ilustración aritmética, no una estimación."},
-    {"p": "¿Por qué no basta con mirar los días de atraso?", "r": "Porque la regla «ya tiene atraso» no distingue entre clientes que hoy están al día, que son los que queremos anticipar. Sobre datos sintéticos propios, las señales tempranas ordenan a esos clientes con un AUC de 0,84, y el 10 % mejor puntuado concentra cerca de dos tercios de los casos."},
-    {"p": "¿Cómo evitan los falsos positivos?", "r": "Con un filtro que exige que la caída sea persistente, no estacional y visible en al menos dos familias de señales. Es nuestra propuesta de control y su efecto se mide en el backtest: todavía no está medido. La precisión absoluta es baja (4,7 %) porque el evento es raro, por eso la acción propuesta es de bajo costo."},
-    {"p": "¿Cómo tratan datos personales y sesgos?", "r": "Trabajamos solo con datos sintéticos. Los registros usan identificadores; sexo y edad solo auditan sesgos y no entran al modelo; la zona define cohortes de comparación y también se audita por grupo. Como mínimo, un cuadro de tasa de alerta por grupo."},
-    {"p": "¿Qué parte es inteligencia artificial y cuál no?", "r": "El modelo calibrado con incertidumbre y el agente acotado que redacta la propuesta. En el mínimo viable el agente funciona con plantillas y el modelo es una regresión logística; el modelo de lenguaje y los árboles se añaden si sobra tiempo. El proveedor es intercambiable y existe modo sin red."},
-    {"p": "¿Cabe en 8 horas por persona?", "r": "Estimamos 31,5 horas-persona de 32, sin holgura; en el escenario pesimista son unas 45. Por eso el plan base es un mínimo viable con recortes ordenados que protegen la cola, la explicación, la aprobación humana con bitácora, el backtest y las pruebas."},
-    {"p": "¿Y si la Caja no entrega datos?", "r": "No los necesitamos para el prototipo: ya existe un generador propio con 5,000 clientes y 34 meses. Si la Caja aporta datos o un esquema, se mapean al mismo formato."},
-    {"p": "¿Esto decide créditos?", "r": "No. La alerta no cambia calificación, límite ni tasa de ningún cliente y ningún endpoint envía mensajes ni ejecuta acciones: el gestor aprueba, edita o descarta."},
-    {"p": "¿La cola es diaria?", "r": "En el prototipo se recalcula por fecha de corte (mensual, según los datos sintéticos). Una cadencia diaria sería un supuesto a validar con el owner."},
-    {"p": "¿Qué es preexistente y qué se construye en el evento?", "r": "Preexistente: el generador de datos con sus pruebas, sus datos y un script de auditoría de dificultad, todos del equipo y creados el 21.11.2026. En el evento se construyen el modelo, el filtro, el agente, la API, la interfaz y el backtest."}
+    {
+      "p": "¿Cuál es el impacto en el KPI?",
+      "r": "No hay línea base oficial, así que no afirmamos una cifra sobre la cartera de la Caja. Medimos sobre datos sintéticos propios cuántos casos detecta la cola, con cuánta anticipación y con qué falsos positivos frente a reglas simples. El efecto de intervenir es un escenario: si evitara 10, 20 o 30 % de los pasos a atraso de los casos capturados, de cada 100 que pasarían a atraso se evitarían unos 7, 13 o 20. Es una ilustración aritmética, no una estimación."
+    },
+    {
+      "p": "¿Por qué no basta con mirar los días de atraso?",
+      "r": "Porque la regla «ya tiene atraso» no distingue entre clientes que hoy están al día, que son los que queremos anticipar. Sobre datos sintéticos propios, las señales tempranas ordenan a esos clientes con un AUC de 0,84, y el 10 % mejor puntuado concentra cerca de dos tercios de los casos."
+    },
+    {
+      "p": "¿Cómo evitan los falsos positivos?",
+      "r": "Con un filtro que exige que la caída sea persistente, no estacional y visible en al menos dos familias de señales. Es nuestra propuesta de control y su efecto se mide en el backtest: todavía no está medido. La precisión absoluta es baja (4,7 %) porque el evento es raro, por eso la acción propuesta es de bajo costo."
+    },
+    {
+      "p": "¿Cómo tratan datos personales y sesgos?",
+      "r": "Trabajamos solo con datos sintéticos. Los registros usan identificadores; sexo y edad solo auditan sesgos y no entran al modelo; la zona define cohortes de comparación y también se audita por grupo. Como mínimo, un cuadro de tasa de alerta por grupo."
+    },
+    {
+      "p": "¿Qué parte es inteligencia artificial y cuál no?",
+      "r": "El modelo calibrado con incertidumbre y el agente acotado que redacta la propuesta. En el mínimo viable el agente funciona con plantillas y el modelo es una regresión logística; el modelo de lenguaje y los árboles se añaden si sobra tiempo. El proveedor es intercambiable y existe modo sin red."
+    },
+    {
+      "p": "¿Cabe en 8 horas por persona?",
+      "r": "Estimamos 31,5 horas-persona de 32, sin holgura; en el escenario pesimista son unas 45. Por eso el plan base es un mínimo viable con recortes ordenados que protegen la cola, la explicación, la aprobación humana con bitácora, el backtest y las pruebas."
+    },
+    {
+      "p": "¿Y si la Caja no entrega datos?",
+      "r": "No los necesitamos para el prototipo: ya existe un generador propio con 5,000 clientes y 34 meses. Si la Caja aporta datos o un esquema, se mapean al mismo formato."
+    },
+    {
+      "p": "¿Esto decide créditos?",
+      "r": "No. La alerta no cambia calificación, límite ni tasa de ningún cliente y ningún endpoint envía mensajes ni ejecuta acciones: el gestor aprueba, edita o descarta."
+    },
+    {
+      "p": "¿La cola es diaria?",
+      "r": "En el prototipo se recalcula por fecha de corte (mensual, según los datos sintéticos). Una cadencia diaria sería un supuesto a validar con el owner."
+    },
+    {
+      "p": "¿Qué es preexistente y qué se construye en el evento?",
+      "r": "Preexistente: el generador de datos con sus pruebas, sus datos y un script de auditoría de dificultad, todos del equipo y creados el 21.11.2026. En el evento se construyen el modelo, el filtro, el agente, la API, la interfaz y el backtest."
+    }
   ],
   "no_prometemos": [
     "Una cifra de impacto sobre la cartera de la Caja: no hay línea base.",

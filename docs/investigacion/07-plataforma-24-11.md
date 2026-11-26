@@ -2,6 +2,21 @@
 
 Resumen **con nuestras palabras** de lo publicado. Los textos literales de expedientes, FAQ y tickets son confidenciales y no se copian aquí.
 
+## 0. El formulario ya está abierto (leído el 25.11, 21:01)
+
+- **Fecha límite:** jueves **26 de noviembre, 11:59 p. m.** (hora de Perú).
+- **Un solo desafío por equipo** («Elijan uno solo: el concepto se evalúa frente al problema central de ese desafío»). No se postulan los ocho. Regla acordada: **RIE-03**.
+- Seis pasos y 11 obligatorios; hay «Guardar y salir» (borrador).
+  1. Identificación: desafío (pestaña de área y reto) y nombre de la solución (máx. 80).
+  2. Concepto: qué es (2 000), cómo funciona (2 000), qué la diferencia (1 000), material visual opcional (hasta **3 archivos PDF/PNG/JPG de 10 MB**) y un enlace opcional.
+  3. Impacto esperado (2 000), con estimaciones y supuestos cuando sea posible.
+  4. Enfoque tecnológico (2 000); punto de partida (desde cero o a partir de preexistentes; si es lo segundo: nombre, tipo, nivel y titularidad de cada desarrollo, y su descripción, 2 000); riesgos (800, opcional).
+  5. Alcance del prototipo: qué se construye (2 000), qué se demuestra (1 500), fuera de alcance (800, opcional).
+  6. Datos e insumos: no requerimos / deseable / indispensable (si se piden, lista y justificación).
+- Al enviar se marcan tres declaraciones: la propuesta fue **revisada y acordada por el equipo**; se identificaron los preexistentes con titularidad; se entiende que habrá que desarrollar algo nuevo y demostrarlo.
+- La portada del formulario insiste en: no hace falta prototipo; se puede complementar con flujos, bocetos o prototipos visuales; declarar qué se construirá en el evento; definir un alcance realista; priorizar datos que el equipo pueda generar.
+- No hay plantilla descargable: es un formulario web.
+
 ## 1. Postulación del Concepto de solución
 
 - La pestaña «Concepto de solución» dice: **«Cerrado temporalmente. Postulación: del miércoles 25 al jueves 26 de noviembre.»** El formulario **no existe todavía**, así que **no se conocen aún sus campos, límites de longitud ni archivos adjuntos**.
