@@ -2,8 +2,8 @@
 tipo: reto
 id: NEG-01
 prioridad: 2
-estado: Borrador v0
-avance: 1/6
+estado: Listo para revisión cruzada
+avance: 5/6
 pareja: Antonio + Glem
 revisor: David
 actualizado: 2026-11-21
@@ -11,32 +11,32 @@ actualizado: 2026-11-21
 
 <!-- AUTO:inicio (no editar; se regenera) -->
 
-# NEG-01 · Cuotas que se adaptan al flujo del negocio
+# NEG-01 · Plan de pagos adaptado al ciclo económico del negocio
 
 Volver al [[boveda/00-HUB-Cajathon|HUB]] · [[boveda/Tablero|Tablero]]
 
-**Estado:** Borrador v0 · **Prioridad:** #2 · **Eje:** 4 Inclusión financiera y resiliencia
+**Estado:** Listo para revisión cruzada · **Prioridad:** #2 · **Eje:** 4 Inclusión financiera y resiliencia
 **Pareja líder:** Antonio + Glem · **Revisor:** David · **Owners (plataforma):** (ver plataforma)
 
 ## Avance (automático)
 
 - [x] Borrador v0 del concepto
-- [ ] Concepto v1 (editado por la pareja)
-- [ ] Panorama de abastecimiento
-- [ ] Cotejo con el expediente literal
+- [x] Concepto v1 (editado por la pareja)
+- [x] Panorama de abastecimiento
+- [x] Cotejo con el expediente literal
 - [ ] Generador de datos sintéticos con pruebas
-- [ ] Texto de postulación
+- [x] Texto de postulación
 
-`█░░░░░ 1/6` · [POR CONFIRMAR]: 5 · (supuesto): 7
+`█████░ 5/6` · [POR CONFIRMAR]: 10 · (supuesto): 18 · postulación: 963 palabras
 
 ## Documentos
 
 - Ficha del reto: [[retos/NEG-01/README|Ficha del reto]]
 - Concepto: [[retos/NEG-01/concepto|Concepto]]
-- Panorama de abastecimiento: _pendiente_
-- Texto de postulación: _pendiente_
+- Panorama de abastecimiento: [[retos/NEG-01/panorama|Panorama de abastecimiento]]
+- Texto de postulación: [[retos/NEG-01/postulacion|Texto de postulación]]
 - Generador de datos: _pendiente_
-- Expediente literal (confidencial, solo local; no se sube al repo): `retos/NEG-01/expediente.md` — no está en este equipo; copiarlo de la plataforma
+- Expediente literal (confidencial, solo local; no se sube al repo): `retos/NEG-01/expediente.md` — presente en este equipo
 
 ## Hipótesis de solución (supuesto)
 

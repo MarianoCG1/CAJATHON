@@ -1,4 +1,6 @@
-# NEG-01 · Cuotas que se adaptan al flujo del negocio
+# NEG-01 · Plan de pagos adaptado al ciclo económico del negocio
+
+> El 25.11 (19:02) la Caja actualizó el expediente y cambió el título (antes: «Cuotas que se adaptan al flujo del negocio»). El v1 está escrito sobre esa versión, sus 10 preguntas frecuentes y la respuesta a nuestro ticket del 24.11.
 
 | | |
 |---|---|
@@ -11,28 +13,28 @@
 
 ## En una frase
 
-Motor que estima el flujo estacional de ingresos de cada microempresario, propone un cronograma de cuotas ajustado y valida rentabilidad y riesgo antes de ofrecerlo, con un agente que lo explica al analista. *(supuesto del equipo, no del expediente)*
+«Ritmo»: el asesor estima el ciclo económico del negocio (patrón del sector y la zona ajustado al cliente) y obtiene el plan de pagos de menor costo que cumple Cuota/Utilidad Neta ≤ factor en cada etapa, con el porqué de cada cuota y su prueba de estrés frente a la cuota fija. *(supuesto del equipo, no del expediente)*
 
 ## Qué hay en esta carpeta
 
 | Archivo | Para qué sirve | Estado |
 |---|---|---|
-| `expediente.md` | Texto literal del reto copiado de la plataforma. **Confidencial: solo local, está en `.gitignore`** | ⬜ cada persona lo copia de la plataforma |
-| `concepto.md` | Concepto de solución (8 secciones + anexos). Borrador v0 generado: hay que editarlo a v1. | ✅ existe |
-| `panorama.md` | Cómo se abastecería el reto: datos, modelo, arquitectura, plan del evento, KPI, riesgos, cotejo con el expediente | ⬜ por crear |
-| `postulacion.md` | Texto para pegar en el formulario de la plataforma (25–26.11) | ⬜ por crear |
-| `datos/` | Generador de datos sintéticos con pruebas (`generar.py`, `test_generar.py`); la salida va a `datos/sintetico/` (ignorada por git) | ⬜ por crear |
+| `expediente.md` | Texto literal del reto copiado de la plataforma. **Confidencial: solo local, está en `.gitignore`** | ✅ copiado el 25.11 (versión de las 19:02, con FAQ y ticket) |
+| `concepto.md` | Concepto de solución (8 secciones + anexos). v1 del 25.11. | ✅ v1 |
+| `panorama.md` | Cómo se abastecería el reto: datos, modelo, arquitectura, plan del evento, KPI, riesgos, cotejo con el expediente | ✅ v1 con cotejo |
+| `postulacion.md` | Texto para pegar en el formulario de la plataforma (25–26.11) | ✅ v1 |
+| `datos/` | Generador de datos sintéticos con pruebas (`generar.py`, `test_generar.py`); la salida va a `datos/sintetico/` (ignorada por git) | ⬜ decisión pendiente (opcional: aporta evidencia medida a Factibilidad) |
 
 ## Qué toca hacer hasta el 25.11
 
 Marca las casillas editando este archivo y haz commit. El avance automático lo lee `boveda/Tablero.md`.
 
-- [ ] Copiar el expediente desde la plataforma a `retos/NEG-01/expediente.md` (solo local).
-- [ ] **Concepto v1:** editar `concepto.md` (completar las 8 secciones, ajustar la funcionalidad crítica, quitar lo genérico). Modelo a imitar: `retos/RIE-03/concepto.md`.
-- [ ] **Panorama de abastecimiento:** crear `panorama.md` con las secciones del modelo `retos/RIE-03/panorama.md` (datos, modelo, arquitectura, plan del evento, KPI, riesgos, preexistente, cotejo).
-- [ ] **Cotejo** palabra por palabra con el expediente: añadir al panorama una sección «Cotejo con el expediente».
+- [x] Copiar el expediente desde la plataforma a `retos/NEG-01/expediente.md` (solo local).
+- [x] **Concepto v1:** editar `concepto.md` (completar las 8 secciones, ajustar la funcionalidad crítica, quitar lo genérico). Modelo a imitar: `retos/RIE-03/concepto.md`.
+- [x] **Panorama de abastecimiento:** crear `panorama.md` con las secciones del modelo `retos/RIE-03/panorama.md` (datos, modelo, arquitectura, plan del evento, KPI, riesgos, preexistente, cotejo).
+- [x] **Cotejo** palabra por palabra con el expediente: añadir al panorama una sección «Cotejo con el expediente».
 - [ ] Decidir si hace falta un generador de datos sintéticos (`datos/`). Si sí: semilla fija, pruebas y declararlo en `docs/preexistente.md`. **No construir la funcionalidad crítica.**
-- [ ] **Texto de postulación** en `postulacion.md` (~700–750 palabras, *supuesto del equipo*; confirmar el formato del formulario). Modelo: `retos/RIE-03/postulacion.md`.
+- [x] **Texto de postulación** en `postulacion.md` (~700–750 palabras, *supuesto del equipo*; confirmar el formato del formulario). Modelo: `retos/RIE-03/postulacion.md`.
 - [ ] **Revisión cruzada** (David) y v2.
 - [ ] Decisión de postular (sí/no) — la toma el coordinador con el equipo.
 
@@ -44,11 +46,8 @@ Marca las casillas editando este archivo y haz commit. El avance automático lo 
 
 ## Funcionalidad crítica propuesta (supuesto)
 
-Dado un cliente, el sistema estima su flujo de ingresos estacional, propone un cronograma de cuotas ajustado, valida automáticamente capacidad de pago, tasa, plazo y rentabilidad contra la política, y explica la propuesta al analista, que decide.
+Dado un cliente y una operación, el sistema estima su ciclo (UN por etapa con banda), construye el plan óptimo con monto y periodo por cuota bajo las reglas del producto, explica por qué cada cuota es alta o baja, muestra Cuota/UN por etapa y lo compara con la cuota fija en escenarios base y adversos; el asesor ajusta y el comité decide. Detalle en `concepto.md` §6.
 
-## Preguntas para el owner (a reformular como comprensión)
+## Preguntas para el owner
 
-- ¿Qué variantes de cronograma flexible permite hoy la normativa y la política de la Caja?
-- ¿Cuál es la línea base de cumplimiento y de rentabilidad por producto?
-- ¿Habrá datos sintéticos de ingresos por mes y estacionalidad por actividad?
-- ¿Qué restricciones de tasa, plazo y rentabilidad mínima debe respetar la propuesta?
+Casi todas quedaron resueltas por las preguntas frecuentes y el ticket del 24.11 (ver `panorama.md`, «Cotejo con el expediente»). Siguen abiertas y se asumen: factores, cuota mínima, plazo y topes por producto; regla de holgura frente a escenarios adversos; topes de concentración y de gracia; línea base de retención. Lista en `concepto.md`, Anexo B.

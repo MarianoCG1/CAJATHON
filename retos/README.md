@@ -9,7 +9,7 @@ El orden sale de `scripts/sinergia/` (cobertura de habilidades de la pareja, sin
 | # | Reto | Eje | Pareja líder | Revisor | Punto de partida |
 |---|---|---|---|---|---|
 | 1 | [RIE-03](RIE-03/README.md) Anticipar el deterioro de pago antes del atraso | 3 Riesgo, fraude y recuperaciones inteligentes | David + Mariano | Glem | Concepto v1 + panorama + postulación + datos: **falta revisión cruzada** |
-| 2 | [NEG-01](NEG-01/README.md) Cuotas que se adaptan al flujo del negocio | 4 Inclusión financiera y resiliencia | Antonio + Glem | David | Solo borrador v0: **falta desarrollarlo** |
+| 2 | [NEG-01](NEG-01/README.md) Plan de pagos adaptado al ciclo económico del negocio | 4 Inclusión financiera y resiliencia | Antonio + Glem | David | Concepto v1 + panorama + postulación (25.11, sobre el expediente actualizado): **falta revisión cruzada** |
 | 3 | [NEG-02](NEG-02/README.md) Open Finance: competir en un ecosistema abierto | 5 Open Finance y nuevos modelos de competencia | Antonio + Mariano | David | Concepto v1 + panorama + postulación + datos: **falta revisión cruzada** |
 | 4 | [RIE-01](RIE-01/README.md) Microfinanzas resilientes al clima | 4 Inclusión financiera y resiliencia | Antonio + Mariano | Glem | Concepto v1 + panorama + postulación + datos: **falta revisión cruzada** |
 | 5 | [RIE-02](RIE-02/README.md) Descubrir redes de riesgo ocultas | 3 Riesgo, fraude y recuperaciones inteligentes | David + Mariano | Antonio | Concepto v1 + panorama + postulación + datos: **falta revisión cruzada** |

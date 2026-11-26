@@ -38,7 +38,7 @@
       ]
     },
     "NEG-01": {
-      "titulo": "Cuotas que se adaptan al flujo del negocio",
+      "titulo": "Plan de pagos adaptado al ciclo económico del negocio",
       "eje": "4 Inclusión financiera y resiliencia",
       "hipotesis": "Motor que estima el flujo estacional de ingresos de cada microempresario, propone un cronograma de cuotas ajustado y valida rentabilidad y riesgo antes de ofrecerlo, con un agente que lo explica al analista.",
       "paquetes": [

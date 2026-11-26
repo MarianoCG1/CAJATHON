@@ -31,15 +31,15 @@ def test_avance_refleja_los_archivos():
     rie03 = gb.avance("RIE-03")
     assert rie03["hechos"] == rie03["total"] == 6
     assert rie03["estado"] == "Listo para revisión cruzada"
-    neg01 = gb.avance("NEG-01")
-    assert neg01["pasos"]["borrador"] and not neg01["pasos"]["v1"]
-    assert neg01["hechos"] == 1
-    assert neg01["estado"] == "Borrador v0"
+    neg03 = gb.avance("NEG-03")
+    assert neg03["pasos"]["borrador"] and not neg03["pasos"]["v1"]
+    assert neg03["hechos"] == 1
+    assert neg03["estado"] == "Borrador v0"
 
 
 def test_cotejo_exige_panorama_con_su_cotejo():
-    # NEG-01 no tiene panorama: el cotejo no puede darse por hecho
-    assert gb.avance("NEG-01")["pasos"]["cotejo"] is False
+    # NEG-03 no tiene panorama: el cotejo no puede darse por hecho
+    assert gb.avance("NEG-03")["pasos"]["cotejo"] is False
 
 
 def test_regenerar_conserva_las_notas_manuales(copia):

@@ -26,7 +26,7 @@ Ver el [[boveda/Tablero|Tablero]] para el avance de cada uno.
 | # | Reto | Estado | Avance |
 |---|---|---|---|
 | 1 | [[boveda/Retos/RIE-03|RIE-03]] Anticipar el deterioro de pago antes del atraso | Listo para revisión cruzada | `██████ 6/6` |
-| 2 | [[boveda/Retos/NEG-01|NEG-01]] Cuotas que se adaptan al flujo del negocio | Borrador v0 | `█░░░░░ 1/6` |
+| 2 | [[boveda/Retos/NEG-01|NEG-01]] Plan de pagos adaptado al ciclo económico del negocio | Listo para revisión cruzada | `█████░ 5/6` |
 | 3 | [[boveda/Retos/NEG-02|NEG-02]] Open Finance: competir en un ecosistema abierto | Listo para revisión cruzada | `██████ 6/6` |
 | 4 | [[boveda/Retos/RIE-01|RIE-01]] Microfinanzas resilientes al clima | Listo para revisión cruzada | `██████ 6/6` |
 | 5 | [[boveda/Retos/RIE-02|RIE-02]] Descubrir redes de riesgo ocultas | Listo para revisión cruzada | `██████ 6/6` |

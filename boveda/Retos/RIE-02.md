@@ -36,7 +36,7 @@ Volver al [[boveda/00-HUB-Cajathon|HUB]] · [[boveda/Tablero|Tablero]]
 - Panorama de abastecimiento: [[retos/RIE-02/panorama|Panorama de abastecimiento]]
 - Texto de postulación: [[retos/RIE-02/postulacion|Texto de postulación]]
 - Generador de datos: `retos/RIE-02/datos/generar.py`
-- Expediente literal (confidencial, solo local; no se sube al repo): `retos/RIE-02/expediente.md` — presente en este equipo
+- Expediente literal (confidencial, solo local; no se sube al repo): `retos/RIE-02/expediente.md` — no está en este equipo; copiarlo de la plataforma
 
 ## Hipótesis de solución (supuesto)
 
